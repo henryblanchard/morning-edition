@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 001 · 20 April 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 20 April 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;background:#f5efe4;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .serif{font-family:'Fraunces',serif;font-optical-sizing:auto}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .meta .num{font-family:'Fraunces',serif;font-weight:500;font-size:32px;letter-spacing:0;text-transform:none}
+  .flag{display:inline-block;padding:6px 14px;border:2px solid currentColor;border-radius:999px;font-size:18px;letter-spacing:0.16em}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:48px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:600}
+  .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(24px,2.5vw,32px);line-height:1.35;max-width:34ch}
+
+  /* 0. MASTHEAD */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#f5efe4;border-bottom:1.5px solid #111;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em}
+  .masthead .title em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase}
+
+  /* 1. HERO COVER */
+  .spread--hero{background:#f5efe4;color:#111}
+  .spread--hero .number{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(160px,22vw,320px);line-height:0.85;letter-spacing:-0.04em;margin:40px 0 0;color:#111}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(56px,8vw,128px);line-height:0.95;letter-spacing:-0.03em;margin:-8px 0 32px;max-width:18ch}
+  .spread--hero .dek{max-width:42ch;margin-top:8px}
+
+  /* 2. ROSE ALERT STAMP */
+  .spread--alert{background:#e8614a;color:#fff5ef}
+  .spread--alert h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(64px,10vw,160px);line-height:0.92;letter-spacing:-0.025em;margin-top:32px;max-width:14ch}
+  .spread--alert .stamp{position:absolute;top:clamp(80px,10vw,140px);right:clamp(40px,8vw,140px);transform:rotate(-14deg);border:4px solid #fff5ef;padding:14px 28px;font-family:'Inter',sans-serif;font-weight:800;letter-spacing:0.3em;font-size:22px;pointer-events:none;background:rgba(255,245,239,0.08)}
+  .spread--alert .dek{margin-top:56px;max-width:38ch;color:#fff5ef}
+  .spread--alert .number{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(140px,18vw,260px);line-height:0.85;color:#fff5ef;opacity:0.95}
+
+  /* 3. DARK / MIDNIGHT */
+  .spread--midnight{background:#0a0e27;color:#e8e4d8}
+  .spread--midnight .number{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(200px,28vw,420px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px #5a6fff;margin:40px 0 -40px;letter-spacing:-0.06em}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(56px,8vw,128px);line-height:0.98;letter-spacing:-0.02em;max-width:15ch;margin-top:32px;color:#fff}
+  .spread--midnight h1 em{color:#8fa4ff;font-style:italic;font-weight:400}
+  .spread--midnight .dek{color:#b8bccb;max-width:36ch;margin-top:40px}
+  .spread--midnight .source{border-color:#2a3058}
+
+  /* 4. ACADEMIC DROP CAP */
+  .spread--academic{background:#fdf8f0;color:#1a1410}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(52px,7vw,96px);line-height:1;letter-spacing:-0.02em;margin:40px 0 48px;max-width:20ch}
+  .spread--academic .body{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(24px,2.2vw,30px);line-height:1.5;max-width:60ch;column-count:2;column-gap:56px;column-rule:1px solid #c8bfad}
+  .spread--academic .body::first-letter{font-family:'Fraunces',serif;font-weight:600;font-size:9em;line-height:0.8;float:left;margin:0 14px 0 -2px;color:#8a2f1f}
+  .spread--academic .number{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0;text-transform:none}
+  @media (max-width:800px){.spread--academic .body{column-count:1}}
+
+  /* 5. TERMINAL */
+  .spread--terminal{background:#000;color:#00ff9c;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .spread--terminal .meta{color:#00ff9c;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:500;letter-spacing:0.08em}
+  .spread--terminal .num{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:22px;font-weight:700}
+  .spread--terminal h1{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-size:clamp(48px,6.4vw,96px);line-height:1.1;letter-spacing:-0.015em;margin-top:48px;max-width:22ch;white-space:pre-wrap}
+  .spread--terminal h1::before{content:"> ";color:#00ff9c;opacity:0.6}
+  .spread--terminal .dek{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(20px,1.8vw,24px);line-height:1.55;margin-top:32px;max-width:72ch;color:#a8ffd8;font-weight:400}
+  .spread--terminal .cursor::after{content:"█";display:inline-block;animation:blink 1.1s step-end infinite;margin-left:6px}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:#00ff9c;color:#00ff9c}
+  .spread--terminal .flag{border-color:#00ff9c}
+
+  /* 6. SWISS POSTER */
+  .spread--swiss{background:#f5c518;color:#111;display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1fr);gap:64px;align-items:stretch}
+  .spread--swiss .meta{grid-column:1/-1}
+  .spread--swiss .left{display:flex;flex-direction:column;justify-content:center}
+  .spread--swiss .right{display:flex;flex-direction:column;justify-content:center;padding-left:32px;border-left:3px solid #111}
+  .spread--swiss .number{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(200px,32vw,520px);line-height:0.75;letter-spacing:-0.06em;color:#111}
+  .spread--swiss h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);line-height:1.02;letter-spacing:-0.02em;text-transform:uppercase;max-width:16ch;margin-bottom:32px}
+  .spread--swiss .dek{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2vw,28px);max-width:36ch}
+  .spread--swiss .source{grid-column:1/-1;margin-top:32px}
+  @media (max-width:900px){.spread--swiss{grid-template-columns:1fr}.spread--swiss .right{border-left:none;border-top:3px solid #111;padding-left:0;padding-top:32px}}
+
+  /* 7. TYPOGRAPHIC COLLAGE */
+  .spread--collage{background:#ede5d8;color:#1a1a1a;overflow:hidden}
+  .spread--collage .layer{position:absolute;font-family:'Fraunces',serif;font-weight:900;color:#d5c9b3;pointer-events:none;user-select:none;line-height:0.8;letter-spacing:-0.06em}
+  .spread--collage .l1{top:12%;left:-4%;font-size:clamp(260px,38vw,620px);font-style:italic}
+  .spread--collage .l2{bottom:-8%;right:-2%;font-size:clamp(220px,30vw,480px);font-weight:400;color:#c6b89e;opacity:0.8}
+  .spread--collage .content{position:relative;z-index:2;max-width:60%;margin-top:auto;margin-bottom:auto}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:clamp(52px,7vw,108px);line-height:0.98;letter-spacing:-0.02em;max-width:16ch;margin:32px 0}
+  .spread--collage .dek{background:#1a1a1a;color:#ede5d8;padding:20px 28px;max-width:42ch;font-family:'Fraunces',serif}
+  @media (max-width:900px){.spread--collage .content{max-width:100%}}
+
+  /* 8. NEWSPAPER COLUMN */
+  .spread--paper{background:#eae0ce;color:#1a1208;background-image:radial-gradient(#00000010 1px,transparent 1px);background-size:4px 4px}
+  .spread--paper .kicker{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:24px;letter-spacing:0.08em;margin-top:24px}
+  .spread--paper h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(64px,8vw,128px);line-height:0.94;letter-spacing:-0.02em;margin:12px 0 40px;text-transform:uppercase;max-width:14ch;border-bottom:6px double #1a1208;padding-bottom:24px}
+  .spread--paper .body{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(22px,2vw,26px);line-height:1.55;column-count:3;column-gap:40px;column-rule:1px solid #8a7e60;max-width:100%}
+  .spread--paper .body::first-letter{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:5.5em;line-height:0.85;float:left;margin:2px 10px 0 -2px}
+  .spread--paper .number{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:42px}
+  @media (max-width:900px){.spread--paper .body{column-count:1}}
+  @media (min-width:900px) and (max-width:1200px){.spread--paper .body{column-count:2}}
+
+  /* 9. MANIFESTO */
+  .spread--manifesto{background:#55121e;color:#f5e9d4;text-align:center;align-items:center;justify-content:center}
+  .spread--manifesto .meta{align-self:stretch;justify-content:space-between;color:#e8b894}
+  .spread--manifesto .center{margin:auto 0;display:flex;flex-direction:column;align-items:center;gap:36px}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(72px,11vw,200px);line-height:0.92;letter-spacing:-0.035em;max-width:18ch}
+  .spread--manifesto h1 em{font-style:italic;font-weight:400;color:#f2a97b}
+  .spread--manifesto .dek{color:#f5e9d4;max-width:36ch;font-weight:350;text-align:center;margin:0 auto}
+  .spread--manifesto .rule{width:60px;height:2px;background:#f2a97b;margin:0 auto}
+  .spread--manifesto .source{border-color:#8b2a39;color:#e8b894;align-self:stretch}
+
+  /* 10. BIG STAT FINISH */
+  .spread--stat{background:linear-gradient(180deg,#0d3b2e 0%,#1e6b50 100%);color:#f7f4e9;justify-content:center}
+  .spread--stat .meta{color:#a8d5c4;border-bottom:1px solid #2d8f6d;padding-bottom:24px}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(240px,42vw,680px);line-height:0.78;letter-spacing:-0.07em;margin:auto 0;color:#fff4c4}
+  .spread--stat .bigstat .unit{font-size:0.22em;vertical-align:top;margin-left:16px;font-weight:400;color:#f7f4e9}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.02em;max-width:22ch;margin-bottom:32px}
+  .spread--stat .dek{color:#d9e7d5;max-width:40ch;font-size:clamp(22px,2vw,28px)}
+  .spread--stat .source{border-color:#2d8f6d;color:#a8d5c4}
+
+  /* COLOPHON */
+  .colophon{background:#111;color:#f5efe4;padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);text-align:center;font-family:'Inter',sans-serif}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(40px,5vw,72px);line-height:1;margin-bottom:24px}
+  .colophon p{font-size:20px;line-height:1.6;max-width:50ch;margin:0 auto 16px}
+  .colophon a{color:#f5c518}
+
+  /* anchor offset */
+  section{scroll-margin-top:24px}
+
+  /* print */
+  @media print{
+    .spread{page-break-after:always;min-height:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="title"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 001 · Mon 20 April 2026 · Ten stories, curated</div>
+</header>
+
+<!-- 01 HERO -->
+<section class="spread spread--hero" id="s1">
+  <div class="meta">
+    <span>01 · Hacker News · 323 points · <span class="flag">🎯 For You</span></span>
+    <span class="num">I</span>
+  </div>
+  <div class="number serif">01</div>
+  <h1>What changed between Opus 4.6 and 4.7.</h1>
+  <p class="dek">The diff between two months of Claude's implicit instructions is a window into Anthropic's evolving definition of 'good behaviour': new guardrails, new affordances, and a much tighter stance on the model naming itself.</p>
+  <footer class="source">
+    <span>Simon Willison · simonwillison.net</span>
+    <a href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</section>
+
+<!-- 02 ROSE ALERT -->
+<section class="spread spread--alert" id="s2">
+  <div class="stamp">ALERT · ALERT · ALERT</div>
+  <div class="meta">
+    <span>02 · Hacker News · 89 points · <span class="flag">🎯 For You</span></span>
+    <span class="num">II</span>
+  </div>
+  <div class="number serif">02</div>
+  <h1>The fake-star economy is eating open source credibility.</h1>
+  <p class="dek">Paid starring has become a quiet economy: agencies flip bundles of GitHub stars to make derivative AI wrappers look credible overnight. If you evaluate open source tools on stars, you're already being gamed.</p>
+  <footer class="source">
+    <span>Awesome Agents investigation</span>
+    <a href="https://awesomeagents.ai/news/github-fake-stars-investigation/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</section>
+
+<!-- 03 MIDNIGHT -->
+<section class="spread spread--midnight" id="s3">
+  <div class="meta">
+    <span>03 · r/Futurology · 849 points</span>
+    <span class="num">III</span>
+  </div>
+  <div class="number">03</div>
+  <h1>Zuckerberg is reportedly building an <em>AI clone</em> of himself to sit in meetings.</h1>
+  <p class="dek">Meta is testing an LLM version of its CEO for internal meetings. The interesting part isn't whether it works. It's whether 'show up as an agent' becomes an acceptable calendar reply.</p>
+  <footer class="source">
+    <span>r/Futurology via external press</span>
+    <a href="https://reddit.com/r/Futurology" target="_blank" rel="noopener">Thread →</a>
+  </footer>
+</section>
+
+<!-- 04 ACADEMIC DROP CAP -->
+<section class="spread spread--academic" id="s4">
+  <div class="meta">
+    <span>04 · r/Physics · 82 points</span>
+    <span class="num">IV</span>
+  </div>
+  <h1>The muon wobbles out of step with the Standard Model, again.</h1>
+  <div class="body">The 2026 Breakthrough Prize in Fundamental Physics went to the muon g-2 collaborations, whose decade-long measurement of a single magnetic moment has, at parts in a billion, refused to agree with theory. For twenty years physicists assumed the discrepancy was a computational mirage, a shadow of how hard it is to model the quark fog a muon swims through. The experimentalists held their number steady. The theorists refined their calculation. The gap did not close. The prize is, in effect, a bet that the gap is real: that the muon, by wobbling half a part per million faster than the Standard Model predicts, is pointing a very small finger at new physics. If correct, it is the first direct evidence of particles we have not yet discovered, hiding in the quantum vacuum around every muon ever measured.</div>
+  <footer class="source">
+    <span>Breakthrough Prize Foundation</span>
+    <a href="https://reddit.com/r/Physics" target="_blank" rel="noopener">Discussion →</a>
+  </footer>
+</section>
+
+<!-- 05 TERMINAL -->
+<section class="spread spread--terminal" id="s5">
+  <div class="meta">
+    <span>05 · HACKER NEWS · 87 PTS · [FLAG:FOR_YOU]</span>
+    <span class="num">V</span>
+  </div>
+  <h1 class="cursor">Build a free, always-on, local AI agent in an afternoon.</h1>
+  <p class="dek">$ cat openclaw.md
+
+A dead-simple recipe for an always-on local agent that watches a folder, runs on your own hardware, and never phones home. Exactly the shape of tool a small team actually ships with: observable, auditable, and entirely yours.
+
+&gt; prerequisites: a laptop, ollama, 40 minutes
+&gt; cost: $0
+&gt; phone-home: no</p>
+  <footer class="source">
+    <span>flyingpenguin.com / OpenClaw</span>
+    <a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</section>
+
+<!-- 06 SWISS POSTER -->
+<section class="spread spread--swiss" id="s6">
+  <div class="meta">
+    <span>06 · Hacker News · 163 points · <span class="flag">🎯 For You</span></span>
+    <span class="num">VI</span>
+  </div>
+  <div class="left">
+    <div class="number">06</div>
+  </div>
+  <div class="right">
+    <h1>TRELLIS.2 image-to-3D runs on Apple Silicon now.</h1>
+    <p class="dek">The threshold for "can I spin up a 3D asset from a reference photo" just dropped to "open your laptop". Native M-series inference, no cloud, no queue. A decent input for a prototype, a thumbnail, a visual pitch, or a magazine-spread mockup.</p>
+  </div>
+  <footer class="source">
+    <span>shivampkumar/trellis-mac · GitHub</span>
+    <a href="https://github.com/shivampkumar/trellis-mac" target="_blank" rel="noopener">Clone →</a>
+  </footer>
+</section>
+
+<!-- 07 TYPOGRAPHIC COLLAGE -->
+<section class="spread spread--collage" id="s7">
+  <div class="layer l1">abc</div>
+  <div class="layer l2">07</div>
+  <div class="meta">
+    <span>07 · r/math · 152 points</span>
+    <span class="num">VII</span>
+  </div>
+  <div class="content">
+    <h1>Mochizuki returns, with a machine checker.</h1>
+    <p class="dek">Two decades after claiming to prove the abc conjecture, Shinichi Mochizuki is back; this time he is formalising Inter-universal Teichmüller theory in Lean. If the proof goes through a machine checker, the twenty-year standoff ends in an afternoon.</p>
+  </div>
+  <footer class="source">
+    <span>r/math · discussion thread</span>
+    <a href="https://reddit.com/r/math" target="_blank" rel="noopener">Thread →</a>
+  </footer>
+</section>
+
+<!-- 08 NEWSPAPER -->
+<section class="spread spread--paper" id="s8">
+  <div class="meta">
+    <span>08 · Hacker News · 52 points</span>
+    <span class="num">08</span>
+  </div>
+  <div class="kicker">Weird Science · Dispatch from under the churchyard</div>
+  <h1>Eight million bees are living beneath a Welsh cemetery.</h1>
+  <div class="body">Naturalists surveying a Victorian-era churchyard in mid-Wales have found a single honeybee colony estimated at 8,000,000 individuals, nesting in the void beneath the cemetery floor. The colony has been burrowing through century-old coffin wood and capitalising, apparently, on the thermal stability of a stone-lined cavern with a convenient side entrance via 1860s masonry. Local beekeepers first noticed something was off when a plume of workers, larger than any recorded swarm in the county, emerged from a cracked headstone. Ground-penetrating radar confirmed the rest: a chambered, multi-storey nest stretching ten metres beneath consecrated ground. The colony is calm, disease-free, and, by one count, producing honey at a rate that would make a commercial apiary nervous. What the local vicar does with it is, evidently, an open question.</div>
+  <footer class="source">
+    <span>Discover Magazine</span>
+    <a href="https://www.discovermagazine.com/up-to-8-million-bees-are-living-in-an-underground-network-beneath-this-cemetery-48977" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</section>
+
+<!-- 09 MANIFESTO -->
+<section class="spread spread--manifesto" id="s9">
+  <div class="meta">
+    <span>09 · r/Futurology · 602 points · <span class="flag">🎯 For You</span></span>
+    <span class="num">IX</span>
+  </div>
+  <div class="center">
+    <h1>Half of America uses AI at work. <em>Ten percent</em> say it has changed the work.</h1>
+    <div class="rule"></div>
+    <p class="dek">The gap between adoption and transformation is where every serious AI programme, workshop, and product has to play. It is also the entire reason an AI education business exists at all.</p>
+  </div>
+  <footer class="source">
+    <span>Reuters / r/Futurology</span>
+    <a href="https://reddit.com/r/Futurology" target="_blank" rel="noopener">Thread →</a>
+  </footer>
+</section>
+
+<!-- 10 BIG STAT FINISH -->
+<section class="spread spread--stat" id="s10">
+  <div class="meta">
+    <span>10 · Hacker News · 42 points</span>
+    <span class="num">X</span>
+  </div>
+  <div class="bigstat serif">1<span class="unit">st</span></div>
+  <h1>Solar is now the single largest source of electricity on the planet.</h1>
+  <p class="dek">Not "on track to". Not "projected". According to the IEA's April report, solar has overtaken every other energy source globally, coal included. A ten-year-old prediction that no one quite believed has, quietly, become the new baseline.</p>
+  <footer class="source">
+    <span>Electrek · IEA data</span>
+    <a href="https://electrek.co/2026/04/19/iea-solar-overtakes-all-energy-sources-in-a-major-global-first/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</section>
+
+<footer class="colophon">
+  <div class="mark serif">Morning Edition</div>
+  <p>Ten stories, curated and designed by an agent from the Hacker News and Reddit front pages, for one reader, every morning.</p>
+  <p>Vol. 001 · 20 April 2026 · <a href="../index.html">Archive →</a></p>
+</footer>
+
+</body>
+</html>
