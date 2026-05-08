@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 010 · 8 May 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 8 May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD — clay ivory with burgundy */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#1c1008;border-bottom:1.5px solid #3a2418;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#ecd8c0}
+  .masthead .brand em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#a87862}
+
+  /* 1. HERO COVER — clay ivory with burgundy */
+  .spread--hero{background:#ecdcc0;color:#1c1008}
+  .spread--hero .meta{color:#6a3818;padding-bottom:20px;border-bottom:1px solid rgba(106,56,24,0.30)}
+  .spread--hero .flag{display:inline-block;padding:2px 10px;border:1.5px solid #6a1a28;font-size:18px;letter-spacing:0.12em;color:#6a1a28}
+  .spread--hero .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:#6a3818;margin:clamp(56px,10vw,140px) 0 20px;display:block}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(64px,12.5vw,212px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#1c1008}
+  .spread--hero h1 em{font-style:italic;font-weight:200;color:#6a1a28}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;color:#2a1810;max-width:46ch;margin-top:44px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--hero .source{border-color:rgba(28,16,8,0.32);color:#6a3818}
+  .spread--hero .source a{color:#1c1008;font-weight:700}
+  .spread--hero .corner-num{position:absolute;bottom:clamp(24px,4vw,72px);right:clamp(24px,4vw,72px);font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,26vw,400px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(106,26,40,0.22);user-select:none;pointer-events:none;letter-spacing:-0.05em}
+
+  /* 2. MANIFESTO — midnight forest with mint */
+  .spread--manifesto{background:#0a1f18;color:#dceadc}
+  .spread--manifesto .meta{color:#5a8a78;padding-bottom:20px;border-bottom:1px solid rgba(90,138,120,0.18)}
+  .spread--manifesto .flag{display:inline-block;padding:2px 10px;border:1.5px solid #80c8a8;font-size:18px;letter-spacing:0.12em;color:#80c8a8}
+  .spread--manifesto .roman{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(48px,7vw,96px);line-height:1;color:#5a8a78;margin-top:clamp(36px,6vw,72px)}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(48px,9vw,148px);line-height:0.88;letter-spacing:-0.038em;max-width:18ch;margin-top:24px;color:#ecf6e8}
+  .spread--manifesto h1 em{font-style:italic;font-weight:400;color:#80c8a8}
+  .spread--manifesto .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.42;max-width:46ch;color:#a8c4b4;margin-top:36px}
+  .spread--manifesto .bg-num{position:absolute;bottom:clamp(24px,4vw,60px);right:clamp(24px,4vw,60px);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(140px,24vw,400px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(128,200,168,0.08);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--manifesto .source{border-color:rgba(90,138,120,0.22);color:#5a8a78}
+  .spread--manifesto .source a{color:#80c8a8;font-weight:700}
+
+  /* 3. NEWSPAPER COLUMN — bone cream */
+  .spread--news{background:#ede4cc;color:#1a1408}
+  .spread--news .meta{color:#5a4828;padding-bottom:20px;border-bottom:2px solid #1a1408}
+  .spread--news .edition{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.8vw,22px);color:#5a4828;margin-top:clamp(48px,8vw,120px);margin-bottom:6px;display:block}
+  .spread--news h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,7vw,110px);line-height:0.91;letter-spacing:-0.03em;max-width:18ch;border-top:3.5px solid #1a1408;padding-top:22px;margin-bottom:28px}
+  .spread--news h1 em{font-style:italic;font-weight:400;color:#7a2818}
+  .spread--news .col-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px 60px;margin-top:18px}
+  .spread--news .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,1.9vw,24px);line-height:1.6;color:#2a1c10}
+  .spread--news .aside-tag{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#5a4828;margin-bottom:10px;display:block}
+  .spread--news .num-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(80px,14vw,180px);line-height:0.78;color:rgba(26,20,8,0.10);display:block;text-align:right;margin-top:auto}
+  .spread--news .source{border-color:#a8987a;color:#5a4828}
+  .spread--news .source a{color:#1a1408;font-weight:700}
+
+  /* 4. DARK/MIDNIGHT — near black with amber gold */
+  .spread--midnight{background:#0a0a0e;color:#d4ad62}
+  .spread--midnight .meta{color:#8a6a3a;padding-bottom:20px;border-bottom:1px solid rgba(138,106,58,0.22)}
+  .spread--midnight .hexnum{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-weight:600;font-size:22px;color:#8a6a3a;letter-spacing:0.08em;line-height:1;margin-top:clamp(40px,7vw,90px)}
+  .spread--midnight .ghost{position:absolute;top:8%;right:-1%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,24vw,420px);line-height:0.82;color:transparent;-webkit-text-stroke:1px rgba(212,173,98,0.07);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(48px,7.4vw,118px);line-height:0.96;letter-spacing:-0.024em;max-width:18ch;margin-top:18px;color:#f0e0c0}
+  .spread--midnight h1 em{color:#e8b860;font-style:italic;font-weight:400}
+  .spread--midnight .dek{font-family:'Fraunces',serif;font-weight:350;color:#9a7a52;max-width:42ch;margin-top:40px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--midnight .flag{display:inline-block;padding:2px 10px;border:1.5px solid #e8b860;font-size:18px;letter-spacing:0.12em;color:#e8b860;vertical-align:middle}
+  .spread--midnight .source{border-color:rgba(138,106,58,0.22);color:#8a6a3a}
+  .spread--midnight .source a{color:#f0e0c0}
+
+  /* 5. ACADEMIC DROP-CAP — dusty rose */
+  .spread--academic{background:#ecd4cc;color:#1a0a08}
+  .spread--academic .meta{color:#6a2a28;border-bottom:2px solid #1a0a08;padding-bottom:20px}
+  .spread--academic .num-small{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0.34em;color:#6a2a28;text-transform:uppercase}
+  .spread--academic .rule{width:100%;height:1.5px;background:#1a0a08;margin:28px 0}
+  .spread--academic .journal-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#6a2a28;margin-bottom:28px;display:block}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,6.5vw,104px);line-height:0.94;letter-spacing:-0.02em;max-width:24ch;margin-bottom:32px}
+  .spread--academic h1 em{font-style:italic;font-weight:400;color:#8a1a18}
+  .spread--academic .body-text{max-width:58ch;font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.62;color:#2a1410}
+  .spread--academic .dropcap::first-letter{font-family:'Fraunces',serif;font-weight:700;font-size:5em;line-height:0.72;float:left;margin:0.1em 0.1em 0 0;color:#8a1a18}
+  .spread--academic .source{border-color:#6a2a28;color:#6a2a28}
+  .spread--academic .source a{color:#1a0a08;font-weight:700}
+
+  /* 6. COLOUR-FIELD MINIMALIST — terracotta */
+  .spread--field{background:#6a2a1a;color:#f0d8b8}
+  .spread--field .meta{color:rgba(240,216,184,0.5);padding-bottom:20px;border-bottom:1px solid rgba(240,216,184,0.12)}
+  .spread--field .bg-num{position:absolute;bottom:-0.05em;right:-0.02em;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(220px,38vw,620px);line-height:0.72;color:rgba(240,216,184,0.07);user-select:none;pointer-events:none;letter-spacing:-0.07em}
+  .spread--field h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(52px,8.5vw,136px);line-height:0.93;letter-spacing:-0.026em;max-width:22ch;margin-top:clamp(56px,10vw,148px)}
+  .spread--field h1 em{font-style:italic;font-weight:300;color:#e8b888}
+  .spread--field .label{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(240,216,184,0.5);margin-top:24px;display:block}
+  .spread--field .dek{font-family:'Fraunces',serif;font-weight:350;color:rgba(240,216,184,0.78);font-size:clamp(20px,2vw,26px);max-width:42ch;margin-top:24px;line-height:1.48}
+  .spread--field .source{border-color:rgba(240,216,184,0.16);color:rgba(240,216,184,0.5)}
+  .spread--field .source a{color:#f0d8b8}
+
+  /* 7. TYPOGRAPHIC COLLAGE — wine burgundy */
+  .spread--collage{background:#220812;color:#ecd4c4}
+  .spread--collage .meta{color:rgba(236,212,196,0.5);padding-bottom:20px;letter-spacing:0.22em}
+  .spread--collage .ghost{position:absolute;top:-4%;left:-1%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(180px,30vw,480px);line-height:0.75;color:rgba(236,212,196,0.06);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--collage .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(236,212,196,0.55);margin:clamp(36px,7vw,96px) 0 14px;display:block}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(44px,8vw,136px);line-height:0.88;letter-spacing:-0.032em;max-width:20ch;color:#f6e4d4}
+  .spread--collage h1 em{font-style:italic;font-weight:400;color:#e8a890}
+  .spread--collage .aside{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;color:rgba(236,212,196,0.55);margin:22px 0;text-transform:uppercase;border-left:3px solid rgba(232,168,144,0.32);padding-left:14px}
+  .spread--collage .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:44ch;color:rgba(236,212,196,0.78)}
+  .spread--collage .source{border-color:rgba(236,212,196,0.14);color:rgba(236,212,196,0.5)}
+  .spread--collage .source a{color:#ecd4c4;font-weight:800}
+
+  /* 8. ROSE-ALERT-STAMP — acid yellow with black */
+  .spread--alert{background:#e8c818;color:#0e0c00}
+  .spread--alert .meta{color:#3a3000;padding-bottom:20px;border-bottom:1.5px solid rgba(14,12,0,0.32)}
+  .spread--alert .flag{display:inline-block;padding:2px 10px;border:1.5px solid #0e0c00;font-size:18px;letter-spacing:0.12em;color:#0e0c00;background:rgba(14,12,0,0.04)}
+  .spread--alert .stamp{position:absolute;top:clamp(72px,10vw,130px);right:clamp(40px,8vw,120px);transform:rotate(-7deg);border:4px solid #0e0c00;padding:12px 22px;font-family:'Inter',sans-serif;font-weight:800;letter-spacing:0.32em;font-size:22px;text-transform:uppercase;background:rgba(14,12,0,0.06);color:#0e0c00;pointer-events:none;user-select:none}
+  .spread--alert .bignumber{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(110px,20vw,300px);line-height:0.8;color:rgba(14,12,0,0.7);margin:36px 0 0;letter-spacing:-0.02em}
+  .spread--alert h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(42px,7vw,116px);line-height:0.92;letter-spacing:-0.025em;margin-top:14px;max-width:15ch;color:#0e0c00}
+  .spread--alert h1 em{font-style:italic;font-weight:400;color:#3a3000}
+  .spread--alert .dek{font-family:'Fraunces',serif;font-weight:350;color:#1a1408;max-width:46ch;margin-top:26px;font-size:clamp(20px,2vw,26px);line-height:1.46}
+  .spread--alert .source{border-color:rgba(14,12,0,0.32);color:#3a3000}
+  .spread--alert .source a{color:#0e0c00;font-weight:700}
+
+  /* 9. TERMINAL/MONOSPACE — deep purple with cyan */
+  .spread--terminal{background:#0e0420;color:#7ae2dc;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .spread--terminal .meta{color:#5a8a98;padding-bottom:20px;border-bottom:1px solid rgba(90,138,152,0.22);font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.06em;text-transform:none}
+  .spread--terminal .flag{display:inline-block;padding:2px 10px;border:1.5px solid #7ae2dc;font-size:18px;letter-spacing:0.04em;color:#7ae2dc;font-family:'JetBrains Mono',monospace}
+  .spread--terminal .prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:#5a8a98;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--terminal .prompt::before{content:'$ ';color:#7ae2dc}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(36px,5.6vw,82px);line-height:1.04;letter-spacing:-0.012em;max-width:28ch;margin-top:14px;color:#d8f4f0}
+  .spread--terminal h1 em{font-style:italic;font-weight:400;color:#7ae2dc}
+  .spread--terminal .ascii-block{font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.32;color:rgba(122,226,220,0.34);white-space:pre;margin:36px 0 8px;letter-spacing:0;user-select:none}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-weight:400;color:#80a8b0;max-width:54ch;margin-top:28px;font-size:clamp(18px,1.6vw,21px);line-height:1.62}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#7ae2dc;vertical-align:-0.12em;animation:blink 1.06s steps(2,end) infinite;margin-left:0.18em}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:rgba(90,138,152,0.22);color:#5a8a98;font-family:'JetBrains Mono',monospace;font-size:18px;text-transform:none;letter-spacing:0}
+  .spread--terminal .source a{color:#d8f4f0;font-weight:600}
+
+  /* 10. BIG-STAT FINISH — slate steel */
+  .spread--stat{background:#2a3848;color:#e6ecf2}
+  .spread--stat .meta{color:#8a9aae;padding-bottom:20px;border-bottom:1.5px solid rgba(230,236,242,0.22)}
+  .spread--stat .label{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#a8b8cc;margin:clamp(36px,6vw,80px) 0 0;display:block}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(140px,22vw,360px);line-height:0.82;letter-spacing:-0.04em;color:#e8a878;margin:8px 0 24px;display:block}
+  .spread--stat .bigstat .small{font-size:0.42em;font-style:normal;font-weight:600;letter-spacing:0.01em;color:#cad4e0;display:block;margin-top:6px}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,6vw,90px);line-height:0.94;letter-spacing:-0.026em;max-width:22ch;color:#f6f8fc}
+  .spread--stat h1 em{font-style:italic;font-weight:400;color:#e8a878}
+  .spread--stat .dek{font-family:'Fraunces',serif;font-weight:350;color:#cad4e0;max-width:46ch;margin-top:32px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--stat .source{border-color:rgba(230,236,242,0.22);color:#8a9aae}
+  .spread--stat .source a{color:#f6f8fc;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#1c1008;color:#a89878;padding:clamp(48px,8vw,96px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,4vw,54px);color:#ecd8c0;margin-bottom:18px}
+  .colophon p{font-family:'Inter',sans-serif;font-size:20px;line-height:1.6;max-width:52ch;margin:0 auto 10px;color:#a89878}
+  .colophon a{color:#e8b860}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 010 &nbsp;&middot;&nbsp; 8 May 2026</div>
+</header>
+
+<!-- STORY 1: HERO COVER — AlphaEvolve -->
+<section class="spread spread--hero" id="s1">
+  <div class="corner-num" aria-hidden="true">1</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 274 pts &nbsp;&middot;&nbsp; deepmind.google</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="eyebrow">DeepMind &nbsp;&middot;&nbsp; evolutionary search &nbsp;&middot;&nbsp; Gemini agent</span>
+  <h1>An evolutionary coder, <em>let loose</em> on real problems.</h1>
+  <p class="dek">DeepMind's AlphaEvolve wraps a Gemini coding agent inside an evolutionary loop that writes, mutates, and selects programs against concrete objectives. The team report measurable wins on long-standing combinatorial open problems, on chip-design scheduling, and on Google's own data-centre operations. The shape of the system matters as much as the headline result: a frontier model has been put inside a search procedure that learns from running its own code.</p>
+  <div class="source">
+    <span>AlphaEvolve: a Gemini-powered coding agent for designing advanced algorithms &nbsp;&middot;&nbsp; deepmind.google</span>
+    <a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 2: MANIFESTO — Anthropic Natural Language Autoencoders -->
+<section class="spread spread--manifesto" id="s2">
+  <div class="bg-num" aria-hidden="true">II</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 249 pts &nbsp;&middot;&nbsp; anthropic.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="roman">II</div>
+  <h1>The model's <em>thoughts</em>, written down in plain English.</h1>
+  <p class="dek">Anthropic researchers describe natural-language autoencoders: small networks trained to take a model's internal activations and decode them back into readable text, so you can ask what a network is actually doing without first translating through a human's hypothesis. The early results are unsettlingly legible. The model is talking to itself in something close to English, and now we can read along.</p>
+  <div class="source">
+    <span>Natural Language Autoencoders: Turning Claude's Thoughts into Text &nbsp;&middot;&nbsp; anthropic.com</span>
+    <a href="https://www.anthropic.com/research/natural-language-autoencoders" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 3: NEWSPAPER COLUMN — Ultrasound destroys flu and COVID viruses -->
+<section class="spread spread--news" id="s3">
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 11,775 pts &nbsp;&middot;&nbsp; agencia.fapesp.br</span>
+  </div>
+  <span class="edition">Acoustics &nbsp;&middot;&nbsp; virology &nbsp;&middot;&nbsp; in vitro</span>
+  <div class="num-tag" aria-hidden="true">No.3</div>
+  <h1>Ultrasound <em>shakes</em> the virus to pieces.</h1>
+  <div class="col-wrap">
+    <p class="dek">A Brazilian-led team report that frequencies tuned to the resonant signature of viral capsids appear to fracture influenza A and SARS-CoV-2 particles in a dish, while leaving human cells intact. The mechanism is acoustic resonance, not heat. If the result holds beyond the bench, it points at a class of physical disinfection methods that need no new chemistry.</p>
+    <div>
+      <span class="aside-tag">The interesting bit</span>
+      <p class="dek">Each virus has a structural frequency at which it vibrates apart, like a wine glass under a sustained note. The team modelled the capsids first, picked the frequency from the model, and then watched the particles disassemble in real time on the imaging stage.</p>
+    </div>
+  </div>
+  <div class="source">
+    <span>Scientists use ultrasound to destroy influenza A and COVID-19 viruses without damaging human cells &nbsp;&middot;&nbsp; agencia.fapesp.br</span>
+    <a href="https://agencia.fapesp.br/scientists-use-ultrasound-to-destroy-influenza-a-and-covid-19-viruses-without-damaging-human-cells/57968" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 4: DARK/MIDNIGHT — DeepSeek 4 Flash on Metal -->
+<section class="spread spread--midnight" id="s4">
+  <div class="ghost" aria-hidden="true">iv</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 348 pts &nbsp;&middot;&nbsp; github.com/antirez</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="hexnum">0x04</div>
+  <h1>A local DeepSeek 4, <em>written</em> for Apple silicon.</h1>
+  <p class="dek">Salvatore Sanfilippo (antirez of Redis fame) has open-sourced ds4, a DeepSeek 4 Flash inference engine written directly against Apple's Metal API. The engine runs the model locally on a MacBook with a small footprint and competitive throughput, no Python runtime required. It is exactly the kind of project that quietly resets what frontier-model access looks like for a single builder on a single laptop.</p>
+  <div class="source">
+    <span>ds4: DeepSeek 4 Flash local inference engine for Metal &nbsp;&middot;&nbsp; github.com</span>
+    <a href="https://github.com/antirez/ds4" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 5: ACADEMIC DROP-CAP — Terry Tao, future of mathematics -->
+<section class="spread spread--academic" id="s5">
+  <div class="meta">
+    <span class="num-small">&sect;05</span>
+    <span>Reddit / r/math &nbsp;&middot;&nbsp; 36 pts &nbsp;&middot;&nbsp; youtube.com</span>
+  </div>
+  <div class="rule"></div>
+  <span class="journal-tag">Mathematics &nbsp;&middot;&nbsp; future of practice</span>
+  <h1>Tao on what <em>changes</em> when the proof assistant joins the room.</h1>
+  <p class="body-text dropcap">Terry Tao's keynote at the Future of Mathematics Symposium reads like a working mathematician's memo on what the next few years feel like to live inside. Lean and large language models are not replacing the human, he argues, but they are changing what gets sketched and what gets verified, and the social shape of a department starts to bend with them. Worth two cups of coffee and a quiet morning.</p>
+  <div class="source">
+    <span>Terry Tao: New Mathematical Workflows &nbsp;&middot;&nbsp; Future of Mathematics Symposium</span>
+    <a href="https://www.youtube.com/live/tN4hsT5t0nw?si=cIQj2Di6sNdZHr7P&t=6330" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 6: COLOUR-FIELD MINIMALIST — Burning Man MOOP map -->
+<section class="spread spread--field" id="s6">
+  <div class="bg-num" aria-hidden="true">6</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 598 pts &nbsp;&middot;&nbsp; not-ship.com</span>
+  </div>
+  <h1>The map that keeps a <em>city</em> honest about its trash.</h1>
+  <span class="label">Data viz &nbsp;&middot;&nbsp; civic ritual</span>
+  <p class="dek">Each year a small army of volunteers walks the playa in a grid after Burning Man and grades every camp's plot on how cleanly it was returned to bare desert. The result is a beautifully drawn pollution map going back decades, and a quietly effective social technology: nobody wants their square to glow red next year. Half cartography, half sociology.</p>
+  <div class="source">
+    <span>The map that keeps Burning Man honest &nbsp;&middot;&nbsp; not-ship.com</span>
+    <a href="https://www.not-ship.com/burning-man-moop/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 7: TYPOGRAPHIC COLLAGE — Virtual wings brain plasticity -->
+<section class="spread spread--collage" id="s7">
+  <div class="ghost" aria-hidden="true">VII</div>
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 2,801 pts &nbsp;&middot;&nbsp; sciencenews.org</span>
+  </div>
+  <span class="tag">Body schema &nbsp;&middot;&nbsp; motor cortex &nbsp;&middot;&nbsp; VR</span>
+  <h1>Train the brain on <em>wings</em>, watch it adopt them.</h1>
+  <div class="aside">Twenty-five volunteers &nbsp;&middot;&nbsp; two extra virtual limbs &nbsp;&middot;&nbsp; cortical remapping</div>
+  <p class="dek">Twenty-five volunteers were taught to fly with two extra virtual limbs in a controlled VR rig. After enough hours of training, motor-cortex recordings showed the brain encoding the new wings less like tools and more like real, owned body parts. The result extends the body-schema literature past prosthetics and pokes at how flexible the inventory of "what counts as me" actually is.</p>
+  <div class="source">
+    <span>25 people learned to fly with virtual wings; the brain began treating wings more like real limbs &nbsp;&middot;&nbsp; sciencenews.org</span>
+    <a href="https://www.sciencenews.org/article/virtual-wings-brain-changes" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 8: ROSE-ALERT-STAMP — AI slop killing online communities -->
+<section class="spread spread--alert" id="s8">
+  <div class="stamp" aria-hidden="true">Field Note</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 570 pts &nbsp;&middot;&nbsp; rmoff.net</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="bignumber" aria-hidden="true">8</div>
+  <h1>The internet is filling up with the <em>wrong kind</em> of company.</h1>
+  <p class="dek">A working developer documents the pattern across forums, mailing lists, and small open-source communities: a rising tide of model-generated posts that look helpful and are not, eroding the trust that made those rooms worth being in. The worry is not the slop itself. It is what happens when the human contributors stop showing up. Anyone running a learning community has homework.</p>
+  <div class="source">
+    <span>AI slop is killing online communities &nbsp;&middot;&nbsp; rmoff.net</span>
+    <a href="https://rmoff.net/2026/05/06/ai-slop-is-killing-online-communities/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 9: TERMINAL — Agents need control flow -->
+<section class="spread spread--terminal" id="s9">
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 416 pts &nbsp;&middot;&nbsp; bsuh.bearblog.dev</span>
+    <span class="flag">[ 🎯 GWAI ]</span>
+  </div>
+  <span class="prompt">agent --retry --fork --handoff --stop</span>
+  <h1>Stop <em>prompting</em> the agent. Wire it up.</h1>
+  <pre class="ascii-block" aria-hidden="true">  prompt --> [model] --> output
+                |
+                v
+       +--------+--------+
+       | retry?  fork?   |
+       | handoff? stop?  |
+       +--------+--------+
+                |
+                v
+            control flow</pre>
+  <p class="dek">A hands-on essay arguing that the next bottleneck for agents is not better prompts but better control flow: when to retry, when to fork, when to hand off, when to stop. The author makes the case in code rather than slogans and lands on a useful split between the model's job and the harness's job. The kind of practical writing course-builders should be cribbing from.<span class="cursor"></span></p>
+  <div class="source">
+    <span>Agents need control flow, not more prompts &nbsp;&middot;&nbsp; bsuh.bearblog.dev</span>
+    <a href="https://bsuh.bearblog.dev/agents-need-control-flow/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 10: BIG-STAT FINISH — Hyundai Boston Dynamics -->
+<section class="spread spread--stat" id="s10">
+  <div class="meta">
+    <span>Reddit / r/Futurology &nbsp;&middot;&nbsp; 4,638 pts &nbsp;&middot;&nbsp; gizmodo.com</span>
+  </div>
+  <span class="label">Robotics &nbsp;&middot;&nbsp; demand signal</span>
+  <span class="bigstat" aria-hidden="true">10,000<span class="small">+ humanoid robots, requested</span></span>
+  <h1>Hyundai is asking for <em>tens of thousands</em> of robots.</h1>
+  <p class="dek">Reporting suggests Hyundai is pressing Boston Dynamics for an industrial-scale rollout of bipedal robots into its factories on a timeline that would dwarf any single previous deployment. Whether the line catches up to the order is another matter; humanoid hardware is hard, and integration is harder. But the demand signal is the story, and it is loud.</p>
+  <div class="source">
+    <span>Hyundai Reportedly Demanding 'Tens of Thousands' of Boston Dynamics Robots ASAP &nbsp;&middot;&nbsp; gizmodo.com</span>
+    <a href="https://gizmodo.com/hyundai-reportedly-demanding-tens-of-thousands-of-boston-dynamics-robots-asap-2000753914" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 010 &nbsp;&middot;&nbsp; 8 May 2026 &nbsp;&middot;&nbsp; Ten stories for one reader.</p>
+  <p>Fetched, curated, and designed autonomously at 7am by a scheduled Claude agent.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
