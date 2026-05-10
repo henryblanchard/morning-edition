@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 012 · 10 May 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 10 May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD — deep aubergine */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#1a0c1c;border-bottom:1.5px solid #34203a;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#e8d4ce}
+  .masthead .brand em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#a87898}
+
+  /* 1. HERO COVER — muted ochre with deep wine */
+  .spread--hero{background:#c8b888;color:#1c1208}
+  .spread--hero .meta{color:#5a3a1c;padding-bottom:20px;border-bottom:1px solid rgba(28,18,8,0.30)}
+  .spread--hero .flag{display:inline-block;padding:2px 10px;border:1.5px solid #5a1a18;font-size:18px;letter-spacing:0.12em;color:#5a1a18}
+  .spread--hero .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:#5a3a1c;margin:clamp(56px,10vw,140px) 0 20px;display:block}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(58px,11vw,196px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#1c1208}
+  .spread--hero h1 em{font-style:italic;font-weight:300;color:#5a1a18}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;color:#2a1c10;max-width:48ch;margin-top:44px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--hero .source{border-color:rgba(28,18,8,0.30);color:#5a3a1c}
+  .spread--hero .source a{color:#1c1208;font-weight:700}
+  .spread--hero .corner-num{position:absolute;bottom:clamp(24px,4vw,72px);right:clamp(24px,4vw,72px);font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,28vw,420px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(90,26,24,0.22);user-select:none;pointer-events:none;letter-spacing:-0.05em}
+
+  /* 2. TERMINAL — deep teal with amber */
+  .spread--terminal{background:#082028;color:#f0b848;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .spread--terminal .meta{color:#7a8a8e;padding-bottom:20px;border-bottom:1px solid rgba(122,138,142,0.22);font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.06em;text-transform:none}
+  .spread--terminal .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f0b848;font-size:18px;letter-spacing:0.04em;color:#f0b848;font-family:'JetBrains Mono',monospace}
+  .spread--terminal .prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:#7a8a8e;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--terminal .prompt::before{content:'$ ';color:#f0b848}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(36px,5.6vw,82px);line-height:1.04;letter-spacing:-0.012em;max-width:28ch;margin-top:14px;color:#f8e0b8}
+  .spread--terminal h1 em{font-style:italic;font-weight:400;color:#f0b848}
+  .spread--terminal .ascii-block{font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.32;color:rgba(240,184,72,0.34);white-space:pre;margin:36px 0 8px;letter-spacing:0;user-select:none}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-weight:400;color:#c8a868;max-width:54ch;margin-top:28px;font-size:clamp(18px,1.6vw,21px);line-height:1.62}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#f0b848;vertical-align:-0.12em;animation:blink 1.06s steps(2,end) infinite;margin-left:0.18em}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:rgba(122,138,142,0.22);color:#7a8a8e;font-family:'JetBrains Mono',monospace;font-size:18px;text-transform:none;letter-spacing:0}
+  .spread--terminal .source a{color:#f8e0b8;font-weight:600}
+
+  /* 3. BIG-STAT FINISH — warm cream with deep teal */
+  .spread--stat{background:#f4ecd8;color:#0c2024}
+  .spread--stat .meta{color:#1a4848;padding-bottom:20px;border-bottom:1.5px solid rgba(12,32,36,0.30)}
+  .spread--stat .flag{display:inline-block;padding:2px 10px;border:1.5px solid #1a4848;font-size:18px;letter-spacing:0.12em;color:#1a4848}
+  .spread--stat .label{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#1a4848;margin:clamp(36px,6vw,80px) 0 0;display:block}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(140px,22vw,360px);line-height:0.82;letter-spacing:-0.04em;color:#1a4848;margin:8px 0 24px;display:block}
+  .spread--stat .bigstat .small{font-size:0.34em;font-style:normal;font-weight:600;letter-spacing:0.01em;color:#0c2024;display:block;margin-top:6px}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(40px,6vw,90px);line-height:0.94;letter-spacing:-0.026em;max-width:24ch;color:#0c2024}
+  .spread--stat h1 em{font-style:italic;font-weight:400;color:#1a4848}
+  .spread--stat .dek{font-family:'Fraunces',serif;font-weight:350;color:#1a3030;max-width:46ch;margin-top:32px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--stat .source{border-color:rgba(12,32,36,0.30);color:#1a4848}
+  .spread--stat .source a{color:#0c2024;font-weight:700}
+
+  /* 4. ACADEMIC DROP-CAP — sage stone with burgundy */
+  .spread--academic{background:#c8d0b8;color:#181208}
+  .spread--academic .meta{color:#3a4a28;border-bottom:2px solid #181208;padding-bottom:20px}
+  .spread--academic .flag{display:inline-block;padding:2px 10px;border:1.5px solid #5a1a28;font-size:18px;letter-spacing:0.12em;color:#5a1a28}
+  .spread--academic .num-small{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0.34em;color:#3a4a28;text-transform:uppercase}
+  .spread--academic .rule{width:100%;height:1.5px;background:#181208;margin:28px 0}
+  .spread--academic .journal-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#3a4a28;margin-bottom:28px;display:block}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,6.5vw,104px);line-height:0.94;letter-spacing:-0.02em;max-width:24ch;margin-bottom:32px;color:#181208}
+  .spread--academic h1 em{font-style:italic;font-weight:400;color:#5a1a28}
+  .spread--academic .body-text{max-width:58ch;font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.62;color:#1a1808}
+  .spread--academic .dropcap::first-letter{font-family:'Fraunces',serif;font-weight:700;font-size:5em;line-height:0.72;float:left;margin:0.1em 0.1em 0 0;color:#5a1a28}
+  .spread--academic .source{border-color:#3a4a28;color:#3a4a28}
+  .spread--academic .source a{color:#181208;font-weight:700}
+
+  /* 5. MANIFESTO — deep aubergine with dusty rose */
+  .spread--manifesto{background:#1c0a1c;color:#e0c8d4}
+  .spread--manifesto .meta{color:#a87898;padding-bottom:20px;border-bottom:1px solid rgba(168,120,152,0.18)}
+  .spread--manifesto .flag{display:inline-block;padding:2px 10px;border:1.5px solid #e0c8d4;font-size:18px;letter-spacing:0.12em;color:#e0c8d4}
+  .spread--manifesto .roman{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(48px,7vw,96px);line-height:1;color:#a87898;margin-top:clamp(36px,6vw,72px)}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(48px,9vw,148px);line-height:0.88;letter-spacing:-0.038em;max-width:18ch;margin-top:24px;color:#f0d8e0}
+  .spread--manifesto h1 em{font-style:italic;font-weight:400;color:#e0a8c8}
+  .spread--manifesto .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.42;max-width:46ch;color:#c8a8b8;margin-top:36px}
+  .spread--manifesto .bg-num{position:absolute;bottom:clamp(24px,4vw,60px);right:clamp(24px,4vw,60px);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(140px,24vw,400px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(224,168,200,0.10);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--manifesto .source{border-color:rgba(168,120,152,0.22);color:#a87898}
+  .spread--manifesto .source a{color:#e0a8c8;font-weight:700}
+
+  /* 6. NEWSPAPER COLUMN — butter cream with deep teal */
+  .spread--news{background:#f4e8b8;color:#0a1c28}
+  .spread--news .meta{color:#1a3a48;padding-bottom:20px;border-bottom:2px solid #0a1c28}
+  .spread--news .edition{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.8vw,22px);color:#1a3a48;margin-top:clamp(48px,8vw,120px);margin-bottom:6px;display:block}
+  .spread--news h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,7vw,110px);line-height:0.91;letter-spacing:-0.03em;max-width:18ch;border-top:3.5px solid #0a1c28;padding-top:22px;margin-bottom:28px;color:#0a1c28}
+  .spread--news h1 em{font-style:italic;font-weight:400;color:#1a3a48}
+  .spread--news .col-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px 60px;margin-top:18px}
+  .spread--news .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,1.9vw,24px);line-height:1.6;color:#1a2838}
+  .spread--news .aside-tag{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#1a3a48;margin-bottom:10px;display:block}
+  .spread--news .num-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(80px,14vw,180px);line-height:0.78;color:rgba(10,28,40,0.10);display:block;text-align:right;margin-top:auto}
+  .spread--news .source{border-color:#7a8a8e;color:#1a3a48}
+  .spread--news .source a{color:#0a1c28;font-weight:700}
+
+  /* 7. COLOUR-FIELD MINIMALIST — slate ocean with warm sand */
+  .spread--field{background:#1a2838;color:#e0c8a8}
+  .spread--field .meta{color:rgba(224,200,168,0.5);padding-bottom:20px;border-bottom:1px solid rgba(224,200,168,0.16)}
+  .spread--field .bg-num{position:absolute;bottom:-0.06em;left:-0.02em;font-family:'Fraunces',serif;font-style:normal;font-weight:900;font-size:clamp(220px,40vw,640px);line-height:0.7;color:transparent;-webkit-text-stroke:1.5px rgba(224,200,168,0.12);user-select:none;pointer-events:none;letter-spacing:-0.06em}
+  .spread--field h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(52px,8.5vw,136px);line-height:0.93;letter-spacing:-0.026em;max-width:22ch;margin-top:clamp(56px,10vw,148px);color:#f0d8b8}
+  .spread--field h1 em{font-style:italic;font-weight:300;color:#c8a878}
+  .spread--field .label{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(224,200,168,0.55);margin-top:24px;display:block}
+  .spread--field .dek{font-family:'Fraunces',serif;font-weight:350;color:rgba(224,200,168,0.78);font-size:clamp(20px,2vw,26px);max-width:44ch;margin-top:24px;line-height:1.48}
+  .spread--field .source{border-color:rgba(224,200,168,0.16);color:rgba(224,200,168,0.5)}
+  .spread--field .source a{color:#f0d8b8}
+
+  /* 8. ROSE-ALERT-STAMP — saffron mustard */
+  .spread--alert{background:#e0b830;color:#1a0c08}
+  .spread--alert .meta{color:#3a1a08;padding-bottom:20px;border-bottom:1.5px solid rgba(26,12,8,0.32)}
+  .spread--alert .stamp{position:absolute;top:clamp(72px,10vw,130px);right:clamp(40px,8vw,120px);transform:rotate(6deg);border:4px solid #1a0c08;padding:12px 22px;font-family:'Inter',sans-serif;font-weight:800;letter-spacing:0.32em;font-size:22px;text-transform:uppercase;background:rgba(26,12,8,0.06);color:#1a0c08;pointer-events:none;user-select:none}
+  .spread--alert .bignumber{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(110px,20vw,300px);line-height:0.8;color:rgba(26,12,8,0.78);margin:36px 0 0;letter-spacing:-0.02em}
+  .spread--alert h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(42px,7vw,116px);line-height:0.92;letter-spacing:-0.025em;margin-top:14px;max-width:15ch;color:#1a0c08}
+  .spread--alert h1 em{font-style:italic;font-weight:400;color:#3a1a08}
+  .spread--alert .dek{font-family:'Fraunces',serif;font-weight:350;color:#1a0c08;max-width:46ch;margin-top:26px;font-size:clamp(20px,2vw,26px);line-height:1.46}
+  .spread--alert .source{border-color:rgba(26,12,8,0.32);color:#3a1a08}
+  .spread--alert .source a{color:#1a0c08;font-weight:700}
+
+  /* 9. TYPOGRAPHIC COLLAGE — deep olive with sun gold */
+  .spread--collage{background:#181c14;color:#f0d8a8}
+  .spread--collage .meta{color:rgba(240,216,168,0.5);padding-bottom:20px;letter-spacing:0.22em}
+  .spread--collage .ghost{position:absolute;top:-3%;right:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(180px,30vw,480px);line-height:0.75;color:rgba(240,216,168,0.06);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--collage .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(240,216,168,0.55);margin:clamp(36px,7vw,96px) 0 14px;display:block}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(44px,8vw,136px);line-height:0.88;letter-spacing:-0.032em;max-width:20ch;color:#f8e8c0}
+  .spread--collage h1 em{font-style:italic;font-weight:400;color:#e0c068}
+  .spread--collage .aside{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;color:rgba(240,216,168,0.55);margin:22px 0;text-transform:uppercase;border-left:3px solid rgba(224,192,104,0.32);padding-left:14px}
+  .spread--collage .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:44ch;color:rgba(240,216,168,0.82)}
+  .spread--collage .source{border-color:rgba(240,216,168,0.14);color:rgba(240,216,168,0.5)}
+  .spread--collage .source a{color:#f0d8a8;font-weight:800}
+
+  /* 10. DARK/MIDNIGHT — slate purple with silver */
+  .spread--midnight{background:#0e0c1c;color:#a8a8c8}
+  .spread--midnight .meta{color:#6a6888;padding-bottom:20px;border-bottom:1px solid rgba(106,104,136,0.22)}
+  .spread--midnight .hexnum{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-weight:600;font-size:22px;color:#6a6888;letter-spacing:0.08em;line-height:1;margin-top:clamp(40px,7vw,90px)}
+  .spread--midnight .ghost{position:absolute;top:6%;left:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,24vw,420px);line-height:0.82;color:transparent;-webkit-text-stroke:1px rgba(168,168,200,0.08);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(48px,7.4vw,118px);line-height:0.96;letter-spacing:-0.024em;max-width:18ch;margin-top:18px;color:#e8e8f4}
+  .spread--midnight h1 em{color:#c8a8e8;font-style:italic;font-weight:400}
+  .spread--midnight .dek{font-family:'Fraunces',serif;font-weight:350;color:#9898b8;max-width:42ch;margin-top:40px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--midnight .source{border-color:rgba(106,104,136,0.22);color:#6a6888}
+  .spread--midnight .source a{color:#e8e8f4}
+
+  /* COLOPHON */
+  .colophon{background:#1a0c1c;color:#a87898;padding:clamp(48px,8vw,96px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,4vw,54px);color:#e8d4ce;margin-bottom:18px}
+  .colophon p{font-family:'Inter',sans-serif;font-size:20px;line-height:1.6;max-width:52ch;margin:0 auto 10px;color:#a87898}
+  .colophon a{color:#e0a8c8}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 012 &nbsp;&middot;&nbsp; 10 May 2026</div>
+</header>
+
+<!-- STORY 1: HERO COVER — NVIDIA Star Elastic -->
+<section class="spread spread--hero" id="s1">
+  <div class="corner-num" aria-hidden="true">1</div>
+  <div class="meta">
+    <span>Reddit / r/LocalLLaMA &nbsp;&middot;&nbsp; 212 pts &nbsp;&middot;&nbsp; nvidia.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="eyebrow">NVIDIA &nbsp;&middot;&nbsp; reasoning models &nbsp;&middot;&nbsp; zero-shot slicing</span>
+  <h1>One checkpoint, <em>three sizes</em>, no retraining.</h1>
+  <p class="dek">NVIDIA's Star Elastic ships a single set of weights you can dynamically slice into a 30B, 23B, or 12B reasoning model at inference time, no fine-tuning required. The trick is a training recipe that keeps every sub-network competent, so the same file behaves like a small model on a laptop and a large one on a server. If it holds up in the wild, the deployment story for open weights gets a lot tidier overnight.</p>
+  <div class="source">
+    <span>Star Elastic: One Checkpoint with 30B / 23B / 12B Reasoning Models &nbsp;&middot;&nbsp; r/LocalLLaMA</span>
+    <a href="https://reddit.com/r/LocalLLaMA/comments/1t8s83r/nvidia_ai_releases_star_elastic_one_checkpoint/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 2: TERMINAL — Bun's Rust rewrite hits 99.8% -->
+<section class="spread spread--terminal" id="s2">
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 584 pts &nbsp;&middot;&nbsp; twitter.com/jarredsumner</span>
+  </div>
+  <span class="prompt">bun --version &amp;&amp; cargo build --release</span>
+  <h1>The Bun rewrite hits <em>99.8%</em> test parity.</h1>
+  <pre class="ascii-block" aria-hidden="true">  zig  ────►  rust
+   │            │
+   │     test suite: 99.8%
+   │            ▼
+   └──►  Linux x64 glibc passing</pre>
+  <p class="dek">Jarred Sumner reports that the experimental Rust port of Bun is now passing 99.8% of the existing test suite on Linux x64. This is the kind of milestone that sounds like a footnote and is anything but: a JavaScript runtime built first in Zig and now ported wholesale to Rust, while keeping behaviour identical, is a serious engineering exercise. Worth watching if you have ever stayed up late debugging a Node version mismatch.<span class="cursor"></span></p>
+  <div class="source">
+    <span>Bun's experimental Rust rewrite hits 99.8% test compatibility &nbsp;&middot;&nbsp; twitter.com</span>
+    <a href="https://twitter.com/jarredsumner/status/2053047748191232310" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 3: BIG-STAT FINISH — Qwen 3.6 80 tok/s on 12GB VRAM -->
+<section class="spread spread--stat" id="s3">
+  <div class="meta">
+    <span>Reddit / r/LocalLLaMA &nbsp;&middot;&nbsp; 547 pts &nbsp;&middot;&nbsp; reddit.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="label">Local inference &nbsp;&middot;&nbsp; consumer GPU &nbsp;&middot;&nbsp; Qwen 3.6 35B</span>
+  <span class="bigstat" aria-hidden="true">80<span class="small">tokens/sec on 12 GB of VRAM</span></span>
+  <h1>A 35B-parameter model, on the GPU you <em>already own</em>.</h1>
+  <p class="dek">A llama.cpp build with Multi-Token Prediction is squeezing 80 tokens per second and 128k of context out of Qwen 3.6 35B A3B on a single 12 GB consumer card. The barrier between hobbyist hardware and frontier-quality reasoning has been moving steadily for two years; this is the run where it visibly breaks. Anyone teaching applied AI on a budget should re-cost their syllabus this week.</p>
+  <div class="source">
+    <span>80 tok/sec, 128K context, 12GB VRAM, Qwen 3.6 35B A3B &nbsp;&middot;&nbsp; r/LocalLLaMA</span>
+    <a href="https://reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 4: ACADEMIC DROP-CAP — LLMs corrupt your documents when you delegate -->
+<section class="spread spread--academic" id="s4">
+  <div class="meta">
+    <span class="num-small">&sect;04</span>
+    <span>HN &nbsp;&middot;&nbsp; 418 pts &nbsp;&middot;&nbsp; arxiv.org</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="rule"></div>
+  <span class="journal-tag">arXiv preprint &nbsp;&middot;&nbsp; AI usage &nbsp;&middot;&nbsp; document integrity</span>
+  <h1>The quiet way LLMs <em>change your documents</em>.</h1>
+  <p class="body-text dropcap">A new arXiv paper measures something most people doing AI-assisted writing have felt without naming: when you ask a model to edit, summarise, or update a long document, it does not only do the thing you asked. It silently rewords adjacent passages, flips uncited claims, and harmonises tone across sections you never flagged. The authors call this corruption rather than collaboration, and the term is fair. A useful piece of evidence for anyone teaching responsible delegation to an agent.</p>
+  <div class="source">
+    <span>LLMs corrupt your documents when you delegate &nbsp;&middot;&nbsp; arxiv.org</span>
+    <a href="https://arxiv.org/abs/2604.15597" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 5: MANIFESTO — Programming as Theory Building -->
+<section class="spread spread--manifesto" id="s5">
+  <div class="bg-num" aria-hidden="true">V</div>
+  <div class="meta">
+    <span>Reddit / r/programming &nbsp;&middot;&nbsp; 264 pts &nbsp;&middot;&nbsp; codeutopia.net</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="roman">V</div>
+  <h1>The codebase is the <em>shadow</em>. The theory is the thing.</h1>
+  <p class="dek">Peter Naur's 1985 essay is having its third public revival, and this time the trigger is generative coding tools. Naur's argument, that a program is the shared mental model in the heads of its authors and the source code is just a serialised trace, has uncomfortable implications when half your authors are now models with no memory between sessions. If you are designing AI engineering curricula, start here.</p>
+  <div class="source">
+    <span>You should read Programming as Theory Building &nbsp;&middot;&nbsp; codeutopia.net</span>
+    <a href="https://codeutopia.net/blog/2026/05/09/you-should-read-programming-as-theory-building/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 6: NEWSPAPER COLUMN — Ewin Tang Breakthrough Prize -->
+<section class="spread spread--news" id="s6">
+  <div class="meta">
+    <span>Reddit / r/math &nbsp;&middot;&nbsp; 967 pts &nbsp;&middot;&nbsp; youtube.com</span>
+  </div>
+  <span class="edition">Mathematics &nbsp;&middot;&nbsp; Breakthrough Prize &nbsp;&middot;&nbsp; profile</span>
+  <div class="num-tag" aria-hidden="true">No.6</div>
+  <h1>The youngest <em>Breakthrough laureate</em> wrote a teenage thesis.</h1>
+  <div class="col-wrap">
+    <p class="dek">Ewin Tang is the youngest winner of the Breakthrough Prize in Mathematics, recognised for a body of work that began as an undergraduate thesis at Texas: classical algorithms that match the speed of celebrated quantum ones for recommendation systems and PCA. The result quietly slowed an entire sub-field of quantum hype, and the new profile traces how she found the trick.</p>
+    <div>
+      <span class="aside-tag">The interesting bit</span>
+      <p class="dek">Tang's classical algorithm did not disprove quantum supremacy. It showed that the specific quantum advantage everyone was citing rested on a comparison with a slow classical baseline that nobody had bothered to optimise. A reminder that some breakthroughs are made by checking the comparison group rather than building a faster engine.</p>
+    </div>
+  </div>
+  <div class="source">
+    <span>Ewin Tang: Youngest Winner of the Breakthrough Prize in Mathematics &nbsp;&middot;&nbsp; youtube.com</span>
+    <a href="https://www.youtube.com/watch?v=L8JD1zXbtmA" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 7: COLOUR-FIELD MINIMALIST — Brain implant artificial vision -->
+<section class="spread spread--field" id="s7">
+  <div class="bg-num" aria-hidden="true">7</div>
+  <div class="meta">
+    <span>Reddit / r/Futurology &nbsp;&middot;&nbsp; 2,581 pts &nbsp;&middot;&nbsp; interestingengineering.com</span>
+  </div>
+  <h1>A blind patient sees, with a chip that <em>skips the eye entirely</em>.</h1>
+  <span class="label">Neural prosthesis &nbsp;&middot;&nbsp; ICVP &nbsp;&middot;&nbsp; third recipient</span>
+  <p class="dek">The Intracortical Visual Prosthesis programme has restored functional vision to a third blind patient by writing patterns of stimulation directly into visual cortex, bypassing both the retina and the optic nerve. The resulting percepts are coarse, more pixelated than photographic, but they are real, repeatable, and useful for navigation. A modest demonstration of a profound principle: that perception, in the end, is a story the cortex tells itself.</p>
+  <div class="source">
+    <span>New brain implant bypasses retina and optic nerves to create artificial vision &nbsp;&middot;&nbsp; interestingengineering.com</span>
+    <a href="https://interestingengineering.com/health/icvp-brain-implant-third-blind-patient-vision-prosthesis" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 8: ROSE-ALERT-STAMP — Laser-created isolated hopfions -->
+<section class="spread spread--alert" id="s8">
+  <div class="stamp" aria-hidden="true">Topology</div>
+  <div class="meta">
+    <span>Reddit / r/Physics &nbsp;&middot;&nbsp; 35 pts &nbsp;&middot;&nbsp; phys.org</span>
+  </div>
+  <div class="bignumber" aria-hidden="true">08</div>
+  <h1>Knotted light, <em>made and seen</em>, in a single pulse.</h1>
+  <p class="dek">A team in Spain reports the first direct observation of an isolated hopfion, a three-dimensional knot of electromagnetic field, created by a tailored laser pulse and imaged before it could decay. Hopfions have lived in theoretical particle physics and exotic magnetism for decades; this is the first time anyone has caught a clean one alone, on demand, in light. A small technical paper that is also a quiet aesthetic achievement.</p>
+  <div class="source">
+    <span>The first direct observation of laser-created isolated hopfions &nbsp;&middot;&nbsp; phys.org</span>
+    <a href="https://phys.org/news/2026-05-laser-isolated-hopfions.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 9: TYPOGRAPHIC COLLAGE — Lemire on what works -->
+<section class="spread spread--collage" id="s9">
+  <div class="ghost" aria-hidden="true">IX</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 110 pts &nbsp;&middot;&nbsp; lemire.me</span>
+  </div>
+  <span class="tag">Epistemology &nbsp;&middot;&nbsp; engineering &nbsp;&middot;&nbsp; tinkering</span>
+  <h1>First it works. <em>Then</em> we explain why.</h1>
+  <div class="aside">Daniel Lemire &nbsp;&middot;&nbsp; on the order of operations in real progress</div>
+  <p class="dek">Daniel Lemire's short essay argues, with examples from steam engines to compilers, that working artefacts almost always precede the theories that explain them. It is a useful corrective to the academic instinct that demands a clean derivation before a deployment, and a quiet defence of the engineer who ships first and writes the paper later. Read it before your next planning meeting.</p>
+  <div class="source">
+    <span>We see something that works, and then we understand it &nbsp;&middot;&nbsp; lemire.me</span>
+    <a href="https://lemire.me/blog/2025/12/04/we-see-something-that-works-and-then-we-understand-it/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 10: DARK/MIDNIGHT — Internet Archive Switzerland -->
+<section class="spread spread--midnight" id="s10">
+  <div class="ghost" aria-hidden="true">X</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 619 pts &nbsp;&middot;&nbsp; blog.archive.org</span>
+  </div>
+  <div class="hexnum">0x0A &nbsp;//&nbsp; redundancy = preservation</div>
+  <h1>The Archive opens a <em>Swiss vault</em>.</h1>
+  <p class="dek">The Internet Archive is establishing a permanent presence in Switzerland, mirroring its collections under jurisdiction designed for long-horizon neutrality. The reasoning is neither dramatic nor secret: a single-country library of the public web is a single point of failure, and the past few years have made that failure mode less hypothetical. A boring, important infrastructure move worth marking.</p>
+  <div class="source">
+    <span>Internet Archive Switzerland &nbsp;&middot;&nbsp; blog.archive.org</span>
+    <a href="https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 012 &nbsp;&middot;&nbsp; 10 May 2026 &nbsp;&middot;&nbsp; Ten stories for one reader.</p>
+  <p>Fetched, curated, and designed autonomously at 7am by a scheduled Claude agent.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
