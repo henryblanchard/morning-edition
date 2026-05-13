@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 015 · 13 May 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 13 May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD — chalky stone */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#1a1c1e;border-bottom:1.5px solid #2c2e30;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#ecd8b0}
+  .masthead .brand em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#8c9aa0}
+
+  /* 1. HERO COVER — ivory cream with deep teal & rust */
+  .spread--hero{background:#f0e6d0;color:#0c2424}
+  .spread--hero .meta{color:#1c3c40;padding-bottom:20px;border-bottom:1px solid rgba(12,36,36,0.28)}
+  .spread--hero .flag{display:inline-block;padding:2px 10px;border:1.5px solid #b03818;font-size:18px;letter-spacing:0.12em;color:#b03818}
+  .spread--hero .roman-i{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(80px,12vw,160px);line-height:1;color:#b03818;margin-top:clamp(48px,8vw,120px);letter-spacing:-0.02em}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(58px,11vw,200px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#0c2424;margin-top:8px}
+  .spread--hero h1 em{font-style:italic;font-weight:300;color:#b03818}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;color:#1c2c2c;max-width:48ch;margin-top:44px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--hero .source{border-color:rgba(12,36,36,0.28);color:#1c3c40}
+  .spread--hero .source a{color:#0c2424;font-weight:700}
+  .spread--hero .corner-num{position:absolute;bottom:clamp(24px,4vw,72px);right:clamp(24px,4vw,72px);font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(200px,36vw,520px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(176,56,24,0.18);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+
+  /* 2. ACADEMIC DROP-CAP — pale parchment with burgundy */
+  .spread--academic{background:#e8d8c0;color:#1c0c0a}
+  .spread--academic .meta{color:#5c1c14;border-bottom:2px solid #1c0c0a;padding-bottom:20px}
+  .spread--academic .flag{display:inline-block;padding:2px 10px;border:1.5px solid #5c1c14;font-size:18px;letter-spacing:0.12em;color:#5c1c14}
+  .spread--academic .num-small{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0.34em;color:#5c1c14;text-transform:uppercase}
+  .spread--academic .rule{width:100%;height:1.5px;background:#1c0c0a;margin:28px 0}
+  .spread--academic .journal-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#5c1c14;margin-bottom:28px;display:block}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,6.8vw,108px);line-height:0.94;letter-spacing:-0.02em;max-width:24ch;margin-bottom:32px;color:#1c0c0a}
+  .spread--academic h1 em{font-style:italic;font-weight:400;color:#5c1c14}
+  .spread--academic .body-text{max-width:58ch;font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.62;color:#2a1208}
+  .spread--academic .dropcap::first-letter{font-family:'Fraunces',serif;font-weight:700;font-size:5em;line-height:0.72;float:left;margin:0.1em 0.1em 0 0;color:#5c1c14}
+  .spread--academic .source{border-color:#5c1c14;color:#5c1c14}
+  .spread--academic .source a{color:#1c0c0a;font-weight:700}
+
+  /* 3. SWISS POSTER — teal pine with cream + ochre */
+  .spread--swiss{background:#1a4440;color:#f4ecd0}
+  .spread--swiss .meta{color:rgba(244,236,208,0.7);padding-bottom:20px;border-bottom:1.5px solid rgba(244,236,208,0.32)}
+  .spread--swiss .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f4c478;font-size:18px;letter-spacing:0.12em;color:#f4c478}
+  .spread--swiss .circle-shape{position:absolute;top:48%;right:8%;width:clamp(180px,28vw,420px);height:clamp(180px,28vw,420px);border-radius:50%;transform:translateY(-50%);border:8px solid #f4c478;user-select:none;pointer-events:none}
+  .spread--swiss .circle-shape::before{content:'';position:absolute;top:0;left:50%;width:8px;height:100%;background:#f4ecd0;transform:translateX(-50%)}
+  .spread--swiss .num-block{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(120px,18vw,260px);line-height:0.82;letter-spacing:-0.06em;margin-top:clamp(36px,6vw,72px);color:#f4ecd0;display:block}
+  .spread--swiss h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(42px,6.6vw,102px);line-height:0.92;letter-spacing:-0.034em;max-width:18ch;margin-top:6px;color:#f4ecd0;text-transform:uppercase}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:#f4c478;text-transform:none;font-family:'Fraunces',serif}
+  .spread--swiss .dek{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:42ch;color:#f4ecd0;margin-top:32px}
+  .spread--swiss .source{border-color:rgba(244,236,208,0.32);color:rgba(244,236,208,0.7)}
+  .spread--swiss .source a{color:#f4c478;font-weight:700}
+
+  /* 4. NEWSPAPER COLUMN — bone newsprint with deep ink */
+  .spread--news{background:#e4dccc;color:#0c0c08}
+  .spread--news .meta{color:#3c2818;padding-bottom:20px;border-bottom:2px solid #0c0c08}
+  .spread--news .flag{display:inline-block;padding:2px 10px;border:1.5px solid #3c2818;font-size:18px;letter-spacing:0.12em;color:#3c2818}
+  .spread--news .edition{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.8vw,22px);color:#3c2818;margin-top:clamp(48px,8vw,120px);margin-bottom:6px;display:block}
+  .spread--news h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,7vw,114px);line-height:0.91;letter-spacing:-0.03em;max-width:18ch;border-top:3.5px solid #0c0c08;padding-top:22px;margin-bottom:28px;color:#0c0c08}
+  .spread--news h1 em{font-style:italic;font-weight:400;color:#3c2818}
+  .spread--news .col-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px 60px;margin-top:18px}
+  .spread--news .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,1.9vw,24px);line-height:1.6;color:#1c1408}
+  .spread--news .aside-tag{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#3c2818;margin-bottom:10px;display:block}
+  .spread--news .num-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(80px,14vw,180px);line-height:0.78;color:rgba(12,12,8,0.14);display:block;text-align:right;margin-top:auto}
+  .spread--news .source{border-color:#5c4028;color:#3c2818}
+  .spread--news .source a{color:#0c0c08;font-weight:700}
+
+  /* 5. TERMINAL — black with green phosphor */
+  .spread--terminal{background:#040804;color:#7ce078;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .spread--terminal .meta{color:#3c7048;padding-bottom:20px;border-bottom:1px solid rgba(60,112,72,0.36);font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.06em;text-transform:none}
+  .spread--terminal .flag{display:inline-block;padding:2px 10px;border:1.5px solid #7ce078;font-size:18px;letter-spacing:0.04em;color:#7ce078;font-family:'JetBrains Mono',monospace}
+  .spread--terminal .prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:#3c7048;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--terminal .prompt::before{content:'$ ';color:#7ce078}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(34px,5.4vw,82px);line-height:1.04;letter-spacing:-0.012em;max-width:30ch;margin-top:14px;color:#bff8b0}
+  .spread--terminal h1 em{font-style:italic;font-weight:400;color:#7ce078}
+  .spread--terminal .ascii-block{font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.32;color:rgba(124,224,120,0.34);white-space:pre;margin:36px 0 8px;letter-spacing:0;user-select:none}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-weight:400;color:#90c890;max-width:54ch;margin-top:28px;font-size:clamp(18px,1.6vw,21px);line-height:1.62}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#7ce078;vertical-align:-0.12em;animation:blink 1.06s steps(2,end) infinite;margin-left:0.18em}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:rgba(60,112,72,0.36);color:#3c7048;font-family:'JetBrains Mono',monospace;font-size:18px;text-transform:none;letter-spacing:0}
+  .spread--terminal .source a{color:#bff8b0;font-weight:600}
+
+  /* 6. BIG-STAT FINISH — bruised plum with cream */
+  .spread--stat{background:#4c1c34;color:#f4d8c8}
+  .spread--stat .meta{color:#f4c4a8;padding-bottom:20px;border-bottom:1.5px solid rgba(244,196,168,0.32)}
+  .spread--stat .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f4c4a8;font-size:18px;letter-spacing:0.12em;color:#f4c4a8}
+  .spread--stat .label{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#f4c4a8;margin:clamp(36px,6vw,80px) 0 0;display:block}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(160px,26vw,400px);line-height:0.82;letter-spacing:-0.04em;color:#f4d8c8;margin:8px 0 24px;display:block}
+  .spread--stat .bigstat .small{font-size:0.16em;font-style:normal;font-weight:600;letter-spacing:0.20em;color:#f4c4a8;display:block;margin-top:14px;text-transform:uppercase}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,6.4vw,96px);line-height:0.94;letter-spacing:-0.026em;max-width:24ch;color:#f4d8c8}
+  .spread--stat h1 em{font-style:italic;font-weight:400;color:#f4c4a8}
+  .spread--stat .dek{font-family:'Fraunces',serif;font-weight:350;color:#e8c8b8;max-width:46ch;margin-top:32px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--stat .source{border-color:rgba(244,196,168,0.32);color:#f4c4a8}
+  .spread--stat .source a{color:#f4d8c8;font-weight:700}
+
+  /* 7. TYPOGRAPHIC COLLAGE — slate violet with cream */
+  .spread--collage{background:#1c1828;color:#e8d8e8}
+  .spread--collage .meta{color:rgba(232,216,232,0.55);padding-bottom:20px;letter-spacing:0.22em}
+  .spread--collage .ghost{position:absolute;top:-3%;right:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(180px,30vw,480px);line-height:0.75;color:rgba(232,216,232,0.07);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--collage .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(232,216,232,0.55);margin:clamp(36px,7vw,96px) 0 14px;display:block}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(46px,8.4vw,142px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#f4e0e8}
+  .spread--collage h1 em{font-style:italic;font-weight:400;color:#c0a4d4}
+  .spread--collage .aside{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;color:rgba(232,216,232,0.55);margin:22px 0;text-transform:uppercase;border-left:3px solid rgba(192,164,212,0.32);padding-left:14px}
+  .spread--collage .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:44ch;color:rgba(232,216,232,0.86)}
+  .spread--collage .source{border-color:rgba(232,216,232,0.16);color:rgba(232,216,232,0.55)}
+  .spread--collage .source a{color:#e8d8e8;font-weight:800}
+
+  /* 8. DARK/MIDNIGHT — deep indigo with cyan */
+  .spread--midnight{background:#040818}
+  .spread--midnight{color:#a8bce0}
+  .spread--midnight .meta{color:#6c84b4;padding-bottom:20px;border-bottom:1px solid rgba(108,132,180,0.24)}
+  .spread--midnight .flag{display:inline-block;padding:2px 10px;border:1.5px solid #80c8e8;font-size:18px;letter-spacing:0.12em;color:#80c8e8}
+  .spread--midnight .hexnum{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-weight:600;font-size:22px;color:#6c84b4;letter-spacing:0.08em;line-height:1;margin-top:clamp(40px,7vw,90px)}
+  .spread--midnight .ghost{position:absolute;top:6%;left:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,24vw,420px);line-height:0.82;color:transparent;-webkit-text-stroke:1px rgba(128,200,232,0.14);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(48px,7.4vw,120px);line-height:0.96;letter-spacing:-0.024em;max-width:18ch;margin-top:18px;color:#e8f0fc}
+  .spread--midnight h1 em{color:#80c8e8;font-style:italic;font-weight:400}
+  .spread--midnight .dek{font-family:'Fraunces',serif;font-weight:350;color:#a0b4d0;max-width:44ch;margin-top:40px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--midnight .source{border-color:rgba(108,132,180,0.24);color:#6c84b4}
+  .spread--midnight .source a{color:#e8f0fc}
+
+  /* 9. MANIFESTO — clay brick with cream */
+  .spread--manifesto{background:#8c3018;color:#f4e0c0}
+  .spread--manifesto .meta{color:rgba(244,224,192,0.7);padding-bottom:20px;border-bottom:1px solid rgba(244,224,192,0.32)}
+  .spread--manifesto .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f4c878;font-size:18px;letter-spacing:0.12em;color:#f4c878}
+  .spread--manifesto .roman{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(72px,10vw,140px);line-height:1;color:#f4c878;margin-top:clamp(40px,7vw,90px);letter-spacing:-0.02em}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(50px,10vw,168px);line-height:0.86;letter-spacing:-0.038em;max-width:18ch;margin-top:14px;color:#f4e4c4}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#f4c878}
+  .spread--manifesto .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.44;max-width:46ch;color:#e8d0a8;margin-top:36px}
+  .spread--manifesto .bg-num{position:absolute;bottom:clamp(24px,4vw,60px);right:clamp(24px,4vw,60px);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(160px,28vw,460px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,200,120,0.20);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--manifesto .source{border-color:rgba(244,224,192,0.32);color:rgba(244,224,192,0.7)}
+  .spread--manifesto .source a{color:#f4c878;font-weight:700}
+
+  /* 10. COLOUR-FIELD MINIMALIST — pale stone, almost empty */
+  .spread--field{background:#d8d0c0;color:#1c1c18}
+  .spread--field .meta{color:#3c3828;padding-bottom:20px;border-bottom:1px solid rgba(28,28,24,0.20)}
+  .spread--field .flag{display:inline-block;padding:2px 10px;border:1.5px solid #1c1c18;font-size:18px;letter-spacing:0.12em;color:#1c1c18}
+  .spread--field .inner{max-width:54ch;margin:auto 0;padding:clamp(60px,12vw,180px) 0}
+  .spread--field .marker{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:#3c3828;margin-bottom:clamp(32px,6vw,72px);display:block}
+  .spread--field h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,5.8vw,86px);line-height:1;letter-spacing:-0.022em;color:#1c1c18}
+  .spread--field h1 em{font-style:italic;font-weight:300;color:#5c2814}
+  .spread--field .dek{font-family:'Fraunces',serif;font-weight:350;color:#2c2c24;margin-top:40px;font-size:clamp(20px,2vw,26px);line-height:1.55}
+  .spread--field .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#5c2814;margin-right:14px;vertical-align:0.2em}
+  .spread--field .source{border-color:rgba(28,28,24,0.20);color:#3c3828}
+  .spread--field .source a{color:#1c1c18;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#1a1c1e;color:#8c9aa0;padding:clamp(48px,8vw,96px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,4vw,54px);color:#ecd8b0;margin-bottom:18px}
+  .colophon p{font-family:'Inter',sans-serif;font-size:20px;line-height:1.6;max-width:52ch;margin:0 auto 10px;color:#8c9aa0}
+  .colophon a{color:#ecd8b0}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 015 &nbsp;&middot;&nbsp; 13 May 2026</div>
+</header>
+
+<!-- STORY 1: HERO COVER — Needle 26M model -->
+<section class="spread spread--hero" id="s1">
+  <div class="corner-num" aria-hidden="true">I</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 378 pts &nbsp;&middot;&nbsp; github.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="roman-i">I.</div>
+  <h1>Gemini's <em>tool calling</em>, distilled into 26 million parameters.</h1>
+  <p class="dek">Cactus Compute have taken the part of Gemini that decides which function to call and what arguments to give it, and distilled that one skill into a 26-million-parameter student small enough to live on a phone. Crucially, what gets distilled is not knowledge of the world, but a narrow competence: dispatch. For anyone building courses around agents, this is the clean proof that capability and scale come apart when the task is precise.</p>
+  <div class="source">
+    <span>Needle: a 26M model that calls tools &nbsp;&middot;&nbsp; github.com/cactus-compute</span>
+    <a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 2: ACADEMIC DROP-CAP — APS amateur papers -->
+<section class="spread spread--academic" id="s2">
+  <div class="meta">
+    <span class="num-small">&sect; II</span>
+    <span>Reddit / r/Physics &nbsp;&middot;&nbsp; 197 pts &nbsp;&middot;&nbsp; reddit.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="rule"></div>
+  <span class="journal-tag">scholarship &nbsp;&middot;&nbsp; aps journals &nbsp;&middot;&nbsp; the cost of producing</span>
+  <h1>Submissions have doubled. The reviewers have <em>not</em>.</h1>
+  <p class="body-text dropcap">The American Physical Society has reported that paper submissions to its journals have more than doubled since ChatGPT became widely available, almost entirely from authors with no prior publication history. Editors are now spending more time triaging than reviewing, and the rejection rate is climbing toward 95%. Nobody is calling it a crisis, but the shape of the problem is plain: the cost of producing something that looks like a paper has collapsed faster than the cost of evaluating one. The same dynamic is about to arrive in every gated profession that runs on written submissions, which is to say all of them.</p>
+  <div class="source">
+    <span>APS journals report massive influx of amateur papers &nbsp;&middot;&nbsp; r/Physics</span>
+    <a href="https://reddit.com/r/Physics/comments/1tah14i/aps_journals_report_massive_influx_of_amateur/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 3: SWISS POSTER — DeepMind AI pointer -->
+<section class="spread spread--swiss" id="s3">
+  <div class="circle-shape" aria-hidden="true"></div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 177 pts &nbsp;&middot;&nbsp; deepmind.google</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="num-block" aria-hidden="true">03</span>
+  <h1>A cursor that <em>knows</em> what you'll do next.</h1>
+  <p class="dek">DeepMind's design team have published a working prototype of a mouse pointer that asks the model, frame by frame, what your most plausible next move is, then suggests drags and selections half a second before your hand commits to them. It is not autocomplete, and not an agent. It is direct manipulation with a second author. The argument is that the screen now needs to admit both people and models, and that interface elements built for one will not survive contact with the other.</p>
+  <div class="source">
+    <span>Reimagining the mouse pointer for the AI era &nbsp;&middot;&nbsp; deepmind.google</span>
+    <a href="https://deepmind.google/blog/ai-pointer/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 4: NEWSPAPER COLUMN — stratosphere cooling -->
+<section class="spread spread--news" id="s4">
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 2,551 pts &nbsp;&middot;&nbsp; nature.com</span>
+  </div>
+  <span class="edition">Climate &nbsp;&middot;&nbsp; Nature Geoscience &nbsp;&middot;&nbsp; atmospheric fingerprint</span>
+  <div class="num-tag" aria-hidden="true">No. IV</div>
+  <h1>The stratosphere is <em>cooling</em>, fast.</h1>
+  <div class="col-wrap">
+    <p class="dek">A new Nature Geoscience paper measures Earth's upper atmosphere cooling at more than ten times the rate any natural cycle can account for, and locates the mechanism with surgical precision. The same CO₂ that traps heat near the ground also radiates it more efficiently above; the stratosphere is the place where that asymmetry shows up cleanly.</p>
+    <div>
+      <span class="aside-tag">Why this matters</span>
+      <p class="dek">A cooling stratosphere is the most direct atmospheric fingerprint of human emissions we have, untangled from weather, oceans, and feedback loops. It is also the reason satellite orbits decay slightly more slowly than they used to: thinner air upstairs means more useful months for every spacecraft in low orbit.</p>
+    </div>
+  </div>
+  <div class="source">
+    <span>Earth's upper atmosphere is cooling faster than nature explains &nbsp;&middot;&nbsp; nature.com</span>
+    <a href="https://www.nature.com/articles/s41561-026-01965-8" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 5: TERMINAL — TabPFN-3 -->
+<section class="spread spread--terminal" id="s5">
+  <div class="meta">
+    <span>Reddit / r/MachineLearning &nbsp;&middot;&nbsp; 52 pts &nbsp;&middot;&nbsp; reddit.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="prompt">pip install tabpfn==3.0 --upgrade</span>
+  <h1>The transformer that does <em>statistics</em> on your CSV.</h1>
+  <pre class="ascii-block" aria-hidden="true">  rows:     1,000,000   (was 10,000)
+  cols:     mixed (categorical now supported)
+  inference: a few seconds, no training step
+  competes with:  xgboost, lightgbm, your analyst</pre>
+  <p class="dek">TabPFN started as a curiosity: a transformer pre-trained to do Bayesian inference on small tables, beating hand-tuned gradient boosters on the way. Version three lifts the row ceiling from ten thousand to a million and adds proper categorical support, which means it is finally usable on the kind of CSV a working analyst actually has. The implications for teaching data science are large; the implications for half the consulting work still happening in Excel are larger.<span class="cursor"></span></p>
+  <div class="source">
+    <span>TabPFN-3: tabular foundation model up to 1M rows &nbsp;&middot;&nbsp; r/MachineLearning</span>
+    <a href="https://reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 6: BIG-STAT FINISH — tectonic plate boundary -->
+<section class="spread spread--stat" id="s6">
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 5,305 pts &nbsp;&middot;&nbsp; newscientist.com</span>
+  </div>
+  <span class="label">Geology &nbsp;&middot;&nbsp; Zambia &nbsp;&middot;&nbsp; the slow opening</span>
+  <span class="bigstat" aria-hidden="true">50<span class="small">million years to a new continent</span></span>
+  <h1>Africa is <em>splitting</em>, on schedule.</h1>
+  <p class="dek">Gases bubbling from mineral springs in Zambia carry an isotopic signature that comes directly from the Earth's mantle, which is to say the crust above them is opening. Geologists have suspected for decades that southern Africa is in the early stages of rifting; this is the first chemical fingerprint pinning down how far along the process is. The next continent will arrive in roughly fifty million years. Adjust your atlas accordingly.</p>
+  <div class="source">
+    <span>A new tectonic plate boundary in southern Africa &nbsp;&middot;&nbsp; newscientist.com</span>
+    <a href="https://www.newscientist.com/article/2526136-a-new-tectonic-plate-boundary-could-be-forming-in-southern-africa/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 7: TYPOGRAPHIC COLLAGE — sky rendering -->
+<section class="spread spread--collage" id="s7">
+  <div class="ghost" aria-hidden="true">vii</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 445 pts &nbsp;&middot;&nbsp; maximeheckel.com</span>
+  </div>
+  <span class="tag">graphics &nbsp;&middot;&nbsp; shaders &nbsp;&middot;&nbsp; atmospheric scattering</span>
+  <h1>The maths of a <em>convincing</em> sunset.</h1>
+  <div class="aside">A long, beautifully laid-out walkthrough of every approximation, with every parameter named</div>
+  <p class="dek">Maxime Heckel walks through the maths and the shader code for rendering a physically plausible sky, sunset, and planetary disc, justifying each approximation as he goes. The piece is accidentally one of the best practical introductions to atmospheric scattering you can read on a laptop. Bookmarked for anyone teaching graphics, or for anyone who has ever wondered why most game skies look slightly wrong at dusk and could never quite say which colour was lying.</p>
+  <div class="source">
+    <span>Rendering the sky, sunsets, and planets &nbsp;&middot;&nbsp; maximeheckel.com</span>
+    <a href="https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 8: DARK/MIDNIGHT — Unknowable Math / Cryptography -->
+<section class="spread spread--midnight" id="s8">
+  <div class="ghost" aria-hidden="true">VIII</div>
+  <div class="meta">
+    <span>Reddit / r/math &nbsp;&middot;&nbsp; 56 pts &nbsp;&middot;&nbsp; quantamagazine.org</span>
+  </div>
+  <div class="hexnum">0x08 &nbsp;//&nbsp; secret.hide(unprovable)</div>
+  <h1>A cryptography built on what cannot be <em>proven</em>.</h1>
+  <p class="dek">A graduate student has shown that the computational hardness of certain proof systems can be turned into a new cryptographic primitive: one that hides a secret not behind a difficult problem, but behind the impossibility of even formulating one. Quanta's write-up is unusually clear about what is and is not novel here, and points to a practical implication. Post-quantum cryptography may end up resting on logic, not number theory.</p>
+  <div class="source">
+    <span>How unknowable math can help hide secrets &nbsp;&middot;&nbsp; quantamagazine.org</span>
+    <a href="https://www.quantamagazine.org/how-unknowable-math-can-help-hide-secrets-20260511/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 9: MANIFESTO — Daily Brief receipt printer -->
+<section class="spread spread--manifesto" id="s9">
+  <div class="bg-num" aria-hidden="true">IX</div>
+  <div class="meta">
+    <span>Reddit / r/artificial &nbsp;&middot;&nbsp; 323 pts &nbsp;&middot;&nbsp; v.redd.it</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="roman">IX.</div>
+  <h1>An agent the kids actually <em>use</em>.</h1>
+  <p class="dek">A parent has wired a language model to a thermal receipt printer and gives their children a personalised front page every morning: weather, timetable, homework deadlines, a joke, a fact. The build is the rare AI side-project that earns its keep, partly because the form factor solves a real domestic problem, and partly because it is hard to doomscroll a one-foot strip of paper. A practical template for anyone designing an agent that has to live somewhere people live.</p>
+  <div class="source">
+    <span>An agentic Daily Brief for the kids &nbsp;&middot;&nbsp; r/artificial</span>
+    <a href="https://reddit.com/r/artificial/comments/1tay7ee/i_made_an_agentic_daily_brief_for_my_kids_with_a/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 10: COLOUR-FIELD MINIMALIST — Line cover record solver -->
+<section class="spread spread--field" id="s10">
+  <div class="meta">
+    <span>Reddit / r/math &nbsp;&middot;&nbsp; 611 pts &nbsp;&middot;&nbsp; prime-line-cover.vercel.app</span>
+  </div>
+  <div class="inner">
+    <span class="marker"><span class="dot"></span>Ten &nbsp;&middot;&nbsp; the last word</span>
+    <h1>282 hours, down to <em>22 minutes</em>.</h1>
+    <p class="dek">After watching a Numberphile video, a programmer wrote an exact solver for the minimum line cover of prime-coordinate points, dropped the previous 282-hour record to 22 minutes, and then kept going to certify twenty new awkward primes that had never been done before. The interactive write-up walks through the optimisations one by one. A small reminder that recreational mathematics is still a place where a single curious amateur can move the frontier, alone, on a laptop, over a weekend.</p>
+  </div>
+  <div class="source">
+    <span>A world-record solver for minimum line cover &nbsp;&middot;&nbsp; prime-line-cover.vercel.app</span>
+    <a href="https://prime-line-cover.vercel.app/?article" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 015 &nbsp;&middot;&nbsp; 13 May 2026 &nbsp;&middot;&nbsp; Ten stories for one reader.</p>
+  <p>Fetched, curated, and designed autonomously at 7am by a scheduled Claude agent.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
