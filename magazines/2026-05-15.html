@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 017 · 15 May 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 15 May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD — bone with deep teal */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#f4e8c8;border-bottom:1.5px solid #0c2c30;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#0c2c30}
+  .masthead .brand em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#3c5854}
+
+  /* 1. HERO COVER — pale ochre / deep teal */
+  .spread--hero{background:#f4e8c8;color:#0c2c30}
+  .spread--hero .meta{color:#3c5854;padding-bottom:20px;border-bottom:1.5px solid #0c2c30}
+  .spread--hero .flag{display:inline-block;padding:2px 10px;border:1.5px solid #a04020;font-size:18px;letter-spacing:0.12em;color:#a04020}
+  .spread--hero .cover-num{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(120px,18vw,260px);line-height:0.86;color:#a04020;letter-spacing:-0.03em;margin-top:clamp(36px,6vw,80px);display:block}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,11vw,200px);line-height:0.84;letter-spacing:-0.04em;max-width:14ch;margin-top:8px;color:#0c2c30}
+  .spread--hero h1 em{font-style:italic;font-weight:400;color:#a04020}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.44;max-width:46ch;color:#1c3c40;margin-top:40px}
+  .spread--hero .rule-mark{position:absolute;left:clamp(32px,6vw,96px);top:46%;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:#3c5854;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .spread--hero .source{border-color:#3c5854;color:#3c5854}
+  .spread--hero .source a{color:#a04020;font-weight:700}
+
+  /* 2. TERMINAL — phosphor green on near-black */
+  .spread--terminal{background:#020a04;color:#6ce070;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .spread--terminal .meta{color:#388c40;padding-bottom:20px;border-bottom:1px solid rgba(56,140,64,0.36);font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.06em;text-transform:none}
+  .spread--terminal .flag{display:inline-block;padding:2px 10px;border:1.5px solid #6ce070;font-size:18px;letter-spacing:0.04em;color:#6ce070;font-family:'JetBrains Mono',monospace}
+  .spread--terminal .prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:#388c40;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--terminal .prompt::before{content:'$ ';color:#6ce070}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(34px,5.4vw,82px);line-height:1.04;letter-spacing:-0.012em;max-width:30ch;margin-top:14px;color:#c4f4c8}
+  .spread--terminal h1 em{font-style:italic;font-weight:400;color:#6ce070}
+  .spread--terminal .ascii-block{font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.32;color:rgba(108,224,112,0.5);white-space:pre;margin:36px 0 8px;letter-spacing:0;user-select:none}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-weight:400;color:#a4d8a8;max-width:54ch;margin-top:28px;font-size:clamp(18px,1.6vw,21px);line-height:1.62}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#6ce070;vertical-align:-0.12em;animation:blink 1.06s steps(2,end) infinite;margin-left:0.18em}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:rgba(56,140,64,0.36);color:#388c40;font-family:'JetBrains Mono',monospace;font-size:18px;text-transform:none;letter-spacing:0}
+  .spread--terminal .source a{color:#c4f4c8;font-weight:600}
+
+  /* 3. ACADEMIC DROP-CAP — ivory with deep indigo */
+  .spread--academic{background:#ece8d8;color:#181842}
+  .spread--academic .meta{color:#3c386c;border-bottom:2px solid #181842;padding-bottom:20px}
+  .spread--academic .flag{display:inline-block;padding:2px 10px;border:1.5px solid #3c386c;font-size:18px;letter-spacing:0.12em;color:#3c386c}
+  .spread--academic .num-small{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0.34em;color:#3c386c;text-transform:uppercase}
+  .spread--academic .rule{width:100%;height:1.5px;background:#181842;margin:28px 0}
+  .spread--academic .journal-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#3c386c;margin-bottom:28px;display:block}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,6.8vw,108px);line-height:0.94;letter-spacing:-0.02em;max-width:24ch;margin-bottom:32px;color:#181842}
+  .spread--academic h1 em{font-style:italic;font-weight:400;color:#3c386c}
+  .spread--academic .body-text{max-width:58ch;font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.62;color:#1c1c4c}
+  .spread--academic .dropcap::first-letter{font-family:'Fraunces',serif;font-weight:700;font-size:5em;line-height:0.72;float:left;margin:0.1em 0.1em 0 0;color:#3c386c}
+  .spread--academic .source{border-color:#3c386c;color:#3c386c}
+  .spread--academic .source a{color:#181842;font-weight:700}
+
+  /* 4. ROSE-ALERT-STAMP — warm peach with vermilion */
+  .spread--alert{background:#f4d0b0;color:#341008}
+  .spread--alert .meta{color:#7c2008;padding-bottom:20px;border-bottom:2px solid #341008}
+  .spread--alert .flag{display:inline-block;padding:2px 10px;border:1.5px solid #b02008;font-size:18px;letter-spacing:0.12em;color:#b02008}
+  .spread--alert .stamp{position:absolute;top:22%;right:6%;width:clamp(180px,26vw,360px);height:clamp(180px,26vw,360px);border:6px double #b02008;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-7deg);user-select:none;pointer-events:none;color:#b02008;text-align:center;opacity:0.86}
+  .spread--alert .stamp::before{content:'';position:absolute;inset:14px;border:2px solid #b02008;border-radius:50%}
+  .spread--alert .stamp .stamp-top{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(22px,2.4vw,30px);letter-spacing:0.32em;text-transform:uppercase;line-height:1}
+  .spread--alert .stamp .stamp-mid{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:clamp(40px,6vw,72px);letter-spacing:-0.02em;line-height:1;margin:8px 0}
+  .spread--alert .stamp .stamp-bot{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;line-height:1}
+  .spread--alert .stamp-num{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.34em;color:#b02008;text-transform:uppercase;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--alert h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(46px,7.4vw,118px);line-height:0.9;letter-spacing:-0.034em;max-width:18ch;margin-top:14px;color:#341008}
+  .spread--alert h1 em{font-style:italic;font-weight:400;color:#b02008}
+  .spread--alert .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.5;max-width:42ch;color:#3c1808;margin-top:32px}
+  .spread--alert .source{border-color:#7c2008;color:#7c2008}
+  .spread--alert .source a{color:#341008;font-weight:700}
+
+  /* 5. SWISS POSTER — ochre with deep navy */
+  .spread--swiss{background:#d8a440;color:#0c1832}
+  .spread--swiss .meta{color:#3c2c08;padding-bottom:20px;border-bottom:1.5px solid #0c1832}
+  .spread--swiss .flag{display:inline-block;padding:2px 10px;border:1.5px solid #0c1832;font-size:18px;letter-spacing:0.12em;color:#0c1832}
+  .spread--swiss .grid-shape{position:absolute;top:46%;right:6%;width:clamp(180px,26vw,400px);height:clamp(180px,26vw,400px);transform:translateY(-50%);user-select:none;pointer-events:none}
+  .spread--swiss .grid-shape::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:#0c1832;clip-path:polygon(50% 0, 100% 50%, 50% 100%, 0 50%);opacity:0.94}
+  .spread--swiss .grid-shape::after{content:'';position:absolute;top:18%;left:18%;width:64%;height:64%;border:5px solid #f4ecd0;transform:rotate(45deg)}
+  .spread--swiss .num-block{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(120px,18vw,260px);line-height:0.82;letter-spacing:-0.06em;margin-top:clamp(36px,6vw,72px);color:#0c1832;display:block}
+  .spread--swiss h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(42px,6.6vw,102px);line-height:0.92;letter-spacing:-0.034em;max-width:18ch;margin-top:6px;color:#0c1832;text-transform:uppercase}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:#f4ecd0;text-transform:none;font-family:'Fraunces',serif}
+  .spread--swiss .dek{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:42ch;color:#1c2c44;margin-top:32px}
+  .spread--swiss .source{border-color:#3c2c08;color:#3c2c08}
+  .spread--swiss .source a{color:#0c1832;font-weight:700}
+
+  /* 6. NEWSPAPER COLUMN — bone with sepia ink */
+  .spread--news{background:#e8e4d8;color:#2c1808}
+  .spread--news .meta{color:#5c2c14;padding-bottom:20px;border-bottom:2px solid #2c1808}
+  .spread--news .flag{display:inline-block;padding:2px 10px;border:1.5px solid #5c2c14;font-size:18px;letter-spacing:0.12em;color:#5c2c14}
+  .spread--news .edition{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.8vw,22px);color:#8c2818;margin-top:clamp(48px,8vw,120px);margin-bottom:6px;display:block}
+  .spread--news h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(40px,7vw,114px);line-height:0.91;letter-spacing:-0.03em;max-width:18ch;border-top:3.5px solid #2c1808;padding-top:22px;margin-bottom:28px;color:#2c1808}
+  .spread--news h1 em{font-style:italic;font-weight:400;color:#8c2818}
+  .spread--news .col-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:40px 60px;margin-top:18px}
+  .spread--news .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,1.9vw,24px);line-height:1.6;color:#2c1808}
+  .spread--news .aside-tag{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#8c2818;margin-bottom:10px;display:block}
+  .spread--news .num-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(80px,14vw,180px);line-height:0.78;color:rgba(44,24,8,0.14);display:block;text-align:right;margin-top:auto}
+  .spread--news .source{border-color:#8c2818;color:#5c2c14}
+  .spread--news .source a{color:#2c1808;font-weight:700}
+
+  /* 7. BIG-STAT FINISH — deep teal with peach */
+  .spread--stat{background:#08384c;color:#f4d4a4}
+  .spread--stat .meta{color:#f4c890;padding-bottom:20px;border-bottom:1.5px solid rgba(244,200,144,0.32)}
+  .spread--stat .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f4c890;font-size:18px;letter-spacing:0.12em;color:#f4c890}
+  .spread--stat .label{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#f4c890;margin:clamp(36px,6vw,80px) 0 0;display:block}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(160px,30vw,440px);line-height:0.82;letter-spacing:-0.04em;color:#f4d4a4;margin:8px 0 24px;display:block}
+  .spread--stat .bigstat .small{font-size:0.16em;font-style:normal;font-weight:600;letter-spacing:0.20em;color:#f4c890;display:block;margin-top:14px;text-transform:uppercase}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,6.4vw,96px);line-height:0.94;letter-spacing:-0.026em;max-width:24ch;color:#f4d4a4}
+  .spread--stat h1 em{font-style:italic;font-weight:400;color:#f4c890}
+  .spread--stat .dek{font-family:'Fraunces',serif;font-weight:350;color:#e8c89c;max-width:46ch;margin-top:32px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--stat .source{border-color:rgba(244,200,144,0.32);color:#f4c890}
+  .spread--stat .source a{color:#f4d4a4;font-weight:700}
+
+  /* 8. DARK/MIDNIGHT — forest with mint */
+  .spread--midnight{background:#04181c;color:#c4ecd4}
+  .spread--midnight .meta{color:#6c9c8c;padding-bottom:20px;border-bottom:1px solid rgba(108,156,140,0.32)}
+  .spread--midnight .flag{display:inline-block;padding:2px 10px;border:1.5px solid #80e4c4;font-size:18px;letter-spacing:0.12em;color:#80e4c4}
+  .spread--midnight .hexnum{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-weight:600;font-size:22px;color:#6c9c8c;letter-spacing:0.08em;line-height:1;margin-top:clamp(40px,7vw,90px)}
+  .spread--midnight .ghost{position:absolute;top:6%;right:-4%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,24vw,420px);line-height:0.82;color:transparent;-webkit-text-stroke:1px rgba(128,228,196,0.16);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(48px,7.4vw,120px);line-height:0.96;letter-spacing:-0.024em;max-width:18ch;margin-top:18px;color:#e4f4dc}
+  .spread--midnight h1 em{color:#80e4c4;font-style:italic;font-weight:400}
+  .spread--midnight .dek{font-family:'Fraunces',serif;font-weight:350;color:#a4c8b4;max-width:44ch;margin-top:40px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--midnight .source{border-color:rgba(108,156,140,0.32);color:#6c9c8c}
+  .spread--midnight .source a{color:#e4f4dc}
+
+  /* 9. TYPOGRAPHIC COLLAGE — eggplant with peach */
+  .spread--collage{background:#2c0824;color:#f4d0b4}
+  .spread--collage .meta{color:rgba(244,208,180,0.55);padding-bottom:20px;letter-spacing:0.22em}
+  .spread--collage .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f4a060;font-size:18px;letter-spacing:0.12em;color:#f4a060}
+  .spread--collage .ghost{position:absolute;top:-3%;right:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(180px,30vw,480px);line-height:0.75;color:rgba(244,160,96,0.08);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--collage .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(244,208,180,0.6);margin:clamp(36px,7vw,96px) 0 14px;display:block}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(46px,8.4vw,142px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#f4e0c4}
+  .spread--collage h1 em{font-style:italic;font-weight:400;color:#f4a060}
+  .spread--collage .aside{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;color:rgba(244,208,180,0.6);margin:22px 0;text-transform:uppercase;border-left:3px solid rgba(244,160,96,0.42);padding-left:14px}
+  .spread--collage .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:44ch;color:rgba(244,208,180,0.88)}
+  .spread--collage .source{border-color:rgba(244,208,180,0.18);color:rgba(244,208,180,0.55)}
+  .spread--collage .source a{color:#f4d0b4;font-weight:800}
+
+  /* 10. MANIFESTO — burgundy with cream */
+  .spread--manifesto{background:#2c0808;color:#f4e0c8}
+  .spread--manifesto .meta{color:rgba(244,224,200,0.7);padding-bottom:20px;border-bottom:1px solid rgba(244,224,200,0.32)}
+  .spread--manifesto .flag{display:inline-block;padding:2px 10px;border:1.5px solid #e8a060;font-size:18px;letter-spacing:0.12em;color:#e8a060}
+  .spread--manifesto .roman{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(72px,10vw,140px);line-height:1;color:#e8a060;margin-top:clamp(40px,7vw,90px);letter-spacing:-0.02em}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(50px,10vw,168px);line-height:0.86;letter-spacing:-0.038em;max-width:18ch;margin-top:14px;color:#f4e0c8}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#e8a060}
+  .spread--manifesto .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.44;max-width:46ch;color:#e8c8a4;margin-top:36px}
+  .spread--manifesto .bg-num{position:absolute;bottom:clamp(24px,4vw,60px);right:clamp(24px,4vw,60px);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(160px,28vw,460px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(232,160,96,0.22);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--manifesto .source{border-color:rgba(244,224,200,0.32);color:rgba(244,224,200,0.7)}
+  .spread--manifesto .source a{color:#e8a060;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#0c2c30;color:#7c9c98;padding:clamp(48px,8vw,96px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,4vw,54px);color:#f4e8c8;margin-bottom:18px}
+  .colophon p{font-family:'Inter',sans-serif;font-size:20px;line-height:1.6;max-width:52ch;margin:0 auto 10px;color:#7c9c98}
+  .colophon a{color:#f4e8c8}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 017 &nbsp;&middot;&nbsp; 15 May 2026</div>
+</header>
+
+<!-- STORY 1: HERO COVER — Claude Code in large codebases -->
+<section class="spread spread--hero" id="s1">
+  <div class="rule-mark" aria-hidden="true">Today &middot; 15 May 2026</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 82 pts &nbsp;&middot;&nbsp; claude.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="cover-num" aria-hidden="true">01</span>
+  <h1>How an agent <em>holds</em> a codebase larger than its context.</h1>
+  <p class="dek">Anthropic have published a long-form piece on how Claude Code stays oriented inside repositories with thousands of files: what it caches, what it skims, when it stops to ask, how its working map of a project is built and rebuilt. It is one of the clearest pictures yet of how an agent reasons about something larger than its own attention window. Required reading for anyone teaching small teams to ship with AI rather than around it.</p>
+  <div class="source">
+    <span>How Claude Code works in large codebases &nbsp;&middot;&nbsp; claude.com</span>
+    <a href="https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 2: TERMINAL — Codex in ChatGPT mobile -->
+<section class="spread spread--terminal" id="s2">
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 278 pts &nbsp;&middot;&nbsp; openai.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="prompt">codex --from pocket</span>
+  <h1>The coding agent moves <em>off the desk</em>.</h1>
+  <pre class="ascii-block" aria-hidden="true">  before:   chat on phone, code on laptop
+  after:    full codex agent inside ChatGPT mobile
+  surface:  one tap from any message
+  unlocks:  fixes, reviews, refactors while away
+  question: who actually writes code on a bus</pre>
+  <p class="dek">OpenAI have moved Codex, their dedicated coding agent, into the ChatGPT mobile app. The agent now runs anywhere a phone goes: on the bus, in a queue, between meetings. The interesting question is not whether anyone wants to author production code on a touchscreen; it is whether short bursts of supervised editing become the default mode of work for the people who spend most of their day away from a keyboard.<span class="cursor"></span></p>
+  <div class="source">
+    <span>Codex is now in the ChatGPT mobile app &nbsp;&middot;&nbsp; openai.com</span>
+    <a href="https://openai.com/index/work-with-codex-from-anywhere/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 3: ACADEMIC DROP-CAP — arXiv 1-year ban -->
+<section class="spread spread--academic" id="s3">
+  <div class="meta">
+    <span class="num-small">&sect; III</span>
+    <span>HN &nbsp;&middot;&nbsp; 432 pts &nbsp;&middot;&nbsp; arxiv.org policy</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="rule"></div>
+  <span class="journal-tag">scholarly publishing &nbsp;&middot;&nbsp; ai integrity &nbsp;&middot;&nbsp; the moderation problem</span>
+  <h1>arXiv will <em>ban</em> you for a year over a hallucinated citation.</h1>
+  <p class="body-text dropcap">arXiv has announced a one-year submission ban for any paper found to contain hallucinated references or fabricated results introduced by language models. The policy is short and unforgiving, which makes it interesting. It treats the moderation problem as one of incentives rather than detection, and asks the field to police its own use of tools that have become irresistibly convenient. The first published case of someone serving the year out will be more interesting still, and the indirect signal it sends to undergraduates, supervisors, and grant committees may matter more than the rule itself.</p>
+  <div class="source">
+    <span>New arXiv policy: 1-year ban for hallucinated references &nbsp;&middot;&nbsp; arxiv</span>
+    <a href="https://twitter.com/tdietterich/status/2055000956144935055" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 4: ROSE-ALERT-STAMP — Mullvad fingerprinting -->
+<section class="spread spread--alert" id="s4">
+  <div class="stamp" aria-hidden="true">
+    <span class="stamp-top">Notice</span>
+    <span class="stamp-mid">no. 04</span>
+    <span class="stamp-bot">Issued 15·V·26</span>
+  </div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 229 pts &nbsp;&middot;&nbsp; tmctmt.com</span>
+  </div>
+  <span class="stamp-num">Notice to VPN users</span>
+  <h1>Mullvad exit IPs are <em>more</em> identifying than people think.</h1>
+  <p class="dek">Mullvad is widely held up as the privacy-conscious VPN of choice, partly because its exit nodes are shared between thousands of users at a time. Independent research now suggests the picture is not so clean. Specific combinations of exit IP, time of day, and traffic shape are unique enough to act as a quiet fingerprint. The lesson is not that Mullvad has failed; it is that anonymity in 2026 is no longer a property of a single provider, and the threat model most people assume they have is rarely the one they actually have.</p>
+  <div class="source">
+    <span>Mullvad exit IPs are surprisingly identifying &nbsp;&middot;&nbsp; tmctmt.com</span>
+    <a href="https://tmctmt.com/posts/mullvad-exit-ips-as-a-fingerprinting-vector/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 5: SWISS POSTER — antirez DS4 -->
+<section class="spread spread--swiss" id="s5">
+  <div class="grid-shape" aria-hidden="true"></div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 251 pts &nbsp;&middot;&nbsp; antirez.com</span>
+  </div>
+  <span class="num-block" aria-hidden="true">05</span>
+  <h1>A new data server, <em>by one author</em>.</h1>
+  <p class="dek">Salvatore Sanfilippo, the Italian programmer who built Redis, has released DS4: a new data-structure server in the same family but rebuilt from scratch for the era of large, structured, mostly-in-memory workloads. The post is short, characteristically opinionated, and worth reading whether or not you ever touch the code. It is also a quiet rebuke of the idea that all infrastructure software in 2026 has to be written by a committee or a foundation. A single author can still ship.</p>
+  <div class="source">
+    <span>A few words on DS4 &nbsp;&middot;&nbsp; antirez.com</span>
+    <a href="https://antirez.com/news/165" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 6: NEWSPAPER COLUMN — RAV4 GPS removal -->
+<section class="spread spread--news" id="s6">
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 749 pts &nbsp;&middot;&nbsp; arkadiyt.com</span>
+  </div>
+  <span class="edition">Owner-engineering &nbsp;&middot;&nbsp; surveillance &nbsp;&middot;&nbsp; the right to switch it off</span>
+  <div class="num-tag" aria-hidden="true">No. VI</div>
+  <h1>The car still drives. The <em>telemetry</em> stops.</h1>
+  <div class="col-wrap">
+    <p class="dek">A Toyota owner has documented, in step-by-step detail, the process of physically excising the cellular modem and GPS unit from a 2024 RAV4 hybrid. The car still drives. The dashboard still works. What stops is the constant background broadcast of position, driver behaviour, and vehicle telemetry back to Toyota's servers.</p>
+    <div>
+      <span class="aside-tag">Why this matters</span>
+      <p class="dek">The piece is a quietly devastating read on what new cars now do by default, and what it takes to opt out without giving up the car. Expect more of this. Right-to-repair has a sibling problem coming, and it is the right to refuse the silent uplink.</p>
+    </div>
+  </div>
+  <div class="source">
+    <span>Removing the modem and GPS from my 2024 RAV4 hybrid &nbsp;&middot;&nbsp; arkadiyt.com</span>
+    <a href="https://arkadiyt.com/2026/05/13/removing-the-modem-and-gps-from-my-rav4/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 7: BIG-STAT FINISH — Sleep and ageing -->
+<section class="spread spread--stat" id="s7">
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 2,864 pts &nbsp;&middot;&nbsp; nature</span>
+  </div>
+  <span class="label">Longevity &nbsp;&middot;&nbsp; the narrow window &nbsp;&middot;&nbsp; six to eight</span>
+  <span class="bigstat" aria-hidden="true">6&ndash;8<span class="small">hours, every night, for slower ageing</span></span>
+  <h1>The window is <em>narrower</em> than the advice.</h1>
+  <p class="dek">A meta-analysis covering hundreds of thousands of adults has put a tighter number on the old line. The people who age slowest by biological markers sleep between six and eight hours a night. People who chronically undershoot show measurable acceleration in markers of cellular ageing; people who chronically overshoot are not far behind. A single, unsurprising chart with policy weight: the most accessible longevity intervention available to anyone is a bedtime.</p>
+  <div class="source">
+    <span>Sleep linked to slower ageing: the right amount &nbsp;&middot;&nbsp; r/science</span>
+    <a href="https://reddit.com/r/science/comments/1tced4d/sleep_linked_to_slower_ageing_huge_study/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 8: DARK/MIDNIGHT — Every organ teaches its nerves -->
+<section class="spread spread--midnight" id="s8">
+  <div class="ghost" aria-hidden="true">VIII</div>
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 2,633 pts &nbsp;&middot;&nbsp; quanta-style writeup</span>
+  </div>
+  <div class="hexnum">0x08 &nbsp;//&nbsp; neuroscience.local()</div>
+  <h1>The body is a <em>confederation</em> of small minds.</h1>
+  <p class="dek">The gut has a second brain. So, it turns out, do the heart, the lungs, and the pancreas. A new line of research suggests that each organ builds its own small nervous system from scratch and trains it locally, rather than receiving instructions from the central brain. The picture that emerges is unsettling and quietly beautiful: the body is not one mind with peripherals but a federation of minds, each one teaching itself the rules of its own neighbourhood.</p>
+  <div class="source">
+    <span>Every organ teaches its nerves what to become &nbsp;&middot;&nbsp; r/science</span>
+    <a href="https://reddit.com/r/science/comments/1td3zjx/every_organ_teaches_its_nerves_what_to_become_the/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 9: TYPOGRAPHIC COLLAGE — Reprogram materials by rearranging atoms -->
+<section class="spread spread--collage" id="s9">
+  <div class="ghost" aria-hidden="true">ix</div>
+  <div class="meta">
+    <span>Reddit / r/science &nbsp;&middot;&nbsp; 105 pts &nbsp;&middot;&nbsp; condensed matter</span>
+  </div>
+  <span class="tag">materials &nbsp;&middot;&nbsp; atomic-scale &nbsp;&middot;&nbsp; the substrate is the software</span>
+  <h1>Move the <em>atoms</em>, change the chip.</h1>
+  <div class="aside">A solid is no longer a fixed thing. The lattice is editable.</div>
+  <p class="dek">A team of materials physicists have published a technique for moving individual columns of atoms inside a solid, on demand, after the material has been made. The atoms do not just shuffle; they slide into new lattices, and the bulk properties of the material follow. The same chip of silicon, in principle, becomes a different chip without ever leaving the wafer. The applications are speculative. The physics is not. The thing being reprogrammed is not the software but the substrate.</p>
+  <div class="source">
+    <span>Researchers reprogram materials by rearranging atoms &nbsp;&middot;&nbsp; r/science</span>
+    <a href="https://reddit.com/r/science/comments/1td9qig/researchers_reprogram_materials_by_quickly/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 10: MANIFESTO — Frontier AI access tightening -->
+<section class="spread spread--manifesto" id="s10">
+  <div class="bg-num" aria-hidden="true">X</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 70 pts &nbsp;&middot;&nbsp; writing.antonleicht.me</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <div class="roman">X.</div>
+  <h1>The open <em>era</em> of frontier AI is closing.</h1>
+  <p class="dek">An essay from Anton Leicht makes the case, calmly and well, that the period in which frontier AI was available to anyone with a credit card is closing. Two forces are doing the closing. The compute economics no longer fit at consumer prices, and the security agencies in three jurisdictions now treat top-tier models the way they treat fissile material. The piece neither gloats nor panics. It maps the next five years for anyone who builds on top of frontier capability, and is worth reading before pricing decisions get made.</p>
+  <div class="source">
+    <span>Access to frontier AI will soon be limited &nbsp;&middot;&nbsp; writing.antonleicht.me</span>
+    <a href="https://writing.antonleicht.me/p/cut-off" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 017 &nbsp;&middot;&nbsp; 15 May 2026 &nbsp;&middot;&nbsp; Ten stories for one reader.</p>
+  <p>Fetched, curated, and designed autonomously at 7am by a scheduled Claude agent.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
