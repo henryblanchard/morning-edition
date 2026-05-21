@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · Vol. 022 · 21 May 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News and Reddit. 21 May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD - ochre parchment with deep ink */
+  .masthead{padding:clamp(24px,4vw,48px) clamp(32px,6vw,96px);background:#e3c98f;border-bottom:1.5px solid #2a1d08;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;color:#2a1d08}
+  .masthead .brand em{font-style:italic;font-weight:400}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#6b4f1c}
+
+  /* 1. HERO COVER - dusk lilac with deep aubergine */
+  .spread--hero{background:#d6c8d4;color:#221422}
+  .spread--hero .meta{color:#5e3a5e;padding-bottom:20px;border-bottom:1.5px solid #221422}
+  .spread--hero .flag{display:inline-block;padding:2px 10px;border:1.5px solid #7a2858;font-size:18px;letter-spacing:0.12em;color:#7a2858}
+  .spread--hero .cover-num{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(120px,18vw,260px);line-height:0.86;color:#7a2858;letter-spacing:-0.03em;margin-top:clamp(36px,6vw,80px);display:block}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(54px,10vw,184px);line-height:0.84;letter-spacing:-0.04em;max-width:15ch;margin-top:8px;color:#221422}
+  .spread--hero h1 em{font-style:italic;font-weight:400;color:#7a2858}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.44;max-width:48ch;color:#3a2436;margin-top:40px}
+  .spread--hero .rule-mark{position:absolute;left:clamp(32px,6vw,96px);top:46%;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:#5e3a5e;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .spread--hero .source{border-color:#5e3a5e;color:#5e3a5e}
+  .spread--hero .source a{color:#7a2858;font-weight:700}
+
+  /* 2. SWISS POSTER - vermillion with cream */
+  .spread--swiss{background:#c5482a;color:#fbf2d6}
+  .spread--swiss .meta{color:rgba(251,242,214,0.78);padding-bottom:20px;border-bottom:1.5px solid #fbf2d6}
+  .spread--swiss .flag{display:inline-block;padding:2px 10px;border:1.5px solid #fbf2d6;font-size:18px;letter-spacing:0.12em;color:#fbf2d6}
+  .spread--swiss .grid-shape{position:absolute;top:46%;right:6%;width:clamp(180px,26vw,400px);height:clamp(180px,26vw,400px);transform:translateY(-50%);user-select:none;pointer-events:none}
+  .spread--swiss .grid-shape::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:#fbf2d6;border-radius:50%;opacity:0.92}
+  .spread--swiss .grid-shape::after{content:'';position:absolute;top:30%;left:30%;width:40%;height:40%;background:#c5482a;border-radius:50%}
+  .spread--swiss .num-block{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(120px,18vw,260px);line-height:0.82;letter-spacing:-0.06em;margin-top:clamp(36px,6vw,72px);color:#fbf2d6;display:block}
+  .spread--swiss h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(42px,6.6vw,102px);line-height:0.92;letter-spacing:-0.034em;max-width:18ch;margin-top:6px;color:#fbf2d6;text-transform:uppercase}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:#241004;text-transform:none;font-family:'Fraunces',serif}
+  .spread--swiss .dek{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:42ch;color:#fbf2d6;margin-top:32px}
+  .spread--swiss .source{border-color:rgba(251,242,214,0.6);color:rgba(251,242,214,0.78)}
+  .spread--swiss .source a{color:#fbf2d6;font-weight:700}
+
+  /* 3. BIG-STAT - deep teal with bright cyan */
+  .spread--stat{background:#0d2e30;color:#cdeef0}
+  .spread--stat .meta{color:#62cdd2;padding-bottom:20px;border-bottom:1.5px solid rgba(98,205,210,0.32)}
+  .spread--stat .flag{display:inline-block;padding:2px 10px;border:1.5px solid #62cdd2;font-size:18px;letter-spacing:0.12em;color:#62cdd2}
+  .spread--stat .label{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#62cdd2;margin:clamp(36px,6vw,80px) 0 0;display:block}
+  .spread--stat .bigstat{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(110px,20vw,300px);line-height:0.86;letter-spacing:-0.04em;color:#e8fbfc;margin:8px 0 24px;display:block}
+  .spread--stat .bigstat .arrow{font-style:normal;font-weight:300;color:#62cdd2;margin:0 0.08em}
+  .spread--stat .bigstat .small{font-size:0.14em;font-style:normal;font-weight:600;letter-spacing:0.18em;color:#62cdd2;display:block;margin-top:18px;text-transform:uppercase;line-height:1.3}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(42px,6.4vw,96px);line-height:0.94;letter-spacing:-0.026em;max-width:24ch;color:#e8fbfc}
+  .spread--stat h1 em{font-style:italic;font-weight:400;color:#62cdd2}
+  .spread--stat .dek{font-family:'Fraunces',serif;font-weight:350;color:#b4e2e4;max-width:46ch;margin-top:32px;font-size:clamp(20px,2vw,26px);line-height:1.5}
+  .spread--stat .source{border-color:rgba(98,205,210,0.32);color:#62cdd2}
+  .spread--stat .source a{color:#e8fbfc;font-weight:700}
+
+  /* 4. ACADEMIC DROP-CAP - pale slate with deep navy */
+  .spread--academic{background:#dde3e1;color:#16203a}
+  .spread--academic .meta{color:#3a5570;border-bottom:2px solid #16203a;padding-bottom:20px}
+  .spread--academic .flag{display:inline-block;padding:2px 10px;border:1.5px solid #3a5570;font-size:18px;letter-spacing:0.12em;color:#3a5570}
+  .spread--academic .num-small{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:0.34em;color:#3a5570;text-transform:uppercase}
+  .spread--academic .rule{width:100%;height:1.5px;background:#16203a;margin:28px 0}
+  .spread--academic .journal-tag{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.22em;text-transform:uppercase;color:#3a5570;margin-bottom:28px;display:block}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,6.8vw,108px);line-height:0.94;letter-spacing:-0.02em;max-width:24ch;margin-bottom:32px;color:#16203a}
+  .spread--academic h1 em{font-style:italic;font-weight:400;color:#3a5570}
+  .spread--academic .body-text{max-width:58ch;font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.62;color:#1c2844}
+  .spread--academic .dropcap::first-letter{font-family:'Fraunces',serif;font-weight:700;font-size:5em;line-height:0.72;float:left;margin:0.1em 0.1em 0 0;color:#3a5570}
+  .spread--academic .source{border-color:#3a5570;color:#3a5570}
+  .spread--academic .source a{color:#16203a;font-weight:700}
+
+  /* 5. TERMINAL - amber phosphor on warm black */
+  .spread--terminal{background:#0a0600;color:#e6a83e;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+  .spread--terminal .meta{color:#8c6420;padding-bottom:20px;border-bottom:1px solid rgba(140,100,32,0.45);font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.06em;text-transform:none}
+  .spread--terminal .flag{display:inline-block;padding:2px 10px;border:1.5px solid #e6a83e;font-size:18px;letter-spacing:0.04em;color:#e6a83e;font-family:'JetBrains Mono',monospace}
+  .spread--terminal .prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:20px;color:#8c6420;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--terminal .prompt::before{content:'$ ';color:#e6a83e}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(34px,5.4vw,82px);line-height:1.04;letter-spacing:-0.012em;max-width:30ch;margin-top:14px;color:#f6d28a}
+  .spread--terminal h1 em{font-style:italic;font-weight:400;color:#e6a83e}
+  .spread--terminal .ascii-block{font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1.32;color:rgba(230,168,62,0.5);white-space:pre;margin:36px 0 8px;letter-spacing:0;user-select:none}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-weight:400;color:#dcb878;max-width:54ch;margin-top:28px;font-size:clamp(18px,1.6vw,21px);line-height:1.62}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#e6a83e;vertical-align:-0.12em;animation:blink 1.06s steps(2,end) infinite;margin-left:0.18em}
+  @keyframes blink{50%{opacity:0}}
+  .spread--terminal .source{border-color:rgba(140,100,32,0.45);color:#8c6420;font-family:'JetBrains Mono',monospace;font-size:18px;text-transform:none;letter-spacing:0}
+  .spread--terminal .source a{color:#f6d28a;font-weight:600}
+
+  /* 6. MIDNIGHT - near-black with sage and pale gold */
+  .spread--midnight{background:#06080a;color:#cfd9d2}
+  .spread--midnight .meta{color:rgba(207,217,210,0.55);padding-bottom:20px;border-bottom:1px solid rgba(207,217,210,0.18)}
+  .spread--midnight .flag{display:inline-block;padding:2px 10px;border:1.5px solid #9ec5a8;font-size:18px;letter-spacing:0.12em;color:#9ec5a8}
+  .spread--midnight .roman-tiny{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:18px;letter-spacing:0.42em;text-transform:uppercase;color:#9ec5a8;margin:clamp(40px,6vw,80px) 0 6px;display:block}
+  .spread--midnight .wave{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:clamp(280px,42vw,640px);height:clamp(280px,42vw,640px);user-select:none;pointer-events:none}
+  .spread--midnight .wave::before,
+  .spread--midnight .wave::after{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(158,197,168,0.16)}
+  .spread--midnight .wave::after{inset:14%;border-color:rgba(158,197,168,0.10)}
+  .spread--midnight .wave .ring{position:absolute;inset:28%;border:1px solid rgba(158,197,168,0.07);border-radius:50%}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,8.2vw,150px);line-height:0.9;letter-spacing:-0.034em;max-width:18ch;margin-top:6px;color:#e6ece6;position:relative}
+  .spread--midnight h1 em{font-style:italic;font-weight:200;color:#9ec5a8}
+  .spread--midnight .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2.1vw,27px);line-height:1.5;max-width:46ch;color:#b8c3bc;margin-top:36px;position:relative}
+  .spread--midnight .source{border-color:rgba(207,217,210,0.18);color:rgba(207,217,210,0.55)}
+  .spread--midnight .source a{color:#9ec5a8;font-weight:700}
+
+  /* 7. TYPOGRAPHIC COLLAGE - deep forest with lime */
+  .spread--collage{background:#11261b;color:#cfe6c8}
+  .spread--collage .meta{color:rgba(207,230,200,0.55);padding-bottom:20px;letter-spacing:0.22em}
+  .spread--collage .flag{display:inline-block;padding:2px 10px;border:1.5px solid #a8d24a;font-size:18px;letter-spacing:0.12em;color:#a8d24a}
+  .spread--collage .ghost{position:absolute;top:-3%;right:-2%;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(180px,30vw,480px);line-height:0.75;color:rgba(168,210,74,0.09);user-select:none;pointer-events:none;letter-spacing:-0.04em;writing-mode:vertical-rl}
+  .spread--collage .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(207,230,200,0.6);margin:clamp(36px,7vw,96px) 0 14px;display:block}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(46px,8.4vw,142px);line-height:0.88;letter-spacing:-0.032em;max-width:18ch;color:#e2f0d6}
+  .spread--collage h1 em{font-style:italic;font-weight:400;color:#a8d24a}
+  .spread--collage .aside{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.06em;color:rgba(207,230,200,0.6);margin:22px 0;text-transform:uppercase;border-left:3px solid rgba(168,210,74,0.42);padding-left:14px}
+  .spread--collage .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.48;max-width:44ch;color:rgba(207,230,200,0.9)}
+  .spread--collage .source{border-color:rgba(207,230,200,0.18);color:rgba(207,230,200,0.55)}
+  .spread--collage .source a{color:#cfe6c8;font-weight:800}
+
+  /* 8. COLOUR-FIELD MINIMALIST - deep cobalt with gold */
+  .spread--field{background:#1f3a66;color:#e6e8d8;justify-content:space-between}
+  .spread--field .meta{color:rgba(230,232,216,0.62);padding-bottom:20px;border-bottom:1px solid rgba(230,232,216,0.3)}
+  .spread--field .flag{display:inline-block;padding:2px 10px;border:1.5px solid #f0c14e;font-size:18px;letter-spacing:0.12em;color:#f0c14e}
+  .spread--field .field-num{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(230,232,216,0.5);margin:clamp(40px,8vw,120px) 0 0;display:block}
+  .spread--field .field-mid{flex:1;display:flex;align-items:center}
+  .spread--field h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(46px,8vw,148px);line-height:0.92;letter-spacing:-0.03em;max-width:20ch;color:#f2f0e0}
+  .spread--field h1 em{font-style:italic;font-weight:400;color:#f0c14e}
+  .spread--field .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.5;max-width:44ch;color:rgba(230,232,216,0.86);margin-bottom:28px}
+  .spread--field .source{border-color:rgba(230,232,216,0.3);color:rgba(230,232,216,0.62);margin-top:0}
+  .spread--field .source a{color:#f0c14e;font-weight:700}
+
+  /* 9. ROSE-ALERT-STAMP - pale rose with vermilion */
+  .spread--alert{background:#edc9c2;color:#3a1410}
+  .spread--alert .meta{color:#7c2208;padding-bottom:20px;border-bottom:2px solid #3a1410}
+  .spread--alert .flag{display:inline-block;padding:2px 10px;border:1.5px solid #b22810;font-size:18px;letter-spacing:0.12em;color:#b22810}
+  .spread--alert .stamp{position:absolute;top:22%;right:6%;width:clamp(180px,26vw,360px);height:clamp(180px,26vw,360px);border:6px double #b22810;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-7deg);user-select:none;pointer-events:none;color:#b22810;text-align:center;opacity:0.86}
+  .spread--alert .stamp::before{content:'';position:absolute;inset:14px;border:2px solid #b22810;border-radius:50%}
+  .spread--alert .stamp .stamp-top{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(22px,2.4vw,30px);letter-spacing:0.32em;text-transform:uppercase;line-height:1}
+  .spread--alert .stamp .stamp-mid{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:clamp(40px,6vw,72px);letter-spacing:-0.02em;line-height:1;margin:8px 0}
+  .spread--alert .stamp .stamp-bot{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;line-height:1}
+  .spread--alert .stamp-num{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.34em;color:#b22810;text-transform:uppercase;margin-top:clamp(48px,8vw,120px);display:block}
+  .spread--alert h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(46px,7.4vw,118px);line-height:0.9;letter-spacing:-0.034em;max-width:18ch;margin-top:14px;color:#3a1410}
+  .spread--alert h1 em{font-style:italic;font-weight:400;color:#b22810}
+  .spread--alert .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.5;max-width:42ch;color:#421a08;margin-top:32px}
+  .spread--alert .source{border-color:#7c2208;color:#7c2208}
+  .spread--alert .source a{color:#3a1410;font-weight:700}
+
+  /* 10. MANIFESTO - deep indigo-ink with amber */
+  .spread--manifesto{background:#161226;color:#ecdcc0}
+  .spread--manifesto .meta{color:rgba(236,220,192,0.7);padding-bottom:20px;border-bottom:1px solid rgba(236,220,192,0.32)}
+  .spread--manifesto .flag{display:inline-block;padding:2px 10px;border:1.5px solid #e8a24e;font-size:18px;letter-spacing:0.12em;color:#e8a24e}
+  .spread--manifesto .roman{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(72px,10vw,140px);line-height:1;color:#e8a24e;margin-top:clamp(40px,7vw,90px);letter-spacing:-0.02em}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(50px,10vw,168px);line-height:0.86;letter-spacing:-0.038em;max-width:18ch;margin-top:14px;color:#ecdcc0}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#e8a24e}
+  .spread--manifesto .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(22px,2.4vw,30px);line-height:1.44;max-width:46ch;color:#d6c4a0;margin-top:36px}
+  .spread--manifesto .bg-num{position:absolute;bottom:clamp(24px,4vw,60px);right:clamp(24px,4vw,60px);font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(160px,28vw,460px);line-height:0.8;color:transparent;-webkit-text-stroke:1.5px rgba(232,162,78,0.22);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--manifesto .source{border-color:rgba(236,220,192,0.32);color:rgba(236,220,192,0.7)}
+  .spread--manifesto .source a{color:#e8a24e;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#161226;color:#9a8fb5;padding:clamp(48px,8vw,96px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,4vw,54px);color:#ecdcc0;margin-bottom:18px}
+  .colophon p{font-family:'Inter',sans-serif;font-size:20px;line-height:1.6;max-width:52ch;margin:0 auto 10px;color:#9a8fb5}
+  .colophon a{color:#ecdcc0}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 022 &nbsp;&middot;&nbsp; 21 May 2026</div>
+</header>
+
+<!-- STORY 1: HERO COVER - OpenAI disproves discrete geometry conjecture -->
+<section class="spread spread--hero" id="s1">
+  <div class="rule-mark" aria-hidden="true">Thursday &middot; 21 May 2026</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 973 pts &nbsp;&middot;&nbsp; openai.com</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="cover-num" aria-hidden="true">I</span>
+  <h1>A machine just <em>broke a conjecture</em>.</h1>
+  <p class="dek">An OpenAI research model has produced a counterexample to a long-standing conjecture in discrete geometry, the Erdos unit-distance problem, that human mathematicians had circled for decades. The result still needs careful human checking, but the direction of travel is the headline: models are starting to find genuinely new mathematics, not just summarise the old. If you teach what these tools can do, this is the cleanest example yet that the frontier has moved from recall to discovery.</p>
+  <div class="source">
+    <span>An OpenAI model disproves a discrete-geometry conjecture &nbsp;&middot;&nbsp; openai.com</span>
+    <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 2: SWISS POSTER - Qwen3.7-Max -->
+<section class="spread spread--swiss" id="s2">
+  <div class="grid-shape" aria-hidden="true"></div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 650 pts &nbsp;&middot;&nbsp; qwen.ai</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="num-block" aria-hidden="true">02</span>
+  <h1>Qwen pushes the <em>agent frontier</em>.</h1>
+  <p class="dek">Alibaba's Qwen team has shipped Qwen3.7-Max, pitched squarely at agentic work: long tool-use chains, planning, and the kind of multi-step tasks that break smaller models. The benchmarks matter less than the strategic signal, which is that an open-weight-adjacent lab is now competing at the top on agents specifically, not just chat. Worth a test run before you assume the only serious agent models carry a Western badge.</p>
+  <div class="source">
+    <span>Qwen3.7-Max: The Agent Frontier &nbsp;&middot;&nbsp; qwen.ai</span>
+    <a href="https://qwen.ai/blog?id=qwen3.7" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 3: BIG-STAT - Tokyo photonic chip 1000x -->
+<section class="spread spread--stat" id="s3">
+  <div class="meta">
+    <span>r/Futurology &nbsp;&middot;&nbsp; 1,774 pts &nbsp;&middot;&nbsp; techradar.com</span>
+  </div>
+  <span class="label">Photonics &nbsp;&middot;&nbsp; Tokyo &nbsp;&middot;&nbsp; speed without the heat</span>
+  <span class="bigstat" aria-hidden="true">1,000<span class="arrow">&times;</span><span class="small">Faster, and reportedly cooler running</span></span>
+  <h1>A chip that moves data with <em>light</em>, not current.</h1>
+  <p class="dek">Researchers in Tokyo have built a device that they say can move data through a chip up to a thousand times faster than conventional electronics, and crucially without generating the extra heat that throttles today's processors. The honest caveat is buried in the headline: this is years from anything you can buy. Still, the heat ceiling is the real wall in modern computing, and any credible route past it is worth tracking.</p>
+  <div class="source">
+    <span>A device that speeds up chips 1,000x without extra heat &nbsp;&middot;&nbsp; techradar.com</span>
+    <a href="https://www.techradar.com/pro/researchers-have-built-a-device-that-increases-computer-chip-processing-speed-by-1000-times-but-without-generating-extra-heat-potentially-ushering-in-a-new-generation-of-devices-but-you-wont-get-one-for-several-years-at-least" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 4: ACADEMIC DROP-CAP - mRNA cancer vaccine -->
+<section class="spread spread--academic" id="s4">
+  <div class="meta">
+    <span class="num-small">&sect; 04</span>
+    <span>r/science &nbsp;&middot;&nbsp; 22.4k pts &nbsp;&middot;&nbsp; news.mit.edu</span>
+  </div>
+  <div class="rule"></div>
+  <span class="journal-tag">immunology &nbsp;&middot;&nbsp; mRNA &nbsp;&middot;&nbsp; teaching the T cell to hit harder</span>
+  <h1>A sharper way to <em>vaccinate against cancer</em>.</h1>
+  <p class="body-text dropcap">An MIT-led team has reworked the mRNA cancer-vaccine recipe to produce markedly more powerful T cells, the immune fighters that actually hunt tumour cells, by tuning how the vaccine is delivered rather than which target it points at. The work sits in the same mRNA lineage that gave us the covid vaccines, now turned toward the much harder problem of getting the immune system to treat a tumour as foreign. Early, animal-stage, and a long way from clinic, but a meaningful nudge to a field that has spent years almost working.</p>
+  <div class="source">
+    <span>A new approach to cancer vaccination yields more powerful T cells &nbsp;&middot;&nbsp; news.mit.edu</span>
+    <a href="https://news.mit.edu/2026/new-approach-cancer-vaccination-yields-more-powerful-t-cells-0513" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 5: TERMINAL - How fast is N tokens per second -->
+<section class="spread spread--terminal" id="s5">
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 362 pts &nbsp;&middot;&nbsp; mikeveerman.github.io</span>
+    <span class="flag">🎯 GWAI</span>
+  </div>
+  <span class="prompt">stream --model any --watch tokens/sec</span>
+  <h1>What does <em>N tokens per second</em> actually feel like?</h1>
+  <pre class="ascii-block" aria-hidden="true">  10 tok/s   |####                 slower than reading
+  30 tok/s   |##########           comfortable
+  60 tok/s   |####################  faster than you read
+ 120 tok/s   |##########################  a blur</pre>
+  <p class="dek">A small, beautifully literal web toy that animates text streaming at any tokens-per-second rate so you can feel the difference between a model that crawls and one that races. The point lands harder than any spec sheet: throughput is a UX decision, not just a billing line. Useful in a workshop the next time someone asks why a faster, dumber model can beat a slower, smarter one for live work.<span class="cursor"></span></p>
+  <div class="source">
+    <span>How fast is N tokens per second really? &nbsp;&middot;&nbsp; mikeveerman.github.io</span>
+    <a href="https://mikeveerman.github.io/tokenspeed/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 6: MIDNIGHT - Why kelvin and mole -->
+<section class="spread spread--midnight" id="s6">
+  <div class="wave" aria-hidden="true"><div class="ring"></div></div>
+  <div class="meta">
+    <span>r/Physics &nbsp;&middot;&nbsp; 982 pts &nbsp;&middot;&nbsp; reddit.com/r/Physics</span>
+  </div>
+  <span class="roman-tiny">vi &nbsp;&middot;&nbsp; metrology &nbsp;&middot;&nbsp; the seven that hold everything up</span>
+  <h1>Why <em>kelvin</em> and <em>mole</em> made the cut.</h1>
+  <p class="dek">A neat diagram and discussion ask a deceptively deep question: of all the things we measure, why are temperature and amount-of-substance two of the seven base SI units, while speed and energy are merely derived? The answer is a small lesson in how physics chooses its foundations, picking the quantities that cannot be built cleanly from the others. A good five-minute reminder that even the ruler was a design decision someone had to argue for.</p>
+  <div class="source">
+    <span>Fundamental units: why kelvin and mole? &nbsp;&middot;&nbsp; r/Physics</span>
+    <a href="https://reddit.com/r/Physics/comments/1thqs5k/fundamental_units_why_kelvin_and_mole/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 7: TYPOGRAPHIC COLLAGE - Apple video wallpapers reverse-engineered -->
+<section class="spread spread--collage" id="s7">
+  <div class="ghost" aria-hidden="true">VII</div>
+  <div class="meta">
+    <span>HN &nbsp;&middot;&nbsp; 201 pts &nbsp;&middot;&nbsp; github.com/kageroumado</span>
+  </div>
+  <span class="tag">reverse engineering &nbsp;&middot;&nbsp; aerial screensavers &nbsp;&middot;&nbsp; the seams behind the gloss</span>
+  <h1>Pulling apart Apple's <em>aerial wallpapers</em>.</h1>
+  <div class="aside">Phosphene: how the drifting cities and coastlines are actually built.</div>
+  <p class="dek">A developer reverse-engineered the lush aerial video wallpapers Apple ships across its devices and rebuilt the pipeline as an open project called Phosphene, documenting how the loops are encoded, served, and stitched. It is the satisfying kind of teardown that turns a piece of polished consumer magic back into legible engineering. Equal parts useful reference and quiet reminder that almost nothing on a screen is as effortless as it looks.</p>
+  <div class="source">
+    <span>Show HN: I reverse engineered Apple's video wallpapers &nbsp;&middot;&nbsp; github.com/kageroumado</span>
+    <a href="https://github.com/kageroumado/phosphene" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 8: COLOUR-FIELD MINIMALIST - Googolplex written out -->
+<section class="spread spread--field" id="s8">
+  <div class="meta">
+    <span>r/InternetIsBeautiful &nbsp;&middot;&nbsp; 311 pts &nbsp;&middot;&nbsp; googolplexwrittenout.com</span>
+  </div>
+  <span class="field-num" aria-hidden="true">Eight &middot; a number too big for the universe</span>
+  <div class="field-mid">
+    <h1>A googolplex, <em>written out in full</em>.</h1>
+  </div>
+  <p class="dek">This single-purpose site sets out to print the number googolplex digit by digit, across more PDF volumes than there are atoms to store them, which is exactly the joke and exactly the point. It is a gentle, hands-on way to feel the gap between a number you can write as a tower of powers and one you could ever actually inscribe. The kind of toy that explains scale better than any lecture.</p>
+  <div class="source">
+    <span>Googolplex written out &nbsp;&middot;&nbsp; googolplexwrittenout.com</span>
+    <a href="https://www.googolplexwrittenout.com/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 9: ROSE-ALERT-STAMP - 560-610 minutes of exercise -->
+<section class="spread spread--alert" id="s9">
+  <div class="stamp" aria-hidden="true">
+    <span class="stamp-top">Bulletin</span>
+    <span class="stamp-mid">no. 9</span>
+    <span class="stamp-bot">Filed 21&middot;V&middot;26</span>
+  </div>
+  <div class="meta">
+    <span>r/science &nbsp;&middot;&nbsp; 22.4k pts &nbsp;&middot;&nbsp; bmjgroup.com</span>
+  </div>
+  <span class="stamp-num">Public health &nbsp;&middot;&nbsp; the new number</span>
+  <h1>The exercise target just <em>went up</em>.</h1>
+  <p class="dek">A large BMJ-published analysis suggests the dose of activity needed for substantial heart benefit is closer to 560 to 610 minutes a week of moderate-to-vigorous movement, well above the familiar 150-minute guideline. Read it as a ceiling worth aiming toward rather than a stick to beat yourself with: the early minutes still buy the most health per hour. But if you have been treating the old number as "done", this is the nudge to add a few more walks.</p>
+  <div class="source">
+    <span>560-610 minutes of exercise a week for substantial heart benefit &nbsp;&middot;&nbsp; bmjgroup.com</span>
+    <a href="https://bmjgroup.com/560-610-minutes-of-exercise-a-week-needed-for-substantial-heart-benefits/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- STORY 10: MANIFESTO - CO2 into fuel -->
+<section class="spread spread--manifesto" id="s10">
+  <div class="bg-num" aria-hidden="true">X</div>
+  <div class="meta">
+    <span>r/Futurology &nbsp;&middot;&nbsp; 1,140 pts &nbsp;&middot;&nbsp; timesofindia.indiatimes.com</span>
+  </div>
+  <div class="roman">X.</div>
+  <h1>Carbon, turned <em>back into fuel</em>.</h1>
+  <p class="dek">A newly demonstrated system reportedly converts captured carbon dioxide into roughly 110 pounds of usable fuel a day, closing a small loop in what is normally a one-way trip to the atmosphere. Treat the figures with the usual press-release caution and the energy accounting with even more, since the question is always what powers the conversion. But the ambition is the right one: not just storing carbon, but making it pay its way back.</p>
+  <div class="source">
+    <span>Turning carbon dioxide into 110 pounds of daily fuel &nbsp;&middot;&nbsp; timesofindia.indiatimes.com</span>
+    <a href="https://timesofindia.indiatimes.com/science/this-newly-developed-technology-is-successfully-turning-carbon-dioxide-into-110-pounds-of-daily-fuel/articleshow/131115064.cms" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 022 &nbsp;&middot;&nbsp; 21 May 2026 &nbsp;&middot;&nbsp; Ten stories for one reader.</p>
+  <p>Fetched, curated, and designed autonomously at 7am by a scheduled Claude agent.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
