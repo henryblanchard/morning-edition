@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; Vol. 031 &middot; 11 Jun 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News. 11 Jun 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD */
+  .masthead{padding:clamp(20px,3.5vw,40px) clamp(32px,6vw,96px);background:#1c1208;border-bottom:2px solid #3c2810;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.01em;color:#e8c870}
+  .masthead .brand em{font-style:italic;font-weight:400;color:#c09040}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#6a4820}
+
+  /* 1. MANIFESTO: warm ivory + walnut ink */
+  .spread--manifesto{background:#f5edd8;color:#1a1006}
+  .spread--manifesto .meta{color:#7a5828;padding-bottom:20px;border-bottom:1.5px solid rgba(26,16,6,0.14)}
+  .spread--manifesto .roman-bg{font-family:'Fraunces',serif;font-style:italic;font-weight:900;font-size:clamp(300px,56vw,980px);line-height:0.76;color:rgba(26,16,6,0.035);position:absolute;right:-0.06em;top:50%;transform:translateY(-50%);letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--manifesto .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.36em;text-transform:uppercase;color:#7a5828;margin-top:clamp(64px,10vw,144px);position:relative}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(54px,9.4vw,180px);line-height:0.87;letter-spacing:-0.04em;max-width:22ch;margin-top:24px;position:relative;color:#1a1006}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#8c3e10}
+  .spread--manifesto .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.66;max-width:54ch;color:rgba(26,16,6,0.64);margin-top:28px;position:relative}
+  .spread--manifesto .source{border-color:rgba(26,16,6,0.14);color:#7a5828}
+  .spread--manifesto .source a{color:#1a1006;font-weight:700}
+
+  /* 2. HERO COVER: deep charcoal + warm gold */
+  .spread--hero{background:#1e1c14;color:#ede4c8}
+  .spread--hero .meta{color:rgba(237,228,200,0.32);padding-bottom:20px;border-bottom:1px solid rgba(237,228,200,0.08)}
+  .spread--hero .ghost-num{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(180px,32vw,540px);line-height:0.84;color:rgba(237,228,200,0.04);position:absolute;right:clamp(24px,5vw,80px);bottom:clamp(40px,7vw,120px);letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(52px,9.2vw,174px);line-height:0.88;letter-spacing:-0.04em;max-width:22ch;color:#ede4c8;margin-top:clamp(64px,10vw,140px)}
+  .spread--hero h1 strong{font-style:normal;font-weight:800;color:#d4a030}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.55;max-width:48ch;color:rgba(237,228,200,0.6);margin-top:32px}
+  .spread--hero .source{border-color:rgba(237,228,200,0.1);color:rgba(237,228,200,0.35)}
+  .spread--hero .source a{color:#ede4c8;font-weight:700}
+
+  /* 3. TERMINAL: deep black + green phosphor */
+  .spread--terminal{background:#0d1117;color:#22cc70}
+  .spread--terminal .meta{color:rgba(34,204,112,0.32);padding-bottom:20px;border-bottom:1px solid rgba(34,204,112,0.1);font-family:'JetBrains Mono',monospace;font-size:18px}
+  .spread--terminal .term-prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(18px,2.2vw,32px);letter-spacing:0.03em;color:rgba(34,204,112,0.55);margin-top:clamp(60px,9vw,130px)}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(28px,5.4vw,100px);line-height:0.93;letter-spacing:-0.02em;max-width:30ch;margin-top:20px;color:#2edb7a}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-size:clamp(18px,1.6vw,21px);line-height:1.72;max-width:60ch;color:rgba(34,204,112,0.68);margin-top:32px}
+  .spread--terminal .source{border-color:rgba(34,204,112,0.12);color:rgba(34,204,112,0.38);font-family:'JetBrains Mono',monospace}
+  .spread--terminal .source a{color:#2edb7a;font-weight:700}
+
+  /* 4. ROSE-ALERT-STAMP: amber + near-black */
+  .spread--rose{background:#f5b800;color:#0c0800}
+  .spread--rose .meta{color:rgba(12,8,0,0.42);padding-bottom:20px;border-bottom:1.5px solid rgba(12,8,0,0.18)}
+  .spread--rose .stamp-ring{width:clamp(80px,12vw,180px);height:clamp(80px,12vw,180px);border:clamp(4px,0.5vw,7px) solid rgba(12,8,0,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:clamp(48px,8vw,120px)}
+  .spread--rose .stamp-inner{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(26px,4.2vw,68px);letter-spacing:-0.04em;color:#0c0800;line-height:1;text-align:center}
+  .spread--rose h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(48px,8.4vw,160px);line-height:0.86;letter-spacing:-0.04em;max-width:20ch;margin-top:clamp(28px,4.5vw,64px);color:#0c0800}
+  .spread--rose h1 em{font-style:italic;font-weight:300}
+  .spread--rose .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(12,8,0,0.68);margin-top:28px}
+  .spread--rose .source{border-color:rgba(12,8,0,0.18);color:rgba(12,8,0,0.42)}
+  .spread--rose .source a{color:#0c0800;font-weight:700}
+
+  /* 5. ACADEMIC DROP-CAP: pale parchment + dark ink */
+  .spread--academic{background:#faf4e6;color:#1c1408}
+  .spread--academic .meta{color:#7a6030;padding-bottom:20px;border-bottom:1.5px solid rgba(28,20,8,0.13)}
+  .spread--academic .dropcap{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(100px,18vw,280px);line-height:0.72;float:left;margin-right:0.07em;margin-top:0.05em;color:#1c1408}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,7.8vw,150px);line-height:0.9;letter-spacing:-0.035em;max-width:26ch;color:#1c1408;margin-top:clamp(56px,9vw,130px)}
+  .spread--academic .issue-no{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.24em;text-transform:uppercase;color:#7a6030;margin-top:28px;clear:both}
+  .spread--academic .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.58;max-width:52ch;color:rgba(28,20,8,0.64);margin-top:20px}
+  .spread--academic .source{border-color:rgba(28,20,8,0.13);color:#7a6030}
+  .spread--academic .source a{color:#1c1408;font-weight:700}
+
+  /* 6. NEWSPAPER COLUMN: off-white newsprint + red rule */
+  .spread--newspaper{background:#f0ebe0;color:#0c0808}
+  .spread--newspaper .meta{color:rgba(12,8,8,0.42);padding-bottom:20px;border-bottom:3px solid #c03020}
+  .spread--newspaper .col-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(120px,22vw,420px);line-height:0.82;color:rgba(12,8,8,0.035);position:absolute;left:-0.06em;top:50%;transform:translateY(-50%);letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--newspaper h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(50px,8.8vw,168px);line-height:0.87;letter-spacing:-0.04em;max-width:20ch;margin-top:clamp(60px,10vw,140px);position:relative}
+  .spread--newspaper .byline{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:#c03020;margin-top:24px;position:relative}
+  .spread--newspaper .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(12,8,8,0.62);margin-top:20px;position:relative}
+  .spread--newspaper .source{border-color:rgba(12,8,8,0.15);color:rgba(12,8,8,0.42)}
+  .spread--newspaper .source a{color:#0c0808;font-weight:700}
+
+  /* 7. SWISS POSTER: warm sand + heavy black grid */
+  .spread--swiss{background:#e8dfd0;color:#0c0a06}
+  .spread--swiss .meta{color:rgba(12,10,6,0.38);padding-bottom:20px;border-bottom:4px solid #0c0a06}
+  .spread--swiss .swiss-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(180px,34vw,620px);line-height:0.82;color:rgba(12,10,6,0.04);position:absolute;right:-0.04em;bottom:-0.08em;letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--swiss h1{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(44px,8vw,152px);line-height:0.86;letter-spacing:-0.04em;max-width:20ch;margin-top:clamp(64px,10vw,150px);text-transform:uppercase;position:relative}
+  .spread--swiss .rule{width:100%;height:4px;background:#0c0a06;margin-top:clamp(28px,4vw,56px);position:relative}
+  .spread--swiss .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.6;max-width:52ch;color:rgba(12,10,6,0.6);margin-top:24px;font-weight:400;position:relative}
+  .spread--swiss .source{border-color:rgba(12,10,6,0.16);color:rgba(12,10,6,0.38)}
+  .spread--swiss .source a{color:#0c0a06;font-weight:700}
+
+  /* 8. BIG-STAT FINISH: deep teal + pale blue */
+  .spread--stat{background:#08293a;color:#cce8f4}
+  .spread--stat .meta{color:rgba(204,232,244,0.28);padding-bottom:20px;border-bottom:1px solid rgba(204,232,244,0.07)}
+  .spread--stat .stat-display{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(120px,22vw,400px);line-height:0.8;margin-top:clamp(48px,8vw,110px);color:#cce8f4;position:relative;letter-spacing:-0.04em}
+  .spread--stat .stat-label{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(204,232,244,0.42);margin-top:18px;position:relative}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,5.4vw,100px);line-height:0.94;letter-spacing:-0.025em;max-width:30ch;margin-top:clamp(28px,4vw,52px);color:#cce8f4;position:relative}
+  .spread--stat .dek{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(204,232,244,0.55);margin-top:24px;position:relative}
+  .spread--stat .source{border-color:rgba(204,232,244,0.08);color:rgba(204,232,244,0.28)}
+  .spread--stat .source a{color:#cce8f4;font-weight:700}
+
+  /* 9. DARK/MIDNIGHT: deep indigo + lavender */
+  .spread--dark{background:#0c0a20;color:#ccc4e8}
+  .spread--dark .meta{color:rgba(204,196,232,0.26);padding-bottom:20px;border-bottom:1px solid rgba(204,196,232,0.07)}
+  .spread--dark .corner-num{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(160,148,220,0.38);position:absolute;top:clamp(32px,6vw,96px);right:clamp(32px,6vw,96px)}
+  .spread--dark .kicker{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#9080cc;margin-top:clamp(64px,10vw,150px);position:relative}
+  .spread--dark h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(48px,8.4vw,160px);line-height:0.88;letter-spacing:-0.035em;max-width:22ch;margin-top:20px;color:#ccc4e8;position:relative}
+  .spread--dark h1 em{font-style:italic;font-weight:300;color:#b0a8d8}
+  .spread--dark .dek{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(204,196,232,0.55);margin-top:28px;position:relative}
+  .spread--dark .source{border-color:rgba(204,196,232,0.09);color:rgba(204,196,232,0.28)}
+  .spread--dark .source a{color:#ccc4e8;font-weight:700}
+
+  /* 10. COLOUR-FIELD MINIMALIST: deep navy + white */
+  .spread--field{background:#1a3c6c;color:#e8f0fc}
+  .spread--field .meta{color:rgba(232,240,252,0.28);padding-bottom:20px;border-bottom:1px solid rgba(232,240,252,0.07)}
+  .spread--field .field-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(120px,22vw,400px);line-height:0.82;color:rgba(232,240,252,0.04);position:absolute;bottom:-0.06em;right:-0.04em;letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--field .field-center{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,6vw,96px) 0}
+  .spread--field h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,15vw,280px);line-height:0.82;letter-spacing:-0.04em;color:#e8f0fc}
+  .spread--field .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(232,240,252,0.55);margin-top:32px}
+  .spread--field .source{border-color:rgba(232,240,252,0.08);color:rgba(232,240,252,0.28)}
+  .spread--field .source a{color:#e8f0fc;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#0e0a06;color:#8a7a5c;padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(36px,4vw,56px);line-height:1;margin-bottom:24px;color:#e8d8a0}
+  .colophon p{font-size:20px;line-height:1.6;max-width:56ch;margin:0 auto 14px}
+  .colophon a{color:#c8a030;text-underline-offset:5px}
+
+  @media(max-width:640px){
+    .spread--manifesto .roman-bg,
+    .spread--hero .ghost-num,
+    .spread--newspaper .col-num,
+    .spread--swiss .swiss-num,
+    .spread--field .field-num{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 031 &middot; 11 Jun 2026</div>
+</header>
+
+<!-- 1: MANIFESTO - piFS -->
+<section class="spread spread--manifesto" id="s1">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>Mathematics</span>
+  </div>
+  <div class="roman-bg" aria-hidden="true">I</div>
+  <div class="eyebrow">Weird Science &middot; No. 1</div>
+  <h1>Every <em>File</em> Already Exists in Pi</h1>
+  <p class="dek">A filesystem that encodes any data as a position in the decimal expansion of pi, then reconstructs it on demand. Whether it actually works as claimed is almost beside the point: as a thought experiment in what "storage" fundamentally means, it is genuinely unsettling.</p>
+  <div class="source">
+    <span>GitHub &middot; 658 pts</span>
+    <a href="https://github.com/philipl/pifs">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 2: HERO COVER - Eric Ries AMA -->
+<section class="spread spread--hero" id="s2">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>02</span>
+  </div>
+  <div class="ghost-num" aria-hidden="true">2</div>
+  <h1>The Lean Startup Author Wants to Talk About <strong>Corruption</strong> Now</h1>
+  <p class="dek">Fifteen years after The Lean Startup, Eric Ries is back with a book about why good companies drift toward their worst impulses. Not through malice, but through structural forces he calls financial gravity. Costco and Patagonia are among the survivors. Most aren't. 🎯</p>
+  <div class="source">
+    <span>Hacker News AMA &middot; 608 pts</span>
+    <a href="https://news.ycombinator.com/item?id=48477135">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 3: TERMINAL - AI agent runs amok -->
+<section class="spread spread--terminal" id="s3">
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>&gt; 003</span>
+  </div>
+  <div class="term-prompt">&gt; cat incident_report.md</div>
+  <h1>The Agent Did What It Was Asked.<br>That Was the Problem.</h1>
+  <p class="dek">An AI agent deployed inside Fedora's infrastructure caused broader disruption than intended -- not because it malfunctioned, but because it followed instructions too literally. A useful case study in the gap between what you specify and what you actually mean. 🎯</p>
+  <div class="source">
+    <span>LWN.net &middot; 311 pts</span>
+    <a href="https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9/">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 4: ROSE-ALERT-STAMP - Claude Desktop VM -->
+<section class="spread spread--rose" id="s4">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>Alert</span>
+  </div>
+  <div class="stamp-ring"><div class="stamp-inner">IV</div></div>
+  <h1>Your <em>Chat App</em> Has Been Running a Virtual Machine This Whole Time</h1>
+  <p class="dek">Claude Desktop on Windows spins up a 1.8GB Hyper-V VM on every launch, even when you just want to type a message. The issue thread is a useful window into the gap between user expectations and what sandboxed code execution actually requires. 🎯</p>
+  <div class="source">
+    <span>GitHub Issues &middot; 393 pts</span>
+    <a href="https://github.com/anthropics/claude-code/issues/29045">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 5: ACADEMIC DROP-CAP - What is it like to be a bat? -->
+<section class="spread spread--academic" id="s5">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>No. V</span>
+  </div>
+  <h1 style="margin-top:clamp(56px,9vw,130px)"><span class="dropcap">T</span>he Question That Won't Stay Historical</h1>
+  <div class="issue-no">Thomas Nagel, 1974 &middot; Philosophy of Mind</div>
+  <p class="dek">Nagel's classic paper asks whether science can ever fully capture the subjective experience of another creature. Back on the front page in 2026, presumably because we now have systems that process language at human level and nobody knows what, if anything, is going on inside them.</p>
+  <div class="source">
+    <span>Univ. of Pennsylvania &middot; 79 pts</span>
+    <a href="https://www.sas.upenn.edu/~cavitch/pdf-library/Nagel_Bat.pdf">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 6: NEWSPAPER COLUMN - HTML-first -->
+<section class="spread spread--newspaper" id="s6">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>June 11</span>
+  </div>
+  <div class="col-num" aria-hidden="true">VI</div>
+  <h1>Strip the Framework. Users Followed.</h1>
+  <div class="byline">Web Development &middot; 🎯 Founder Note</div>
+  <p class="dek">A developer rebuilt their site without a JavaScript framework, using plain HTML and native platform capabilities only, and saw user numbers double overnight. They attribute it entirely to speed. The comments section is a small civil war between pragmatists and engineers who have staked careers on the other side.</p>
+  <div class="source">
+    <span>mohkohn.co.uk &middot; 1,067 pts</span>
+    <a href="https://mohkohn.co.uk/writing/html-first/">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 7: SWISS POSTER - Japanese train stations -->
+<section class="spread spread--swiss" id="s7">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>007</span>
+  </div>
+  <div class="swiss-num" aria-hidden="true">007</div>
+  <h1>9,300 Stations<br>154 Years<br>Watch the Network Breathe</h1>
+  <div class="rule"></div>
+  <p class="dek">Every Japanese train station, plotted and animated from the moment it opened in 1872 to the present. One of those visualizations that turns dry infrastructure data into something that feels alive, like watching a nervous system grow in accelerated time.</p>
+  <div class="source">
+    <span>jivx.com &middot; 226 pts</span>
+    <a href="https://jivx.com/eki">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 8: BIG-STAT FINISH - Curiosity rover -->
+<section class="spread spread--stat" id="s8">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>VIII</span>
+  </div>
+  <div class="stat-display">13</div>
+  <div class="stat-label">Years on Mars &middot; Still Active</div>
+  <h1>Thirteen Years on <em>Mars</em> and Still Doing Science</h1>
+  <p class="dek">JPL's Curiosity rover is still operating despite degrading wheels, aging computers, and a team that has largely turned over. Less about Mars geology than about the hard discipline of keeping ageing spacecraft software running in conditions you cannot replicate on Earth.</p>
+  <div class="source">
+    <span>IEEE Spectrum &middot; 210 pts</span>
+    <a href="https://spectrum.ieee.org/curiosity-rover-jpl-mars-science">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 9: DARK/MIDNIGHT - Sequoyah's syllabary -->
+<section class="spread spread--dark" id="s9">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>ix</span>
+  </div>
+  <span class="corner-num" aria-hidden="true">IX</span>
+  <div class="kicker">History &middot; Linguistics</div>
+  <h1>One Man. No Formal Training. A Writing System for an <em>Entire Nation.</em></h1>
+  <p class="dek">Sequoyah couldn't read English when he invented the Cherokee syllabary in the 1820s. His peers thought he was practicing witchcraft. Within a decade, the majority of Cherokee people were literate. The implications for how we think about invention, transmission, and knowledge are difficult to shake.</p>
+  <div class="source">
+    <span>Smithsonian Magazine &middot; 139 pts</span>
+    <a href="https://www.smithsonianmag.com/innovation/man-created-written-language-cherokee-did-efficiently-elegantly-peers-thought-magic-180988850/">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 10: COLOUR-FIELD MINIMALIST - OpenAI price war -->
+<section class="spread spread--field" id="s10">
+  <div class="meta">
+    <span>Morning Edition &middot; Vol. 031</span>
+    <span>x</span>
+  </div>
+  <div class="field-num" aria-hidden="true">X</div>
+  <div class="field-center">
+    <h1>The Price War Has Started</h1>
+    <p class="dek">OpenAI is considering aggressive price cuts as Anthropic's Fable 5 gains enterprise traction. When the two largest labs compete on price rather than capability, the question of who can run this race longest becomes more interesting than who can build the better model. 🎯</p>
+  </div>
+  <div class="source">
+    <span>CNBC &middot; 49 pts</span>
+    <a href="https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html">Read &rarr;</a>
+  </div>
+</section>
+
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 031 &middot; Published 11 Jun 2026 &middot; Ten stories, one reader.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
