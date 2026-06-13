@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; Vol. 032 &middot; 13 Jun 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News. 13 Jun 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source-bar{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source-bar a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD */
+  .masthead{padding:clamp(20px,3.5vw,40px) clamp(32px,6vw,96px);background:#1c2c1c;border-bottom:2px solid #2e4a2e;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.01em;color:#a8d090}
+  .masthead .brand em{font-style:italic;font-weight:400;color:#70a050}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#486848}
+
+  /* 1. SWISS POSTER: forest green + cream */
+  .spread--swiss{background:#2d4a2d;color:#f5ede0}
+  .spread--swiss .meta{color:rgba(245,237,224,0.38);padding-bottom:20px;border-bottom:1px solid rgba(245,237,224,0.1)}
+  .spread--swiss .big-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(120px,22vw,340px);line-height:1;color:rgba(245,237,224,0.07);position:absolute;right:clamp(24px,5vw,80px);top:clamp(24px,5vw,80px);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--swiss .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#7ebd60;margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--swiss h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(56px,10.5vw,200px);line-height:0.86;letter-spacing:-0.04em;max-width:18ch;margin-top:20px;position:relative;color:#f5ede0}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:#a8e880}
+  .spread--swiss .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(245,237,224,0.62);margin-top:28px;position:relative}
+  .spread--swiss .source-bar{border-color:rgba(245,237,224,0.12);color:rgba(245,237,224,0.38)}
+  .spread--swiss .source-bar a{color:#f5ede0;font-weight:700}
+
+  /* 2. MANIFESTO: deep navy + warm white */
+  .spread--manifesto{background:#0a1428;color:#f0ead8}
+  .spread--manifesto .meta{color:rgba(240,234,216,0.3);padding-bottom:20px;border-bottom:1px solid rgba(240,234,216,0.08)}
+  .spread--manifesto .roman-bg{font-family:'Fraunces',serif;font-style:italic;font-weight:900;font-size:clamp(280px,52vw,900px);line-height:0.76;color:rgba(240,234,216,0.025);position:absolute;right:-0.06em;top:50%;transform:translateY(-50%);letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--manifesto .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.36em;text-transform:uppercase;color:#6a90c0;margin-top:clamp(64px,10vw,144px);position:relative}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(54px,9.2vw,172px);line-height:0.87;letter-spacing:-0.04em;max-width:22ch;margin-top:24px;position:relative;color:#f0ead8}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#b8d860}
+  .spread--manifesto .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.66;max-width:54ch;color:rgba(240,234,216,0.62);margin-top:28px;position:relative}
+  .spread--manifesto .source-bar{border-color:rgba(240,234,216,0.1);color:rgba(240,234,216,0.32)}
+  .spread--manifesto .source-bar a{color:#f0ead8;font-weight:700}
+
+  /* 3. DARK/MIDNIGHT: near-black + teal glow */
+  .spread--midnight{background:#060d0d;color:#d0f5ec}
+  .spread--midnight .meta{color:rgba(208,245,236,0.28);padding-bottom:20px;border-bottom:1px solid rgba(208,245,236,0.06)}
+  .spread--midnight .glyph-accent{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(200px,36vw,600px);line-height:0.82;color:rgba(30,207,160,0.055);position:absolute;right:-0.02em;bottom:clamp(20px,4vw,60px);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--midnight .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.3em;text-transform:uppercase;color:#1ecfa0;margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(52px,9.6vw,182px);line-height:0.88;letter-spacing:-0.035em;max-width:24ch;margin-top:24px;position:relative;color:#d0f5ec}
+  .spread--midnight h1 strong{font-weight:900;font-style:normal;color:#1ecfa0}
+  .spread--midnight .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(208,245,236,0.6);margin-top:28px;position:relative}
+  .spread--midnight .source-bar{border-color:rgba(208,245,236,0.08);color:rgba(208,245,236,0.28)}
+  .spread--midnight .source-bar a{color:#1ecfa0;font-weight:700}
+
+  /* 4. ROSE-ALERT-STAMP: crimson + ivory */
+  .spread--rose{background:#cc1a1a;color:#fdf6ea}
+  .spread--rose .meta{color:rgba(253,246,234,0.42);padding-bottom:20px;border-bottom:1.5px solid rgba(253,246,234,0.2)}
+  .spread--rose .stamp-ring{width:clamp(80px,12vw,180px);height:clamp(80px,12vw,180px);border:clamp(4px,0.5vw,7px) solid rgba(253,246,234,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:clamp(48px,8vw,120px)}
+  .spread--rose .stamp-inner{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(26px,4.2vw,68px);letter-spacing:-0.04em;color:#fdf6ea;line-height:1;text-align:center}
+  .spread--rose h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(48px,8.4vw,158px);line-height:0.86;letter-spacing:-0.04em;max-width:20ch;margin-top:clamp(28px,4.5vw,64px);color:#fdf6ea}
+  .spread--rose h1 em{font-style:italic;font-weight:300}
+  .spread--rose .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(253,246,234,0.72);margin-top:28px}
+  .spread--rose .source-bar{border-color:rgba(253,246,234,0.2);color:rgba(253,246,234,0.45)}
+  .spread--rose .source-bar a{color:#fdf6ea;font-weight:700}
+
+  /* 5. TERMINAL: dark + phosphor green */
+  .spread--terminal{background:#0d1117;color:#22cc70}
+  .spread--terminal .meta{color:rgba(34,204,112,0.32);padding-bottom:20px;border-bottom:1px solid rgba(34,204,112,0.1);font-family:'JetBrains Mono',monospace;font-size:18px}
+  .spread--terminal .term-prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(18px,2.2vw,30px);letter-spacing:0.03em;color:rgba(34,204,112,0.42);margin-top:clamp(60px,9vw,130px)}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(26px,5vw,90px);line-height:0.95;letter-spacing:-0.02em;max-width:32ch;margin-top:20px;color:#2edb7a}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-size:clamp(18px,1.6vw,21px);line-height:1.72;max-width:60ch;color:rgba(34,204,112,0.68);margin-top:32px}
+  .spread--terminal .source-bar{border-color:rgba(34,204,112,0.12);color:rgba(34,204,112,0.38);font-family:'JetBrains Mono',monospace}
+  .spread--terminal .source-bar a{color:#2edb7a;font-weight:700}
+
+  /* 6. COLOUR-FIELD MINIMALIST: warm ochre + deep brown */
+  .spread--colourfield{background:#e8840a;color:#1a0c02}
+  .spread--colourfield .meta{color:rgba(26,12,2,0.4);padding-bottom:20px;border-bottom:1.5px solid rgba(26,12,2,0.14)}
+  .spread--colourfield .stroke-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(200px,38vw,660px);line-height:0.78;-webkit-text-stroke:clamp(2px,0.3vw,5px) rgba(26,12,2,0.11);color:transparent;position:absolute;left:-0.04em;bottom:-0.1em;letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--colourfield .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,12,2,0.52);margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--colourfield h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(52px,10vw,192px);line-height:0.87;letter-spacing:-0.04em;max-width:18ch;margin-top:20px;position:relative;color:#1a0c02}
+  .spread--colourfield h1 em{font-style:italic;font-weight:300;color:rgba(26,12,2,0.58)}
+  .spread--colourfield .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(26,12,2,0.64);margin-top:28px;position:relative}
+  .spread--colourfield .source-bar{border-color:rgba(26,12,2,0.16);color:rgba(26,12,2,0.42)}
+  .spread--colourfield .source-bar a{color:#1a0c02;font-weight:700}
+
+  /* 7. ACADEMIC DROP-CAP: lavender parchment + deep ink */
+  .spread--academic{background:#f4f0f8;color:#1a1028}
+  .spread--academic .meta{color:#6a5880;padding-bottom:20px;border-bottom:1.5px solid rgba(26,16,40,0.12)}
+  .spread--academic .dropcap{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(100px,18vw,280px);line-height:0.72;float:left;margin-right:0.07em;margin-top:0.05em;color:#3a2858}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,7.6vw,146px);line-height:0.9;letter-spacing:-0.035em;max-width:26ch;color:#1a1028;margin-top:clamp(56px,9vw,130px)}
+  .spread--academic .issue-no{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.24em;text-transform:uppercase;color:#6a5880;margin-top:28px;clear:both}
+  .spread--academic .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.58;max-width:52ch;color:rgba(26,16,40,0.62);margin-top:20px}
+  .spread--academic .source-bar{border-color:rgba(26,16,40,0.12);color:#6a5880}
+  .spread--academic .source-bar a{color:#1a1028;font-weight:700}
+
+  /* 8. TYPOGRAPHIC COLLAGE: ink black + hot orange */
+  .spread--collage{background:#0f0f0f;color:#f0e8e0}
+  .spread--collage .meta{color:rgba(240,232,224,0.28);padding-bottom:20px;border-bottom:1px solid rgba(240,232,224,0.07)}
+  .spread--collage .collage-word{font-family:'Fraunces',serif;font-style:italic;font-weight:900;line-height:0.86;color:rgba(255,77,26,0.07);position:absolute;pointer-events:none;user-select:none;letter-spacing:-0.06em}
+  .spread--collage .collage-word.w1{font-size:clamp(80px,16vw,260px);left:-0.04em;top:clamp(80px,14vw,200px)}
+  .spread--collage .collage-word.w2{font-size:clamp(60px,12vw,200px);right:-0.04em;bottom:clamp(60px,10vw,140px);font-weight:200;opacity:0.6}
+  .spread--collage .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#ff4d1a;margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--collage h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(52px,9.2vw,174px);line-height:0.87;letter-spacing:-0.04em;max-width:20ch;margin-top:20px;position:relative;color:#f0e8e0}
+  .spread--collage h1 em{font-style:italic;font-weight:300;color:#ff4d1a}
+  .spread--collage .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(240,232,224,0.6);margin-top:28px;position:relative}
+  .spread--collage .source-bar{border-color:rgba(240,232,224,0.08);color:rgba(240,232,224,0.28)}
+  .spread--collage .source-bar a{color:#f0e8e0;font-weight:700}
+
+  /* 9. HERO COVER: dusty sage + near-black */
+  .spread--hero{background:#c8d8c4;color:#111a0f}
+  .spread--hero .meta{color:rgba(17,26,15,0.36);padding-bottom:20px;border-bottom:1px solid rgba(17,26,15,0.12)}
+  .spread--hero .ghost-num{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(180px,32vw,520px);line-height:0.84;color:rgba(17,26,15,0.05);position:absolute;right:clamp(24px,5vw,80px);bottom:clamp(40px,7vw,120px);letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:200;font-style:italic;font-size:clamp(52px,9.2vw,172px);line-height:0.88;letter-spacing:-0.04em;max-width:22ch;color:#111a0f;margin-top:clamp(64px,10vw,140px)}
+  .spread--hero h1 strong{font-style:normal;font-weight:900;color:#1a4a0a}
+  .spread--hero .dek{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(20px,2vw,26px);line-height:1.55;max-width:48ch;color:rgba(17,26,15,0.62);margin-top:32px}
+  .spread--hero .source-bar{border-color:rgba(17,26,15,0.14);color:rgba(17,26,15,0.38)}
+  .spread--hero .source-bar a{color:#111a0f;font-weight:700}
+
+  /* 10. BIG-STAT FINISH: deep plum + gold */
+  .spread--stat{background:#1e0a2e;color:#e8e0f0}
+  .spread--stat .meta{color:rgba(232,224,240,0.28);padding-bottom:20px;border-bottom:1px solid rgba(232,224,240,0.07)}
+  .spread--stat .stat-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,30vw,520px);line-height:0.84;color:#e8c030;letter-spacing:-0.06em;margin-top:clamp(48px,7vw,100px)}
+  .spread--stat .stat-unit{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(18px,2vw,28px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,224,240,0.44);margin-top:8px}
+  .spread--stat h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(34px,6vw,112px);line-height:0.92;letter-spacing:-0.03em;max-width:28ch;margin-top:clamp(24px,4vw,52px);color:#e8e0f0}
+  .spread--stat .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(232,224,240,0.6);margin-top:24px}
+  .spread--stat .source-bar{border-color:rgba(232,224,240,0.08);color:rgba(232,224,240,0.28)}
+  .spread--stat .source-bar a{color:#e8c030;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{background:#111;color:#888;padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(36px,4vw,56px);line-height:1;margin-bottom:24px;color:#ccc}
+  .colophon p{font-size:20px;line-height:1.6;max-width:56ch;margin:0 auto 14px}
+  .colophon a{color:#e8c030}
+
+  @media (max-width:640px){
+    .spread--colourfield .stroke-num,
+    .spread--swiss .big-num,
+    .spread--collage .collage-word,
+    .spread--midnight .glyph-accent,
+    .spread--hero .ghost-num,
+    .spread--manifesto .roman-bg{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 032 &nbsp;&middot;&nbsp; 13 Jun 2026</div>
+</header>
+
+<!-- 1. SWISS POSTER: Fable 5 / Mythos 5 US government ban -->
+<section class="spread spread--swiss" id="s1">
+  <div class="meta">
+    <span>01</span>
+    <span>HN &middot; 1,741 pts &nbsp;&#127919;</span>
+  </div>
+  <div class="big-num" aria-hidden="true">01</div>
+  <div class="eyebrow">Breaking &middot; AI Governance</div>
+  <h1>Washington <em>Pulls the Plug</em> on Two AIs</h1>
+  <p class="dek">The US government has issued a directive suspending public access to Fable 5 and Mythos 5, Anthropic's most capable frontier models. Anthropic's statement offers measured protest without apparent panic; the underlying question - whether a government can unilaterally gate the most powerful AI systems in existence - is one the industry has been quietly dreading.</p>
+  <div class="source-bar">
+    <span>anthropic.com</span>
+    <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 2. MANIFESTO: human effort and attention -->
+<section class="spread spread--manifesto" id="s2">
+  <div class="meta">
+    <span>II</span>
+    <span>HN &middot; 1,550 pts &nbsp;&#127919;</span>
+  </div>
+  <div class="roman-bg" aria-hidden="true">II</div>
+  <div class="eyebrow">Attention Economics</div>
+  <h1>You Reap <em>What</em> You Signal</h1>
+  <p class="dek">A quietly devastating observation: if you want a human to read your work, the text needs to carry visible evidence that a human made it. AI slop has trained readers to pattern-match on effort signals before spending attention. The piece doesn't argue against AI tools; it argues for accountability in what you send out into the world.</p>
+  <div class="source-bar">
+    <span>tombedor.dev</span>
+    <a href="https://tombedor.dev/human-attention-and-human-effort/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 3. MIDNIGHT: CRISPR cancer -->
+<section class="spread spread--midnight" id="s3">
+  <div class="meta">
+    <span>03</span>
+    <span>HN &middot; 771 pts</span>
+  </div>
+  <div class="glyph-accent" aria-hidden="true">III</div>
+  <div class="eyebrow">Biomedicine</div>
+  <h1>A Scalpel <strong>That Cuts</strong> at the Gene</h1>
+  <p class="dek">Researchers at the Innovative Genomics Institute have developed a CRISPR technique that selectively destroys cancer cells while leaving healthy tissue intact, including tumours previously labelled undruggable. The mechanism exploits a vulnerability specific to cancer's chromosomal chaos, and early results across multiple cancer types are compelling enough to accelerate clinical trials.</p>
+  <div class="source-bar">
+    <span>innovativegenomics.org</span>
+    <a href="https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 4. ROSE-ALERT-STAMP: open source AI -->
+<section class="spread spread--rose" id="s4">
+  <div class="meta">
+    <span>4</span>
+    <span>HN &middot; 627 pts &nbsp;&#127919;</span>
+  </div>
+  <div class="stamp-ring">
+    <div class="stamp-inner">4</div>
+  </div>
+  <h1>The Case for <em>Open</em> AI</h1>
+  <p class="dek">A manifesto-grade argument that proprietary AI development concentrates power in ways that make this morning's Fable/Mythos suspension story not just possible but inevitable. The argument isn't ideological; it's structural: closed models create single points of failure for the entire knowledge economy. Today's ban is Exhibit A.</p>
+  <div class="source-bar">
+    <span>opensourceaimustwin.com</span>
+    <a href="https://opensourceaimustwin.com/?share=v2" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 5. TERMINAL: malware targeting MCP developers -->
+<section class="spread spread--terminal" id="s5">
+  <div class="meta">
+    <span>05</span>
+    <span>HN &middot; 362 pts</span>
+  </div>
+  <div class="term-prompt">$ threat_report --target mcp-developers --severity critical</div>
+  <h1>Spyware That Hides Behind Forbidden Texts</h1>
+  <p class="dek">// Malware packages targeting MCP developers and bioinformatics researchers embedded nuclear and biological weapons text in their payloads. Apparent goal: trigger export-control detection systems, creating legal liability for the victims. Operational security weaponised as a legal trap. Watch your dependencies.</p>
+  <div class="source-bar">
+    <span>socket.dev via twitter</span>
+    <a href="https://twitter.com/jsrailton/status/2064661778978533571" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 6. COLOUR-FIELD MINIMALIST: electric motors -->
+<section class="spread spread--colourfield" id="s6">
+  <div class="meta">
+    <span>6</span>
+    <span>HN &middot; 352 pts</span>
+  </div>
+  <div class="stroke-num" aria-hidden="true">VI</div>
+  <div class="eyebrow">Engineering</div>
+  <h1>The Motor Without <em>the Mining Problem</em></h1>
+  <p class="dek">Renault's engineers have published a detailed breakdown of new electric motor designs that eliminate rare earth materials entirely. The geopolitical case is obvious; the engineering case is more interesting: permanent magnets aren't necessary if you're willing to rethink rotor geometry from scratch. A cleaner supply chain and a better motor.</p>
+  <div class="source-bar">
+    <span>renaultgroup.com</span>
+    <a href="https://www.renaultgroup.com/en/magazine/energy-and-powertrains/all-about-electric-motors-with-no-rare-earths/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 7. ACADEMIC DROP-CAP: "Don't You Just Upload It to ChatGPT?" -->
+<section class="spread spread--academic" id="s7">
+  <div class="meta">
+    <span>07</span>
+    <span>HN &middot; 381 pts &nbsp;&#127919;</span>
+  </div>
+  <div class="dropcap" aria-hidden="true">D</div>
+  <h1>on't You Just Upload It to ChatGPT?</h1>
+  <div class="issue-no">Story Seven &middot; Vol. 032</div>
+  <p class="dek">A researcher's field notes on what it actually means when colleagues treat AI as a magic upload button. The piece is careful not to be a lament; it ends up as a useful taxonomy of how AI literacy divides along the axis of what people think "understanding" means. Directly useful for anyone teaching AI skills in 2026.</p>
+  <div class="source-bar">
+    <span>correresmidestino.com</span>
+    <a href="https://correresmidestino.com/dont-you-just-upload-it-to-chatgpt/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 8. TYPOGRAPHIC COLLAGE: Palantir loses -->
+<section class="spread spread--collage" id="s8">
+  <div class="meta">
+    <span>viii</span>
+    <span>HN &middot; 265 pts</span>
+  </div>
+  <div class="collage-word w1" aria-hidden="true">Palantir</div>
+  <div class="collage-word w2" aria-hidden="true">Loses</div>
+  <div class="eyebrow">Press Freedom</div>
+  <h1>Palantir vs. a Magazine. <em>The Magazine Won.</em></h1>
+  <p class="dek">Palantir attempted to use legal means to suppress reporting by a Swiss investigative outlet. The challenge was dismissed. A reminder that surveillance capitalism companies remain uncomfortable with scrutiny of the kind they routinely apply to others; and that European press protections can, occasionally, hold.</p>
+  <div class="source-bar">
+    <span>ft.com</span>
+    <a href="https://www.ft.com/content/7ffcace7-9dc0-4e7e-9912-895ac073f979" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 9. HERO COVER: AI-generated frontend sloppiness -->
+<section class="spread spread--hero" id="s9">
+  <div class="meta">
+    <span>09</span>
+    <span>HN &middot; 182 pts &nbsp;&#127919;</span>
+  </div>
+  <div class="ghost-num" aria-hidden="true">9</div>
+  <h1>Against the <strong>Slop</strong> Aesthetic</h1>
+  <p class="dek">A practical guide to making AI-generated frontend code look less obviously AI-generated: the specific padding ratios, font-pairing failures, and border-radius habits that mark the work. Not a style guide; more of an autopsy of what defaults look like when no human eye reviewed the output. Essential reading if you ship AI-built interfaces.</p>
+  <div class="source-bar">
+    <span>envs.net</span>
+    <a href="https://envs.net/~volpe/blog/posts/reduce-slop.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 10. BIG-STAT FINISH: 21 zero-days in FFmpeg -->
+<section class="spread spread--stat" id="s10">
+  <div class="meta">
+    <span>X</span>
+    <span>HN &middot; 163 pts</span>
+  </div>
+  <div class="stat-num">21</div>
+  <div class="stat-unit">zero-days &middot; one library</div>
+  <h1>Twenty-One Ways to Break the World's Most-Used Media Library</h1>
+  <p class="dek">Security researchers found twenty-one previously undisclosed vulnerabilities in FFmpeg, the open-source library that processes audio and video across an enormous fraction of the internet's infrastructure. Twenty-one isn't just a count; it's a reminder of what hides beneath every streaming service, video editor, and broadcast system you've touched this week.</p>
+  <div class="source-bar">
+    <span>depthfirst.com</span>
+    <a href="https://depthfirst.com/research/21-zero-days-in-ffmpeg" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Published daily from a laptop in Battersea. Curated, written, and designed by an agent. Fraunces and Inter from Google Fonts. Hosted on GitHub Pages.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
