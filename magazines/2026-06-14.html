@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; Vol. 033 &middot; 14 Jun 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News. 14 Jun 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source-bar{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source-bar a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD */
+  .masthead{padding:clamp(20px,3.5vw,40px) clamp(32px,6vw,96px);background:#1a1a2e;border-bottom:2px solid #2d2d58;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.01em;color:#a0a8e0}
+  .masthead .brand em{font-style:italic;font-weight:400;color:#7080c8}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#4a5090}
+
+  /* 1. MANIFESTO: deep indigo + warm white */
+  .spread--manifesto{background:#0e0c24;color:#f0ead8}
+  .spread--manifesto .meta{color:rgba(240,234,216,0.3);padding-bottom:20px;border-bottom:1px solid rgba(240,234,216,0.08)}
+  .spread--manifesto .roman-bg{font-family:'Fraunces',serif;font-style:italic;font-weight:900;font-size:clamp(280px,52vw,900px);line-height:0.76;color:rgba(240,234,216,0.022);position:absolute;right:-0.06em;top:50%;transform:translateY(-50%);letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--manifesto .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.36em;text-transform:uppercase;color:#8090e0;margin-top:clamp(64px,10vw,144px);position:relative}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(54px,9.2vw,172px);line-height:0.87;letter-spacing:-0.04em;max-width:22ch;margin-top:24px;position:relative;color:#f0ead8}
+  .spread--manifesto h1 em{font-style:italic;font-weight:300;color:#aac060}
+  .spread--manifesto .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.66;max-width:54ch;color:rgba(240,234,216,0.62);margin-top:28px;position:relative}
+  .spread--manifesto .source-bar{border-color:rgba(240,234,216,0.1);color:rgba(240,234,216,0.32)}
+  .spread--manifesto .source-bar a{color:#f0ead8;font-weight:700}
+
+  /* 2. ROSE-ALERT-STAMP: crimson + ivory */
+  .spread--rose{background:#b81818;color:#fdf6ea}
+  .spread--rose .meta{color:rgba(253,246,234,0.42);padding-bottom:20px;border-bottom:1.5px solid rgba(253,246,234,0.2)}
+  .spread--rose .stamp-ring{width:clamp(80px,12vw,180px);height:clamp(80px,12vw,180px);border:clamp(4px,0.5vw,7px) solid rgba(253,246,234,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:clamp(48px,8vw,120px)}
+  .spread--rose .stamp-inner{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(26px,4.2vw,68px);letter-spacing:-0.04em;color:#fdf6ea;line-height:1;text-align:center}
+  .spread--rose h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(48px,8.4vw,158px);line-height:0.86;letter-spacing:-0.04em;max-width:20ch;margin-top:clamp(28px,4.5vw,64px);color:#fdf6ea}
+  .spread--rose h1 em{font-style:italic;font-weight:300}
+  .spread--rose .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.62;max-width:52ch;color:rgba(253,246,234,0.72);margin-top:28px}
+  .spread--rose .source-bar{border-color:rgba(253,246,234,0.2);color:rgba(253,246,234,0.45)}
+  .spread--rose .source-bar a{color:#fdf6ea;font-weight:700}
+
+  /* 3. TERMINAL: dark + phosphor green */
+  .spread--terminal{background:#0d1117;color:#22cc70}
+  .spread--terminal .meta{color:rgba(34,204,112,0.32);padding-bottom:20px;border-bottom:1px solid rgba(34,204,112,0.1);font-family:'JetBrains Mono',monospace;font-size:18px}
+  .spread--terminal .term-prompt{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(18px,2.2vw,30px);letter-spacing:0.03em;color:rgba(34,204,112,0.42);margin-top:clamp(60px,9vw,130px)}
+  .spread--terminal h1{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:clamp(24px,4.6vw,84px);line-height:0.96;letter-spacing:-0.02em;max-width:34ch;margin-top:20px;color:#2edb7a}
+  .spread--terminal .dek{font-family:'JetBrains Mono',monospace;font-size:clamp(18px,1.6vw,21px);line-height:1.72;max-width:60ch;color:rgba(34,204,112,0.68);margin-top:32px}
+  .spread--terminal .source-bar{border-color:rgba(34,204,112,0.12);color:rgba(34,204,112,0.38);font-family:'JetBrains Mono',monospace}
+  .spread--terminal .source-bar a{color:#2edb7a;font-weight:700}
+
+  /* 4. NEWSPAPER COLUMN: warm ivory + dark ink */
+  .spread--newspaper{background:#f8f2e6;color:#1a1208}
+  .spread--newspaper .meta{color:rgba(26,18,8,0.38);padding-bottom:16px;border-bottom:2px solid rgba(26,18,8,0.15)}
+  .spread--newspaper .col-rule{width:2px;background:rgba(26,18,8,0.1);position:absolute;left:50%;top:clamp(100px,14vw,200px);bottom:clamp(80px,10vw,140px)}
+  .spread--newspaper .issue-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(80px,14vw,220px);line-height:1;color:rgba(26,18,8,0.055);position:absolute;right:clamp(24px,5vw,80px);bottom:clamp(40px,6vw,100px);letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--newspaper .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,18,8,0.46);margin-top:clamp(48px,8vw,120px)}
+  .spread--newspaper h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,8vw,148px);line-height:0.88;letter-spacing:-0.04em;max-width:20ch;margin-top:20px;color:#1a1208}
+  .spread--newspaper h1 em{font-style:italic;font-weight:300}
+  .spread--newspaper .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.66;max-width:52ch;color:rgba(26,18,8,0.62);margin-top:24px}
+  .spread--newspaper .source-bar{border-color:rgba(26,18,8,0.14);color:rgba(26,18,8,0.38)}
+  .spread--newspaper .source-bar a{color:#1a1208;font-weight:700}
+
+  /* 5. HERO COVER: sage green + cream */
+  .spread--hero{background:#3d6b4f;color:#f5edd8}
+  .spread--hero .meta{color:rgba(245,237,216,0.38);padding-bottom:20px;border-bottom:1px solid rgba(245,237,216,0.12)}
+  .spread--hero .hero-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(200px,38vw,640px);line-height:0.82;color:rgba(245,237,216,0.05);position:absolute;left:-0.04em;bottom:clamp(20px,4vw,60px);letter-spacing:-0.08em;-webkit-text-stroke:clamp(2px,0.3vw,4px) rgba(245,237,216,0.1);user-select:none;pointer-events:none}
+  .spread--hero .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:#a0d8b0;margin-top:clamp(80px,14vw,200px);position:relative}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(54px,10vw,190px);line-height:0.87;letter-spacing:-0.03em;max-width:22ch;margin-top:24px;position:relative;color:#f5edd8}
+  .spread--hero h1 strong{font-weight:900;font-style:normal}
+  .spread--hero .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(245,237,216,0.65);margin-top:28px;position:relative}
+  .spread--hero .source-bar{border-color:rgba(245,237,216,0.12);color:rgba(245,237,216,0.4)}
+  .spread--hero .source-bar a{color:#f5edd8;font-weight:700}
+
+  /* 6. COLOUR-FIELD MINIMALIST: warm ochre + dark */
+  .spread--colourfield{background:#e8a840;color:#1c1008}
+  .spread--colourfield .meta{color:rgba(28,16,8,0.35);padding-bottom:20px;border-bottom:1px solid rgba(28,16,8,0.12)}
+  .spread--colourfield .field-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(300px,56vw,960px);line-height:0.78;color:rgba(28,16,8,0.05);position:absolute;right:-0.04em;top:50%;transform:translateY(-52%);letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--colourfield .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(28,16,8,0.5);margin-top:clamp(80px,14vw,200px);position:relative}
+  .spread--colourfield h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(52px,9.8vw,186px);line-height:0.87;letter-spacing:-0.04em;max-width:20ch;margin-top:24px;position:relative;color:#1c1008}
+  .spread--colourfield h1 em{font-style:italic;font-weight:300;color:#6b3808}
+  .spread--colourfield .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(28,16,8,0.62);margin-top:28px;position:relative}
+  .spread--colourfield .source-bar{border-color:rgba(28,16,8,0.14);color:rgba(28,16,8,0.38)}
+  .spread--colourfield .source-bar a{color:#1c1008;font-weight:700}
+
+  /* 7. ACADEMIC DROP-CAP: powder blue + near-black */
+  .spread--academic{background:#dce8f8;color:#0c1820}
+  .spread--academic .meta{color:rgba(12,24,32,0.38);padding-bottom:20px;border-bottom:1px solid rgba(12,24,32,0.12)}
+  .spread--academic .acad-num{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(160px,30vw,500px);line-height:0.9;color:rgba(12,24,32,0.055);position:absolute;right:clamp(24px,4vw,60px);top:50%;transform:translateY(-50%);letter-spacing:-0.04em;user-select:none;pointer-events:none}
+  .spread--academic .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(12,24,32,0.44);margin-top:clamp(64px,10vw,144px);position:relative}
+  .spread--academic .drop-cap{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(90px,16vw,260px);line-height:0.78;letter-spacing:-0.06em;color:rgba(12,24,32,0.09);float:left;margin-right:0.08em;margin-top:0.06em}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(44px,8vw,148px);line-height:0.88;letter-spacing:-0.04em;max-width:24ch;margin-top:20px;position:relative;color:#0c1820}
+  .spread--academic h1 em{font-style:italic;font-weight:300;color:#1a5080}
+  .spread--academic .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.66;max-width:52ch;color:rgba(12,24,32,0.58);margin-top:24px;position:relative;clear:both}
+  .spread--academic .source-bar{border-color:rgba(12,24,32,0.12);color:rgba(12,24,32,0.35)}
+  .spread--academic .source-bar a{color:#0c1820;font-weight:700}
+
+  /* 8. DARK/MIDNIGHT: near-black + teal glow */
+  .spread--midnight{background:#060d0d;color:#d0f5ec}
+  .spread--midnight .meta{color:rgba(208,245,236,0.28);padding-bottom:20px;border-bottom:1px solid rgba(208,245,236,0.06)}
+  .spread--midnight .glyph-accent{font-family:'Fraunces',serif;font-style:italic;font-weight:200;font-size:clamp(200px,36vw,600px);line-height:0.82;color:rgba(30,207,160,0.045);position:absolute;right:-0.02em;bottom:clamp(20px,4vw,60px);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--midnight .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.3em;text-transform:uppercase;color:#1ecfa0;margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(52px,9.6vw,182px);line-height:0.88;letter-spacing:-0.035em;max-width:24ch;margin-top:24px;position:relative;color:#d0f5ec}
+  .spread--midnight h1 strong{font-weight:900;font-style:normal;color:#1ecfa0}
+  .spread--midnight .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(208,245,236,0.6);margin-top:28px;position:relative}
+  .spread--midnight .source-bar{border-color:rgba(208,245,236,0.08);color:rgba(208,245,236,0.28)}
+  .spread--midnight .source-bar a{color:#1ecfa0;font-weight:700}
+
+  /* 9. SWISS POSTER: burnt sienna + warm cream */
+  .spread--swiss{background:#c4501a;color:#faecd8}
+  .spread--swiss .meta{color:rgba(250,236,216,0.38);padding-bottom:20px;border-bottom:1px solid rgba(250,236,216,0.1)}
+  .spread--swiss .big-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(120px,22vw,340px);line-height:1;color:rgba(250,236,216,0.065);position:absolute;right:clamp(24px,5vw,80px);top:clamp(24px,5vw,80px);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--swiss .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(250,236,216,0.6);margin-top:clamp(80px,12vw,160px);position:relative}
+  .spread--swiss h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(56px,10.5vw,200px);line-height:0.86;letter-spacing:-0.04em;max-width:18ch;margin-top:20px;position:relative;color:#faecd8}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:rgba(250,236,216,0.72)}
+  .spread--swiss .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:52ch;color:rgba(250,236,216,0.62);margin-top:28px;position:relative}
+  .spread--swiss .source-bar{border-color:rgba(250,236,216,0.12);color:rgba(250,236,216,0.38)}
+  .spread--swiss .source-bar a{color:#faecd8;font-weight:700}
+
+  /* 10. BIG-STAT FINISH: deep aubergine + gold */
+  .spread--bigstat{background:#1e0a2e;color:#f0dca8}
+  .spread--bigstat .meta{color:rgba(240,220,168,0.28);padding-bottom:20px;border-bottom:1px solid rgba(240,220,168,0.08)}
+  .spread--bigstat .stat-bg{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(240px,44vw,760px);line-height:0.78;-webkit-text-stroke:clamp(1px,0.2vw,3px) rgba(240,220,168,0.07);color:transparent;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);letter-spacing:-0.08em;user-select:none;pointer-events:none;white-space:nowrap}
+  .spread--bigstat .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(240,220,168,0.48);margin-top:clamp(64px,10vw,144px);position:relative}
+  .spread--bigstat .big-figure{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,18vw,300px);line-height:0.84;letter-spacing:-0.06em;color:#f0dca8;margin-top:clamp(16px,2.5vw,36px);position:relative}
+  .spread--bigstat .big-unit{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(22px,3vw,48px);letter-spacing:0.08em;text-transform:uppercase;color:rgba(240,220,168,0.52);display:block;margin-top:8px}
+  .spread--bigstat h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(36px,6vw,110px);line-height:0.9;letter-spacing:-0.03em;max-width:26ch;margin-top:clamp(20px,3vw,44px);position:relative;color:#f0dca8}
+  .spread--bigstat .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.64;max-width:54ch;color:rgba(240,220,168,0.55);margin-top:24px;position:relative}
+  .spread--bigstat .source-bar{border-color:rgba(240,220,168,0.1);color:rgba(240,220,168,0.3)}
+  .spread--bigstat .source-bar a{color:#f0dca8;font-weight:700}
+
+  /* COLOPHON */
+  .colophon{padding:clamp(40px,7vw,100px) clamp(32px,6vw,96px);background:#0e0c24;color:rgba(240,234,216,0.4);text-align:center;font-family:'Inter',sans-serif;font-size:20px}
+  .colophon a{color:rgba(240,234,216,0.7);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 033 &middot; 14 June 2026</div>
+</header>
+
+<!-- SPREAD 1: MANIFESTO - GLM 5.2 -->
+<section class="spread spread--manifesto" id="s1">
+  <div class="roman-bg">I</div>
+  <div class="meta">
+    <span>No. 01</span>
+    <span>Hacker News &middot; 476 pts 🎯</span>
+  </div>
+  <div class="eyebrow">AI / New Models</div>
+  <h1>China's Answer to <em>GPT-4o</em> Gets an Upgrade</h1>
+  <p class="dek">GLM 5.2 lands from Tsinghua's Zhipu AI, and the competition at the frontier just got a little more interesting. The model reportedly trades blows with top Western offerings on reasoning benchmarks, a sign that the gap is closing faster than many assumed.</p>
+  <div class="source-bar">
+    <span>twitter.com/jietang</span>
+    <a href="https://twitter.com/jietang/status/2065784751345287314" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 2: ROSE-ALERT-STAMP - Amazon / Anthropic crackdown -->
+<section class="spread spread--rose" id="s2">
+  <div class="meta">
+    <span>No. 02</span>
+    <span>Hacker News &middot; 628 pts</span>
+  </div>
+  <div class="stamp-ring"><div class="stamp-inner">02</div></div>
+  <h1>The Politics of AI, <em>Played at Board Level</em></h1>
+  <p class="dek">Behind the scenes of the AI arms race, the WSJ reports that Amazon's CEO privately lobbied U.S. officials, a conversation that ultimately led to government restrictions on certain Anthropic capabilities. A reminder that frontier AI is now as much geopolitical theatre as it is engineering.</p>
+  <div class="source-bar">
+    <span>wsj.com</span>
+    <a href="https://www.wsj.com/tech/ai/amazon-ceos-talks-with-u-s-officials-triggered-crackdown-on-anthropic-models-dcc90578?st=Yct6gx&reflink=desktopwebshare_permalink" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 3: TERMINAL - Making Claude a Chemist -->
+<section class="spread spread--terminal" id="s3">
+  <div class="meta">
+    <span>No. 03</span>
+    <span>HN / anthropic.com &middot; 18 pts 🎯</span>
+  </div>
+  <div class="term-prompt">$ ./research --domain=chemistry --model=claude --year=2026</div>
+  <h1>Teaching an LLM<br>to Think<br>in Molecules</h1>
+  <p class="dek">Anthropic publishes research on extending Claude into specialist scientific domains, specifically chemistry. The methods here are worth studying for any AI educator: fine-tuning, tool use, and knowledge grounding layered together into something that can reason about synthesis routes.</p>
+  <div class="source-bar">
+    <span>anthropic.com/research</span>
+    <a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 4: NEWSPAPER COLUMN - Census noise ban -->
+<section class="spread spread--newspaper" id="s4">
+  <div class="col-rule"></div>
+  <div class="issue-num">IV</div>
+  <div class="meta">
+    <span>No. 04</span>
+    <span>Hacker News &middot; 789 pts</span>
+  </div>
+  <div class="eyebrow">Data / Privacy / Policy</div>
+  <h1>The Government <em>Outlawed</em> Its Own Privacy Trick</h1>
+  <p class="dek">Differential privacy researchers are watching with dismay as the U.S. Census Bureau is barred from adding calibrated statistical noise to its published data, a technique designed to protect individuals within aggregate statistics. The decision trades privacy for precision, and the implications reach far beyond demographics.</p>
+  <div class="source-bar">
+    <span>desfontain.es</span>
+    <a href="https://desfontain.es/blog/banning-noise.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 5: HERO COVER - Cancer master switch -->
+<section class="spread spread--hero" id="s5">
+  <div class="hero-num">5</div>
+  <div class="meta">
+    <span>No. 05</span>
+    <span>Hacker News &middot; 336 pts</span>
+  </div>
+  <div class="eyebrow">Science / Medicine</div>
+  <h1>The Switch That Might <strong>Turn Cancer Off</strong></h1>
+  <p class="dek">Research into some of the hardest-to-treat tumours may have uncovered a fundamental regulatory mechanism shared across many cancers. If it holds up, this is less a treatment breakthrough and more a key that could unlock multiple doors at once.</p>
+  <div class="source-bar">
+    <span>economist.com</span>
+    <a href="https://economist.com/science-and-technology/2026/06/12/treating-pancreatic-tumours-may-have-revealed-cancers-master-switch" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 6: COLOUR-FIELD MINIMALIST - Every Frame Perfect -->
+<section class="spread spread--colourfield" id="s6">
+  <div class="field-num">6</div>
+  <div class="meta">
+    <span>No. 06</span>
+    <span>Hacker News &middot; 650 pts</span>
+  </div>
+  <div class="eyebrow">Creative Software / Design</div>
+  <h1>The Secret Race to Draw <em>One Billion Pixels</em></h1>
+  <p class="dek">Nikita Prokopov's deep-dive into why software UIs are still, in 2026, often unable to render at the full frame rate of the display they're running on. A beautifully argued piece about the stubborn gap between what hardware can do and what software actually delivers.</p>
+  <div class="source-bar">
+    <span>tonsky.me</span>
+    <a href="https://tonsky.me/blog/every-frame-perfect/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 7: ACADEMIC DROP-CAP - RTX dual GPU inference -->
+<section class="spread spread--academic" id="s7">
+  <div class="acad-num">VII</div>
+  <div class="meta">
+    <span>No. 07</span>
+    <span>Hacker News &middot; 222 pts 🎯</span>
+  </div>
+  <div class="eyebrow">AI / Local Inference</div>
+  <h1><span class="drop-cap">R</span>unning a 27-Billion-Parameter Model at <em>Conversation Speed</em></h1>
+  <p class="dek">A real-world dual-GPU setup achieving 80 tokens per second on a 27B quantised model makes local AI inference genuinely viable for everyday use. Worth benchmarking against cloud costs if you're building AI products or running workshops that depend on fast, private inference.</p>
+  <div class="source-bar">
+    <span>imil.net</span>
+    <a href="https://imil.net/blog/posts/2026/rtx-5080-+-rtx-3090-setup-80+-tok-s-on-qwen-3.6-27b-q8/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 8: DARK/MIDNIGHT - AI fabricated police evidence -->
+<section class="spread spread--midnight" id="s8">
+  <div class="glyph-accent">viii</div>
+  <div class="meta">
+    <span>No. 08</span>
+    <span>Hacker News &middot; 285 pts 🎯</span>
+  </div>
+  <div class="eyebrow">AI Ethics / Law</div>
+  <h1>When AI Becomes a <strong>Tool for Fabrication</strong></h1>
+  <p class="dek">A Derbyshire police officer is under investigation for allegedly using AI tools to manufacture or alter evidence across several cases. It is exactly the kind of real-world AI misuse story that belongs in any serious course on AI ethics, and the full consequences are still unfolding.</p>
+  <div class="source-bar">
+    <span>news.sky.com</span>
+    <a href="https://news.sky.com/story/derbyshire-police-officer-investigated-for-using-ai-to-create-evidence-in-multiple-cases-13553661" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 9: SWISS POSTER - Retired phones as low-carbon servers -->
+<section class="spread spread--swiss" id="s9">
+  <div class="big-num">9</div>
+  <div class="meta">
+    <span>No. 09</span>
+    <span>Hacker News &middot; 268 pts</span>
+  </div>
+  <div class="eyebrow">Sustainability / Computing</div>
+  <h1>Your Old iPhone Is <em>Somebody's Server</em></h1>
+  <p class="dek">Google Research proposes repurposing decommissioned smartphones as a distributed, low-carbon computing substrate, sidestepping the enormous environmental cost of manufacturing new hardware. It is a smart sustainability argument dressed up as an infrastructure proposal.</p>
+  <div class="source-bar">
+    <span>research.google</span>
+    <a href="https://research.google/blog/a-low-carbon-computing-platform-from-your-retired-phones/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 10: BIG-STAT FINISH - Ancient genome duplications -->
+<section class="spread spread--bigstat" id="s10">
+  <div class="stat-bg">X</div>
+  <div class="meta">
+    <span>No. 10</span>
+    <span>Hacker News &middot; 29 pts</span>
+  </div>
+  <div class="eyebrow">Biology / Evolution</div>
+  <div class="big-figure">500M<span class="big-unit">years in the making</span></div>
+  <h1>How Your Brain Was Built in Geological Time</h1>
+  <p class="dek">Oxford researchers trace the evolutionary origin of neural complexity to whole-genome duplication events hundreds of millions of years ago, events that multiplied the genetic toolkit available to early vertebrates. The brains we take for granted were, in the deepest sense, an accident of scale.</p>
+  <div class="source-bar">
+    <span>ox.ac.uk</span>
+    <a href="https://www.ox.ac.uk/news/2026-06-09-ancient-genome-duplications-laid-the-foundations-of-complex-brains" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <p>Morning Edition &middot; Vol. 033 &middot; 14 June 2026<br>
+  <a href="../index.html">Back to archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
