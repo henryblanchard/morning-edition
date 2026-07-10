@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; Vol. 044 &middot; 10 Jul 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News. 10 Jul 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source-bar{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source-bar a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD */
+  .masthead{padding:clamp(20px,3.5vw,40px) clamp(32px,6vw,96px);background:#060e18;border-bottom:2px solid #0e2236;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.01em;color:#a8cce0}
+  .masthead .brand em{font-style:italic;font-weight:400;color:#c8e4f4}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#2a5070}
+
+  /* ===== 1. HERO COVER: deep slate-blue + pale gold ===== */
+  .spread--hero{background:#121824;color:#f0d88a}
+  .spread--hero .meta{color:rgba(240,216,138,0.20);padding-bottom:20px;border-bottom:1px solid rgba(240,216,138,0.07)}
+  .spread--hero .ghost-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(320px,68vw,1400px);line-height:0.80;color:rgba(240,216,138,0.010);position:absolute;right:-0.08em;top:-0.04em;letter-spacing:-0.08em;user-select:none;pointer-events:none;white-space:nowrap}
+  .spread--hero .hero-eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.38em;text-transform:uppercase;color:rgba(240,216,138,0.30);margin-top:clamp(80px,14vw,200px);position:relative}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(56px,11vw,210px);line-height:0.87;letter-spacing:-0.04em;max-width:18ch;margin-top:24px;position:relative;color:#f0d88a}
+  .spread--hero .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:52ch;color:rgba(240,216,138,0.52);margin-top:30px;position:relative}
+  .spread--hero .source-bar{border-color:rgba(240,216,138,0.08);color:rgba(240,216,138,0.26)}
+  .spread--hero .source-bar a{color:#f0d88a;font-weight:800}
+
+  /* ===== 2. ROSE-ALERT-STAMP: cream + deep crimson ===== */
+  .spread--rose{background:#f8f0e8;color:#1a0408}
+  .spread--rose .meta{color:rgba(26,4,8,0.26);padding-bottom:20px;border-bottom:2px solid rgba(26,4,8,0.08)}
+  .spread--rose .stamp-wrap{position:absolute;top:clamp(28px,5vw,72px);right:clamp(28px,5vw,72px);user-select:none;pointer-events:none}
+  .spread--rose .stamp-circle{width:clamp(80px,14vw,200px);height:clamp(80px,14vw,200px);border:4px solid rgba(26,4,8,0.12);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transform:rotate(-8deg)}
+  .spread--rose .stamp-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(28px,5.6vw,72px);letter-spacing:-0.04em;line-height:1;color:rgba(26,4,8,0.14)}
+  .spread--rose .stamp-text{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(9px,1.1vw,11px);letter-spacing:0.34em;text-transform:uppercase;color:rgba(26,4,8,0.14)}
+  .spread--rose .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(26,4,8,0.32);margin-top:clamp(64px,10vw,140px);position:relative}
+  .spread--rose h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(38px,7.8vw,150px);line-height:0.87;letter-spacing:-0.03em;max-width:22ch;margin-top:20px;color:#1a0408;position:relative}
+  .spread--rose h1 em{font-style:italic;font-weight:400;color:#c01820}
+  .spread--rose .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:54ch;color:rgba(26,4,8,0.58);margin-top:28px;position:relative}
+  .spread--rose .source-bar{border-color:rgba(26,4,8,0.10);color:rgba(26,4,8,0.28)}
+  .spread--rose .source-bar a{color:#c01820}
+
+  /* ===== 3. TERMINAL/MONOSPACE: near-black + phosphor green ===== */
+  .spread--terminal{background:#040408;color:#3ad460}
+  .spread--terminal .meta{color:rgba(58,212,96,0.18);padding-bottom:20px;border-bottom:1px solid rgba(58,212,96,0.05);font-family:'Courier New',Courier,monospace;letter-spacing:0.06em}
+  .spread--terminal .term-num{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(18px,2vw,24px);letter-spacing:0.12em;color:rgba(58,212,96,0.24);margin-top:clamp(60px,10vw,130px)}
+  .spread--terminal .prompt{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(20px,2.4vw,32px);letter-spacing:0.04em;color:rgba(58,212,96,0.38);margin-top:20px}
+  .spread--terminal h1{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(22px,4.4vw,82px);line-height:0.96;letter-spacing:-0.02em;max-width:32ch;margin-top:16px;color:#3ad460}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#3ad460;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .spread--terminal .dek{font-family:'Courier New',Courier,monospace;font-size:clamp(18px,1.7vw,22px);line-height:1.74;max-width:54ch;color:rgba(58,212,96,0.44);margin-top:28px}
+  .spread--terminal .source-bar{border-color:rgba(58,212,96,0.06);color:rgba(58,212,96,0.22);font-family:'Courier New',Courier,monospace}
+  .spread--terminal .source-bar a{color:#3ad460}
+
+  /* ===== 4. ACADEMIC DROP-CAP: warm ochre + deep earth ===== */
+  .spread--academic{background:#f2e8cc;color:#180c04}
+  .spread--academic .meta{color:rgba(24,12,4,0.26);padding-bottom:20px;border-bottom:1.5px solid rgba(24,12,4,0.08)}
+  .spread--academic .acad-num{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(100px,22vw,380px);line-height:1;color:rgba(24,12,4,0.030);position:absolute;top:clamp(28px,5vw,72px);right:clamp(28px,5vw,72px);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--academic .subject{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(24,12,4,0.32);margin-top:clamp(64px,10vw,144px)}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,6.8vw,130px);line-height:0.89;letter-spacing:-0.03em;max-width:24ch;margin-top:20px;color:#180c04}
+  .spread--academic .dropcap-body{font-family:'Fraunces',serif;font-size:clamp(20px,2.1vw,25px);line-height:1.78;max-width:58ch;margin-top:36px;font-weight:350;color:rgba(24,12,4,0.68)}
+  .spread--academic .dropcap-body::first-letter{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,13vw,168px);float:left;line-height:0.78;margin:0.06em 0.10em 0 0;color:#180c04}
+  .spread--academic .source-bar{border-color:rgba(24,12,4,0.10);color:rgba(24,12,4,0.28)}
+  .spread--academic .source-bar a{color:#180c04}
+
+  /* ===== 5. MANIFESTO: deep oxblood + warm rose ===== */
+  .spread--manifesto{background:#1a0404;color:#f08878}
+  .spread--manifesto .meta{color:rgba(240,136,120,0.20);padding-bottom:20px;border-bottom:1px solid rgba(240,136,120,0.07)}
+  .spread--manifesto .ghost-i{font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(300px,66vw,1200px);line-height:0.88;color:rgba(240,136,120,0.012);position:absolute;left:-0.04em;top:-0.06em;letter-spacing:-0.08em;user-select:none;pointer-events:none;white-space:nowrap}
+  .spread--manifesto .num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:20px;letter-spacing:0.36em;color:rgba(240,136,120,0.26);margin-top:clamp(60px,10vw,140px);position:relative}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,9.4vw,180px);line-height:0.84;letter-spacing:-0.04em;max-width:20ch;margin-top:22px;position:relative;color:#f08878}
+  .spread--manifesto .rule{width:80px;height:4px;background:#f08878;margin-top:36px;opacity:0.34;position:relative}
+  .spread--manifesto .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,2vw,26px);line-height:1.72;max-width:54ch;color:rgba(240,136,120,0.52);margin-top:32px;position:relative;border-left:3px solid rgba(240,136,120,0.20);padding-left:24px}
+  .spread--manifesto .source-bar{border-color:rgba(240,136,120,0.09);color:rgba(240,136,120,0.24)}
+  .spread--manifesto .source-bar a{color:#f08878}
+
+  /* ===== 6. SWISS POSTER: bright white + deep ink ===== */
+  .spread--swiss{background:#f0f0ec;color:#080810}
+  .spread--swiss .meta{color:rgba(8,8,16,0.22);padding-bottom:20px;border-bottom:3px solid rgba(8,8,16,0.07)}
+  .spread--swiss .swiss-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(260px,54vw,960px);line-height:0.88;color:rgba(8,8,16,0.015);position:absolute;right:-0.06em;top:-0.08em;letter-spacing:-0.10em;user-select:none;pointer-events:none}
+  .spread--swiss .eyebrow{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(8,8,16,0.30);margin-top:clamp(60px,10vw,144px);position:relative}
+  .spread--swiss h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,8.4vw,160px);line-height:0.84;letter-spacing:-0.04em;max-width:22ch;margin-top:22px;position:relative;color:#080810}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:rgba(8,8,80,0.58)}
+  .spread--swiss .rule-h{width:100%;height:5px;background:#080810;margin-top:28px;opacity:0.09;position:relative}
+  .spread--swiss .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.70;max-width:54ch;color:rgba(8,8,16,0.54);margin-top:28px;position:relative}
+  .spread--swiss .source-bar{border-color:rgba(8,8,16,0.09);color:rgba(8,8,16,0.26)}
+  .spread--swiss .source-bar a{color:#080810}
+
+  /* ===== 7. DARK/MIDNIGHT: deep indigo + cool cyan ===== */
+  .spread--midnight{background:#060810;color:#80c8f0}
+  .spread--midnight .meta{color:rgba(128,200,240,0.18);padding-bottom:20px;border-bottom:1px solid rgba(128,200,240,0.05)}
+  .spread--midnight .mid-num{font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(200px,46vw,860px);line-height:0.78;color:rgba(128,200,240,0.009);position:absolute;right:-0.04em;bottom:-0.12em;letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--midnight .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(128,200,240,0.24);margin-top:clamp(80px,16vw,210px);position:relative}
+  .spread--midnight .vol-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:18px;letter-spacing:0.22em;color:rgba(128,200,240,0.16);margin-top:12px;position:relative}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(42px,8.4vw,160px);line-height:0.88;letter-spacing:-0.03em;max-width:22ch;margin-top:24px;position:relative;color:#80c8f0}
+  .spread--midnight .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.70;max-width:54ch;color:rgba(128,200,240,0.44);margin-top:28px;position:relative}
+  .spread--midnight .source-bar{border-color:rgba(128,200,240,0.07);color:rgba(128,200,240,0.22)}
+  .spread--midnight .source-bar a{color:#80c8f0}
+
+  /* ===== 8. COLOUR-FIELD MINIMALIST: soft terracotta + dark espresso ===== */
+  .spread--colorfield{background:#d8a898;color:#140806}
+  .spread--colorfield .meta{color:rgba(20,8,6,0.24);padding-bottom:20px;border-bottom:1px solid rgba(20,8,6,0.06)}
+  .spread--colorfield .cf-band{height:clamp(28px,5vw,56px);background:#c09080;width:100%;position:absolute;bottom:0;left:0;right:0}
+  .spread--colorfield .cf-num{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(100px,22vw,380px);line-height:0.80;color:rgba(20,8,6,0.040);position:absolute;right:clamp(32px,6vw,96px);top:50%;transform:translateY(-58%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--colorfield .cf-label{font-family:'Inter',sans-serif;font-weight:400;font-size:18px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(20,8,6,0.28);margin-top:clamp(80px,16vw,220px);position:relative}
+  .spread--colorfield h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(42px,8.4vw,160px);line-height:0.88;letter-spacing:-0.03em;max-width:22ch;margin-top:28px;color:#140806;position:relative}
+  .spread--colorfield .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.75;max-width:52ch;color:rgba(20,8,6,0.60);margin-top:32px;position:relative}
+  .spread--colorfield .source-bar{border-color:rgba(20,8,6,0.09);color:rgba(20,8,6,0.30);z-index:2;position:relative}
+  .spread--colorfield .source-bar a{color:#140806;font-weight:700}
+
+  /* ===== 9. NEWSPAPER COLUMN: newsprint + dark ink ===== */
+  .spread--newspaper{background:#ede8dc;color:#0e0c08}
+  .spread--newspaper .meta{color:rgba(14,12,8,0.24);padding-bottom:18px;border-bottom:2px solid rgba(14,12,8,0.10);font-family:'Fraunces',serif;font-weight:300;letter-spacing:0.06em}
+  .spread--newspaper .edition-rule{width:100%;height:3px;background:#0e0c08;opacity:0.14;margin-top:clamp(48px,8vw,100px)}
+  .spread--newspaper .col-header{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(14,12,8,0.36);margin-top:28px}
+  .spread--newspaper .col-num-big{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,18vw,320px);line-height:0.78;color:rgba(14,12,8,0.040);position:absolute;right:clamp(32px,6vw,96px);top:50%;transform:translateY(-50%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--newspaper h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,6.4vw,122px);line-height:0.89;letter-spacing:-0.03em;max-width:26ch;margin-top:18px;color:#0e0c08;position:relative}
+  .spread--newspaper .col-rule{width:60px;height:3px;background:#0e0c08;margin-top:28px;opacity:0.20}
+  .spread--newspaper .dek{font-family:'Fraunces',serif;font-size:clamp(20px,2.1vw,26px);line-height:1.76;max-width:54ch;color:rgba(14,12,8,0.60);margin-top:28px;font-weight:350;font-style:italic;position:relative}
+  .spread--newspaper .source-bar{border-color:rgba(14,12,8,0.10);color:rgba(14,12,8,0.30);font-family:'Inter',sans-serif}
+  .spread--newspaper .source-bar a{color:#0e0c08;font-weight:800}
+
+  /* ===== 10. BIG-STAT FINISH: near-black + warm brass ===== */
+  .spread--bigstat{background:#0c0800;color:#e0b030}
+  .spread--bigstat .meta{color:rgba(224,176,48,0.18);padding-bottom:20px;border-bottom:1px solid rgba(224,176,48,0.06)}
+  .spread--bigstat .stat-ghost{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(200px,46vw,860px);line-height:0.76;color:rgba(224,176,48,0.016);position:absolute;right:-0.08em;top:50%;transform:translateY(-52%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--bigstat .bs-label{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(18px,2vw,24px);letter-spacing:0.38em;text-transform:uppercase;color:rgba(224,176,48,0.30);margin-top:clamp(60px,10vw,140px);position:relative}
+  .spread--bigstat .bs-stat{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(72px,16vw,290px);line-height:0.82;letter-spacing:-0.04em;color:#e0b030;margin-top:20px;position:relative}
+  .spread--bigstat h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(32px,6.4vw,120px);line-height:0.91;letter-spacing:-0.03em;max-width:26ch;margin-top:24px;position:relative;color:rgba(224,176,48,0.72)}
+  .spread--bigstat .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:54ch;color:rgba(224,176,48,0.42);margin-top:28px;position:relative}
+  .spread--bigstat .source-bar{border-color:rgba(224,176,48,0.07);color:rgba(224,176,48,0.22)}
+  .spread--bigstat .source-bar a{color:#e0b030;font-weight:900}
+
+  /* COLOPHON */
+  .colophon{background:#060e18;color:rgba(168,204,224,0.44);padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(36px,4vw,56px);line-height:1;margin-bottom:24px;color:#a8cce0}
+  .colophon p{font-size:20px;line-height:1.6;max-width:56ch;margin:0 auto 14px}
+  .colophon a{color:#5090b8}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 044 &nbsp;&middot;&nbsp; 10 Jul 2026</div>
+</header>
+
+<!-- ===== 1. HERO COVER: GPT-5.6 ===== -->
+<section class="spread spread--hero">
+  <div class="ghost-num">1</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>01 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="hero-eyebrow">Model Release</p>
+  <h1>OpenAI Keeps Pushing: GPT-5.6 Is Already Here</h1>
+  <p class="dek">Another month, another model. OpenAI has released GPT-5.6, continuing an acceleration that shows no sign of levelling off. The capability gains keep outpacing the tooling built around them, and the benchmark race has become almost too fast to track. For anyone teaching or building with AI in 2026, the ground shifts every few weeks: keeping up is no longer optional, it is the job.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 1,313 points &middot; 921 comments</span>
+    <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 2. ROSE-ALERT-STAMP: EU Chat Control ===== -->
+<section class="spread spread--rose">
+  <div class="stamp-wrap">
+    <div class="stamp-circle">
+      <span class="stamp-num">II</span>
+      <span class="stamp-text">Policy Alert</span>
+    </div>
+  </div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>02 of 10</span>
+  </div>
+  <p class="eyebrow">Surveillance</p>
+  <h1>Europe Votes to <em>Scan Every</em> Private Message</h1>
+  <p class="dek">The EU Parliament has passed Chat Control 1.0, requiring platforms to automatically scan private messages for illegal content. Critics, including MEP Patrick Breyer, argue the regulation effectively ends end-to-end encryption as a meaningful protection. What arrives in the name of child safety may, in practice, build infrastructure for something far broader. The debate is not over. But the vote happened.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 1,421 points &middot; 675 comments</span>
+    <a href="https://www.patrick-breyer.de/en/eu-parliament-greenlights-chat-control-1-0-breyer-our-children-lose-out/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 3. TERMINAL: GLM 5.2 on consumer hardware ===== -->
+<section class="spread spread--terminal">
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>03 of 10</span>
+  </div>
+  <p class="term-num">03 / LOCAL_AI</p>
+  <p class="prompt">$ ./colibri --model glm-5.2-int4 --ram 32GB<span class="cursor"></span></p>
+  <h1>Running a 744B Model on 32&nbsp;GB of RAM</h1>
+  <p class="dek">A developer set out to run GLM 5.2, a massive mixture-of-experts model comparable in quality to Claude or GPT, on a regular laptop. The result: Colibri, a tool that achieved 0.1 tokens per second. Slow, yes. But it worked. The project is proof that frontier-class AI is approaching a point where consumer hardware becomes viable. The journey, not the speed, is the point.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 706 points &middot; 170 comments</span>
+    <a href="https://github.com/JustVugg/colibri" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 4. ACADEMIC DROP-CAP: John Deere right to repair ===== -->
+<section class="spread spread--academic">
+  <div class="acad-num">IV</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>04 of 10</span>
+  </div>
+  <p class="subject">Consumer Rights</p>
+  <h1>John Deere Farmers Win the Right to Fix Their Own Machines</h1>
+  <p class="dropcap-body">Under a new FTC settlement, John Deere owners will gain the right to repair their own agricultural equipment using independent mechanics and parts. The decade-long fight pitted farmers against one of the most powerful companies in the world. The outcome has implications far beyond tractors: it sets a precedent for who controls what you own once the software is inside it. When a machine needs the manufacturer's permission to run, ownership becomes conditional.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 1,327 points &middot; 278 comments</span>
+    <a href="https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 5. MANIFESTO: Muse Spark 1.1 ===== -->
+<section class="spread spread--manifesto">
+  <div class="ghost-i">V</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>05 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="num">v.</p>
+  <h1>Meta Starts Charging for AI</h1>
+  <div class="rule"></div>
+  <p class="dek">Muse Spark 1.1 is Meta's first commercial, paid AI model. The company built its reputation on open-source releases. This is something different: an agentic model designed for multi-step tasks, sold via API. For anyone building AI products or teaching AI strategy, the move signals a tightening competitive landscape. The era of free frontier models from Meta is not over, but its limits are now visible.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 379 points &middot; 189 comments</span>
+    <a href="https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 6. SWISS POSTER: AI tutor for 5-year-olds ===== -->
+<section class="spread spread--swiss">
+  <div class="swiss-num">6</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>06 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="eyebrow">AI Education</p>
+  <h1>Teaching a Five-Year-Old in <em>Under a Second</em></h1>
+  <div class="rule-h"></div>
+  <p class="dek">Ello built a real-time AI reading tutor for children aged 4 to 9. The challenge was not just building a capable model: effective teaching at conversation speed required replacing the standard tool-use loop entirely. Their system uses a streaming interpreter for immediate action while a separate planner reasons one step ahead. The result is a tutor that reads a child's learning state in real time. The design decisions here are worth studying by anyone building AI-assisted education.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 91 points &middot; 164 comments</span>
+    <a href="https://www.ello.com/blog/teaching-a-child-in-1000-ms" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 7. DARK/MIDNIGHT: Postgres rewritten in Rust ===== -->
+<section class="spread spread--midnight">
+  <div class="mid-num">7</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>07 of 10</span>
+  </div>
+  <p class="eyebrow">Engineering</p>
+  <p class="vol-num">100% pass rate</p>
+  <h1>Postgres, Rewritten in Rust, Passes Every Test</h1>
+  <p class="dek">A project called pgrust has rewritten PostgreSQL in Rust and is now passing 100% of the official Postgres regression test suite. That is a meaningful milestone: not a toy reimplementation, but a full compatibility pass on the database that underpins much of the internet's data layer. Whether it ever becomes the recommended path for new deployments is another question entirely. For now, the proof is in the test results.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 688 points &middot; 580 comments</span>
+    <a href="https://github.com/malisper/pgrust" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 8. COLOUR-FIELD MINIMALIST: AI brain videos ===== -->
+<section class="spread spread--colorfield">
+  <div class="cf-num">8</div>
+  <div class="cf-band"></div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>08 of 10</span>
+  </div>
+  <p class="cf-label">Neuroscience</p>
+  <h1>Scientists Used AI to Build Videos That Target Specific Brain Cells</h1>
+  <p class="dek">Researchers at EPFL's NEVO project have created a system for generating videos designed to maximally stimulate a target region of the brain. Instead of waiting for natural stimuli that happen to trigger a neuron, you can now design the stimulus directly. The potential applications range from mapping perception to, more ambiguously, shaping it. The science is extraordinary. The implications are worth thinking through carefully.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 72 points &middot; 68 comments</span>
+    <a href="https://nevo-project.epfl.ch/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 9. NEWSPAPER COLUMN: No leap second ===== -->
+<section class="spread spread--newspaper">
+  <div class="col-num-big">IX</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>09 of 10</span>
+  </div>
+  <div class="edition-rule"></div>
+  <p class="col-header">Timekeeping</p>
+  <h1>No Leap Second at Year's End: Earth's Rotation Holds Steady</h1>
+  <div class="col-rule"></div>
+  <p class="dek">The International Earth Rotation and Reference Systems Service has confirmed no leap second will be added at the end of December 2026. The announcement is routine but quietly satisfying: timekeeping is one of humanity's most elaborate collective agreements, and occasionally the planet cooperates. Engineers who have scrambled to patch distributed systems for past leap seconds will face no such disruption this cycle. Time, for once, behaves.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 287 points &middot; 222 comments</span>
+    <a href="https://datacenter.iers.org/data/latestVersion/bulletinC.txt" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 10. BIG-STAT FINISH: Damn Interesting ===== -->
+<section class="spread spread--bigstat">
+  <div class="stat-ghost">X</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>10 of 10</span>
+  </div>
+  <p class="bs-label">Years Online</p>
+  <p class="bs-stat">21</p>
+  <h1>What Happens to a Website That Has Always Been Free?</h1>
+  <p class="dek">Damn Interesting, the long-running curiosity publication that has operated free and ad-light since 2005, is mapping its own possible futures. Part admission, part exploration: the economics of independent publishing have shifted underneath a project built for the pre-attention-economy web. How a site like this survives, or doesn't, tells you something about what we actually value on the internet once the incentive structures are laid bare.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 286 points &middot; 39 comments</span>
+    <a href="https://www.damninteresting.com/a-possible-future/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <p class="mark">Morning Edition</p>
+  <p>Vol. 044 &middot; 10 July 2026 &middot; Ten stories, curated and typeset each morning.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
