@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; Vol. 045 &middot; 12 Jul 2026</title>
+<meta name="description" content="Ten stories, curated and designed, from Hacker News. 12 Jul 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-size:22px;line-height:1.5;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+  .spread{min-height:100vh;padding:clamp(32px,6vw,96px);position:relative;display:flex;flex-direction:column;overflow:hidden}
+  .meta{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .source-bar{font-family:'Inter',sans-serif;font-size:20px;font-weight:500;margin-top:auto;padding-top:36px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid currentColor}
+  .source-bar a{font-weight:700}
+  section{scroll-margin-top:24px}
+
+  /* MASTHEAD */
+  .masthead{padding:clamp(20px,3.5vw,40px) clamp(32px,6vw,96px);background:#100818;border-bottom:2px solid #281438;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+  .masthead .brand{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.01em;color:#c4a0e8}
+  .masthead .brand em{font-style:italic;font-weight:400;color:#dcc0f8}
+  .masthead .vol{font-weight:600;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#4a2870}
+
+  /* ===== 1. MANIFESTO: deep midnight-purple + soft lavender ===== */
+  .spread--manifesto{background:#100818;color:#c8a8f4}
+  .spread--manifesto .meta{color:rgba(200,168,244,0.20);padding-bottom:20px;border-bottom:1px solid rgba(200,168,244,0.07)}
+  .spread--manifesto .ghost-i{font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(300px,66vw,1200px);line-height:0.88;color:rgba(200,168,244,0.012);position:absolute;left:-0.04em;top:-0.06em;letter-spacing:-0.08em;user-select:none;pointer-events:none;white-space:nowrap}
+  .spread--manifesto .num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:20px;letter-spacing:0.36em;color:rgba(200,168,244,0.28);margin-top:clamp(60px,10vw,140px);position:relative}
+  .spread--manifesto h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,9.4vw,180px);line-height:0.84;letter-spacing:-0.04em;max-width:20ch;margin-top:22px;position:relative;color:#c8a8f4}
+  .spread--manifesto .rule{width:80px;height:4px;background:#c8a8f4;margin-top:36px;opacity:0.30;position:relative}
+  .spread--manifesto .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,2vw,26px);line-height:1.72;max-width:54ch;color:rgba(200,168,244,0.54);margin-top:32px;position:relative;border-left:3px solid rgba(200,168,244,0.20);padding-left:24px}
+  .spread--manifesto .source-bar{border-color:rgba(200,168,244,0.09);color:rgba(200,168,244,0.26)}
+  .spread--manifesto .source-bar a{color:#c8a8f4}
+
+  /* ===== 2. NEWSPAPER COLUMN: newsprint + dark ink ===== */
+  .spread--newspaper{background:#f0ebe0;color:#0c0a06}
+  .spread--newspaper .meta{color:rgba(12,10,6,0.24);padding-bottom:18px;border-bottom:2px solid rgba(12,10,6,0.10);font-family:'Fraunces',serif;font-weight:300;letter-spacing:0.06em}
+  .spread--newspaper .edition-rule{width:100%;height:3px;background:#0c0a06;opacity:0.14;margin-top:clamp(48px,8vw,100px)}
+  .spread--newspaper .col-header{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(12,10,6,0.36);margin-top:28px}
+  .spread--newspaper .col-num-big{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,18vw,320px);line-height:0.78;color:rgba(12,10,6,0.035);position:absolute;right:clamp(32px,6vw,96px);top:50%;transform:translateY(-50%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--newspaper h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,6.4vw,122px);line-height:0.89;letter-spacing:-0.03em;max-width:26ch;margin-top:18px;color:#0c0a06;position:relative}
+  .spread--newspaper .col-rule{width:60px;height:3px;background:#0c0a06;margin-top:28px;opacity:0.20}
+  .spread--newspaper .dek{font-family:'Fraunces',serif;font-size:clamp(20px,2.1vw,26px);line-height:1.76;max-width:54ch;color:rgba(12,10,6,0.60);margin-top:28px;font-weight:350;font-style:italic;position:relative}
+  .spread--newspaper .source-bar{border-color:rgba(12,10,6,0.10);color:rgba(12,10,6,0.30);font-family:'Inter',sans-serif}
+  .spread--newspaper .source-bar a{color:#0c0a06;font-weight:800}
+
+  /* ===== 3. DARK/MIDNIGHT: deep indigo + warm antique gold ===== */
+  .spread--midnight{background:#060810;color:#e0c070}
+  .spread--midnight .meta{color:rgba(224,192,112,0.18);padding-bottom:20px;border-bottom:1px solid rgba(224,192,112,0.05)}
+  .spread--midnight .mid-num{font-family:'Fraunces',serif;font-weight:900;font-style:italic;font-size:clamp(200px,46vw,860px);line-height:0.78;color:rgba(224,192,112,0.009);position:absolute;right:-0.04em;bottom:-0.12em;letter-spacing:-0.08em;user-select:none;pointer-events:none}
+  .spread--midnight .eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(224,192,112,0.26);margin-top:clamp(80px,16vw,210px);position:relative}
+  .spread--midnight .vol-num{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:18px;letter-spacing:0.22em;color:rgba(224,192,112,0.18);margin-top:12px;position:relative}
+  .spread--midnight h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(42px,8.4vw,160px);line-height:0.88;letter-spacing:-0.03em;max-width:22ch;margin-top:24px;position:relative;color:#e0c070}
+  .spread--midnight .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.70;max-width:54ch;color:rgba(224,192,112,0.46);margin-top:28px;position:relative}
+  .spread--midnight .source-bar{border-color:rgba(224,192,112,0.07);color:rgba(224,192,112,0.24)}
+  .spread--midnight .source-bar a{color:#e0c070}
+
+  /* ===== 4. ACADEMIC DROP-CAP: dusty rose + dark espresso ===== */
+  .spread--academic{background:#f5e4dc;color:#180c0a}
+  .spread--academic .meta{color:rgba(24,12,10,0.26);padding-bottom:20px;border-bottom:1.5px solid rgba(24,12,10,0.08)}
+  .spread--academic .acad-num{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(100px,22vw,380px);line-height:1;color:rgba(24,12,10,0.025);position:absolute;top:clamp(28px,5vw,72px);right:clamp(28px,5vw,72px);user-select:none;pointer-events:none;letter-spacing:-0.04em}
+  .spread--academic .subject{font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(24,12,10,0.34);margin-top:clamp(64px,10vw,144px)}
+  .spread--academic h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(34px,6.8vw,130px);line-height:0.89;letter-spacing:-0.03em;max-width:24ch;margin-top:20px;color:#180c0a}
+  .spread--academic .dropcap-body{font-family:'Fraunces',serif;font-size:clamp(20px,2.1vw,25px);line-height:1.78;max-width:58ch;margin-top:36px;font-weight:350;color:rgba(24,12,10,0.68)}
+  .spread--academic .dropcap-body::first-letter{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(80px,13vw,168px);float:left;line-height:0.78;margin:0.06em 0.10em 0 0;color:#180c0a}
+  .spread--academic .source-bar{border-color:rgba(24,12,10,0.10);color:rgba(24,12,10,0.28)}
+  .spread--academic .source-bar a{color:#180c0a}
+
+  /* ===== 5. TERMINAL/MONOSPACE: near-black + phosphor green ===== */
+  .spread--terminal{background:#040408;color:#3ad460}
+  .spread--terminal .meta{color:rgba(58,212,96,0.18);padding-bottom:20px;border-bottom:1px solid rgba(58,212,96,0.05);font-family:'Courier New',Courier,monospace;letter-spacing:0.06em}
+  .spread--terminal .term-num{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(18px,2vw,24px);letter-spacing:0.12em;color:rgba(58,212,96,0.26);margin-top:clamp(60px,10vw,130px)}
+  .spread--terminal .prompt{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(20px,2.4vw,32px);letter-spacing:0.04em;color:rgba(58,212,96,0.40);margin-top:20px}
+  .spread--terminal h1{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:clamp(22px,4.4vw,82px);line-height:0.96;letter-spacing:-0.02em;max-width:32ch;margin-top:16px;color:#3ad460}
+  .spread--terminal .cursor{display:inline-block;width:0.55em;height:1em;background:#3ad460;vertical-align:text-bottom;animation:blink 1s step-end infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .spread--terminal .dek{font-family:'Courier New',Courier,monospace;font-size:clamp(18px,1.7vw,22px);line-height:1.74;max-width:54ch;color:rgba(58,212,96,0.46);margin-top:28px}
+  .spread--terminal .source-bar{border-color:rgba(58,212,96,0.06);color:rgba(58,212,96,0.24);font-family:'Courier New',Courier,monospace}
+  .spread--terminal .source-bar a{color:#3ad460}
+
+  /* ===== 6. ROSE-ALERT-STAMP: warm ivory + deep crimson ===== */
+  .spread--rose{background:#faf4ea;color:#1c0608}
+  .spread--rose .meta{color:rgba(28,6,8,0.26);padding-bottom:20px;border-bottom:2px solid rgba(28,6,8,0.08)}
+  .spread--rose .stamp-wrap{position:absolute;top:clamp(28px,5vw,72px);right:clamp(28px,5vw,72px);user-select:none;pointer-events:none}
+  .spread--rose .stamp-circle{width:clamp(80px,14vw,200px);height:clamp(80px,14vw,200px);border:4px solid rgba(28,6,8,0.12);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transform:rotate(-8deg)}
+  .spread--rose .stamp-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(28px,5.6vw,72px);letter-spacing:-0.04em;line-height:1;color:rgba(28,6,8,0.14)}
+  .spread--rose .stamp-text{font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(9px,1.1vw,11px);letter-spacing:0.34em;text-transform:uppercase;color:rgba(28,6,8,0.14)}
+  .spread--rose .eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(28,6,8,0.34);margin-top:clamp(64px,10vw,140px);position:relative}
+  .spread--rose h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(38px,7.8vw,150px);line-height:0.87;letter-spacing:-0.03em;max-width:22ch;margin-top:20px;color:#1c0608;position:relative}
+  .spread--rose h1 em{font-style:italic;font-weight:400;color:#b81020}
+  .spread--rose .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:54ch;color:rgba(28,6,8,0.58);margin-top:28px;position:relative}
+  .spread--rose .source-bar{border-color:rgba(28,6,8,0.10);color:rgba(28,6,8,0.28)}
+  .spread--rose .source-bar a{color:#b81020}
+
+  /* ===== 7. SWISS POSTER: cool off-white + deep navy ===== */
+  .spread--swiss{background:#f2f2ee;color:#060818}
+  .spread--swiss .meta{color:rgba(6,8,24,0.22);padding-bottom:20px;border-bottom:3px solid rgba(6,8,24,0.07)}
+  .spread--swiss .swiss-num{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(260px,54vw,960px);line-height:0.88;color:rgba(6,8,24,0.014);position:absolute;right:-0.06em;top:-0.08em;letter-spacing:-0.10em;user-select:none;pointer-events:none}
+  .spread--swiss .eyebrow{font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(6,8,24,0.30);margin-top:clamp(60px,10vw,144px);position:relative}
+  .spread--swiss h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,8.4vw,160px);line-height:0.84;letter-spacing:-0.04em;max-width:22ch;margin-top:22px;position:relative;color:#060818}
+  .spread--swiss h1 em{font-style:italic;font-weight:300;color:rgba(6,8,100,0.54)}
+  .spread--swiss .rule-h{width:100%;height:5px;background:#060818;margin-top:28px;opacity:0.09;position:relative}
+  .spread--swiss .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.70;max-width:54ch;color:rgba(6,8,24,0.54);margin-top:28px;position:relative}
+  .spread--swiss .source-bar{border-color:rgba(6,8,24,0.09);color:rgba(6,8,24,0.26)}
+  .spread--swiss .source-bar a{color:#060818}
+
+  /* ===== 8. COLOUR-FIELD MINIMALIST: sage green + dark forest ===== */
+  .spread--colorfield{background:#7a9870;color:#f4f8f0}
+  .spread--colorfield .meta{color:rgba(244,248,240,0.30);padding-bottom:20px;border-bottom:1px solid rgba(244,248,240,0.12)}
+  .spread--colorfield .cf-band{height:clamp(28px,5vw,56px);background:#6a8860;width:100%;position:absolute;bottom:0;left:0;right:0}
+  .spread--colorfield .cf-num{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(100px,22vw,380px);line-height:0.80;color:rgba(244,248,240,0.08);position:absolute;right:clamp(32px,6vw,96px);top:50%;transform:translateY(-58%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--colorfield .cf-label{font-family:'Inter',sans-serif;font-weight:400;font-size:18px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(244,248,240,0.50);margin-top:clamp(80px,16vw,220px);position:relative}
+  .spread--colorfield h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(42px,8.4vw,160px);line-height:0.88;letter-spacing:-0.03em;max-width:22ch;margin-top:28px;color:#f4f8f0;position:relative}
+  .spread--colorfield .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.75;max-width:52ch;color:rgba(244,248,240,0.70);margin-top:32px;position:relative}
+  .spread--colorfield .source-bar{border-color:rgba(244,248,240,0.18);color:rgba(244,248,240,0.46);z-index:2;position:relative}
+  .spread--colorfield .source-bar a{color:#f4f8f0;font-weight:700}
+
+  /* ===== 9. HERO COVER: deep forest + phosphor lime ===== */
+  .spread--hero{background:#0c1808;color:#a8d870}
+  .spread--hero .meta{color:rgba(168,216,112,0.22);padding-bottom:20px;border-bottom:1px solid rgba(168,216,112,0.07)}
+  .spread--hero .ghost-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(320px,68vw,1400px);line-height:0.80;color:rgba(168,216,112,0.010);position:absolute;right:-0.08em;top:-0.04em;letter-spacing:-0.08em;user-select:none;pointer-events:none;white-space:nowrap}
+  .spread--hero .hero-eyebrow{font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.38em;text-transform:uppercase;color:rgba(168,216,112,0.32);margin-top:clamp(80px,14vw,200px);position:relative}
+  .spread--hero h1{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(56px,11vw,210px);line-height:0.87;letter-spacing:-0.04em;max-width:18ch;margin-top:24px;position:relative;color:#a8d870}
+  .spread--hero .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:52ch;color:rgba(168,216,112,0.54);margin-top:30px;position:relative}
+  .spread--hero .source-bar{border-color:rgba(168,216,112,0.08);color:rgba(168,216,112,0.28)}
+  .spread--hero .source-bar a{color:#a8d870;font-weight:800}
+
+  /* ===== 10. BIG-STAT FINISH: deep ocean + cool cyan ===== */
+  .spread--bigstat{background:#020a10;color:#38b8e0}
+  .spread--bigstat .meta{color:rgba(56,184,224,0.18);padding-bottom:20px;border-bottom:1px solid rgba(56,184,224,0.06)}
+  .spread--bigstat .stat-ghost{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(200px,46vw,860px);line-height:0.76;color:rgba(56,184,224,0.016);position:absolute;right:-0.08em;top:50%;transform:translateY(-52%);letter-spacing:-0.06em;user-select:none;pointer-events:none}
+  .spread--bigstat .bs-label{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(18px,2vw,24px);letter-spacing:0.38em;text-transform:uppercase;color:rgba(56,184,224,0.32);margin-top:clamp(60px,10vw,140px);position:relative}
+  .spread--bigstat .bs-stat{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(72px,16vw,290px);line-height:0.82;letter-spacing:-0.04em;color:#38b8e0;margin-top:20px;position:relative}
+  .spread--bigstat h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(32px,6.4vw,120px);line-height:0.91;letter-spacing:-0.03em;max-width:26ch;margin-top:24px;position:relative;color:rgba(56,184,224,0.72)}
+  .spread--bigstat .dek{font-family:'Inter',sans-serif;font-size:clamp(20px,1.9vw,24px);line-height:1.72;max-width:54ch;color:rgba(56,184,224,0.44);margin-top:28px;position:relative}
+  .spread--bigstat .source-bar{border-color:rgba(56,184,224,0.07);color:rgba(56,184,224,0.24)}
+  .spread--bigstat .source-bar a{color:#38b8e0;font-weight:900}
+
+  /* COLOPHON */
+  .colophon{background:#100818;color:rgba(196,160,232,0.44);padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);text-align:center}
+  .colophon .mark{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:clamp(36px,4vw,56px);line-height:1;margin-bottom:24px;color:#c4a0e8}
+  .colophon p{font-size:20px;line-height:1.6;max-width:56ch;margin:0 auto 14px}
+  .colophon a{color:#9060c8}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand"><em>Morning</em> Edition</div>
+  <div class="vol">Vol. 045 &nbsp;&middot;&nbsp; 12 Jul 2026</div>
+</header>
+
+<!-- ===== 1. MANIFESTO: Grok Build CLI data leak ===== -->
+<section class="spread spread--manifesto">
+  <div class="ghost-i">I</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>01 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="num">i.</p>
+  <h1>What Your AI Dev Tool Is Quietly Sending Home</h1>
+  <div class="rule"></div>
+  <p class="dek">A developer dissected xAI's Grok Build CLI and found it transmitting a steady stream of data back to xAI's servers: project context, file details, usage patterns. This is not an isolated scandal. It is a structural feature of how AI coding tools operate in 2026. Every assistant in your workflow has a data strategy. Your files, your clients' code, your students' exercises may all be part of someone else's training pipeline. Read the network traffic before you read the documentation.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 248 points &middot; 118 comments</span>
+    <a href="https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 2. NEWSPAPER COLUMN: SQLite strict tables ===== -->
+<section class="spread spread--newspaper">
+  <div class="col-num-big">II</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>02 of 10</span>
+  </div>
+  <div class="edition-rule"></div>
+  <p class="col-header">Database</p>
+  <h1>The SQLite Setting Most Developers Don't Know Exists</h1>
+  <div class="col-rule"></div>
+  <p class="dek">STRICT mode tables arrived in SQLite 3.37 and have been quietly available ever since. They enforce actual column types at insertion rather than relying on SQLite's famously permissive type affinity rules, which silently accept almost anything. The author makes an unambiguous case: use strict tables unless you have a specific reason not to. It is the small irreversible decision that saves you from an entire category of bugs you would never have anticipated finding.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 263 points &middot; 129 comments</span>
+    <a href="https://evanhahn.com/prefer-strict-tables-in-sqlite/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 3. DARK/MIDNIGHT: Mesh LLM distributed AI ===== -->
+<section class="spread spread--midnight">
+  <div class="mid-num">3</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>03 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="eyebrow">Distributed AI</p>
+  <p class="vol-num">peer-to-peer inference</p>
+  <h1>What If Everyone's Laptop Was the Server?</h1>
+  <p class="dek">Iroh is a networking protocol for building peer-to-peer applications. Mesh LLM is the experiment built on top of it: distribute an AI model across several consumer devices, run inference collectively, own no central infrastructure. The project is early and throughput is modest. The concept is significant. As compute centralises ever further around hyperscalers, this asks whether the inverse is architecturally possible, and what AI access might look like if it were.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 195 points &middot; 43 comments</span>
+    <a href="https://www.iroh.computer/blog/mesh-llm" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 4. ACADEMIC DROP-CAP: UPI payment anatomy ===== -->
+<section class="spread spread--academic">
+  <div class="acad-num">IV</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>04 of 10</span>
+  </div>
+  <p class="subject">Fintech Infrastructure</p>
+  <h1>India's Payment Network Moves Billions a Month. Here's How.</h1>
+  <p class="dropcap-body">UPI processes several billion transactions monthly across a country of 1.4 billion people. This deep-read breaks down the two-layer architecture: the NPCI acts as a central switch, banks hold customer data, and interface apps act as thin clients with no direct settlement role. For anyone interested in financial infrastructure, payment product design, or the policy choices required to build at national scale, this is a clear and methodical dissection of something most engineers see daily and almost none understand.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 158 points &middot; 62 comments</span>
+    <a href="https://timeseriesofindia.com/economy/reads/upi-architecture/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 5. TERMINAL: Learn by rebuilding ===== -->
+<section class="spread spread--terminal">
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>05 of 10 &nbsp;&middot;&nbsp; &#127919;</span>
+  </div>
+  <p class="term-num">05 / REBUILD_FROM_SCRATCH</p>
+  <p class="prompt">$ git init --understand-everything<span class="cursor"></span></p>
+  <h1>Build a Bad Redis. You'll Learn More Than Reading About a Good One.</h1>
+  <p class="dek">ShipThatCode offers guided projects that rebuild Redis, Git, and a SQL database starting from a blank file. The pedagogical premise: you never truly understand a tool until you have built a broken version of it yourself. This transfers directly to AI education. The best way to understand a language model is probably to train a small, inadequate one. The second best is this. Teaching by doing the painful hard thing rather than watching someone else do it.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 154 points &middot; 43 comments</span>
+    <a href="https://shipthatcode.com" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 6. ROSE-ALERT-STAMP: How doctors die ===== -->
+<section class="spread spread--rose">
+  <div class="stamp-wrap">
+    <div class="stamp-circle">
+      <span class="stamp-num">VI</span>
+      <span class="stamp-text">Long Read</span>
+    </div>
+  </div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>06 of 10</span>
+  </div>
+  <p class="eyebrow">Medicine</p>
+  <h1>What Doctors <em>Actually Choose</em> When They Become the Patient</h1>
+  <p class="dek">When physicians receive a terminal diagnosis, they overwhelmingly choose less intervention than they prescribe for others. No ventilators. No heroic surgeries. Comfort care at home. This essay, published in 2011 and resurfacing with good reason, asks a question that quietly haunts medicine: if the people who best understand the system systematically opt out of it at the end, what does that tell us about what the system is actually for?</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 131 points &middot; 73 comments</span>
+    <a href="https://archive.cancerworld.net/featured/how-doctors-die/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 7. SWISS POSTER: SVD history ===== -->
+<section class="spread spread--swiss">
+  <div class="swiss-num">7</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>07 of 10</span>
+  </div>
+  <p class="eyebrow">Mathematics</p>
+  <h1>The Decomposition That <em>Runs Everything</em>, and How We Found It</h1>
+  <div class="rule-h"></div>
+  <p class="dek">Singular value decomposition underlies search engines, image compression, recommendation systems, and the dimensionality reduction at the heart of machine learning. G.W. Stewart's 1993 paper traces its history back through Sylvester, Beltrami, Jordan, and Eckart. For anyone using these tools daily, this is the historical receipt. Mathematics does not arrive fully formed: it accumulates across arguments in obscure journals, misattributed and rediscovered, for most of a century.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 109 points &middot; 62 comments</span>
+    <a href="https://www.math.ucdavis.edu/~saito/courses/229A/stewart-svd.pdf" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 8. COLOUR-FIELD MINIMALIST: Long COVID vagal nerve ===== -->
+<section class="spread spread--colorfield">
+  <div class="cf-num">8</div>
+  <div class="cf-band"></div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>08 of 10</span>
+  </div>
+  <p class="cf-label">Science</p>
+  <h1>Long COVID May Be a Nerve Problem in the Stomach</h1>
+  <p class="dek">New research finds that Long COVID patients show degradation of the vagal cholinergic fibres in the gastric mucosa: the neural wiring connecting gut to brain. The vagus nerve governs heart rate, digestion, inflammation, and mood. Peripheral damage here would explain Long COVID's most baffling symptom cluster: fatigue, gut dysfunction, and cognitive fog arriving together, without requiring direct injury to the brain itself. The mechanism is precise. The implications for treatment are significant.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 98 points &middot; 46 comments</span>
+    <a href="https://www.ijidonline.com/article/S1201-9712(26)00608-9/fulltext" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 9. HERO COVER: Solidlike fracture in liquids ===== -->
+<section class="spread spread--hero">
+  <div class="ghost-num">9</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>09 of 10</span>
+  </div>
+  <p class="hero-eyebrow">Physics</p>
+  <h1>We Thought We Knew How Liquids Work</h1>
+  <p class="dek">New research reported by Quanta shows that simple fluids, under specific conditions, can fracture like a solid rather than flow around an obstacle. This challenges a foundational assumption of fluid mechanics: that liquids, by definition, cannot sustain cracks. The conditions required are precise and extreme. The principle itself is disorienting. Some things we treated as definitional turn out to have exceptions. That is, roughly speaking, how physics has always advanced.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 85 points &middot; 40 comments</span>
+    <a href="https://www.quantamagazine.org/we-know-simple-fluids-can-flow-turns-out-some-can-fracture-20260710/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== 10. BIG-STAT FINISH: Cultural variation in sketches ===== -->
+<section class="spread spread--bigstat">
+  <div class="stat-ghost">X</div>
+  <div class="meta">
+    <span>Morning Edition</span>
+    <span>10 of 10</span>
+  </div>
+  <p class="bs-label">Drawings Analysed</p>
+  <p class="bs-stat">50M+</p>
+  <h1>What Fifty Million Drawings Reveal About the Way Cultures See</h1>
+  <p class="dek">Researchers analysed over 50 million sketches from Google's Quick Draw dataset across more than 100 countries. The results show systematic cross-cultural variation in how people represent common concepts: a clock drawn in Japan looks structurally different from one drawn in Germany. The variations cluster by region, language family, and geography. What we assume are universal mental representations may be culturally learned, drawn in the mind before they are drawn on the page.</p>
+  <div class="source-bar">
+    <span>Hacker News &middot; 81 points &middot; 12 comments</span>
+    <a href="https://arxiv.org/abs/2607.07267" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <p class="mark">Morning Edition</p>
+  <p>Vol. 045 &middot; 12 July 2026 &middot; Ten stories, curated and typeset each morning.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
