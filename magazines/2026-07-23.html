@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition &middot; 23 Jul 2026</title>
+<meta name="description" content="Vol. 053. Ten stories curated and designed for one reader. 23 July 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+
+/* ---- MASTHEAD ---- */
+.masthead {
+  background: #f5efe4;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 40px) clamp(28px, 5.5vw, 80px);
+  border-bottom: 2px solid #111;
+}
+.masthead .title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(22px, 2.5vw, 34px);
+  letter-spacing: -0.01em;
+}
+.masthead .meta {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+/* ---- SPREAD 1: BIG-STAT -- Jacobian Conjecture / Tao ---- */
+.s1 {
+  min-height: 100vh;
+  background: #fdf3d8;
+  color: #1a1200;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s1 .bg-stat {
+  position: absolute;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(200px, 40vw, 600px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: rgba(180, 120, 0, 0.1);
+  user-select: none;
+  pointer-events: none;
+}
+.s1 .s-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 1;
+  color: #c8920a;
+  margin-bottom: 32px;
+  position: relative;
+}
+.s1 .s-label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #c8920a;
+  margin-bottom: 20px;
+  position: relative;
+}
+.s1 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+  margin-bottom: 32px;
+  position: relative;
+}
+.s1 .dek {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.65;
+  max-width: 56ch;
+  font-weight: 300;
+  margin-bottom: 40px;
+  position: relative;
+}
+.s1 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.s1 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #997010;
+}
+.s1 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1a1200;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 2: HERO COVER -- Bento Slides ---- */
+.s2 {
+  min-height: 100vh;
+  background: #163024;
+  color: #f0ebe0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s2 .hero-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(100px, 18vw, 260px);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  font-style: italic;
+  color: rgba(240, 235, 220, 0.12);
+  position: absolute;
+  bottom: clamp(40px, 6vw, 80px);
+  right: clamp(40px, 6vw, 80px);
+  user-select: none;
+}
+.s2 .s-label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #5cb88a;
+  margin-bottom: 48px;
+}
+.s2 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(44px, 7vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  max-width: 18ch;
+  margin-bottom: 40px;
+}
+.s2 .dek {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.65;
+  max-width: 52ch;
+  font-weight: 300;
+  margin-bottom: 48px;
+  color: #c8c0b0;
+}
+.s2 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.s2 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5cb88a;
+}
+.s2 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0ebe0;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 3: TERMINAL -- GigaToken ---- */
+.s3 {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Courier New', 'Courier', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s3 .term-num {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #4af626;
+  margin-bottom: 64px;
+  letter-spacing: 0.08em;
+}
+.s3 .term-speed {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: clamp(80px, 18vw, 280px);
+  line-height: 0.85;
+  color: #4af626;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+}
+.s3 h2 {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: clamp(24px, 3.5vw, 48px);
+  line-height: 1.15;
+  color: #e6edf3;
+  max-width: 40ch;
+  margin-bottom: 32px;
+}
+.s3 .dek {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.7;
+  max-width: 60ch;
+  color: #8b949e;
+  margin-bottom: 48px;
+}
+.s3 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.s3 .source-tag {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4af626;
+}
+.s3 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e6edf3;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 4: ROSE-ALERT-STAMP -- Pelicanmaxxing ---- */
+.s4 {
+  min-height: 100vh;
+  background: #c23b1d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s4 .bg-num {
+  position: absolute;
+  top: -0.2em;
+  right: -0.08em;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(220px, 40vw, 560px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  color: rgba(255,255,255,0.06);
+  user-select: none;
+  pointer-events: none;
+}
+.s4 .stamp {
+  display: inline-block;
+  border: 3.5px solid rgba(255,255,255,0.85);
+  padding: 10px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  width: fit-content;
+  color: rgba(255,255,255,0.9);
+  position: relative;
+  z-index: 1;
+}
+.s4 .top-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: clamp(60px, 10vw, 120px);
+}
+.s4 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+.s4 .dek {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.65;
+  max-width: 54ch;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+  color: rgba(255,255,255,0.88);
+}
+.s4 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.s4 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.s4 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 5: DARK/MIDNIGHT -- Dvorak obituary ---- */
+.s5 {
+  min-height: 100vh;
+  background: #141414;
+  color: #f2e8d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s5 .s-num-word {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(36px, 7vw, 120px);
+  line-height: 1;
+  color: rgba(242, 232, 213, 0.15);
+  margin-bottom: 56px;
+  letter-spacing: -0.03em;
+}
+.s5 .dateline {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a89060;
+  margin-bottom: 32px;
+}
+.s5 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(38px, 5.5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+  margin-bottom: 40px;
+}
+.s5 .dek {
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.7;
+  max-width: 56ch;
+  font-weight: 300;
+  color: #c8bba2;
+  margin-bottom: 48px;
+}
+.s5 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.s5 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a5a40;
+}
+.s5 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f2e8d5;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 6: ACADEMIC DROP-CAP -- Making ---- */
+.s6 {
+  min-height: 100vh;
+  background: #f3eee4;
+  color: #1a1810;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 7vw, 96px);
+  max-width: 100%;
+}
+.s6 .acad-num {
+  font-family: 'Fraunces', serif;
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: #8a7a60;
+  margin-bottom: 64px;
+  text-transform: uppercase;
+}
+.s6 .drop-cap-block {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 2.5vw, 32px);
+  margin-bottom: 36px;
+  max-width: 70ch;
+}
+.s6 .drop-letter {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(100px, 16vw, 200px);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  color: #1a1810;
+  flex-shrink: 0;
+  margin-top: 0.05em;
+}
+.s6 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.s6 .dek {
+  font-size: clamp(20px, 1.9vw, 25px);
+  line-height: 1.75;
+  max-width: 60ch;
+  font-weight: 300;
+  color: #3c3828;
+  margin-bottom: 48px;
+}
+.s6 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.s6 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7a60;
+}
+.s6 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1810;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 7: SWISS POSTER -- Quality non-fiction ---- */
+.s7 {
+  min-height: 100vh;
+  background: #7b9e87;
+  color: #f8fff9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s7 .poster-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(140px, 28vw, 480px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  color: rgba(248, 255, 249, 0.12);
+  position: absolute;
+  top: -0.1em;
+  right: -0.04em;
+  user-select: none;
+}
+.s7 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 3px solid rgba(248,255,249,0.5);
+  border-bottom: 3px solid rgba(248,255,249,0.5);
+  padding: 14px 0;
+  margin-bottom: 64px;
+  position: relative;
+}
+.s7 .top-bar .label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.s7 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(44px, 7.5vw, 130px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  max-width: 16ch;
+  margin-bottom: 40px;
+  position: relative;
+}
+.s7 .dek {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.65;
+  max-width: 52ch;
+  font-weight: 300;
+  color: rgba(248,255,249,0.85);
+  margin-bottom: 48px;
+  position: relative;
+}
+.s7 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.s7 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(248,255,249,0.55);
+}
+.s7 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fff9;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 8: NEWSPAPER COLUMN -- GPU cluster economics ---- */
+.s8 {
+  min-height: 100vh;
+  background: #fafaf5;
+  color: #111008;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s8 .paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 3px solid #111008;
+  border-bottom: 1px solid #111008;
+  padding: 14px 0;
+  margin-bottom: 56px;
+  gap: 24px;
+}
+.s8 .paper-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.5vw, 32px);
+  letter-spacing: -0.01em;
+}
+.s8 .paper-meta {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #555;
+  white-space: nowrap;
+}
+.s8 .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  max-width: 100%;
+}
+.s8 .col-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(40px, 8vw, 120px);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  color: #d4cbb8;
+  margin-bottom: 32px;
+}
+.s8 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.s8 .dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.75;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 40px;
+}
+.s8 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #c8c0b0;
+  padding-top: 20px;
+}
+.s8 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #777;
+}
+.s8 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111008;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+@media (max-width: 640px) {
+  .s8 .columns { grid-template-columns: 1fr; }
+}
+
+/* ---- SPREAD 9: TYPOGRAPHIC COLLAGE -- Christopher Alexander ---- */
+.s9 {
+  min-height: 100vh;
+  background: #2a1742;
+  color: #e4d8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s9 .ghost-num {
+  position: absolute;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(180px, 38vw, 580px);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: rgba(228, 216, 248, 0.05);
+  bottom: -0.15em;
+  right: -0.05em;
+  user-select: none;
+}
+.s9 .s-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #9b80d4;
+  margin-bottom: 56px;
+  position: relative;
+}
+.s9 .collage-words {
+  position: relative;
+  margin-bottom: 48px;
+}
+.s9 .word-large {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(64px, 12vw, 180px);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  color: #e4d8f8;
+  display: block;
+}
+.s9 .word-med {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 110px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: rgba(228, 216, 248, 0.45);
+  display: block;
+  padding-left: clamp(40px, 8vw, 120px);
+}
+.s9 .word-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 3.5vw, 56px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #9b80d4;
+  display: block;
+  padding-left: clamp(80px, 16vw, 240px);
+  margin-top: 8px;
+}
+.s9 .dek {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.65;
+  max-width: 56ch;
+  font-weight: 300;
+  color: rgba(228, 216, 248, 0.75);
+  margin-bottom: 48px;
+  position: relative;
+}
+.s9 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.s9 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a4a9c;
+}
+.s9 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e4d8f8;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- SPREAD 10: MANIFESTO -- Medici DNA ---- */
+.s10 {
+  min-height: 100vh;
+  background: #0b1928;
+  color: #f0e8d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+}
+.s10 .mani-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(80px, 18vw, 320px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: rgba(240, 232, 216, 0.07);
+  position: absolute;
+  bottom: clamp(40px, 6vw, 80px);
+  right: clamp(40px, 6vw, 80px);
+  user-select: none;
+}
+.s10 .decree {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #6a90b8;
+  margin-bottom: 56px;
+  position: relative;
+}
+.s10 h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(44px, 7vw, 112px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  max-width: 20ch;
+  margin-bottom: 48px;
+  position: relative;
+}
+.s10 .manifesto-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 56px;
+  position: relative;
+  max-width: 56ch;
+}
+.s10 .mline {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.6;
+  font-weight: 300;
+  color: rgba(240, 232, 216, 0.82);
+  border-left: 2px solid #3a5a7a;
+  padding-left: 24px;
+}
+.s10 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.s10 .source-tag {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4a6a88;
+}
+.s10 .read-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0e8d8;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---- COLOPHON ---- */
+.colophon {
+  background: #111;
+  color: #998a74;
+  padding: clamp(64px, 10vw, 140px) clamp(40px, 6vw, 96px);
+  text-align: center;
+}
+.colophon .mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  color: #f5efe4;
+  margin-bottom: 28px;
+}
+.colophon p {
+  font-size: 20px;
+  line-height: 1.65;
+  max-width: 48ch;
+  margin: 0 auto 16px;
+}
+.colophon a {
+  color: #c8a020;
+  text-underline-offset: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="title"><em>Morning</em> Edition</div>
+  <div class="meta">Vol. 053 &middot; 23 July 2026</div>
+</header>
+
+<!-- SPREAD 1: BIG-STAT -- Terence Tao / Jacobian Conjecture -->
+<section class="s1">
+  <div class="bg-stat">87</div>
+  <div class="s-num">I</div>
+  <div class="s-label">HN &middot; 752 pts &middot; 🎯</div>
+  <h2>Terence Tao reads the conversation that may have cracked an 87-year-old conjecture</h2>
+  <p class="dek">Claude Fable produced what appears to be a genuine counterexample to the Jacobian Conjecture, a problem in algebraic geometry that has defeated mathematicians since 1939. The world's greatest living mathematician sat down with the transcript and walked through it carefully. Peer review is underway. The mathematics community is paying attention.</p>
+  <div class="meta-row">
+    <span class="source-tag">HN &middot; @gmays</span>
+    <a class="read-link" href="https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 2: HERO COVER -- Bento Slides -->
+<section class="s2">
+  <div class="hero-num">2</div>
+  <div class="s-label">🎯 &middot; HN &middot; 744 pts &middot; Tools</div>
+  <h2>The slide deck that lives in your inbox</h2>
+  <p class="dek">Bento is a full presentation tool packed into one self-contained HTML file. No cloud account, no install, no subscription. Open it in a browser and you can edit, present, and share it with anyone. Drop it into Claude to convert an existing deck. Collaborate on it via an encrypted relay that never sees the content. For anyone who makes workshops for a living, this is interesting.</p>
+  <div class="meta-row">
+    <span class="source-tag">bento.page &middot; @starfallg</span>
+    <a class="read-link" href="https://bento.page/slides/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 3: TERMINAL -- GigaToken -->
+<section class="s3">
+  <div class="term-num">$ ./issue --story=3 --source=hn --score=439</div>
+  <div class="term-speed">1000x</div>
+  <h2>GigaToken: a tokenizer that actually keeps up</h2>
+  <p class="dek">Tokenization is the first thing every language model does: it splits your text into chunks before it can think about any of it. It has also been quietly slow, bottlenecking inference pipelines at scale. GigaToken claims to be roughly 1000x faster than the current standard. Not a new model. Just better plumbing. Which sometimes matters more.</p>
+  <div class="meta-row">
+    <span class="source-tag">GitHub &middot; @syrusakbary</span>
+    <a class="read-link" href="https://github.com/marcelroed/gigatoken/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 4: ROSE-ALERT-STAMP -- Pelicanmaxxing -->
+<section class="s4">
+  <div class="bg-num">IV</div>
+  <div class="top-block">
+    <div class="stamp">HN &middot; 461 pts &middot; 🎯</div>
+    <h2>Are AI labs pelicanmaxxing?</h2>
+    <p class="dek">The pelican in the metaphor is optimising for one thing so hard it ignores everything else. The essay asks whether frontier AI labs, under relentless pressure to beat benchmarks, are building systems that score well on tests without building what the tests were supposed to measure. This is not a fringe concern. It is, increasingly, a serious research question and a live business risk for anyone teaching people to rely on these tools.</p>
+    <div class="meta-row">
+      <span class="source-tag">dylancastillo.co &middot; @dcastm</span>
+      <a class="read-link" href="https://dylancastillo.co/posts/pelicanmaxxing.html" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 5: DARK/MIDNIGHT -- John C. Dvorak -->
+<section class="s5">
+  <div class="s-num-word">Five</div>
+  <div class="dateline">Obituary &middot; HN &middot; 683 pts</div>
+  <h2>John C. Dvorak, 1946&ndash;2026. Tech journalism's most reliable contrarian.</h2>
+  <p class="dek">Dvorak was wrong about many things: he predicted the Mac would fail, that the internet was a fad, that podcasting wouldn't last. He was also, often enough to matter, exactly right. He was the voice on PC Magazine, then on No Agenda, then on TWiT, across five decades of the industry he covered. He was not warm on paper and was, by most accounts, generous in person. Tech journalism has lost one of the originals.</p>
+  <div class="meta-row">
+    <span class="source-tag">twit.community</span>
+    <a class="read-link" href="https://www.twit.community/t/john-c-dvorak-has-passed-away/20291" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 6: ACADEMIC DROP-CAP -- Making -->
+<section class="s6">
+  <div class="acad-num">No. VI &middot; HN &middot; 319 pts &middot; 🎯</div>
+  <div class="drop-cap-block">
+    <span class="drop-letter">M</span>
+    <h2>aking things, after the machines learned how</h2>
+  </div>
+  <p class="dek">Beej's essay is a quiet meditation on what creating means now that AI can produce things instantly. The question is not whether the output is good. The question is what happens to the person who is no longer required to struggle through the process of making it. There is something in the effort that the result cannot contain. This is the argument that matters most for anyone teaching creative or technical skills.</p>
+  <div class="meta-row">
+    <span class="source-tag">beej.us &middot; @erikschoster</span>
+    <a class="read-link" href="https://beej.us/blog/data/ai-making/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 7: SWISS POSTER -- Quality non-fiction -->
+<section class="s7">
+  <div class="poster-num">7</div>
+  <div class="top-bar">
+    <span class="label">HN &middot; 268 pts</span>
+    <span class="label">Res Obscura</span>
+  </div>
+  <h2>Quality non-fiction is what AI cannot do</h2>
+  <p class="dek">Some books took a decade to research. They contain knowledge that exists nowhere else, assembled by someone who spent years in archives, in the field, talking to the last people who were there. AI can produce 10,000 imitations at zero marginal cost. It cannot produce these. The author argues that the prize-winning book is becoming the last defensible claim to human epistemic authority. That may be slightly overstated but is directionally correct.</p>
+  <div class="meta-row">
+    <span class="source-tag">resobscura.substack.com &middot; @benbreen</span>
+    <a class="read-link" href="https://resobscura.substack.com/p/quality-non-fiction-books-are-the" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 8: NEWSPAPER COLUMN -- GPU cluster economics -->
+<section class="s8">
+  <div class="paper-header">
+    <span class="paper-title">Morning Edition &middot; Markets</span>
+    <span class="paper-meta">No. VIII &middot; 23 Jul 2026</span>
+  </div>
+  <div class="columns">
+    <div>
+      <div class="col-num">VIII</div>
+      <h2>Nobody knows what a used GPU cluster is worth</h2>
+      <p class="dek">The second-hand AI hardware market has no price discovery. An H100 cluster that cost $30 million new might sell for half that or a tenth of it, depending on who is buying, why they are buying, and whether the seller has other options. The piece documents the chaos: brokers with wildly different quotes, hyperscalers offloading quietly, startups trying to buy at the bottom of a market that has no bottom anyone can locate. If you are thinking about AI infrastructure costs for any reason, this is useful context.</p>
+      <div class="meta-row">
+        <span class="source-tag">ciphertalk.substack.com</span>
+        <a class="read-link" href="https://ciphertalk.substack.com/p/nobody-knows-what-a-used-gpu-cluster" target="_blank" rel="noopener">Read &rarr;</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;">
+        <div style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(60px,12vw,180px);line-height:0.85;letter-spacing:-0.05em;color:#d4cbb8;">HN<br>206</div>
+        <div style="font-size:18px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#aaa;margin-top:16px;">points</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 9: TYPOGRAPHIC COLLAGE -- Christopher Alexander -->
+<section class="s9">
+  <div class="ghost-num">009</div>
+  <div class="s-num">No. 009 &middot; HN &middot; 54 pts &middot; 🎯</div>
+  <div class="collage-words">
+    <span class="word-large">PATTERN</span>
+    <span class="word-med">language</span>
+    <span class="word-small">all 253, summarised</span>
+  </div>
+  <p class="dek">Christopher Alexander spent his career asking why some buildings, streets, and towns feel alive while others feel dead. His answer: 253 specific patterns, from the scale of a city down to the depth of a windowsill. This page summarises all of them. Alexander's ideas have quietly influenced software architecture, community design, and course structure for 40 years. For anyone building a curriculum or a learning environment, this is a surprisingly direct reference.</p>
+  <div class="meta-row">
+    <span class="source-tag">claytondorge.com &middot; @toomuchtodo</span>
+    <a class="read-link" href="https://claytondorge.com/patterns-list" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 10: MANIFESTO -- Medici DNA -->
+<section class="s10">
+  <div class="mani-num">X</div>
+  <div class="decree">HN &middot; 103 pts &middot; Forensic Science</div>
+  <h2>The Medici mystery that took 400 years to close</h2>
+  <div class="manifesto-lines">
+    <p class="mline">Several members of the Medici family died in ways that never made sense. The historical record blamed poisoning, political murder, or bad luck. Researchers now believe the answer is malaria, specifically a particularly virulent strain of the parasite common in 15th and 16th century Tuscany.</p>
+    <p class="mline">The evidence comes from DNA extracted from the family's remains in the Basilica di San Lorenzo. This is forensic genomics doing something historians alone could not: reopening a cold case that had been cold for four centuries and arriving at a plausible answer.</p>
+    <p class="mline">The Medici funded the Renaissance. Their deaths shaped Italian politics for generations. The cause, it turns out, was a mosquito.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source-tag">CNN Science &middot; @effects</span>
+    <a class="read-link" href="https://www.cnn.com/2026/07/15/science/medici-family-mystery-dna-malaria" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 053 &middot; 23 July 2026. Ten stories curated, written, and designed by an agent at 7am for one reader.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
