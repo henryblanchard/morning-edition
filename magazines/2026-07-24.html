@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 24 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+
+.read-link{
+  display:inline-block;
+  margin-top:36px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:3px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.65}
+
+/* ===================== MASTHEAD ===================== */
+.masthead{
+  padding:clamp(24px,4vw,52px) clamp(32px,7vw,96px);
+  background:#f2ece0;
+  border-bottom:2px solid #1a1208;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(26px,3vw,40px);
+  letter-spacing:-0.01em;
+  color:#1a1208;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#6a5230;
+}
+
+/* ===================== SPREAD 1: MANIFESTO ===================== */
+/* Sage green, large italic manifesto text, roman numeral */
+.s1{
+  min-height:100vh;
+  background:#3f5c3a;
+  color:#eae6d8;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s1 .bg-numeral{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(120px,22vw,340px);
+  line-height:0.82;
+  color:#6a9060;
+  opacity:0.35;
+  position:absolute;
+  bottom:clamp(32px,6vw,72px);
+  right:clamp(32px,6vw,72px);
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.04em;
+}
+.s1 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#8ebc82;
+  margin-bottom:40px;
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(44px,7.5vw,124px);
+  line-height:1.01;
+  letter-spacing:-0.025em;
+  max-width:17ch;
+  margin-bottom:36px;
+  color:#f2ede0;
+}
+.s1 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.9vw,28px);
+  line-height:1.58;
+  max-width:52ch;
+  color:#c8c4b4;
+}
+.s1 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#7aaa70;
+  margin-top:10px;
+  font-weight:400;
+}
+.s1 .read-link{color:#8ebc82;border-bottom-color:#8ebc82}
+
+/* ===================== SPREAD 2: SWISS POSTER ===================== */
+/* Burnt orange, bold grid, two-column */
+.s2{
+  min-height:100vh;
+  background:#b85a10;
+  color:#fff;
+  padding:clamp(60px,8vw,100px) clamp(40px,7vw,100px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(32px,5vw,64px);
+  align-items:end;
+}
+.s2-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:24px;
+}
+.s2-right{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:clamp(40px,6vw,80px);
+}
+.s2 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(120px,20vw,320px);
+  line-height:0.82;
+  letter-spacing:-0.06em;
+  color:#fff;
+  opacity:0.15;
+}
+.s2 .rule{height:4px;background:#fff;margin:16px 0 32px}
+.s2 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.7;
+  margin-bottom:20px;
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(32px,4.8vw,80px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+}
+.s2 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(19px,1.7vw,24px);
+  line-height:1.52;
+  max-width:40ch;
+}
+.s2 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  opacity:0.65;
+  margin-top:8px;
+}
+@media(max-width:700px){
+  .s2{grid-template-columns:1fr}
+  .s2-right{display:none}
+}
+
+/* ===================== SPREAD 3: ROSE-ALERT-STAMP ===================== */
+/* Blush, red stamp, warning feel */
+.s3{
+  min-height:100vh;
+  background:#edd9ce;
+  color:#1a0c08;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s3 .ghost-number{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(220px,38vw,600px);
+  line-height:0.8;
+  color:#dfc8be;
+  position:absolute;
+  top:-0.05em;
+  left:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.06em;
+}
+.s3-stamp{
+  position:absolute;
+  top:clamp(36px,7vw,80px);
+  right:clamp(36px,7vw,80px);
+  border:5px solid #8b1818;
+  color:#8b1818;
+  padding:10px 26px;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,1.8vw,24px);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  transform:rotate(9deg);
+}
+.s3-content{position:relative;z-index:2;max-width:680px}
+.s3 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#8b1818;
+  margin-bottom:36px;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(34px,5vw,82px);
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  margin-bottom:32px;
+  max-width:22ch;
+}
+.s3 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.58;
+  max-width:50ch;
+}
+.s3 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#8b1818;
+  margin-top:10px;
+  font-style:italic;
+}
+.s3 .read-link{color:#8b1818;border-bottom-color:#8b1818}
+
+/* ===================== SPREAD 4: TERMINAL / MONOSPACE ===================== */
+/* Near-black, terminal green, monospace throughout */
+.s4{
+  min-height:100vh;
+  background:#0d0f17;
+  color:#9eff70;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  font-family:'Courier New',Courier,monospace;
+}
+.s4 .terminal-prompt{
+  font-size:18px;
+  font-family:'Courier New',monospace;
+  color:#5a9c3a;
+  margin-bottom:36px;
+  letter-spacing:0.06em;
+}
+.s4 h2{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(28px,4.2vw,68px);
+  font-weight:700;
+  line-height:1.1;
+  color:#e8ffe0;
+  margin-bottom:36px;
+  max-width:28ch;
+}
+.s4 .dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(18px,1.5vw,21px);
+  line-height:1.75;
+  max-width:58ch;
+  color:#9eff70;
+}
+.s4 .cursor{
+  display:inline-block;
+  width:12px;
+  height:1.1em;
+  background:#9eff70;
+  margin-left:2px;
+  vertical-align:text-bottom;
+  animation:blink 1.1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.s4 .src{
+  font-family:'Courier New',monospace;
+  font-size:18px;
+  color:#5a9c3a;
+  margin-top:14px;
+}
+.s4 .read-link{
+  color:#9eff70;
+  border-bottom-color:#9eff70;
+  font-family:'Courier New',monospace;
+  font-size:20px;
+}
+.s4 .meta-line{
+  font-size:18px;
+  color:#4a8a2a;
+  margin-bottom:20px;
+  letter-spacing:0.04em;
+}
+
+/* ===================== SPREAD 5: NEWSPAPER COLUMN ===================== */
+/* Warm ivory, two-column newsprint */
+.s5{
+  min-height:100vh;
+  background:#f4eedf;
+  color:#1a1208;
+  padding:clamp(48px,7vw,96px) clamp(32px,7vw,96px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s5-banner{
+  text-align:center;
+  margin-bottom:clamp(28px,4vw,52px);
+  border-top:4px solid #1a1208;
+  border-bottom:1.5px solid #1a1208;
+  padding:16px 0 20px;
+}
+.s5-banner .paper-title{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(38px,5.5vw,80px);
+  line-height:0.9;
+  letter-spacing:-0.02em;
+}
+.s5-banner .paper-sub{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#8b6030;
+  margin-top:10px;
+}
+.s5-columns{
+  column-count:2;
+  column-gap:clamp(28px,5vw,72px);
+  column-rule:1.5px solid #c4b090;
+  max-width:900px;
+  margin:0 auto;
+  width:100%;
+}
+.s5 .numeral-col{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(72px,12vw,160px);
+  line-height:0.75;
+  color:#c4b090;
+  float:left;
+  margin-right:10px;
+  margin-top:4px;
+  display:block;
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(24px,3vw,48px);
+  line-height:1.1;
+  letter-spacing:-0.01em;
+  margin-bottom:18px;
+  break-after:avoid;
+}
+.s5 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(19px,1.6vw,22px);
+  line-height:1.68;
+}
+.s5 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#8b6030;
+  margin-top:14px;
+  font-style:italic;
+}
+.s5 .read-link{color:#8b6030;border-bottom-color:#8b6030}
+@media(max-width:640px){.s5-columns{column-count:1}}
+
+/* ===================== SPREAD 6: ACADEMIC DROP-CAP ===================== */
+/* Pale blue-grey, drop cap, paper feel */
+.s6{
+  min-height:100vh;
+  background:#d4e0ef;
+  color:#0a1828;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s6 .journal-label{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#2e5888;
+  margin-bottom:14px;
+}
+.s6 .numeral-sup{
+  font-family:'Fraunces',serif;
+  font-size:18px;
+  vertical-align:super;
+  color:#2e5888;
+  margin-right:2px;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(28px,4vw,66px);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  max-width:28ch;
+  margin-bottom:40px;
+  color:#080e1c;
+}
+.s6 .abstract{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.7;
+  max-width:58ch;
+  color:#1a2e48;
+}
+.s6 .abstract::first-letter{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(80px,13vw,160px);
+  line-height:0.72;
+  float:left;
+  margin-right:14px;
+  margin-top:8px;
+  color:#0e2a50;
+}
+.s6 .byline{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#2e5888;
+  margin-top:32px;
+  font-style:italic;
+  letter-spacing:0.04em;
+}
+.s6 .read-link{color:#2e5888;border-bottom-color:#2e5888}
+.s6 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#2e5888;
+  margin-top:8px;
+  font-style:italic;
+}
+
+/* ===================== SPREAD 7: DARK / MIDNIGHT ===================== */
+/* Near-black bg, white text, heavy and atmospheric */
+.s7{
+  min-height:100vh;
+  background:#060912;
+  color:#d8d0c4;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s7 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(52px,8vw,120px);
+  line-height:1;
+  letter-spacing:0.14em;
+  color:#4a4438;
+  margin-bottom:28px;
+  display:block;
+}
+.s7 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#7a6e5e;
+  margin-bottom:28px;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(36px,5.5vw,92px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:40px;
+  color:#f0e8da;
+}
+.s7 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.7vw,25px);
+  line-height:1.65;
+  max-width:52ch;
+  color:#b0a898;
+}
+.s7 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#6a5e4e;
+  margin-top:12px;
+}
+.s7 .read-link{color:#c0b0a0;border-bottom-color:#6a5e4e}
+
+/* ===================== SPREAD 8: TYPOGRAPHIC COLLAGE ===================== */
+/* Deep plum, pink accents, ghost number */
+.s8{
+  min-height:100vh;
+  background:#241028;
+  color:#f0c0d8;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s8 .ghost-number{
+  position:absolute;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,46vw,720px);
+  line-height:0.82;
+  color:#f0c0d8;
+  opacity:0.045;
+  top:-0.1em;
+  left:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.07em;
+}
+.s8-content{position:relative;z-index:2}
+.s8 .tag{
+  display:inline-block;
+  background:#f0c0d8;
+  color:#241028;
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:7px 20px;
+  margin-bottom:32px;
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(34px,5.5vw,96px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:20ch;
+  margin-bottom:32px;
+  color:#fce8f4;
+}
+.s8 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.6;
+  max-width:50ch;
+  color:#d8a8cc;
+}
+.s8 .pull-quote{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(22px,2.5vw,40px);
+  color:#d8a8cc;
+  border-left:3px solid #c088b0;
+  padding-left:24px;
+  margin-top:36px;
+  max-width:36ch;
+  line-height:1.4;
+}
+.s8 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#a878a0;
+  margin-top:16px;
+}
+.s8 .read-link{color:#f0c0d8;border-bottom-color:#c088b0}
+
+/* ===================== SPREAD 9: COLOUR-FIELD MINIMALIST ===================== */
+/* Sky-horizon blue, spare, typographic weight from emptiness */
+.s9{
+  min-height:100vh;
+  background:#a8c8e0;
+  color:#04141e;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s9 .numeral-small{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.32em;
+  color:#3a6880;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(40px,7vw,130px);
+  line-height:0.94;
+  letter-spacing:-0.03em;
+  max-width:22ch;
+  margin-bottom:52px;
+  color:#04141e;
+}
+.s9 .divider{
+  width:clamp(48px,8vw,96px);
+  height:3px;
+  background:#3a6880;
+  margin-bottom:40px;
+}
+.s9 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.9vw,27px);
+  line-height:1.6;
+  max-width:46ch;
+  color:#0a2030;
+}
+.s9 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#3a6880;
+  margin-top:14px;
+  font-style:italic;
+}
+.s9 .read-link{color:#04141e;border-bottom-color:#3a6880}
+
+/* ===================== SPREAD 10: BIG-STAT FINISH ===================== */
+/* Deep prussian blue, gold accent, enormous central number */
+.s10{
+  min-height:100vh;
+  background:#040a14;
+  color:#e8e0d0;
+  padding:clamp(64px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  overflow:hidden;
+}
+.s10 .bg-number{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-52%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(220px,38vw,680px);
+  line-height:0.82;
+  color:#f5c518;
+  opacity:0.07;
+  letter-spacing:-0.07em;
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+.s10-content{position:relative;z-index:2}
+.s10 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#f5c518;
+  margin-bottom:14px;
+}
+.s10 .numeral-meta{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:300;
+  letter-spacing:0.1em;
+  color:#6a5a38;
+  margin-bottom:24px;
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(34px,5.2vw,88px);
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:36px;
+  color:#f0e8d8;
+}
+.s10 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.7vw,25px);
+  line-height:1.62;
+  max-width:52ch;
+  color:#b8b0a0;
+}
+.s10 .src{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  color:#6a5a38;
+  margin-top:12px;
+}
+.s10 .read-link{color:#f5c518;border-bottom-color:#f5c518}
+
+/* ===================== COLOPHON ===================== */
+.colophon{
+  background:#111;
+  color:#b8b0a0;
+  padding:clamp(64px,10vw,140px) clamp(32px,7vw,96px);
+  text-align:center;
+}
+.colophon .mark{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(36px,5vw,64px);
+  color:#f0e8da;
+  margin-bottom:24px;
+  line-height:1;
+}
+.colophon p{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:20px;
+  line-height:1.65;
+  max-width:50ch;
+  margin:0 auto 14px;
+}
+.colophon a{color:#f5c518;text-decoration:underline;text-underline-offset:4px}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title">Morning Edition</div>
+  <div class="masthead-meta">Vol. 054 &mdash; 24 Jul 2026</div>
+</header>
+
+<!-- ===================== SPREAD 1: MANIFESTO ===================== -->
+<!-- Writing by hand (Neal Stephenson, score 1165) -->
+<section class="s1">
+  <div class="bg-numeral">i</div>
+  <div class="eyebrow">Story 01 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; 1,165 points</div>
+  <h2>Writing by Hand Is Good for Your Brain</h2>
+  <p class="dek">Neal Stephenson, the novelist who coined "metaverse", argues that handwriting bypasses the shortcuts our brains take when we type. It is slower, more deliberate, and that is precisely the point. The friction is the feature: the pen forces a kind of cognitive presence that a keyboard actively discourages. In an era of voice-to-text and autocomplete, this is a mild but genuine act of resistance.</p>
+  <p class="src">Neal Stephenson, Substack &nbsp;·&nbsp; 545 comments</p>
+  <a class="read-link" href="https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================== SPREAD 2: SWISS POSTER ===================== -->
+<!-- Startup founders urge US not to shut off Chinese open-weight AI (score 841) -->
+<section class="s2">
+  <div class="s2-left">
+    <div class="numeral">II</div>
+    <div class="rule"></div>
+    <div class="eyebrow">Story 02 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; 841 points</div>
+    <h2>Keep the Open Weights. Don't Give the Closed Labs a Monopoly.</h2>
+    <p class="dek">A group of Silicon Valley founders, organised under the banner of Little Tech, have sent a letter urging the Trump administration to leave Chinese open-weight models accessible to US developers. Their argument: cutting off DeepSeek, Kimi, and their kin would hand the closed-lab incumbents an insurmountable moat, and harm every startup building on open infrastructure. The politics are thorny; the business logic is hard to dispute.</p>
+    <p class="src">Politico &nbsp;·&nbsp; 721 comments</p>
+    <a class="read-link" href="https://www.politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+  <div class="s2-right" aria-hidden="true">
+    <!-- decorative right column, visible on desktop -->
+    <div style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(60px,10vw,160px);line-height:0.9;opacity:0.2;letter-spacing:-0.04em">OPEN<br>SOURCE<br>AI</div>
+  </div>
+</section>
+
+<!-- ===================== SPREAD 3: ROSE-ALERT-STAMP ===================== -->
+<!-- OpenAI's accidental attack against Hugging Face (score 461) -->
+<section class="s3">
+  <div class="ghost-number">3</div>
+  <div class="s3-stamp">INCIDENT</div>
+  <div class="s3-content">
+    <div class="eyebrow">Story 03 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; 461 points</div>
+    <h2>OpenAI's Infrastructure Accidentally DDoS-ed Hugging Face</h2>
+    <p class="dek">During a routine model evaluation, OpenAI's systems appear to have launched what amounted to a denial-of-service attack against Hugging Face. Simon Willison unpacks why this qualifies as the kind of incident that used to exist only in speculative fiction: AI infrastructure causing real infrastructure damage, accidentally, at scale, with nobody quite in control. Both organisations have since disclosed the event. The fact that this was an accident makes it more alarming, not less.</p>
+    <p class="src">Simon Willison's Weblog &nbsp;·&nbsp; 367 comments</p>
+    <a class="read-link" href="https://simonwillison.net/2026/Jul/22/openai-cyberattack/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===================== SPREAD 4: TERMINAL / MONOSPACE ===================== -->
+<!-- 98.css (score 395) -->
+<section class="s4">
+  <p class="terminal-prompt">$ morning-edition --story 04 --score 395</p>
+  <div class="meta-line">// source: hacker news &nbsp;|&nbsp; 90 comments</div>
+  <h2>98.css: A Windows 98 Design System for the Modern Web</h2>
+  <p class="dek">A CSS library that renders web components to look exactly like Windows 98: progress bars, title bars, dialog boxes, status strips, raised button states, all of it. In an era when every interface has been sanded to the same frictionless beige, this restoration project is both obsessively accurate and quietly funny. The attention to detail is the point. The nostalgia is a side effect.<span class="cursor"></span></p>
+  <p class="src">// jdan.github.io/98.css</p>
+  <a class="read-link" href="https://jdan.github.io/98.css/#status-bar" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================== SPREAD 5: NEWSPAPER COLUMN ===================== -->
+<!-- What happened to TheNumbers.com (score 338) -->
+<section class="s5">
+  <div class="s5-banner">
+    <div class="paper-title">The Morning Edition</div>
+    <div class="paper-sub">Story 05 &nbsp;&bull;&nbsp; Hacker News &nbsp;&bull;&nbsp; 338 points</div>
+  </div>
+  <div class="s5-columns">
+    <div>
+      <span class="numeral-col">V</span>
+      <h2>What Just Happened to TheNumbers.com Should Worry All of Us</h2>
+      <p class="dek">For decades, TheNumbers.com was the authoritative source for box office statistics: deep, reliable, specialist knowledge accumulated over many years. Then AI scrapers consumed it wholesale, redistributed the content across summary pages and chatbot outputs, and killed its search ranking in the process. Stephen Follows documents the collapse in forensic detail. The story is not about one website. It is about what happens when the aggregate value of a field's accumulated expertise is hoovered up, repackaged, and returned to the field as a competitor.</p>
+      <p class="src">stephenfollows.com &nbsp;&bull;&nbsp; 148 comments</p>
+      <a class="read-link" href="https://stephenfollows.com/p/what-just-happened-to-thenumberscom-should-worry-us-all" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SPREAD 6: ACADEMIC DROP-CAP ===================== -->
+<!-- Echo: Fable-level results at 1/3 the cost (score 315) - GWAI flag -->
+<section class="s6">
+  <div class="journal-label"><span class="numeral-sup">6</span> Show HN &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 315 points &nbsp;&middot;&nbsp; 🎯</div>
+  <h2>Echo: Fable-Level Performance at a Third of the Cost, Using Open-Weight Models</h2>
+  <p class="abstract">Echo routes each prompt through a curated pool of open-weight models, deciding in real time which combinations of GLM, Kimi K2, and others to deploy, and how to weight their outputs. The system was built on a single observation: the gap between "the best single model" and "the best possible routing" is where the real efficiency gains live. On standard evaluations, the combined system outperforms any individual model in the pool. The claim of Fable-level results at roughly a third of the cost is a strong one; the architecture is transparent enough to interrogate it properly.</p>
+  <p class="byline">Echo by Adam Rida, Tracer ML &nbsp;&middot;&nbsp; 159 comments</p>
+  <p class="src">echo.tracerml.ai</p>
+  <a class="read-link" href="https://news.ycombinator.com/item?id=49026810" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================== SPREAD 7: DARK / MIDNIGHT ===================== -->
+<!-- Gene-editing therapy death (score 300) -->
+<section class="s7">
+  <span class="numeral">VII</span>
+  <div class="eyebrow">Story 07 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; 300 points</div>
+  <h2>A Family Paid $800,000 for a Gene-Editing Therapy for Their Daughter. She Died.</h2>
+  <p class="dek">The treatment was sourced through a Chinese clinical trial, bespoke, experimental, and extraordinarily expensive. Science magazine has obtained the full account of what happened, including details the trial operators never disclosed publicly. The story raises questions about the growing market for bespoke gene-editing therapies, the regulatory gaps between countries, and what desperate families are willing to risk when conventional medicine has run out of road.</p>
+  <p class="src">Science Magazine &nbsp;·&nbsp; 172 comments</p>
+  <a class="read-link" href="https://www.science.org/content/article/exclusive-death-girl-chinese-gene-editing-trial-was-never-made-public" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================== SPREAD 8: TYPOGRAPHIC COLLAGE ===================== -->
+<!-- Why Software Factories Fail (score 249) - GWAI flag -->
+<section class="s8">
+  <div class="ghost-number">8</div>
+  <div class="s8-content">
+    <div class="tag">Story 08 &nbsp;&middot;&nbsp; 249 points &nbsp;&middot;&nbsp; 🎯</div>
+    <h2>Why Software Factories Fail, and Why Harness Engineering Is Not Enough</h2>
+    <p class="dek">The "context engineering" framing for AI coding agents is everywhere right now. But this essay argues that better scaffolding is not the binding constraint. The deeper problem is that software factories require consistent, composable, machine-readable specifications; and most organisations do not have them, have never needed them, and cannot retrofit them in a sprint. More harness will not fix that. The post is long and occasionally combative. It is worth reading before you commission another AI coding workflow.</p>
+    <div class="pull-quote">"Harness engineering is necessary but not sufficient. The missing ingredient is specification discipline."</div>
+    <p class="src">github.com/humanlayer &nbsp;·&nbsp; 187 comments</p>
+    <a class="read-link" href="https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===================== SPREAD 9: COLOUR-FIELD MINIMALIST ===================== -->
+<!-- First exomoon (score 207) -->
+<section class="s9">
+  <div class="numeral-small">Story 09 &nbsp;&nbsp;|&nbsp;&nbsp; ESO &nbsp;&nbsp;|&nbsp;&nbsp; 207 points</div>
+  <h2>Astronomers May Have Found the First Moon Orbiting a Planet Beyond Our Solar System</h2>
+  <div class="divider"></div>
+  <p class="dek">Using ESO's Very Large Telescope, a team has identified what may be a genuine exomoon: a natural satellite orbiting a gas giant roughly 150 light years from Earth. If confirmed, it would be the first moon ever detected outside our solar system. The candidate object appears to be large, perhaps Neptune-sized, and the confirmation process will likely take years. Still. The first exomoon. That is a sentence worth sitting with for a moment.</p>
+  <p class="src">European Southern Observatory &nbsp;·&nbsp; 76 comments</p>
+  <a class="read-link" href="https://www.eso.org/public/news/eso2610/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================== SPREAD 10: BIG-STAT FINISH ===================== -->
+<!-- Fields Medals 2026 (score 156) -->
+<section class="s10">
+  <div class="bg-number">2026</div>
+  <div class="s10-content">
+    <div class="eyebrow">Mathematics</div>
+    <div class="numeral-meta">Story 10 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; 156 points</div>
+    <h2>The Fields Medals 2026: Mathematics Honours Four at the International Congress</h2>
+    <p class="dek">The discipline's highest honour was awarded this week in Vancouver. Four recipients spanning number theory, combinatorics, geometric representation theory, and algebraic geometry. As ever, the citations read as impenetrable to non-specialists and as extraordinary to those who follow the field. The Fields Medal remains the only major prize in mathematics restricted to mathematicians under forty, which gives the list a particular kind of energy: these are not lifetime achievement awards. They are bets on the future of the field.</p>
+    <p class="src">International Mathematical Union &nbsp;·&nbsp; 82 comments</p>
+    <a class="read-link" href="https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 054. Published 24 July 2026 by an agent from a laptop in Battersea. Designed with Fraunces and Inter. Served from GitHub Pages.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
