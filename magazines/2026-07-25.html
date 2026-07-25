@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 25 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+
+.read-link{
+  display:inline-block;
+  margin-top:32px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:3px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.65}
+
+/* ===== MASTHEAD ===== */
+.masthead{
+  padding:clamp(24px,4vw,52px) clamp(32px,7vw,96px);
+  background:#F4EDE0;
+  border-bottom:2px solid #1a1208;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(26px,3vw,40px);
+  color:#1a1208;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#6a5230;
+}
+
+/* ===== SPREAD 1: HERO COVER — deep teal, outline numeral ===== */
+.s1{
+  min-height:100vh;
+  background:#1C3D4A;
+  color:#F0EAD8;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s1 .bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(200px,36vw,540px);
+  line-height:0.85;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(240,234,216,0.12);
+  position:absolute;
+  top:clamp(20px,3vw,48px);
+  right:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.05em;
+}
+.s1 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#6ABBD4;
+  margin-bottom:clamp(24px,4vw,48px);
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(44px,8vw,132px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s1 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(22px,2.2vw,32px);
+  line-height:1.45;
+  max-width:52ch;
+  color:#C0D8E8;
+}
+
+/* ===== SPREAD 2: DARK / MIDNIGHT — near-black navy, roman ii ===== */
+.s2{
+  min-height:100vh;
+  background:#0A0E1A;
+  color:#D0C8B8;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s2 .glow{
+  position:absolute;
+  top:0;right:0;bottom:0;left:0;
+  background:radial-gradient(ellipse at 72% 28%, rgba(38,58,120,0.28) 0%, transparent 60%);
+  pointer-events:none;
+}
+.s2 .num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(18px,1.5vw,24px);
+  color:#404880;
+  margin-bottom:clamp(32px,5vw,64px);
+  letter-spacing:0.1em;
+}
+.s2 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#4878A8;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(40px,6.5vw,112px);
+  line-height:1.01;
+  letter-spacing:-0.025em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  color:#E8E0D0;
+}
+.s2 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.8vw,26px);
+  line-height:1.55;
+  max-width:52ch;
+  color:#8888A0;
+}
+
+/* ===== SPREAD 3: SWISS POSTER — crisp white, huge 3, red accent ===== */
+.s3{
+  min-height:100vh;
+  background:#FAFAF8;
+  color:#0F0F0F;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.s3 .bg-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(240px,44vw,680px);
+  line-height:0.82;
+  color:#E8E8E4;
+  position:absolute;
+  bottom:-0.12em;
+  right:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.06em;
+}
+.s3 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:#C02818;
+  margin-bottom:clamp(24px,4vw,48px);
+  position:relative;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7vw,110px);
+  line-height:0.97;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+  position:relative;
+}
+.s3 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  position:relative;
+  color:#2A2A2A;
+}
+
+/* ===== SPREAD 4: ACADEMIC DROP-CAP — warm parchment, italic IV ===== */
+.s4{
+  min-height:100vh;
+  background:#EBE0CE;
+  color:#1A1208;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.s4 .num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(72px,12vw,180px);
+  line-height:0.85;
+  color:#C4A868;
+  position:absolute;
+  top:clamp(40px,7vw,100px);
+  right:clamp(40px,7vw,100px);
+  letter-spacing:-0.02em;
+}
+.s4 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#7A6840;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(36px,5.5vw,88px);
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:28ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s4 .dek-small{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.55;
+  max-width:54ch;
+  color:#4A3820;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s4 .drop-cap-wrap{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px,2vw,28px);
+  line-height:1.5;
+  max-width:58ch;
+  color:#2A1E08;
+}
+.s4 .drop-cap-wrap::first-letter{
+  float:left;
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:5.2em;
+  line-height:0.78;
+  padding-right:0.12em;
+  padding-top:0.06em;
+  color:#8A6028;
+}
+
+/* ===== SPREAD 5: ROSE-ALERT-STAMP — dusty rose, stamped alert ===== */
+.s5{
+  min-height:100vh;
+  background:#E0BFB8;
+  color:#1A0808;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s5 .stamp{
+  display:inline-block;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#9A1818;
+  border:3px solid #9A1818;
+  padding:8px 18px;
+  transform:rotate(-2.5deg);
+  margin-bottom:clamp(28px,4vw,56px);
+  width:fit-content;
+}
+.s5 .bg-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(100px,20vw,300px);
+  line-height:0.88;
+  color:rgba(154,24,24,0.1);
+  position:absolute;
+  bottom:clamp(24px,5vw,72px);
+  right:clamp(32px,6vw,80px);
+  letter-spacing:-0.05em;
+  pointer-events:none;
+  user-select:none;
+}
+.s5 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#7A2010;
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,100px);
+  line-height:0.97;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s5 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  color:#4A1810;
+}
+
+/* ===== SPREAD 6: MANIFESTO — dark forest green, lowercase vi bg ===== */
+.s6{
+  min-height:100vh;
+  background:#1B2E1A;
+  color:#D0E0C8;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s6 .bg-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(200px,36vw,560px);
+  line-height:0.85;
+  color:#253D23;
+  position:absolute;
+  bottom:-0.08em;
+  left:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.03em;
+}
+.s6 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#68AA5C;
+  margin-bottom:clamp(20px,3vw,40px);
+  position:relative;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(40px,7vw,120px);
+  line-height:0.99;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  position:relative;
+}
+.s6 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(22px,2vw,30px);
+  line-height:1.48;
+  max-width:52ch;
+  color:#98C490;
+  position:relative;
+}
+
+/* ===== SPREAD 7: TYPOGRAPHIC COLLAGE — pale lavender, split layout ===== */
+.s7{
+  min-height:100vh;
+  background:#D8D2EC;
+  color:#1A1430;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s7 .bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(200px,40vw,620px);
+  line-height:1;
+  color:rgba(26,20,48,0.06);
+  position:absolute;
+  top:-0.04em;
+  right:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.05em;
+}
+.s7 .collage-row{
+  display:flex;
+  align-items:flex-start;
+  gap:clamp(24px,5vw,80px);
+  flex-wrap:wrap;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s7 .collage-numeral{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(64px,12vw,180px);
+  line-height:0.88;
+  color:#8880C8;
+  flex-shrink:0;
+}
+.s7 .collage-head{
+  flex:1;
+  min-width:220px;
+}
+.s7 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#5848A8;
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,90px);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s7 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  color:#38306A;
+}
+
+/* ===== SPREAD 8: TERMINAL / MONOSPACE — black-green, scanlines ===== */
+.s8{
+  min-height:100vh;
+  background:#060D06;
+  color:#40D840;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s8 .scanlines{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.05) 3px,
+    rgba(0,0,0,0.05) 4px
+  );
+  pointer-events:none;
+}
+.s8 .num{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  color:#208820;
+  margin-bottom:clamp(28px,5vw,60px);
+  letter-spacing:0.1em;
+  position:relative;
+}
+.s8 .prompt{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  color:#208820;
+  margin-bottom:10px;
+  letter-spacing:0.04em;
+  position:relative;
+}
+.s8 h2{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(26px,4vw,62px);
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  max-width:30ch;
+  margin-bottom:clamp(28px,4vw,52px);
+  color:#70F870;
+  position:relative;
+}
+.s8 .dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.65;
+  max-width:58ch;
+  color:#28A828;
+  position:relative;
+}
+.s8 .cursor{
+  display:inline-block;
+  width:0.55em;
+  height:1em;
+  background:#40D840;
+  vertical-align:middle;
+  margin-left:4px;
+  animation:blink 1.2s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.s8 .read-link{color:#70F870;border-color:#70F870;position:relative}
+
+/* ===== SPREAD 9: COLOUR-FIELD MINIMALIST — sage, centred IX ===== */
+.s9{
+  min-height:100vh;
+  background:#C4D8CC;
+  color:#0A1A12;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
+.s9 .num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(18px,1.6vw,24px);
+  color:#3A7858;
+  margin-bottom:clamp(40px,7vw,100px);
+  letter-spacing:0.18em;
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(36px,6vw,96px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:0;
+  color:#0A1A12;
+}
+.s9 .divider{
+  width:56px;
+  height:2px;
+  background:#3A7858;
+  margin:clamp(24px,4vw,48px) auto;
+}
+.s9 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.6;
+  max-width:48ch;
+  color:#1E4830;
+}
+.s9 .source{
+  margin-top:clamp(20px,3vw,36px);
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:#3A7858;
+}
+
+/* ===== SPREAD 10: BIG-STAT FINISH — deep charcoal, huge X bg ===== */
+.s10{
+  min-height:100vh;
+  background:#141414;
+  color:#F0E8D0;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s10 .bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(280px,52vw,840px);
+  line-height:0.82;
+  color:rgba(240,232,208,0.04);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.06em;
+  white-space:nowrap;
+}
+.s10 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#C8A838;
+  margin-bottom:clamp(16px,2.5vw,32px);
+  position:relative;
+}
+.s10 .big-stat{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(80px,16vw,260px);
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  color:#E0C870;
+  margin-bottom:clamp(16px,2vw,28px);
+  position:relative;
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(32px,4.5vw,72px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:28ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+  position:relative;
+}
+.s10 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  color:#908878;
+  position:relative;
+}
+.s10 .read-link{color:#E0C870;border-color:#E0C870;position:relative}
+
+/* ===== COLOPHON ===== */
+.colophon{
+  background:#1a1208;
+  color:#A09080;
+  padding:clamp(64px,10vw,120px) clamp(40px,8vw,120px);
+  text-align:center;
+}
+.colophon .mark{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(40px,5vw,64px);
+  line-height:1;
+  margin-bottom:24px;
+  color:#F5EFE4;
+}
+.colophon p{
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.6;
+  max-width:56ch;
+  margin:0 auto 14px;
+}
+.colophon a{color:#E8C840;text-decoration:underline;text-underline-offset:4px}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title">Morning Edition</div>
+  <div class="masthead-meta">Vol. 055 &nbsp;&middot;&nbsp; 25 Jul 2026</div>
+</header>
+
+<!-- SPREAD 1: HERO COVER — Claude Opus 5 -->
+<section class="s1">
+  <div class="bg-num">I</div>
+  <div class="eyebrow">anthropic.com &middot; 1441 pts &nbsp; 🎯</div>
+  <h2>Claude Opus 5 has arrived</h2>
+  <p class="dek">Anthropic's new flagship scores highest on every benchmark that matters. This is not a minor revision: the system card describes a model that reasons differently, holds context longer, and refuses less without becoming less safe. For anyone building on Claude, the upgrade changes what is now possible.</p>
+  <a class="read-link" href="https://www.anthropic.com/news/claude-opus-5">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 2: DARK / MIDNIGHT — Open-weights regulation -->
+<section class="s2">
+  <div class="glow"></div>
+  <div class="num">ii</div>
+  <div class="eyebrow">cnbc.com &middot; 573 pts</div>
+  <h2>Nvidia, Microsoft and Meta draw the open-weights line</h2>
+  <p class="dek">Three companies with very different interests signed the same letter this week: don't kill open weights. The argument is sound on its face, the signatories are hardly neutral, and the underlying question, whether releasing model weights is more like publishing source code or more like handing out blueprints for weapons, remains genuinely unsettled.</p>
+  <a class="read-link" href="https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 3: SWISS POSTER — Coding solved / software worse -->
+<section class="s3">
+  <div class="bg-num">3</div>
+  <div class="eyebrow">ptrchm.com &middot; 682 pts &nbsp; 🎯</div>
+  <h2>Coding is solved. Software keeps getting worse.</h2>
+  <p class="dek">The thesis has become a cliche: AI writes code now, so software should be getting better. It isn't. This essay traces the real explanation, which has less to do with code quality and more to do with what gets built, who commissions it, and which incentives survive contact with a generation of near-free tokens.</p>
+  <a class="read-link" href="https://ptrchm.com/posts/nothing-works-and-everyone-is-euphoric/">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 4: ACADEMIC DROP-CAP — Hannah Fry Leelavati Prize -->
+<section class="s4">
+  <div class="num">IV</div>
+  <div class="eyebrow">maths.cam.ac.uk &middot; 35 pts &nbsp; 🎯</div>
+  <h2>Hannah Fry wins the Leelavati Prize for mathematics outreach</h2>
+  <p class="dek-small">The ICM's prize for mathematical communication goes this year to a broadcaster and UCL professor who has consistently managed the hardest trick in the discipline: making it feel like it matters without lying about how hard it is.</p>
+  <div class="drop-cap-wrap">Fry has spent a decade building the argument that mathematics is not a private language for specialists but a way of looking at the world that anyone can learn to use. The Leelavati Prize is overdue recognition of what that kind of work actually costs to do well.</div>
+  <a class="read-link" href="https://www.maths.cam.ac.uk/features/professor-hannah-fry-wins-leelavati-prize">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 5: ROSE-ALERT-STAMP — Security camera GitHub token -->
+<section class="s5">
+  <div class="stamp">Security breach</div>
+  <div class="eyebrow">hhh.hn &middot; 550 pts</div>
+  <h2>The security camera that shipped a GitHub admin token</h2>
+  <div class="bg-num">5</div>
+  <p class="dek">A researcher bought a security camera and, while inspecting its login page source, found a valid GitHub admin token hard-coded into the HTML. The repository it granted access to contained the firmware source for every device the company shipped. The camera was watching; so was everyone else.</p>
+  <a class="read-link" href="https://hhh.hn/hanwha-github-token/">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 6: MANIFESTO — India's first private rocket -->
+<section class="s6">
+  <div class="bg-num">vi</div>
+  <div class="eyebrow">arstechnica.com &middot; 557 pts</div>
+  <h2>India's first private rocket reaches orbit on debut launch</h2>
+  <p class="dek">Agnikul Cosmos has become the first private Indian company to reach orbit, on the first attempt, using a semi-cryogenic engine manufactured entirely in-country. The milestone arrives as the Indian government's commercial space policy takes shape, and as everyone watches whether the next decade of launch belongs to one country or to several.</p>
+  <a class="read-link" href="https://arstechnica.com/space/2026/07/indias-first-privately-developed-rocket-reaches-orbit-on-dramatic-debut-launch/">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 7: TYPOGRAPHIC COLLAGE — Future euro banknote designs -->
+<section class="s7">
+  <div class="bg-num">7</div>
+  <div class="collage-row">
+    <div class="collage-numeral">VII</div>
+    <div class="collage-head">
+      <div class="eyebrow">ecb.europa.eu &middot; 160 pts</div>
+      <h2>The ECB's twelve proposals for the next euro note</h2>
+    </div>
+  </div>
+  <p class="dek">The European Central Bank published all twelve finalist designs for the next euro series. The brief asked designers to depict European culture and civilisation, and the results swing between dignified and adventurous. Worth ten minutes of quiet attention before a committee picks the one nobody will remember designing.</p>
+  <a class="read-link" href="https://www.ecb.europa.eu/euro/banknotes/future_banknotes/html/all-design-proposals.en.html">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 8: TERMINAL / MONOSPACE — Bitchat removed from GitHub -->
+<section class="s8">
+  <div class="scanlines"></div>
+  <div class="num">[ 08 / 10 ]</div>
+  <div class="prompt">$ cat incident.log</div>
+  <h2>India orders GitHub to pull Bitchat from the internet</h2>
+  <p class="dek">India's government ordered GitHub to remove Bitchat, a Bluetooth-mesh chat app backed by Jack Dorsey. Stated reason: national security. The real question this raises: when is a communication tool too secure for official comfort? The app used no central servers. There was nothing to subpoena.<span class="cursor"></span></p>
+  <a class="read-link" href="https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 9: COLOUR-FIELD MINIMALIST — Sperm whales -->
+<section class="s9">
+  <div class="num">IX</div>
+  <h2>Sperm whales blow bubbles to sleep standing up</h2>
+  <div class="divider"></div>
+  <p class="dek">Researchers at St Andrews have documented a previously unobserved sperm whale sleep behaviour: blowing controlled streams of bubbles while hanging vertically in the water. The bubbles appear to regulate buoyancy, letting the whale rest without sinking or surfacing. The ocean, still surprising us.</p>
+  <a class="read-link" href="https://news.st-andrews.ac.uk/archive/sperm-whales-blow-bubbles-to-achieve-restful-vertical-sleep/">Read &rarr;</a>
+  <div class="source">news.st-andrews.ac.uk &middot; 70 pts</div>
+</section>
+
+<!-- SPREAD 10: BIG-STAT FINISH — Half-Life 2 on HaikuOS -->
+<section class="s10">
+  <div class="bg-num">X</div>
+  <div class="eyebrow">haiku-os.org &middot; 288 pts</div>
+  <div class="big-stat">HL2</div>
+  <h2>Half-Life 2 runs natively on HaikuOS</h2>
+  <p class="dek">HaikuOS, the open-source descendant of BeOS, is now running Half-Life 2 at playable frame rates via a newly ported Nvidia Turing driver. The project is the work of a single developer. Against all odds, the operating system nobody uses for anything serious is getting closer to being one people could.</p>
+  <a class="read-link" href="https://discuss.haiku-os.org/t/haiku-nvidia-porting-nvidia-driver-for-turing-gpus/16520?page=18">Read &rarr;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 055 &nbsp;&middot;&nbsp; 25 Jul 2026 &nbsp;&middot;&nbsp; Ten stories, curated and designed at 7am.</p>
+  <p>Published daily from Battersea. <a href="../index.html">Back to the archive</a>.</p>
+</footer>
+
+</body>
+</html>
