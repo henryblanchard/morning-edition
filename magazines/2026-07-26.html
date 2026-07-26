@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 26 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:32px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.05em;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:3px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.65}
+
+/* === MASTHEAD === */
+.masthead{
+  padding:clamp(24px,4vw,52px) clamp(32px,7vw,96px);
+  background:#1E2F22;
+  border-bottom:2px solid #0a1a0c;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(26px,3vw,40px);
+  color:#C8DCC0;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#7AA882;
+}
+
+/* === SPREAD 1: MANIFESTO — ochre field, enormous ghost roman numeral === */
+.s1{
+  min-height:100vh;
+  background:#F5F0E4;
+  color:#1A1206;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s1 .bg-rom{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(260px,46vw,640px);
+  line-height:0.88;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(26,18,6,0.07);
+  position:absolute;
+  top:-0.08em;
+  left:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.04em;
+}
+.s1 .meta{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#8A6030;
+  margin-bottom:clamp(16px,2.5vw,36px);
+  position:relative;
+}
+.s1 .rule{
+  width:56px;
+  height:3px;
+  background:#C8820A;
+  margin-bottom:clamp(20px,3vw,40px);
+  position:relative;
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(48px,9.5vw,160px);
+  line-height:0.91;
+  letter-spacing:-0.04em;
+  max-width:13ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  position:relative;
+}
+.s1 .dek{
+  font-size:clamp(20px,1.85vw,25px);
+  line-height:1.6;
+  max-width:56ch;
+  font-weight:400;
+  color:#3A2810;
+  position:relative;
+}
+
+/* === SPREAD 2: DARK/MIDNIGHT — navy void, fine grid, italic serif === */
+.s2{
+  min-height:100vh;
+  background:#060D18;
+  color:#C4D2E8;
+  padding:clamp(56px,9vw,130px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.s2 .grid-bg{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(68,120,200,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(68,120,200,0.05) 1px, transparent 1px);
+  background-size:clamp(44px,7vw,88px) clamp(44px,7vw,88px);
+  pointer-events:none;
+}
+.s2 .corner-num{
+  position:absolute;
+  top:clamp(32px,4vw,56px);
+  right:clamp(40px,8vw,120px);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.3em;
+  color:rgba(196,210,232,0.28);
+  text-transform:uppercase;
+}
+.s2 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#3D72C0;
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(44px,8vw,130px);
+  line-height:0.94;
+  letter-spacing:-0.02em;
+  max-width:18ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s2 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:#7A96BE;
+  font-weight:400;
+}
+
+/* === SPREAD 3: BIG-STAT — dark terracotta, the price as the graphic === */
+.s3{
+  min-height:100vh;
+  background:#180A04;
+  color:#F0E4D0;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s3 .giant-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(200px,36vw,520px);
+  line-height:0.83;
+  color:#D85430;
+  letter-spacing:-0.06em;
+  position:absolute;
+  right:-0.04em;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  user-select:none;
+}
+.s3 .story-num{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#D85430;
+  margin-bottom:clamp(16px,2.5vw,36px);
+  position:relative;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(40px,7vw,114px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+  margin-bottom:clamp(20px,3vw,40px);
+  position:relative;
+}
+.s3 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  color:#B09072;
+  position:relative;
+}
+.s3 .stat-label{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(240,228,208,0.35);
+  position:absolute;
+  right:clamp(40px,8vw,120px);
+  bottom:clamp(64px,10vw,140px);
+}
+
+/* === SPREAD 4: ACADEMIC DROP-CAP — cream page, chapter styling === */
+.s4{
+  min-height:100vh;
+  background:#FDFCF5;
+  color:#18160A;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s4 .chapter{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#78684A;
+  margin-bottom:clamp(16px,2.5vw,32px);
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.s4 .chapter::before{
+  content:'';
+  display:block;
+  width:40px;
+  height:2px;
+  background:#78684A;
+  flex-shrink:0;
+}
+.s4 .drop-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(140px,26vw,380px);
+  line-height:0.82;
+  color:#E8DEC8;
+  float:left;
+  margin-right:0.04em;
+  margin-bottom:-0.06em;
+  letter-spacing:-0.06em;
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(36px,6vw,96px);
+  line-height:1.01;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s4 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.72;
+  max-width:54ch;
+  clear:left;
+  color:#382E18;
+}
+
+/* === SPREAD 5: ROSE-ALERT-STAMP — blush field, circular stamp numeral === */
+.s5{
+  min-height:100vh;
+  background:#EFE4DE;
+  color:#2A0E0E;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s5 .stamp{
+  position:absolute;
+  top:clamp(48px,7vw,100px);
+  right:clamp(48px,9vw,130px);
+  width:clamp(100px,15vw,190px);
+  height:clamp(100px,15vw,190px);
+  border:3px solid #B83838;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(-8deg);
+  gap:2px;
+}
+.s5 .stamp-v{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(40px,7vw,96px);
+  line-height:1;
+  color:#B83838;
+}
+.s5 .stamp-sub{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#B83838;
+}
+.s5 .alert-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:#B83838;
+  color:#EFE4DE;
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  padding:9px 22px;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,8.5vw,138px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:14ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s5 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:#4A1818;
+}
+
+/* === SPREAD 6: TYPOGRAPHIC COLLAGE — deep canopy green, oversized ghost numeral === */
+.s6{
+  min-height:100vh;
+  background:#0C1E10;
+  color:#BCDBC0;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.s6 .collage-num{
+  position:absolute;
+  top:-0.06em;
+  right:-0.06em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(300px,55vw,780px);
+  line-height:0.8;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(188,219,192,0.05);
+  letter-spacing:-0.1em;
+  pointer-events:none;
+  user-select:none;
+}
+.s6 .tag{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#3DAD5C;
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7.5vw,122px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:19ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s6 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  color:#7AAE80;
+}
+
+/* === SPREAD 7: SWISS POSTER — pure electric blue, geometric grid === */
+.s7{
+  min-height:100vh;
+  background:#1640C8;
+  color:#FFFFFF;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  overflow:hidden;
+}
+.s7 .swiss-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:clamp(40px,7vw,100px);
+}
+.s7 .swiss-label{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.s7 .swiss-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,15vw,220px);
+  line-height:0.82;
+  color:rgba(255,255,255,0.1);
+  letter-spacing:-0.06em;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,8.5vw,144px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:14ch;
+  align-self:center;
+}
+.s7 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:rgba(255,255,255,0.68);
+  margin-top:clamp(24px,3.5vw,48px);
+  align-self:end;
+}
+
+/* === SPREAD 8: NEWSPAPER COLUMN — warm newsprint, two-column grid === */
+.s8{
+  min-height:100vh;
+  background:#EDE7D0;
+  color:#1A1608;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:grid;
+  grid-template-columns:minmax(120px,0.55fr) 1fr;
+  gap:clamp(40px,6vw,80px);
+  align-items:start;
+  position:relative;
+}
+@media(max-width:680px){
+  .s8{grid-template-columns:1fr}
+}
+.s8 .col-left{
+  padding-top:clamp(8px,1.5vw,20px);
+}
+.s8 .col-left .big-italic{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(96px,18vw,260px);
+  line-height:0.84;
+  color:#C4A85E;
+  letter-spacing:-0.04em;
+  display:block;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s8 .col-left .source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:500;
+  color:#7A6840;
+  letter-spacing:0.06em;
+  line-height:1.6;
+}
+.s8 .dateline{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#7A6840;
+  border-top:2px solid #1A1608;
+  padding-top:16px;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,96px);
+  line-height:1.0;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s8 .dek{
+  font-size:clamp(20px,1.75vw,23px);
+  line-height:1.72;
+  max-width:54ch;
+  color:#362E14;
+}
+
+/* === SPREAD 9: HERO COVER — near-black amber, outline ghost numeral === */
+.s9{
+  min-height:100vh;
+  background:#190E02;
+  color:#EEE0C0;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.s9 .bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(220px,40vw,600px);
+  line-height:0.84;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(238,224,192,0.06);
+  position:absolute;
+  top:clamp(20px,3vw,48px);
+  right:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.06em;
+}
+.s9 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#C88C2C;
+  margin-bottom:clamp(24px,4vw,48px);
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,8.5vw,140px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:15ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s9 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:#A08C60;
+}
+
+/* === SPREAD 10: COLOUR-FIELD MINIMALIST — dusty violet, text alone === */
+.s10{
+  min-height:100vh;
+  background:#7A6CB0;
+  color:#F2EFFF;
+  padding:clamp(64px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s10 .field-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(200px,34vw,480px);
+  line-height:0.85;
+  color:rgba(242,239,255,0.07);
+  position:absolute;
+  right:-0.04em;
+  bottom:-0.08em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.06em;
+}
+.s10 .label{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:rgba(242,239,255,0.5);
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(44px,8.5vw,144px);
+  line-height:0.93;
+  letter-spacing:-0.03em;
+  max-width:15ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s10 .dek{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:rgba(242,239,255,0.72);
+}
+
+/* === COLOPHON === */
+.colophon{
+  background:#0C0C0C;
+  color:rgba(255,255,255,0.45);
+  padding:clamp(48px,8vw,96px) clamp(40px,8vw,120px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:24px;
+}
+.colophon a{
+  color:rgba(255,255,255,0.72);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-title">Morning Edition</span>
+  <span class="masthead-meta">Vol. 056 &nbsp;&middot;&nbsp; 26 Jul 2026</span>
+</header>
+
+<!-- SPREAD 1: MANIFESTO — Claude 5 context engineering -->
+<section class="s1">
+  <div class="bg-rom" aria-hidden="true">I</div>
+  <div class="meta">&#127919; No. 01 &nbsp;&middot;&nbsp; Hacker News &middot; 255 pts</div>
+  <div class="rule"></div>
+  <h2>The Rules Have Changed</h2>
+  <p class="dek">Anthropic's new guidance on building with Claude 5 rewrites the operating manual for AI developers. Prompting is dead; context architecture is the new craft. Every AI educator building curricula around the old paradigms should read this before Monday.</p>
+  <a class="read-link" href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 2: DARK/MIDNIGHT — open-weight AI Kubernetes moment -->
+<section class="s2">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <span class="corner-num">02</span>
+  <div class="eyebrow">&#127919; Hacker News &middot; 357 pts</div>
+  <h2>Open Weights Find Their Kubernetes</h2>
+  <p class="dek">The sprawling open-source AI ecosystem is beginning to coalesce around deployment standards, just as Kubernetes once tamed container chaos. The implications for who controls the AI stack are considerable, and the momentum is accelerating faster than most incumbents expected.</p>
+  <a class="read-link" href="https://tobi.knaup.me/2026-07-25-open-weight-ai-is-having-its-kubernetes-moment/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 3: BIG-STAT — LLM on $8 microcontroller -->
+<section class="s3">
+  <div class="giant-stat" aria-hidden="true">$8</div>
+  <div class="story-num">&#127919; No. 03 &nbsp;&middot;&nbsp; Hacker News &middot; 132 pts</div>
+  <h2>A Brain for Eight Dollars</h2>
+  <p class="dek">A 28.9 million parameter language model, fitted onto an ESP32 chip that costs less than a pint of milk. Whether this is a genuine frontier or an impressive toy is beside the point: the price floor for intelligence just fell through the floor.</p>
+  <a class="read-link" href="https://github.com/slvDev/esp32-ai" target="_blank" rel="noopener">Read &#8594;</a>
+  <span class="stat-label">per unit</span>
+</section>
+
+<!-- SPREAD 4: ACADEMIC DROP-CAP — rethinking legal education -->
+<section class="s4">
+  <div class="chapter">&#127919; No. 04 &nbsp;&middot;&nbsp; Hacker News &middot; 49 pts</div>
+  <div class="drop-num" aria-hidden="true">IV</div>
+  <h2>Law School Faces the Mirror</h2>
+  <p class="dek">The University of Chicago Law School published a formal AI strategy that acknowledges what every educator already suspects: the knowledge being taught today may not be the knowledge graduates will need. The document is measured. The subtext is urgent.</p>
+  <a class="read-link" href="https://www.law.uchicago.edu/news/ai-strategy-statement" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 5: ROSE-ALERT-STAMP — Android ADB restriction -->
+<section class="s5">
+  <div class="stamp" aria-hidden="true">
+    <span class="stamp-v">V</span>
+    <span class="stamp-sub">Alert</span>
+  </div>
+  <div class="alert-tag">No. 05 &nbsp;&middot;&nbsp; HN &middot; 900 pts</div>
+  <h2>Google Moves to Close the Hatch</h2>
+  <p class="dek">Android's Developer Bridge, the tool that lets technologists inspect and control their own devices, may soon require tethering to a desktop. A small restriction with a large philosophical consequence: who actually owns your phone?</p>
+  <a class="read-link" href="https://kitsumed.github.io/blog/posts/android-may-soon-restrict-on-device-adb/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 6: TYPOGRAPHIC COLLAGE — Amazon canopy bridges -->
+<section class="s6">
+  <div class="collage-num" aria-hidden="true">VI</div>
+  <div class="tag">No. 06 &nbsp;&middot;&nbsp; Hacker News &middot; 333 pts</div>
+  <h2>Fifteen Thousand Crossings, Zero Deaths</h2>
+  <p class="dek">Rope bridges strung through the Amazon canopy have allowed animals to safely cross roads more than 15,000 times, with no roadkill recorded. Sometimes the most elegant engineering is embarrassingly low-tech.</p>
+  <a class="read-link" href="https://news.mongabay.com/2026/07/zero-roadkill-as-amazon-canopy-bridges-secure-15000-crossings/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 7: SWISS POSTER — sodium ion batteries -->
+<section class="s7">
+  <div class="swiss-header">
+    <span class="swiss-label">No. 07 &nbsp;&middot;&nbsp; HN &middot; 163 pts</span>
+    <span class="swiss-num" aria-hidden="true">VII</span>
+  </div>
+  <h2>The Grid's New Chemistry</h2>
+  <p class="dek">General Motors is backing sodium-ion batteries for US grid storage, sidestepping the lithium supply chain entirely. The bet is on abundance: sodium is practically everywhere, and the cells are getting cheaper faster than anyone modelled.</p>
+  <a class="read-link" href="https://spectrum.ieee.org/sodium-ion-battery-peak-energy" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 8: NEWSPAPER COLUMN — clinical failure rates -->
+<section class="s8">
+  <div class="col-left">
+    <span class="big-italic" aria-hidden="true">VIII</span>
+    <span class="source">Science.org<br>82 pts</span>
+  </div>
+  <div class="col-right">
+    <div class="dateline">No. 08 &nbsp;&middot;&nbsp; Hacker News</div>
+    <h2>Drug Trials Are Getting Harder to Win</h2>
+    <p class="dek">Clinical failure rates have worsened across virtually every therapeutic area over the past few decades. More trials, more money, fewer approvals: the productivity paradox of modern drug development shows no sign of resolving. A sobering chart with a very long tail.</p>
+    <a class="read-link" href="https://www.science.org/content/blog-post/clinical-failure-rates-over-decades-yikes" target="_blank" rel="noopener">Read &#8594;</a>
+  </div>
+</section>
+
+<!-- SPREAD 9: HERO COVER — JetZero -->
+<section class="s9">
+  <div class="bg-num" aria-hidden="true">IX</div>
+  <div class="eyebrow">No. 09 &nbsp;&middot;&nbsp; Hacker News &middot; 133 pts</div>
+  <h2>The Wing Is the Fuselage</h2>
+  <p class="dek">JetZero is betting the next generation of aviation on the blended wing body: a design so aerodynamically efficient it has been studied for a century without anyone building a commercial version. The Air Force is now paying them to try.</p>
+  <a class="read-link" href="https://www.jetzero.aero" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- SPREAD 10: COLOUR-FIELD MINIMALIST — humans still evolving -->
+<section class="s10">
+  <div class="field-num" aria-hidden="true">X</div>
+  <div class="label">No. 10 &nbsp;&middot;&nbsp; Hacker News &middot; 48 pts</div>
+  <h2>Selection Hasn't Stopped</h2>
+  <p class="dek">Harvard researchers find measurable genetic selection pressure still acting on modern human populations, favouring variants linked to later menopause, disease resistance, and cardiovascular health. Evolution, it turns out, did not wait for us to settle down.</p>
+  <a class="read-link" href="https://www.harvardmagazine.com/research/harvard-human-evolution-genes-selective-pressure" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span>Morning Edition &nbsp;&middot;&nbsp; Vol. 056 &nbsp;&middot;&nbsp; 26 Jul 2026</span>
+  <a href="../index.html">Back to archive &#8594;</a>
+</footer>
+
+</body>
+</html>
