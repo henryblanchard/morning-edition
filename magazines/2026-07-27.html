@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 27 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:36px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:4px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.6}
+.flag{font-size:1em;margin-right:6px}
+
+/* ============================
+   MASTHEAD
+   ============================ */
+.masthead{
+  padding:clamp(22px,3.5vw,48px) clamp(32px,7vw,96px);
+  background:#1B2FBE;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(24px,2.8vw,38px);
+  color:#fff;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+}
+
+/* ============================
+   SPREAD 1: SWISS POSTER
+   Kill The Cookie Banner
+   Background: cobalt blue
+   ============================ */
+.s1{
+  min-height:100vh;
+  background:#1B2FBE;
+  color:#fff;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.s1 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,44vw,600px);
+  line-height:0.85;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,0.15);
+  position:absolute;
+  top:-0.06em;
+  right:-0.05em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.04em;
+}
+.s1 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.65;
+  margin-bottom:28px;
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(52px,8.5vw,140px);
+  line-height:0.9;
+  letter-spacing:-0.025em;
+  max-width:14ch;
+  margin-bottom:36px;
+  position:relative;
+}
+.s1 .dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(21px,2.1vw,28px);
+  line-height:1.5;
+  max-width:52ch;
+  opacity:0.88;
+  position:relative;
+}
+.s1 .rule{
+  width:80px;
+  height:3px;
+  background:#fff;
+  margin:28px 0;
+}
+
+/* ============================
+   SPREAD 2: HERO COVER
+   GrapheneOS / airport
+   Background: near-black, amber accent
+   ============================ */
+.s2{
+  min-height:100vh;
+  background:#0F0E0C;
+  color:#F5F0E4;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s2 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(320px,52vw,720px);
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(245,192,24,0.12);
+  position:absolute;
+  bottom:-0.15em;
+  right:-0.06em;
+  pointer-events:none;
+  user-select:none;
+}
+.s2 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#F5C018;
+  margin-bottom:40px;
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(48px,7.5vw,120px);
+  line-height:0.93;
+  letter-spacing:-0.025em;
+  max-width:16ch;
+  margin-bottom:40px;
+}
+.s2 h2 em{
+  font-style:italic;
+  font-weight:400;
+  color:#F5C018;
+}
+.s2 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.55;
+  max-width:54ch;
+  color:rgba(245,240,228,0.8);
+}
+
+/* ============================
+   SPREAD 3: TYPOGRAPHIC COLLAGE
+   Htmx Game Boy
+   Background: acid green
+   ============================ */
+.s3{
+  min-height:100vh;
+  background:#BEFF8A;
+  color:#0A1A00;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s3 .top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s3 .numeral{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.25em;
+  opacity:0.45;
+}
+.s3 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.55;
+  text-align:right;
+}
+.s3 .collage-word{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,280px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  text-align:center;
+  position:relative;
+}
+.s3 .collage-word span{
+  display:block;
+}
+.s3 .collage-word .alt{
+  font-weight:300;
+  font-style:italic;
+  color:#2F5E00;
+}
+.s3 .bottom-content{
+  max-width:60ch;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(26px,2.8vw,38px);
+  line-height:1.1;
+  margin-bottom:20px;
+  letter-spacing:-0.01em;
+}
+.s3 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.55;
+  opacity:0.75;
+}
+
+/* ============================
+   SPREAD 4: ROSE-ALERT-STAMP
+   Pyrocumulonimbus
+   Background: terracotta/dusty rose
+   ============================ */
+.s4{
+  min-height:100vh;
+  background:#DDB89A;
+  color:#1A0A00;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s4 .stamp{
+  position:absolute;
+  top:clamp(40px,6vw,80px);
+  right:clamp(40px,6vw,80px);
+  width:clamp(100px,14vw,180px);
+  height:clamp(100px,14vw,180px);
+  border:4px solid #8B2500;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#8B2500;
+}
+.s4 .stamp .rom{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(28px,4vw,52px);
+  line-height:1;
+}
+.s4 .stamp .label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:clamp(7px,0.7vw,10px);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+.s4 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-bottom:32px;
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(48px,7.5vw,118px);
+  line-height:0.92;
+  letter-spacing:-0.025em;
+  max-width:14ch;
+  margin-bottom:36px;
+}
+.s4 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.55;
+  max-width:50ch;
+}
+
+/* ============================
+   SPREAD 5: ACADEMIC DROP-CAP
+   Decker / HyperCard
+   Background: aged parchment
+   ============================ */
+.s5{
+  min-height:100vh;
+  background:#F7F2E3;
+  color:#1A140A;
+  padding:clamp(80px,10vw,140px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.s5 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(18px,1.5vw,22px);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:56px;
+}
+.s5 .dropcap-row{
+  display:flex;
+  gap:clamp(24px,3vw,40px);
+  align-items:flex-start;
+}
+.s5 .dropcap{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(120px,18vw,240px);
+  line-height:0.82;
+  flex-shrink:0;
+  color:#1A140A;
+  letter-spacing:-0.04em;
+}
+.s5 .dropcap-content{
+  flex:1;
+  padding-top:clamp(8px,1vw,16px);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(32px,3.8vw,56px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  margin-bottom:28px;
+}
+.s5 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.6;
+  max-width:52ch;
+  opacity:0.75;
+}
+.s5 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-top:32px;
+}
+
+/* ============================
+   SPREAD 6: DARK / MIDNIGHT
+   Black hole in your room
+   Background: deep space
+   ============================ */
+.s6{
+  min-height:100vh;
+  background:#050510;
+  color:#E8E4F8;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.s6 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(240px,38vw,520px);
+  line-height:1;
+  position:absolute;
+  bottom:-0.2em;
+  right:-0.05em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(140,100,255,0.18);
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.03em;
+}
+.s6 .glow{
+  position:absolute;
+  width:clamp(300px,45vw,600px);
+  height:clamp(300px,45vw,600px);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(100,60,200,0.25) 0%,transparent 70%);
+  top:50%;
+  right:8%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.s6 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(180,160,255,0.6);
+  margin-bottom:36px;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(44px,7vw,108px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  max-width:18ch;
+  margin-bottom:36px;
+  position:relative;
+}
+.s6 h2 em{
+  font-weight:300;
+  font-style:italic;
+  color:#A890FF;
+}
+.s6 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.55;
+  max-width:52ch;
+  color:rgba(232,228,248,0.75);
+  position:relative;
+}
+
+/* ============================
+   SPREAD 7: MANIFESTO
+   AI Superpowers
+   Background: ochre/gold
+   ============================ */
+.s7{
+  min-height:100vh;
+  background:#E8A020;
+  color:#0A0600;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s7 .bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(300px,50vw,700px);
+  line-height:0.85;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(10,6,0,0.08);
+  position:absolute;
+  top:-0.08em;
+  left:-0.04em;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.04em;
+}
+.s7 .top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s7 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.s7 .flag-pill{
+  background:#0A0600;
+  color:#E8A020;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:8px 18px;
+  border-radius:2px;
+}
+.s7 .bottom{
+  position:relative;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(52px,8.5vw,140px);
+  line-height:0.9;
+  letter-spacing:-0.025em;
+  max-width:15ch;
+  margin-bottom:36px;
+}
+.s7 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.55;
+  max-width:54ch;
+  opacity:0.7;
+}
+
+/* ============================
+   SPREAD 8: TERMINAL / MONOSPACE
+   Token relay market
+   Background: terminal green on black
+   ============================ */
+.s8{
+  min-height:100vh;
+  background:#001400;
+  color:#00FF41;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  font-family:'Courier New',Courier,monospace;
+  position:relative;
+  overflow:hidden;
+}
+.s8 .numeral{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.1em;
+  color:#00FF41;
+  opacity:0.4;
+  margin-bottom:48px;
+}
+.s8 .prompt{
+  font-size:clamp(18px,1.5vw,22px);
+  opacity:0.5;
+  margin-bottom:8px;
+  letter-spacing:0.05em;
+}
+.s8 h2{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(28px,4vw,58px);
+  line-height:1.15;
+  letter-spacing:-0.01em;
+  max-width:26ch;
+  margin-bottom:48px;
+  text-transform:uppercase;
+}
+.s8 .dek{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:400;
+  font-size:clamp(19px,1.7vw,22px);
+  line-height:1.65;
+  max-width:56ch;
+  color:rgba(0,255,65,0.75);
+}
+.s8 .meta{
+  font-size:18px;
+  opacity:0.4;
+  margin-top:36px;
+  letter-spacing:0.08em;
+}
+.s8 .cursor{
+  display:inline-block;
+  width:0.6em;
+  height:1.1em;
+  background:#00FF41;
+  vertical-align:text-bottom;
+  animation:blink 1s step-end infinite;
+  margin-left:2px;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ============================
+   SPREAD 9: BIG-STAT FINISH
+   Proof automation
+   Background: clean warm white
+   ============================ */
+.s9{
+  min-height:100vh;
+  background:#FAFAF5;
+  color:#111;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s9 .numeral{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+.s9 .stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(140px,24vw,360px);
+  line-height:0.88;
+  letter-spacing:-0.05em;
+  color:transparent;
+  -webkit-text-stroke:2px #111;
+  align-self:center;
+  text-align:center;
+}
+.s9 .stat-label{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  text-align:center;
+  opacity:0.45;
+  margin-top:8px;
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(32px,3.8vw,54px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:24px;
+}
+.s9 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.6;
+  max-width:52ch;
+  opacity:0.65;
+}
+.s9 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-top:28px;
+}
+
+/* ============================
+   SPREAD 10: NEWSPAPER COLUMN
+   Useless Knowledge
+   Background: newsprint
+   ============================ */
+.s10{
+  min-height:100vh;
+  background:#F4EDD5;
+  color:#1A1208;
+  padding:clamp(60px,9vw,120px) clamp(40px,8vw,120px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.s10 .header-bar{
+  border-top:3px solid #1A1208;
+  border-bottom:1px solid #1A1208;
+  padding:12px 0;
+  margin-bottom:48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.s10 .paper-name{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(18px,1.8vw,24px);
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.s10 .numeral-col{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(18px,1.8vw,24px);
+  opacity:0.45;
+}
+.s10 .col-grid{
+  display:grid;
+  grid-template-columns:1fr 1px 1fr;
+  gap:0 clamp(32px,4vw,56px);
+}
+.s10 .col-divider{
+  background:#1A1208;
+  opacity:0.2;
+}
+.s10 .col-left h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(38px,5.5vw,80px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  margin-bottom:28px;
+}
+.s10 .col-right{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s10 .col-right .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.65;
+  opacity:0.75;
+}
+.s10 .col-right .byline{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(18px,1.5vw,22px);
+  opacity:0.5;
+  margin-top:28px;
+}
+.s10 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-top:48px;
+}
+
+/* ============================
+   COLOPHON
+   ============================ */
+.colophon{
+  background:#1A1208;
+  color:#c9beaa;
+  padding:clamp(64px,10vw,120px) clamp(40px,8vw,120px);
+  text-align:center;
+}
+.colophon .mark{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(36px,4.5vw,60px);
+  line-height:1;
+  margin-bottom:28px;
+  color:#f5efe4;
+}
+.colophon p{
+  font-size:20px;
+  line-height:1.6;
+  max-width:52ch;
+  margin:0 auto 14px;
+}
+.colophon a{color:#E8A020;text-underline-offset:5px}
+
+@media(max-width:640px){
+  .s10 .col-grid{grid-template-columns:1fr;gap:28px 0}
+  .s10 .col-divider{display:none}
+  .s3 .collage-word{font-size:clamp(80px,22vw,180px)}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <div class="masthead-title">Morning Edition</div>
+  <div class="masthead-meta">Vol. 057 &nbsp;·&nbsp; 27 Jul 2026</div>
+</header>
+
+<!-- ===== SPREAD 1: SWISS POSTER — Kill The Cookie Banner ===== -->
+<section class="s1">
+  <div class="numeral" aria-hidden="true">1</div>
+  <div class="meta">Hacker News · 910 pts</div>
+  <h2>Cookie banners must die</h2>
+  <div class="rule"></div>
+  <p class="dek">A European campaign is building legal pressure to make the pop-up permission theatre that blights half the internet simply disappear. The case rests on a clean reading of existing law: if you don't collect data, you don't need a banner. A small idea with very large teeth.</p>
+  <a class="read-link" href="https://killthecookiebanner.eu/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===== SPREAD 2: HERO COVER — GrapheneOS phone wipes at airport ===== -->
+<section class="s2">
+  <div class="numeral" aria-hidden="true">II</div>
+  <div class="meta">Hacker News · 485 pts</div>
+  <h2>Phone wipes <em>itself</em>. Man charged.</h2>
+  <p class="dek">A US citizen's GrapheneOS handset erased its own data when border agents attempted to search it, triggering a federal obstruction charge. The case hinges on whether a device following its own pre-set instructions constitutes a crime. Either answer is alarming.</p>
+  <a class="read-link" href="https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===== SPREAD 3: TYPOGRAPHIC COLLAGE — Htmx 4.0 on Game Boy ===== -->
+<section class="s3">
+  <div class="top-row">
+    <div class="numeral">03</div>
+    <div class="meta">Hacker News<br>401 pts</div>
+  </div>
+  <div class="collage-word" aria-hidden="true">
+    <span>HTM</span>
+    <span class="alt">X</span>
+    <span>4.0</span>
+  </div>
+  <div class="bottom-content">
+    <h2>The first JavaScript library released exclusively on the Game Boy</h2>
+    <p class="dek">The framework that hates JavaScript has published its latest version on a 1989 games console. You can order the cartridge. It runs. Whether it ships to production is left as an exercise for the reader.</p>
+    <a class="read-link" href="https://swag.htmx.org/en-cad/products/htmx-4-the-game" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== SPREAD 4: ROSE-ALERT-STAMP — Pyrocumulonimbus ===== -->
+<section class="s4">
+  <div class="stamp" aria-hidden="true">
+    <div class="rom">IV</div>
+    <div class="label">Story</div>
+  </div>
+  <div class="meta">Hacker News · 274 pts</div>
+  <h2>The fire made its own storm</h2>
+  <p class="dek">French firefighters encountered a pyrocumulonimbus this week for the first time: a thundercloud formed when wildfire heat is so intense it generates its own lightning, which then starts more fires. This is a new category of hazard the training manuals don't cover.</p>
+  <a class="read-link" href="https://www.france24.com/en/live-news/20260726-french-firefighters-face-pyrocumulonimbus-for-first-time" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===== SPREAD 5: ACADEMIC DROP-CAP — Decker / HyperCard ===== -->
+<section class="s5">
+  <div class="numeral">v. &nbsp;&nbsp;decker</div>
+  <div class="dropcap-row">
+    <div class="dropcap" aria-hidden="true">H</div>
+    <div class="dropcap-content">
+      <h2>HyperCard never really died</h2>
+      <p class="dek">Decker is a living platform built from the spirit of HyperCard and classic Mac software: stacks, cards, scripting, and a gentle refusal to be modern. It runs in the browser and is being used, quietly, to build real things. Some ideas are simply right.</p>
+      <div class="meta">Hacker News · 276 pts</div>
+      <a class="read-link" href="https://beyondloom.com/decker/" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPREAD 6: DARK / MIDNIGHT — Black hole in your room ===== -->
+<section class="s6">
+  <div class="numeral" aria-hidden="true">VI</div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="meta">Hacker News · 190 pts</div>
+  <h2>A Harvard astrophysicist put a <em>black hole</em> in your browser</h2>
+  <p class="dek">Alexander Plavin studies quasar environments for a living. He has built a physically accurate black hole simulation, running in any browser, with AR mode for mobile and VR headsets. Gravitational lensing, Doppler boosting, and the moment light bends back on itself. It is, genuinely, astonishing.</p>
+  <a class="read-link" href="https://blackhole.plav.in" target="_blank" rel="noopener" style="color:#A890FF;border-bottom-color:#A890FF">Read &rarr;</a>
+</section>
+
+<!-- ===== SPREAD 7: MANIFESTO — AI Superpowers: Focus and Followthrough ===== -->
+<section class="s7">
+  <div class="bg-num" aria-hidden="true">7</div>
+  <div class="top">
+    <div class="meta">Hacker News · 186 pts</div>
+    <div class="flag-pill">🎯 GWAI-relevant</div>
+  </div>
+  <div class="bottom">
+    <h2>The new AI skills aren't technical</h2>
+    <p class="dek">As AI handles more of the execution, the competitive advantages are shifting to focus and followthrough: the human ability to decide what matters, then see it through. This is exactly the curriculum gap most AI courses miss, and the one most worth filling first.</p>
+    <a class="read-link" href="https://www.rickmanelius.com/p/the-new-ai-superpowers-focus-and" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== SPREAD 8: TERMINAL — Token relay market ===== -->
+<section class="s8">
+  <div class="numeral">08_</div>
+  <div class="prompt">$ cat relay_market.txt<span class="cursor"></span></div>
+  <h2>There is a grey market for AI tokens, and it is booming</h2>
+  <p class="dek">An investigation into the ecosystem of token resellers, relay services, and fraud layers orbiting every major AI API. The pricing and access controls you rely on are already being systematically gamed. Worth understanding before you build on top of them.</p>
+  <div class="meta">HN · 179 pts &nbsp;|&nbsp; 🎯 AI market intel</div>
+  <a class="read-link" href="https://vectoral.com/blog/token-relay-market" target="_blank" rel="noopener" style="color:#00FF41;border-bottom-color:#00FF41">Read &rarr;</a>
+</section>
+
+<!-- ===== SPREAD 9: BIG-STAT FINISH — Proof automation ===== -->
+<section class="s9">
+  <div class="numeral">ix. &nbsp;formal verification</div>
+  <div>
+    <div class="stat" aria-label="zero bugs proven">0</div>
+    <div class="stat-label">unverified lines of zstd</div>
+  </div>
+  <div>
+    <h2>We have proof automation now</h2>
+    <p class="dek">A team used Lean to formally verify the ZSTD compression algorithm, line by line. This is proof automation landing in production software, not just toy examples: the kind of milestone that tends to age badly on disbelievers.</p>
+    <div class="meta">Hacker News · 135 pts</div>
+    <a class="read-link" href="https://www.imperialviolet.org/2026/07/26/zstd-lean.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===== SPREAD 10: NEWSPAPER COLUMN — Useless Knowledge ===== -->
+<section class="s10">
+  <div class="header-bar">
+    <span class="paper-name">Morning Edition</span>
+    <span class="numeral-col">X</span>
+  </div>
+  <div class="col-grid">
+    <div class="col-left">
+      <h2>In defence of learning nothing useful</h2>
+    </div>
+    <div class="col-divider" aria-hidden="true"></div>
+    <div class="col-right">
+      <p class="dek">Abraham Flexner's 1939 essay for Harper's, written from the Institute for Advanced Study, makes the case that the discoveries most useful to civilisation came from people with no practical goal whatsoever. It was true then. It is true now. The essay is six pages and worth every one.</p>
+      <div class="byline">Flexner, 1939 &nbsp;&middot;&nbsp; 🎯 For educators</div>
+    </div>
+  </div>
+  <div class="meta">Hacker News · 50 pts</div>
+  <a class="read-link" href="https://faculty.lsu.edu/kharms/files/flexner_1939.pdf" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===== COLOPHON ===== -->
+<footer class="colophon">
+  <div class="mark">Morning Edition</div>
+  <p>Vol. 057, published 27 Jul 2026. Ten stories, curated and designed each morning by an agent from a laptop in Battersea.</p>
+  <p><a href="../index.html">Back to the archive</a></p>
+</footer>
+
+</body>
+</html>
