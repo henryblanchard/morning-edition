@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 29 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:40px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.07em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.55}
+
+/* ============================
+   MASTHEAD
+   ============================ */
+.masthead{
+  padding:clamp(22px,3.5vw,48px) clamp(32px,7vw,96px);
+  background:#1E3D2F;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(24px,2.8vw,38px);
+  color:#fff;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+
+/* ============================
+   SPREAD 1: TERMINAL / MONOSPACE
+   Kimi K3 Architecture
+   bg: near-black
+   ============================ */
+.s1{
+  min-height:100vh;
+  background:#060A0F;
+  color:#5EE87A;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+  font-family:'Courier New',Courier,monospace;
+}
+.s1-bg-num{
+  position:absolute;
+  bottom:-0.1em;
+  right:clamp(20px,4vw,60px);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(200px,30vw,420px);
+  line-height:1;
+  color:rgba(94,232,122,0.05);
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.06em;
+}
+.s1 .term-num{
+  font-size:18px;
+  letter-spacing:0.22em;
+  opacity:0.5;
+  margin-bottom:20px;
+}
+.s1 .term-prompt{
+  font-size:18px;
+  opacity:0.4;
+  margin-bottom:36px;
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,88px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  color:#5EE87A;
+  max-width:820px;
+  margin-bottom:36px;
+}
+.s1 .dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.7;
+  max-width:640px;
+  color:rgba(94,232,122,0.75);
+}
+.s1 .meta{
+  margin-top:44px;
+  font-size:18px;
+  letter-spacing:0.14em;
+  opacity:0.45;
+}
+.s1 .read-link{
+  color:#5EE87A;
+}
+
+/* ============================
+   SPREAD 2: COLOUR-FIELD MINIMALIST
+   LearnVector - Andrew Ng
+   bg: sage forest green
+   ============================ */
+.s2{
+  min-height:100vh;
+  background:#3A6B4A;
+  color:#F0EAD6;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+}
+.s2-roman{
+  position:absolute;
+  top:clamp(24px,4vw,60px);
+  right:clamp(24px,4vw,60px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(100px,18vw,280px);
+  line-height:1;
+  color:rgba(240,234,214,0.12);
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.04em;
+}
+.s2 .num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.s2 .flag-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:clamp(40px,7vw,80px);
+}
+.s2 .gwai-flag{
+  background:rgba(240,234,214,0.18);
+  color:#F0EAD6;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.1em;
+  padding:6px 14px;
+  border-radius:2px;
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(44px,7vw,110px);
+  line-height:1.04;
+  letter-spacing:-0.025em;
+  max-width:800px;
+  margin-bottom:40px;
+}
+.s2 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.65;
+  max-width:580px;
+  opacity:0.88;
+}
+.s2 .meta-row{
+  margin-top:auto;
+  padding-top:40px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.s2 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+
+/* ============================
+   SPREAD 3: HERO COVER
+   Half-Life on Mac OS 9
+   bg: burnt orange
+   ============================ */
+.s3{
+  min-height:100vh;
+  background:#C4501A;
+  color:#FFF8F0;
+  padding:0;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.s3-giant-num{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,45vw,600px);
+  line-height:0.85;
+  color:rgba(255,248,240,0.06);
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.05em;
+  white-space:nowrap;
+}
+.s3-content{
+  position:relative;
+  z-index:2;
+  padding:clamp(40px,6vw,80px) clamp(40px,8vw,120px);
+  background:linear-gradient(to top, rgba(196,80,26,0.95) 60%, transparent);
+}
+.s3 .num-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:20px;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(48px,7.5vw,120px);
+  line-height:1.0;
+  letter-spacing:-0.03em;
+  max-width:860px;
+  margin-bottom:32px;
+}
+.s3 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.65;
+  max-width:600px;
+  opacity:0.88;
+  margin-bottom:8px;
+}
+.s3 .meta-row{
+  margin-top:36px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.s3 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+
+/* ============================
+   SPREAD 4: MANIFESTO
+   Claude discovers crypto flaws
+   bg: warm ivory
+   ============================ */
+.s4{
+  min-height:100vh;
+  background:#F5F0E6;
+  color:#1A1410;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s4-bg-num{
+  position:absolute;
+  top:50%;
+  left:-0.1em;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(300px,40vw,550px);
+  line-height:1;
+  color:rgba(26,20,16,0.04);
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.04em;
+}
+.s4 .num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.36em;
+  text-transform:uppercase;
+  opacity:0.3;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s4 .manifesto-line{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(36px,5.5vw,80px);
+  line-height:1.18;
+  letter-spacing:-0.02em;
+  max-width:880px;
+  margin-bottom:44px;
+}
+.s4 .manifesto-line em{
+  font-style:italic;
+  font-weight:700;
+}
+.s4 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.65;
+  max-width:660px;
+  margin-bottom:44px;
+}
+.s4 .meta-row{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  opacity:0.5;
+}
+.s4 .meta-row span{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+}
+
+/* ============================
+   SPREAD 5: SWISS POSTER
+   Delayed Gratification
+   bg: bright yellow
+   ============================ */
+.s5{
+  min-height:100vh;
+  background:#E9C518;
+  color:#0A0A0A;
+  padding:clamp(48px,8vw,96px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+}
+.s5-num-outline{
+  position:absolute;
+  top:clamp(24px,4vw,48px);
+  right:clamp(24px,4vw,60px);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(120px,20vw,320px);
+  line-height:1;
+  -webkit-text-stroke:3px #0A0A0A;
+  color:transparent;
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.04em;
+}
+.s5 .header-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.s5 .swiss-label{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(72px,12vw,200px);
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  max-width:800px;
+  margin-top:auto;
+  padding-top:clamp(40px,8vw,100px);
+}
+.s5 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.6;
+  max-width:600px;
+  margin-top:32px;
+  font-weight:400;
+}
+.s5 .footer-row{
+  margin-top:auto;
+  padding-top:40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+  border-top:2.5px solid rgba(10,10,10,0.25);
+}
+.s5 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+
+/* ============================
+   SPREAD 6: DARK / MIDNIGHT
+   Substack writers need a website
+   bg: deep navy
+   ============================ */
+.s6{
+  min-height:100vh;
+  background:#0D1B2A;
+  color:#E8E4DC;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s6-tiny-num{
+  position:absolute;
+  top:clamp(28px,4vw,56px);
+  left:clamp(40px,8vw,120px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.24em;
+  color:rgba(232,228,220,0.2);
+}
+.s6-side-rule{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:linear-gradient(to bottom,transparent,rgba(232,228,220,0.15),transparent);
+}
+.s6 .flag-line{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:32px;
+}
+.s6 .flag-pill{
+  background:rgba(232,228,220,0.12);
+  color:rgba(232,228,220,0.7);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.1em;
+  padding:6px 14px;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(40px,6.5vw,100px);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  max-width:860px;
+  margin-bottom:44px;
+}
+.s6 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.7;
+  max-width:600px;
+  color:rgba(232,228,220,0.78);
+}
+.s6 .meta-row{
+  margin-top:52px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.s6 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(232,228,220,0.4);
+}
+
+/* ============================
+   SPREAD 7: ACADEMIC DROP-CAP
+   Truth is not a direction / Tarski + LLMs
+   bg: warm parchment
+   ============================ */
+.s7{
+  min-height:100vh;
+  background:#E8DCC8;
+  color:#1A160F;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s7-num{
+  position:absolute;
+  top:clamp(28px,4vw,48px);
+  right:clamp(40px,8vw,120px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.22em;
+  color:rgba(26,22,15,0.25);
+  text-transform:uppercase;
+}
+.s7 .section-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:40px;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(32px,4.5vw,68px);
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  max-width:820px;
+  margin-bottom:44px;
+  border-bottom:2px solid rgba(26,22,15,0.15);
+  padding-bottom:44px;
+}
+.s7 .drop-cap-body{
+  max-width:700px;
+}
+.s7 .drop-cap-body p{
+  font-size:clamp(20px,1.5vw,22px);
+  line-height:1.75;
+  color:#2A2218;
+}
+.s7 .drop-cap-body p:first-child::first-letter{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(72px,9vw,130px);
+  line-height:0.78;
+  float:left;
+  margin-right:12px;
+  margin-top:8px;
+  color:#1A160F;
+}
+.s7 .meta-row{
+  margin-top:48px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.s7 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ============================
+   SPREAD 8: NEWSPAPER COLUMN
+   LLMs + ACM Digital Library
+   bg: newsprint off-white
+   ============================ */
+.s8{
+  min-height:100vh;
+  background:#F4F1EC;
+  color:#111;
+  padding:clamp(48px,7vw,96px) clamp(40px,8vw,120px);
+  position:relative;
+  overflow:hidden;
+}
+.s8-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-bottom:3px double rgba(17,17,17,0.25);
+  padding-bottom:18px;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s8-header .paper-name{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:28px;
+  letter-spacing:-0.01em;
+}
+.s8-header .paper-date{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  opacity:0.45;
+  letter-spacing:0.04em;
+}
+.s8 .story-num{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  letter-spacing:0.18em;
+  opacity:0.3;
+  margin-bottom:18px;
+  font-weight:700;
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(36px,5.5vw,80px);
+  line-height:1.07;
+  letter-spacing:-0.025em;
+  margin-bottom:36px;
+  max-width:100%;
+}
+.s8-cols{
+  column-count:2;
+  column-gap:clamp(32px,5vw,72px);
+  column-rule:1px solid rgba(17,17,17,0.18);
+}
+@media(max-width:600px){.s8-cols{column-count:1;}}
+.s8-cols p{
+  font-size:clamp(20px,1.5vw,22px);
+  line-height:1.75;
+  margin-bottom:20px;
+  break-inside:avoid;
+}
+.s8 .meta-row{
+  margin-top:44px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(17,17,17,0.18);
+  padding-top:28px;
+}
+.s8 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ============================
+   SPREAD 9: TYPOGRAPHIC COLLAGE
+   ReFrame - The EPaper Camera
+   bg: muted teal
+   ============================ */
+.s9{
+  min-height:100vh;
+  background:#2B6777;
+  color:#F0EAD6;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s9-collage{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  user-select:none;
+  overflow:hidden;
+}
+.s9-word{
+  position:absolute;
+  font-family:'Fraunces',serif;
+  color:rgba(240,234,214,0.06);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-0.03em;
+}
+.s9-word.w1{font-size:clamp(80px,14vw,200px);top:-2%;left:-2%;transform:rotate(-8deg);}
+.s9-word.w2{font-size:clamp(40px,7vw,110px);top:15%;right:-1%;transform:rotate(4deg);}
+.s9-word.w3{font-size:clamp(60px,10vw,150px);bottom:5%;left:10%;transform:rotate(3deg);}
+.s9-word.w4{font-size:clamp(30px,5vw,80px);top:55%;right:8%;transform:rotate(-6deg);}
+.s9-word.w5{font-size:clamp(100px,17vw,260px);bottom:-5%;right:-3%;transform:rotate(-2deg);}
+.s9 .num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:rgba(240,234,214,0.4);
+  margin-bottom:28px;
+  position:relative;
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(40px,6vw,96px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  max-width:740px;
+  margin-bottom:40px;
+  position:relative;
+}
+.s9 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.65;
+  max-width:600px;
+  opacity:0.82;
+  position:relative;
+}
+.s9 .meta-row{
+  margin-top:48px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  position:relative;
+}
+.s9 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+/* ============================
+   SPREAD 10: BIG-STAT FINISH
+   Teach yourself programming in 10 years
+   bg: deep plum
+   ============================ */
+.s10{
+  min-height:100vh;
+  background:#2D1B4E;
+  color:#F0EAD6;
+  padding:clamp(64px,10vw,128px) clamp(40px,8vw,120px);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s10-big-num{
+  position:absolute;
+  bottom:-0.15em;
+  right:-0.05em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,40vw,560px);
+  line-height:1;
+  color:rgba(240,234,214,0.05);
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.06em;
+}
+.s10 .ten-label{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,260px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  color:rgba(240,234,214,0.12);
+  margin-bottom:40px;
+  display:block;
+}
+.s10 .num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:36px;
+}
+.s10 .flag-line{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:28px;
+}
+.s10 .gwai-flag{
+  background:rgba(240,234,214,0.12);
+  color:rgba(240,234,214,0.7);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.1em;
+  padding:6px 14px;
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(34px,5.2vw,76px);
+  line-height:1.12;
+  letter-spacing:-0.02em;
+  max-width:820px;
+  margin-bottom:44px;
+  position:relative;
+}
+.s10 .dek{
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.7;
+  max-width:620px;
+  opacity:0.82;
+  position:relative;
+}
+.s10 .meta-row{
+  margin-top:52px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+  position:relative;
+}
+.s10 .source-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ============================
+   COLOPHON
+   ============================ */
+.colophon{
+  background:#1E3D2F;
+  color:rgba(240,234,214,0.65);
+  padding:clamp(48px,7vw,80px) clamp(40px,8vw,120px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.colophon-text{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(20px,1.8vw,26px);
+  letter-spacing:-0.01em;
+}
+.colophon a{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(240,234,214,0.5);
+  text-decoration:none;
+  border-bottom:1.5px solid rgba(240,234,214,0.25);
+  padding-bottom:3px;
+  transition:opacity 0.15s;
+}
+.colophon a:hover{opacity:0.7;}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-title">Morning Edition</span>
+  <span class="masthead-meta">Vol. 059 &nbsp;/&nbsp; 29 Jul 2026</span>
+</header>
+
+<!-- ==========================================
+     SPREAD 1: TERMINAL / MONOSPACE
+     Kimi K3 Architecture
+     ========================================== -->
+<section class="s1">
+  <div class="s1-bg-num">01</div>
+  <div class="term-num">// 01 of 10</div>
+  <div class="term-prompt">$ cat kimi-k3-architecture-notes.md</div>
+  <h2>Inside Kimi K3: The Architecture Choices That Actually Matter</h2>
+  <p class="dek">
+    Moonshot AI's latest frontier model is the most architecturally interesting release to come out of China's AI labs this year.
+    Sebastian Raschka dissects the design decisions in characteristic clarity: which transformer variants they reached for,
+    how they handled context length, and what the spec signals about where the next generation of models is heading.
+    Not a press release. A teardown.
+  </p>
+  <div class="meta">hn &nbsp;·&nbsp; 385 pts &nbsp;·&nbsp; sebastianraschka.com</div>
+  <a class="read-link" href="https://sebastianraschka.com/blog/2026/kimi-k3-architecture-notes.html" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ==========================================
+     SPREAD 2: COLOUR-FIELD MINIMALIST
+     LearnVector - Andrew Ng
+     ========================================== -->
+<section class="s2">
+  <div class="s2-roman">II</div>
+  <div>
+    <div class="flag-row">
+      <span class="num-label">02 of 10</span>
+      <span class="gwai-flag">🎯 GWAI</span>
+    </div>
+    <h2>Andrew Ng's Next Bet: One Teacher Per Student</h2>
+    <p class="dek">
+      LearnVector is Ng's post-Coursera thesis made concrete: adaptive, personalised AI instruction that responds
+      to how you think, not what the curriculum assumes. Worth watching closely if you design learning experiences
+      for adults entering AI. The question it poses is less about technology than about what a teacher actually does,
+      and whether that can be replicated at scale.
+    </p>
+  </div>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 150 pts &nbsp;·&nbsp; learnvector.ai</span>
+    <a class="read-link" href="https://learnvector.ai/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 3: HERO COVER
+     Half-Life on Mac OS 9
+     ========================================== -->
+<section class="s3">
+  <div class="s3-giant-num">III</div>
+  <div class="s3-content">
+    <div class="num-tag">03 of 10</div>
+    <h2>Half-Life Runs on Mac OS 9. Natively.</h2>
+    <p class="dek">
+      Not an emulator, not a wrapper: someone compiled and shipped Half-Life as a native PowerPC binary for a machine
+      running a 25-year-old operating system. The technical feat is impressive. The cultural impulse behind it,
+      the refusal to let software die, is something else entirely. Old code is not dead code if someone still cares.
+    </p>
+    <div class="meta-row">
+      <span class="source-tag">hn &nbsp;·&nbsp; 211 pts &nbsp;·&nbsp; mac-classic.com</span>
+      <a class="read-link" href="https://mac-classic.com/news/half-life-ported-to-mac-os-9/" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 4: MANIFESTO
+     Claude discovers cryptographic weaknesses
+     ========================================== -->
+<section class="s4">
+  <div class="s4-bg-num">IV</div>
+  <div class="num-label">04 of 10</div>
+  <p class="manifesto-line">
+    Claude found <em>real</em> cryptographic flaws.<br>
+    This is what AI doing science looks like.
+  </p>
+  <p class="dek">
+    Anthropic researchers used Claude to discover genuine weaknesses in cryptographic schemes: not suggested lines of inquiry,
+    not assisted review, but novel findings the model generated independently. The paper moves the benchmark.
+    The question is no longer whether AI can assist researchers. It is whether researchers can keep pace
+    with what the models find.
+  </p>
+  <div class="meta-row">
+    <span>hn &nbsp;·&nbsp; 209 pts &nbsp;·&nbsp; anthropic.com</span>
+    <a class="read-link" href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 5: SWISS POSTER
+     Delayed Gratification - slow journalism
+     ========================================== -->
+<section class="s5">
+  <div class="s5-num-outline">V</div>
+  <div class="header-row">
+    <span class="swiss-label">05 of 10</span>
+  </div>
+  <h2>Slow is a Strategy</h2>
+  <p class="dek">
+    Delayed Gratification publishes quarterly and refuses to run a story until it knows how it ended.
+    In a decade of faster-everywhere media, they have turned patience into a competitive advantage.
+    Their accuracy rate beats most daily news outlets. Their subscriber retention is higher too.
+    Patience is not a weakness; it is a product decision.
+  </p>
+  <div class="footer-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 280 pts &nbsp;·&nbsp; slow-journalism.com</span>
+    <a class="read-link" href="https://www.slow-journalism.com/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 6: DARK / MIDNIGHT
+     Substack writers, you need a website
+     ========================================== -->
+<section class="s6">
+  <div class="s6-tiny-num">06</div>
+  <div class="s6-side-rule"></div>
+  <div class="flag-line">
+    <span class="flag-pill">🎯 GWAI</span>
+  </div>
+  <h2>Your Newsletter Platform Is a Landlord</h2>
+  <p class="dek">
+    Substack is not a website. It is a tenant arrangement. Elizabeth Tai's essay cuts through the creator-economy
+    optimism: you do not own your subscribers, your domain, or your algorithmic position. For anyone building
+    a business on someone else's platform, the calculus has not changed since 2010.
+    What you own is the address. Platform risk is permanent. Get a website.
+  </p>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 499 pts &nbsp;·&nbsp; elizabethtai.com</span>
+    <a class="read-link" href="https://elizabethtai.com/2026/06/10/substack-writers-you-need-a-website/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 7: ACADEMIC DROP-CAP
+     Truth is not a direction (Tarski + LLM probes)
+     ========================================== -->
+<section class="s7">
+  <div class="s7-num">No. VII</div>
+  <div class="section-label">AI Interpretability</div>
+  <h2>There Is No Truth Vector in a Language Model</h2>
+  <div class="drop-cap-body">
+    <p>
+      Researchers building interpretability tools assumed that honesty, or at least something like truth,
+      would appear as a consistent geometric direction inside model activations. Abel Jansma applies Tarski's
+      undefinability theorem to dismantle that assumption: formal provability constraints mean the concept
+      of truth cannot be captured in a single linear probe. The geometry does not cooperate.
+      The implications for alignment research are significant and underappreciated.
+    </p>
+  </div>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 73 pts &nbsp;·&nbsp; abeljansma.nl</span>
+    <a class="read-link" href="https://abeljansma.nl/2026/07/10/truth-is-not-a-direction.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 8: NEWSPAPER COLUMN
+     LLMs + ACM Digital Library
+     ========================================== -->
+<section class="s8">
+  <div class="s8-header">
+    <span class="paper-name">Morning Edition</span>
+    <span class="paper-date">29 July 2026 &nbsp;&mdash;&nbsp; Vol. 059</span>
+  </div>
+  <div class="story-num">08 / 10</div>
+  <h2>Eight Decades of Computer Science, Locked Out of the Models</h2>
+  <div class="s8-cols">
+    <p>The ACM Digital Library holds 80 years of peer-reviewed computing research: the most structured,
+    rigorously verified body of technical knowledge in existence. Language models cannot read it.</p>
+    <p>A guest editorial in Communications of the ACM makes the case that this is not merely an access
+    inconvenience. It is a capability ceiling. The gap between what LLMs currently know and what
+    they could reason over is sitting behind a subscription paywall.</p>
+    <p>The argument for opening the archive is harder to dismiss than it sounds. If we are serious
+    about AI that can do science, we should probably let it read the science.
+    Eighty years of peer review is not a small thing to leave behind a gate.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 143 pts &nbsp;·&nbsp; cacm.acm.org</span>
+    <a class="read-link" href="https://cacm.acm.org/opinion/now-is-the-time-to-give-llms-access-to-the-acm-digital-library/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 9: TYPOGRAPHIC COLLAGE
+     ReFrame - The EPaper Camera
+     ========================================== -->
+<section class="s9">
+  <div class="s9-collage" aria-hidden="true">
+    <span class="s9-word w1">FRAME</span>
+    <span class="s9-word w2">FOCUS</span>
+    <span class="s9-word w3">LIGHT</span>
+    <span class="s9-word w4">INK</span>
+    <span class="s9-word w5">PAPER</span>
+  </div>
+  <div class="num-label">09 of 10</div>
+  <h2>A Camera That Shows You the Print Before You Take the Shot</h2>
+  <p class="dek">
+    ReFrame is an e-paper camera: the viewfinder is an e-ink display, so you see your image rendered in
+    grayscale before you press the shutter. It is a workflow tool first and an aesthetic argument second.
+    For photographers who spend hours converting to black and white in post-production, seeing in ink
+    from the start changes how you compose. You stop guessing. You start editing in your head.
+  </p>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 91 pts &nbsp;·&nbsp; reframe.camera</span>
+    <a class="read-link" href="https://reframe.camera/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ==========================================
+     SPREAD 10: BIG-STAT FINISH
+     Teach yourself programming in ten years
+     ========================================== -->
+<section class="s10">
+  <div class="s10-big-num">X</div>
+  <span class="ten-label">TEN</span>
+  <div class="num-label">10 of 10</div>
+  <div class="flag-line">
+    <span class="gwai-flag">🎯 GWAI</span>
+  </div>
+  <h2>Peter Norvig Said Ten Years. He Wrote That in 1998. He Is Still Right.</h2>
+  <p class="dek">
+    The man who built Google's spell-checker argued in 1998 that serious programming competence requires
+    a decade of deliberate practice, not 21 days and a course certificate. The essay is still online,
+    still correct, and perpetually timely because every generation re-invents the weekend coding bootcamp.
+    In the AI era, the lesson sharpens: the tools accelerate output but not understanding.
+    If you teach people to use AI, teach them what they are actually learning to do.
+  </p>
+  <div class="meta-row">
+    <span class="source-tag">hn &nbsp;·&nbsp; 110 pts &nbsp;·&nbsp; norvig.com</span>
+    <a class="read-link" href="https://www.norvig.com/21-days.html" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span class="colophon-text">Morning Edition &mdash; a daily briefing for Henry Blanchard.</span>
+  <a href="../index.html">&larr; All Issues</a>
+</footer>
+
+</body>
+</html>
