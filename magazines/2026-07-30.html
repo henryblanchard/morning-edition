@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 30 Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.45}
+
+/* MASTHEAD */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#C9963E;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#1A0E00;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(26,14,0,0.5);
+}
+
+/* SHARED */
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+
+/* ===========================================
+   S1: MANIFESTO — TurboFieldfare / Local AI
+   =========================================== */
+.s1{
+  background:#C9963E;
+  color:#1A0E00;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s1-ghost{
+  position:absolute;
+  top:-0.12em;
+  right:-0.06em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(280px,42vw,650px);
+  line-height:0.82;
+  color:#1A0E00;
+  opacity:0.055;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+.s1 > *{position:relative;z-index:1}
+.s1-num{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.36em;
+  text-transform:uppercase;
+  opacity:0.45;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s1 h1{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,8.5vw,128px);
+  line-height:0.94;
+  letter-spacing:-0.025em;
+  max-width:16ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s1 h1 em{
+  font-style:italic;
+  font-weight:200;
+}
+.s1-rule{
+  width:clamp(48px,6vw,88px);
+  height:3px;
+  background:#1A0E00;
+  margin-bottom:clamp(24px,3.5vw,44px);
+  opacity:0.4;
+}
+.s1-dek{
+  font-size:clamp(20px,1.9vw,27px);
+  line-height:1.65;
+  max-width:58ch;
+  font-weight:400;
+}
+.s1-meta{
+  margin-top:clamp(32px,4vw,56px);
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+
+
+/* ===========================================
+   S2: HERO COVER — Frontier Lab Intrusion
+   =========================================== */
+.s2{
+  background:#1B1F3B;
+  color:#EDE9E0;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s2-num{
+  position:absolute;
+  top:clamp(32px,5vw,64px);
+  right:clamp(32px,7vw,96px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(18px,2vw,26px);
+  letter-spacing:0.2em;
+  color:rgba(237,233,224,0.28);
+}
+.s2-ghost-circle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:clamp(200px,38vw,580px);
+  height:clamp(200px,38vw,580px);
+  border-radius:50%;
+  border:1px solid rgba(237,233,224,0.06);
+}
+.s2-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(237,233,224,0.4);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7.5vw,114px);
+  line-height:0.94;
+  letter-spacing:-0.025em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3vw,44px);
+}
+.s2 h2 em{
+  font-style:italic;
+  font-weight:200;
+  color:rgba(237,233,224,0.55);
+}
+.s2-dek{
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.65;
+  max-width:56ch;
+  font-weight:300;
+  color:rgba(237,233,224,0.8);
+}
+.s2-footer{
+  margin-top:clamp(32px,4vw,56px);
+  border-top:1px solid rgba(237,233,224,0.12);
+  padding-top:clamp(20px,2.5vw,36px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s2-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(237,233,224,0.38);
+}
+
+
+/* ===========================================
+   S3: COLOUR-FIELD MINIMALIST — Superlogical
+   =========================================== */
+.s3{
+  background:#6B9E62;
+  color:#0D1E0A;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s3-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.45;
+  margin-bottom:clamp(40px,6vw,90px);
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(56px,11vw,170px);
+  line-height:1.0;
+  letter-spacing:-0.03em;
+  max-width:12ch;
+  margin-bottom:clamp(24px,3vw,44px);
+}
+.s3 h2 em{
+  font-style:italic;
+  font-weight:200;
+}
+.s3-dek{
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.7;
+  max-width:46ch;
+  font-weight:400;
+  opacity:0.75;
+  margin-bottom:clamp(24px,3vw,40px);
+}
+.s3-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+
+/* ===========================================
+   S4: NEWSPAPER COLUMN — AI Not Publishing
+   =========================================== */
+.s4{
+  background:#F7F3EC;
+  color:#111108;
+  flex-direction:column;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s4-header{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  border-top:3px solid #111108;
+  border-bottom:1px solid rgba(17,17,8,0.2);
+  padding:12px 0;
+  margin-bottom:clamp(32px,4.5vw,64px);
+  gap:16px;
+  flex-wrap:wrap;
+}
+.s4-header-vol{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:800;
+  font-size:clamp(20px,2.2vw,30px);
+}
+.s4-header-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(38px,6.5vw,96px);
+  line-height:0.97;
+  letter-spacing:-0.02em;
+  max-width:20ch;
+  margin-bottom:clamp(28px,4vw,52px);
+  padding-bottom:clamp(28px,4vw,52px);
+  border-bottom:1.5px solid rgba(17,17,8,0.18);
+}
+.s4-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(28px,4.5vw,64px);
+  align-items:start;
+}
+.s4-col p{
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.7;
+}
+.s4-col-right{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(24px,3vw,40px);
+}
+.s4-pullquote{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(26px,3.5vw,48px);
+  line-height:1.2;
+  letter-spacing:-0.01em;
+  border-left:4px solid #111108;
+  padding-left:clamp(20px,2.5vw,36px);
+  color:rgba(17,17,8,0.55);
+}
+.s4-footer{
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+@media(max-width:640px){.s4-cols{grid-template-columns:1fr}}
+
+
+/* ===========================================
+   S5: ROSE-ALERT-STAMP — AI Recruiting Trades
+   =========================================== */
+.s5{
+  background:#D9A99A;
+  color:#200A04;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s5-stamp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:clamp(66px,9vw,120px);
+  height:clamp(66px,9vw,120px);
+  border-radius:50%;
+  border:4px solid #200A04;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(20px,2.8vw,38px);
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(28px,4vw,56px);
+  transform:rotate(-7deg);
+  flex-shrink:0;
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(42px,8vw,118px);
+  line-height:0.94;
+  letter-spacing:-0.025em;
+  max-width:16ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s5 h2 em{
+  font-style:italic;
+  font-weight:200;
+}
+.s5-dek{
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.65;
+  max-width:56ch;
+}
+.s5-alert{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  background:#200A04;
+  color:#D9A99A;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  padding:10px 22px;
+}
+.s5-source{
+  margin-top:clamp(20px,3vw,40px);
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+
+/* ===========================================
+   S6: ACADEMIC DROP-CAP — Anthropic Crypto
+   =========================================== */
+.s6{
+  background:#EFE8D6;
+  color:#1C1610;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s6-vol{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  opacity:0.38;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s6-vol em{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:22px;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(30px,5vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:26ch;
+  margin-bottom:clamp(32px,4.5vw,64px);
+  padding-top:clamp(24px,3.5vw,48px);
+  border-top:2px solid #1C1610;
+}
+.s6-body{
+  display:flex;
+  gap:clamp(16px,3vw,44px);
+  align-items:flex-start;
+}
+.s6-dropcap{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(96px,15vw,200px);
+  line-height:0.78;
+  flex-shrink:0;
+  margin-top:6px;
+  letter-spacing:-0.03em;
+}
+.s6-text{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(20px,2.5vw,34px);
+}
+.s6-dek{
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.72;
+  font-weight:400;
+}
+.s6-footnote{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:18px;
+  opacity:0.45;
+  border-top:1px solid rgba(28,22,16,0.2);
+  padding-top:clamp(16px,2vw,28px);
+}
+@media(max-width:600px){.s6-dropcap{font-size:clamp(72px,20vw,140px)}}
+
+
+/* ===========================================
+   S7: DARK / MIDNIGHT — Commodification
+   =========================================== */
+.s7{
+  background:#0B0F1C;
+  color:#D8D2C6;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s7-ghost{
+  position:absolute;
+  bottom:-0.18em;
+  right:-0.04em;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(180px,33vw,520px);
+  line-height:0.82;
+  color:#D8D2C6;
+  opacity:0.032;
+  pointer-events:none;
+  user-select:none;
+}
+.s7 > *{position:relative;z-index:1}
+.s7-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s7-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(216,210,198,0.35);
+}
+.s7-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:200;
+  font-size:clamp(20px,2.5vw,32px);
+  color:rgba(216,210,198,0.28);
+  letter-spacing:0.08em;
+}
+.s7-mid{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(40px,6vw,80px) 0;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(44px,8vw,120px);
+  line-height:0.93;
+  letter-spacing:-0.025em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s7 h2 em{
+  font-style:italic;
+  font-weight:200;
+  color:rgba(216,210,198,0.45);
+}
+.s7-dek{
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.65;
+  max-width:56ch;
+  font-weight:300;
+  color:rgba(216,210,198,0.75);
+}
+.s7-bottom{
+  border-top:1px solid rgba(216,210,198,0.1);
+  padding-top:clamp(20px,2.5vw,36px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s7-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(216,210,198,0.32);
+}
+
+
+/* ===========================================
+   S8: BIG-STAT FINISH — Kimi K3-256k
+   =========================================== */
+.s8{
+  background:#012F6B;
+  color:#FFFFFF;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s8-num{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.28);
+}
+.s8-mid{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(12px,1.8vw,24px);
+}
+.s8-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(90px,18vw,280px);
+  line-height:0.85;
+  letter-spacing:-0.04em;
+  color:#FFFFFF;
+}
+.s8-stat-label{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:clamp(18px,2vw,26px);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.45);
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(26px,4vw,58px);
+  line-height:1.1;
+  letter-spacing:-0.015em;
+  max-width:24ch;
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s8-dek{
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.65;
+  max-width:60ch;
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+}
+.s8-bottom{
+  border-top:1px solid rgba(255,255,255,0.12);
+  padding-top:clamp(20px,2.5vw,36px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s8-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.32);
+}
+
+
+/* ===========================================
+   S9: SWISS POSTER — Vision Pro
+   =========================================== */
+.s9{
+  background:#FFFFFF;
+  color:#111111;
+  flex-direction:column;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+  justify-content:space-between;
+}
+.s9-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:4px solid #111111;
+  padding-bottom:clamp(20px,2.5vw,36px);
+  margin-bottom:clamp(32px,4.5vw,64px);
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s9-pub{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,2vw,28px);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,2vw,28px);
+  letter-spacing:0.05em;
+  color:#DD2222;
+}
+.s9-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:clamp(24px,3.5vw,52px);
+}
+.s9-cat{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:#DD2222;
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,8.5vw,128px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+}
+.s9-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:clamp(24px,3vw,48px);
+  flex-wrap:wrap;
+}
+.s9-dek{
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.65;
+  max-width:52ch;
+  font-weight:400;
+}
+.s9-score-block{
+  text-align:right;
+  flex-shrink:0;
+}
+.s9-score-big{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,6vw,80px);
+  line-height:1;
+  color:#DD2222;
+}
+.s9-score-label{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+
+/* ===========================================
+   S10: TERMINAL — Tokenless
+   =========================================== */
+.s10{
+  background:#091408;
+  color:#3DFF20;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,130px) clamp(32px,7vw,96px);
+}
+.s10-prompt{
+  font-family:'Courier New','Courier',monospace;
+  font-size:clamp(18px,2vw,26px);
+  color:rgba(61,255,32,0.45);
+  margin-bottom:clamp(24px,3.5vw,48px);
+  letter-spacing:0.02em;
+}
+.s10 h2{
+  font-family:'Courier New','Courier',monospace;
+  font-weight:700;
+  font-size:clamp(28px,5vw,76px);
+  line-height:1.12;
+  letter-spacing:-0.01em;
+  max-width:28ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  color:#3DFF20;
+}
+.s10-dek{
+  font-family:'Courier New','Courier',monospace;
+  font-size:clamp(20px,1.75vw,24px);
+  line-height:1.75;
+  max-width:62ch;
+  color:rgba(61,255,32,0.78);
+}
+.s10-output{
+  margin-top:clamp(36px,5vw,72px);
+  font-family:'Courier New','Courier',monospace;
+  font-size:18px;
+  line-height:1.65;
+  color:rgba(61,255,32,0.38);
+}
+.s10-output span.hi{color:rgba(61,255,32,0.65)}
+.s10-cursor{
+  display:inline-block;
+  width:11px;
+  height:1.1em;
+  background:#3DFF20;
+  vertical-align:text-bottom;
+  margin-left:3px;
+  animation:blink 1.05s step-end infinite;
+}
+@keyframes blink{50%{opacity:0}}
+.s10-read{border-color:#3DFF20;margin-top:clamp(36px,4.5vw,60px)}
+
+
+/* COLOPHON */
+.colophon{
+  background:#1A0E00;
+  color:rgba(247,243,236,0.38);
+  padding:clamp(36px,5vw,68px) clamp(28px,6vw,88px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.colophon-text{font-size:18px;line-height:1.6}
+.colophon a{
+  color:rgba(247,243,236,0.6);
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title">Morning Edition</div>
+  <div class="masthead-meta">Vol. 060 &nbsp; 30 Jul 2026</div>
+</header>
+
+<!-- ===========================================
+     SPREAD 1: MANIFESTO — TurboFieldfare
+     =========================================== -->
+<section class="spread s1">
+  <div class="s1-ghost" aria-hidden="true">I</div>
+  <div class="s1-num">No. 01 &nbsp;·&nbsp; HN · 723 pts &nbsp; 🎯</div>
+  <h1>Fourteen<br>Gigabytes.<br><em>Two Gigabytes</em><br>of RAM.</h1>
+  <div class="s1-rule"></div>
+  <p class="s1-dek">An open-source Swift and Metal inference engine that fits a 26-billion-parameter model into 2GB of working memory by streaming expert layers from SSD while the GPU handles the shared portions in parallel. At 5-6 tokens per second on a base MacBook Air, TurboFieldfare is what genuinely democratic AI infrastructure actually looks like: no cloud, no API key, no subscription.</p>
+  <div class="s1-meta">Hacker News · 723 points · 251 comments</div>
+  <a href="https://github.com/drumih/turbo-fieldfare" class="read-link" target="_blank" rel="noopener">Read →</a>
+</section>
+
+<!-- ===========================================
+     SPREAD 2: HERO COVER — Agent Intrusion
+     =========================================== -->
+<section class="spread s2">
+  <div class="s2-num" aria-hidden="true">ii</div>
+  <div class="s2-ghost-circle" aria-hidden="true"></div>
+  <div class="s2-label">No. 02 &nbsp;·&nbsp; HN · 344 pts</div>
+  <h2>Someone Got Into<br>a Frontier<br>AI Lab.<br><em>Here Is the Timeline.</em></h2>
+  <p class="s2-dek">HuggingFace published a detailed technical post-mortem of a July 2026 security intrusion at a frontier AI research facility. When AI agents designed to act autonomously also create new attack surfaces, the distance between capability and vulnerability closes faster than most organisations are prepared for.</p>
+  <div class="s2-footer">
+    <span class="s2-source">HuggingFace Blog · 344 pts · 199 comments</span>
+    <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" class="read-link" target="_blank" rel="noopener">Read →</a>
+  </div>
+</section>
+
+<!-- ===========================================
+     SPREAD 3: COLOUR-FIELD MINIMALIST — Superlogical
+     =========================================== -->
+<section class="spread s3">
+  <div class="s3-num">No. 03</div>
+  <h2>Super<em>logical</em></h2>
+  <p class="s3-dek">Mitchell Hashimoto, the engineer who built Vagrant and co-founded HashiCorp, has published something called Superlogical. Nearly 400 comments and a score of 615 later, the Hacker News thread is still arguing about what it is. High-signal obscurity from a builder whose instincts have a proven track record.</p>
+  <div class="s3-source">HN · 615 pts · 379 comments</div>
+  <a href="https://www.superlogical.com/" class="read-link" target="_blank" rel="noopener">Read →</a>
+</section>
+
+<!-- ===========================================
+     SPREAD 4: NEWSPAPER COLUMN — AI Not Publishing
+     =========================================== -->
+<section class="spread s4">
+  <div class="s4-header">
+    <div class="s4-header-vol"><em>IV.</em> Intelligence</div>
+    <div class="s4-header-meta">HN · 342 pts &nbsp; 🎯</div>
+  </div>
+  <h2>The Labs Stopped Sharing Their Work. That Should Worry You.</h2>
+  <div class="s4-cols">
+    <div class="s4-col">
+      <p>Science.org investigated the research publication patterns of the major AI startups and found a dramatic retreat from open academic contribution. Companies once prolific in publishing, including the labs that produced the foundational papers of the current generation, have significantly reduced what they share.</p>
+    </div>
+    <div class="s4-col s4-col-right">
+      <p class="s4-pullquote">"The frontier is classified now."</p>
+      <p>The shift from open science to competitive secrecy is accelerating at precisely the moment the field is most consequential. If you teach AI or build on AI, the knowledge gap between what labs know and what the rest of us can read is widening every quarter.</p>
+      <a href="https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research" class="read-link" target="_blank" rel="noopener">Read →</a>
+    </div>
+  </div>
+  <div class="s4-footer">Science.org · 342 pts · 185 comments</div>
+</section>
+
+<!-- ===========================================
+     SPREAD 5: ROSE-ALERT-STAMP — AI Recruiting Trades
+     =========================================== -->
+<section class="spread s5">
+  <div class="s5-stamp" aria-hidden="true">05</div>
+  <h2>AI Has<br>an <em>Electrician</em><br>Problem</h2>
+  <p class="s5-dek">Data centre construction is consuming the skilled trades workforce faster than it can be replenished. AI companies are now directly funding electrician and carpenter training programmes to fill a bottleneck that no language model can fix: the physical infrastructure that underpins every inference call needs hands, not tokens.</p>
+  <div class="s5-alert">HN · 259 pts · NYT</div>
+  <div class="s5-source">nytimes.com · 259 pts · 318 comments</div>
+  <a href="https://www.nytimes.com/2026/07/29/business/economy/data-center-electricians-training.html" class="read-link" target="_blank" rel="noopener">Read →</a>
+</section>
+
+<!-- ===========================================
+     SPREAD 6: ACADEMIC DROP-CAP — Anthropic Crypto
+     =========================================== -->
+<section class="spread s6">
+  <div class="s6-vol">No. <em>VI</em> &nbsp;·&nbsp; HN · 129 pts</div>
+  <h2>Anthropic Did Cryptography Research. Mathematicians Are Paying Attention.</h2>
+  <div class="s6-body">
+    <div class="s6-dropcap" aria-hidden="true">A</div>
+    <div class="s6-text">
+      <p class="s6-dek">Anthropic, better known for training large language models, has published cryptanalysis results significant enough to draw commentary from Matthew Green, the Johns Hopkins cryptographer whose textbook teaches the field. Green walks through what was found and explains why it matters well beyond the AI lab context: this is genuine frontier mathematics, not promotional science.</p>
+      <p class="s6-dek">The paper sits at the intersection of formal verification, cryptographic proof systems, and the kind of rigorous mathematics most AI companies do not pursue. Whether it signals a new research direction or a one-off, it is worth understanding.</p>
+      <a href="https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/" class="read-link" target="_blank" rel="noopener">Read →</a>
+      <div class="s6-footnote">blog.cryptographyengineering.com · 129 pts · 69 comments</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     SPREAD 7: DARK / MIDNIGHT — Commodification
+     =========================================== -->
+<section class="spread s7">
+  <div class="s7-ghost" aria-hidden="true">07</div>
+  <div class="s7-top">
+    <div class="s7-tag">No. 07 &nbsp;·&nbsp; HN · 75 pts</div>
+    <div class="s7-num">Intelligence, Commodified</div>
+  </div>
+  <div class="s7-mid">
+    <h2>The Circular<br>Deals<br><em>Warping</em><br>the AI Economy</h2>
+    <p class="s7-dek">As AI compute becomes commodity infrastructure, a pattern is emerging: labs invest in startups that use their APIs, those startups raise capital that flows back into compute spend at the same labs, and the numbers look like growth when they might be loops. Emerging Trajectories names both the good and the dangerous versions of these arrangements, and the analysis is sharp enough to make you uncomfortable about the fundraising announcements you read last month.</p>
+  </div>
+  <div class="s7-bottom">
+    <span class="s7-source">emergingtrajectories.com · 75 pts · 40 comments</span>
+    <a href="https://www.emergingtrajectories.com/lh/commodification-and-circularity/" class="read-link" target="_blank" rel="noopener">Read →</a>
+  </div>
+</section>
+
+<!-- ===========================================
+     SPREAD 8: BIG-STAT FINISH — Kimi K3-256k
+     =========================================== -->
+<section class="spread s8">
+  <div class="s8-num">No. 08 &nbsp;·&nbsp; HN · 392 pts &nbsp; 🎯</div>
+  <div class="s8-mid">
+    <div class="s8-stat">256K</div>
+    <div class="s8-stat-label">Token Context Window</div>
+    <h2>China's Frontier Model with the Window Nobody Else Has</h2>
+    <p class="s8-dek">Moonshot AI's Kimi K3 arrives with a 256,000-token context window and benchmark scores that put it in genuine competition with Western frontier models. At that scale you can feed an entire technical codebase or a year of meeting transcripts in a single prompt. The context race is far from settled, and the leaderboard is no longer a Western one.</p>
+  </div>
+  <div class="s8-bottom">
+    <span class="s8-source">kimi.com · 392 pts · 116 comments</span>
+    <a href="https://www.kimi.com/code/docs/en/kimi-code/models" class="read-link" target="_blank" rel="noopener">Read →</a>
+  </div>
+</section>
+
+<!-- ===========================================
+     SPREAD 9: SWISS POSTER — Vision Pro
+     =========================================== -->
+<section class="spread s9">
+  <div class="s9-top">
+    <div class="s9-pub">Morning Edition</div>
+    <div class="s9-num">09 / 10</div>
+  </div>
+  <div class="s9-main">
+    <div class="s9-cat">Creative Technology</div>
+    <h2>The Most Useful Thing You Didn't Know You Could Do with a Vision Pro</h2>
+  </div>
+  <div class="s9-bottom">
+    <div>
+      <p class="s9-dek">Christian Selig, who built Apollo, documented the most sensible domestic Vision Pro use case he has found: capturing every room in his house as spatial video, then replaying it in the headset while standing in a hardware store picking fixtures and finishes. Aspirational hardware finally finds a genuinely practical application, and it involves neither gaming nor telepresence meetings.</p>
+      <a href="https://christianselig.com/2026/07/vision-pro-house/" class="read-link" target="_blank" rel="noopener">Read →</a>
+    </div>
+    <div class="s9-score-block">
+      <div class="s9-score-big">534</div>
+      <div class="s9-score-label">HN Points</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     SPREAD 10: TERMINAL — Tokenless
+     =========================================== -->
+<section class="spread s10">
+  <div class="s10-prompt">&gt; morning-edition --story 10 of 10 &nbsp; 🎯</div>
+  <h2>Route Smart.<br>Route Cheap.<br>Don't Touch<br>Your Code.</h2>
+  <p class="s10-dek">A YC Summer 2026 company built by a former Princeton PhD student who spent too long watching his academic Cursor budget disappear into frontier model API calls. Tokenless sits between your application and its AI APIs, dynamically routing each conversation turn to the cheapest capable model. The pitch: 90% cost reduction without changing a line of your existing code.</p>
+  <div class="s10-output">
+    <span class="hi">routing:</span> turn 1 → claude-haiku-4-5 (saved $0.008)<br>
+    <span class="hi">routing:</span> turn 2 → gemma-26b-local (saved $0.031)<br>
+    <span class="hi">routing:</span> turn 3 → claude-sonnet-5 (complex, escalated)<br>
+    total saved this session: <span class="hi">$0.039</span> &nbsp;<span class="s10-cursor"></span>
+  </div>
+  <a href="https://usetokenless.com/" class="read-link s10-read" target="_blank" rel="noopener">Read →</a>
+  <div class="s10-output" style="margin-top:clamp(20px,3vw,36px)">HN · 58 pts · 50 comments &nbsp;·&nbsp; YC S26</div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-text">Morning Edition Vol. 060 &nbsp;·&nbsp; 30 July 2026 &nbsp;·&nbsp; Published by a scheduled agent for one reader.</div>
+  <a href="../index.html">Back to archive</a>
+</footer>
+
+</body>
+</html>
