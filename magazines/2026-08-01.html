@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 01 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.45}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ============ MASTHEAD ============ */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#2C1A0E;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#F2E8D0;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(242,232,208,0.4);
+}
+
+/* ============================================================
+   S1 — MANIFESTO
+   Twenty-five years ago it was cryptography, today model weights
+   ============================================================ */
+.s1{
+  background:#B06820;
+  color:#F5EBD8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s1 .ghost-num{
+  position:absolute;
+  right:-0.04em;
+  top:-0.06em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(280px,46vw,700px);
+  line-height:0.76;
+  color:#F5EBD8;
+  opacity:0.07;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.04em;
+}
+.s1 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  opacity:0.62;
+  margin-bottom:clamp(36px,5.5vw,72px);
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,7.5vw,116px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  text-transform:uppercase;
+  max-width:18ch;
+  margin-bottom:clamp(28px,4.5vw,60px);
+}
+.s1 .dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(22px,2.5vw,34px);
+  line-height:1.45;
+  max-width:44ch;
+}
+.s1 .source{
+  position:absolute;
+  bottom:clamp(32px,5vw,64px);
+  left:clamp(36px,7vw,100px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+/* ============================================================
+   S2 — HERO COVER
+   qm: Multiplayer Agent Harness
+   ============================================================ */
+.s2{
+  background:#1A2444;
+  color:#E0EAF8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s2 .corner-num{
+  position:absolute;
+  top:clamp(44px,6vw,88px);
+  right:clamp(36px,7vw,100px);
+  font-family:'Fraunces',serif;
+  font-weight:200;
+  font-style:italic;
+  font-size:clamp(96px,16vw,240px);
+  line-height:1;
+  color:#4A9EF0;
+  opacity:0.18;
+  letter-spacing:-0.04em;
+  pointer-events:none;
+  user-select:none;
+}
+.s2 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#4A9EF0;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(52px,9vw,156px);
+  line-height:0.93;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s2 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:50ch;
+  color:rgba(224,234,248,0.72);
+}
+.s2 .bottom{
+  margin-top:clamp(36px,5vw,72px);
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.s2 .source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.32;
+}
+
+/* ============================================================
+   S3 — TERMINAL / MONOSPACE
+   Kimi K3 in 29 GB of RAM
+   ============================================================ */
+.s3{
+  background:#0F1410;
+  color:#7ED648;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+  font-family:'Courier New',Courier,monospace;
+}
+.s3 .prompt{
+  font-size:18px;
+  opacity:0.42;
+  margin-bottom:clamp(20px,3vw,40px);
+  letter-spacing:0.02em;
+}
+.s3 h2{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:normal;
+  font-size:clamp(28px,5vw,78px);
+  line-height:1.18;
+  max-width:38ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s3 .dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.65;
+  max-width:52ch;
+  color:rgba(126,214,72,0.66);
+}
+.s3 .t-num{
+  position:absolute;
+  bottom:clamp(36px,5vw,72px);
+  right:clamp(36px,7vw,100px);
+  font-size:clamp(100px,18vw,280px);
+  font-weight:normal;
+  line-height:1;
+  opacity:0.07;
+  letter-spacing:-0.03em;
+  pointer-events:none;
+  user-select:none;
+}
+.s3 .source{
+  margin-top:clamp(28px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.06em;
+  opacity:0.35;
+}
+.s3 .cursor{
+  display:inline-block;
+  width:10px;
+  height:1.1em;
+  background:#7ED648;
+  vertical-align:text-bottom;
+  margin-left:3px;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ============================================================
+   S4 — SWISS POSTER
+   Is AI reasoning right for the wrong reasons?
+   ============================================================ */
+.s4{
+  background:#F8F5F0;
+  color:#0A0A0A;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s4 .swiss-iv{
+  position:absolute;
+  left:-0.05em;
+  top:-0.04em;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(200px,34vw,520px);
+  line-height:0.86;
+  color:#C41830;
+  letter-spacing:-0.07em;
+  pointer-events:none;
+  user-select:none;
+}
+.s4 .top{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  padding-top:clamp(110px,20vw,300px);
+  position:relative;
+  z-index:1;
+}
+.s4 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#C41830;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,88px);
+  line-height:1.06;
+  letter-spacing:-0.025em;
+  text-align:right;
+  max-width:22ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s4 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2.1vw,26px);
+  line-height:1.55;
+  text-align:right;
+  max-width:44ch;
+}
+.s4 .bottom{
+  position:relative;
+  z-index:1;
+}
+.s4 .rule{height:3px;background:#0A0A0A;margin-bottom:clamp(20px,3vw,36px)}
+.s4 .bottom-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s4 .source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.32;
+}
+
+/* ============================================================
+   S5 — DARK / MIDNIGHT
+   Tailscale and the Hugging Face Intrusion
+   ============================================================ */
+.s5{
+  background:#0C0812;
+  color:#E8E0F0;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s5 .ghost-num{
+  position:absolute;
+  right:-0.02em;
+  bottom:-0.08em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(260px,44vw,680px);
+  line-height:0.78;
+  color:#8060D0;
+  opacity:0.05;
+  pointer-events:none;
+  user-select:none;
+}
+.s5 .ordinal{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(18px,2vw,24px);
+  letter-spacing:0.38em;
+  color:rgba(232,224,240,0.22);
+  margin-bottom:clamp(24px,3.5vw,48px);
+  text-transform:uppercase;
+}
+.s5 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#A080F0;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(44px,7.5vw,120px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  max-width:22ch;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s5 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,26px);
+  line-height:1.6;
+  max-width:52ch;
+  color:rgba(232,224,240,0.62);
+}
+.s5 .source{
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.28;
+}
+
+/* ============================================================
+   S6 — ACADEMIC DROP-CAP
+   Elevators
+   ============================================================ */
+.s6{
+  background:#EFE7D5;
+  color:#1A1208;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s6 .meta{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  opacity:0.38;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s6 .meta::before{
+  content:'';
+  display:block;
+  width:44px;
+  height:2px;
+  background:currentColor;
+  flex-shrink:0;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(48px,8vw,124px);
+  line-height:0.96;
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s6 .body-text{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(22px,2.4vw,30px);
+  line-height:1.55;
+  max-width:52ch;
+}
+.s6 .drop{
+  float:left;
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(130px,20vw,260px);
+  line-height:0.72;
+  margin-right:0.06em;
+  margin-top:0.05em;
+  color:#1A1208;
+}
+.s6 .footer{
+  clear:both;
+  margin-top:clamp(32px,5vw,64px);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.s6 .source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.32;
+}
+
+/* ============================================================
+   S7 — NEWSPAPER COLUMN
+   Big Food vs. the People
+   ============================================================ */
+.s7{
+  background:#DDD4BE;
+  color:#1A1208;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+}
+.s7 .mastline{
+  border-top:3px solid #1A1208;
+  border-bottom:1px solid #1A1208;
+  padding:11px 0;
+  margin-bottom:clamp(36px,5.5vw,72px);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+}
+.s7 .mastline-left{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+.s7 .mastline-right{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:20px;
+  opacity:0.45;
+}
+.s7 .grid{
+  display:grid;
+  grid-template-columns:1.4fr 0.75fr;
+  gap:clamp(36px,5.5vw,80px);
+  align-items:start;
+  flex:1;
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,84px);
+  line-height:1.04;
+  letter-spacing:-0.025em;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s7 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.1vw,26px);
+  line-height:1.62;
+}
+.s7 .aside{
+  border-left:2px solid #1A1208;
+  padding-left:clamp(24px,3.5vw,48px);
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  align-self:stretch;
+  justify-content:center;
+}
+.s7 .pullquote{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(24px,3.2vw,46px);
+  line-height:1.22;
+  color:#5A3010;
+}
+.s7 .aside-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+.s7 .ghost-num{
+  position:absolute;
+  right:clamp(36px,7vw,100px);
+  bottom:clamp(36px,5vw,64px);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,240px);
+  line-height:1;
+  opacity:0.06;
+  pointer-events:none;
+  user-select:none;
+}
+@media(max-width:640px){
+  .s7 .grid{grid-template-columns:1fr}
+  .s7 .aside{border-left:none;border-top:1px solid #1A1208;padding-left:0;padding-top:28px}
+}
+
+/* ============================================================
+   S8 — ROSE-ALERT-STAMP
+   BMW Spider-Man in-car advertising
+   ============================================================ */
+.s8{
+  background:#E8C4BC;
+  color:#1A0808;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s8 .stamp{
+  position:absolute;
+  top:clamp(44px,6vw,84px);
+  right:clamp(44px,6vw,84px);
+  width:clamp(104px,14vw,192px);
+  height:clamp(104px,14vw,192px);
+  border:5px solid #1A0808;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(11deg);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(44px,7vw,88px);
+  line-height:1;
+}
+.s8 .alert-badge{
+  display:inline-block;
+  background:#1A0808;
+  color:#E8C4BC;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,2.2vw,28px);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  padding:8px 18px;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s8 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  opacity:0.42;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(44px,7.5vw,116px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s8 .dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,26px);
+  line-height:1.55;
+  max-width:48ch;
+}
+.s8 .source{
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.36;
+}
+
+/* ============================================================
+   S9 — COLOUR-FIELD MINIMALIST
+   Software for One (🎯)
+   ============================================================ */
+.s9{
+  background:#0C2016;
+  color:#C4ECD4;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s9 .ghost-num{
+  position:absolute;
+  left:-0.09em;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(300px,50vw,760px);
+  line-height:0.78;
+  color:#C4ECD4;
+  opacity:0.032;
+  pointer-events:none;
+  user-select:none;
+}
+.s9 .inner{
+  max-width:54ch;
+  margin-left:auto;
+  position:relative;
+  z-index:1;
+}
+.s9 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(196,236,212,0.32);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(52px,9vw,140px);
+  line-height:0.96;
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s9 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,26px);
+  line-height:1.62;
+  color:rgba(196,236,212,0.62);
+}
+.s9 .source{
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(196,236,212,0.26);
+}
+
+/* ============================================================
+   S10 — BIG-STAT FINISH
+   Using the railway network as a flatbed scanner
+   ============================================================ */
+.s10{
+  background:#1A1820;
+  color:#F0EAD8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s10 .bg-x{
+  position:absolute;
+  right:-0.04em;
+  top:clamp(16px,2vw,40px);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(240px,42vw,660px);
+  line-height:0.82;
+  color:#E8D240;
+  opacity:0.13;
+  letter-spacing:-0.04em;
+  pointer-events:none;
+  user-select:none;
+}
+.s10 .meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:#E8D240;
+  opacity:0.58;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(44px,7.5vw,120px);
+  line-height:0.97;
+  letter-spacing:-0.03em;
+  max-width:22ch;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s10 .dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,26px);
+  line-height:1.58;
+  max-width:52ch;
+  color:rgba(240,234,216,0.68);
+}
+.s10 .bottom{
+  margin-top:clamp(36px,5vw,72px);
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.s10 .source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+
+/* ============ COLOPHON ============ */
+.colophon{
+  background:#100E18;
+  color:#AEA8C0;
+  padding:clamp(72px,11vw,160px) clamp(36px,7vw,100px);
+  text-align:center;
+}
+.colophon .mark{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(44px,5.5vw,80px);
+  line-height:1;
+  margin-bottom:28px;
+  color:#F0EAD8;
+}
+.colophon p{
+  font-family:'Inter',sans-serif;
+  font-size:20px;
+  line-height:1.65;
+  max-width:52ch;
+  margin:0 auto 18px;
+}
+.colophon a{color:#E8D240;text-underline-offset:5px}
+</style>
+</head>
+<body>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
+  <div class="masthead-title"><em>Morning</em> Edition</div>
+  <div class="masthead-meta">Vol.&nbsp;062 &nbsp;&middot;&nbsp; 01 Aug 2026</div>
+</header>
+
+
+<!-- ============================================================
+     S1 — MANIFESTO
+     Twenty-five years ago it was cryptography, today model weights
+     ============================================================ -->
+<section class="spread s1">
+  <span class="ghost-num" aria-hidden="true">I</span>
+  <p class="meta">&#127919;&nbsp; Story I &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 217 pts</p>
+  <h2>The New Cipher Keys</h2>
+  <p class="dek">Twenty-five years ago, governments called encryption a weapon and tried to regulate its export. Today the same argument is being made, with AI model weights as the contraband. A short, clear-eyed essay arguing that the next wave of cypherpunks has already arrived: they just call themselves open-source AI developers.</p>
+  <a href="https://weeraman.com/because-we-can/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  <p class="source">weeraman.com &nbsp;&middot;&nbsp; 217 pts</p>
+</section>
+
+
+<!-- ============================================================
+     S2 — HERO COVER
+     qm: Multiplayer Agent Harness for Work
+     ============================================================ -->
+<section class="spread s2">
+  <span class="corner-num" aria-hidden="true">02</span>
+  <p class="meta">&#127919;&nbsp; Story II &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 524 pts</p>
+  <h2>Agents That Work Together</h2>
+  <p class="dek">Most AI tooling treats each agent as a solo act. qm builds a proper multiplayer harness: multiple agents collaborating, handing off context, dividing labour on real work tasks. Early infrastructure, but the kind that tends to define what the next few years of agentic AI actually looks like at ground level.</p>
+  <div class="bottom">
+    <p class="source">github.com/yc-software/qm &nbsp;&middot;&nbsp; 524 pts</p>
+    <a href="https://github.com/yc-software/qm" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S3 — TERMINAL / MONOSPACE
+     Kimi K3 in 29 GB of RAM
+     ============================================================ -->
+<section class="spread s3">
+  <p class="prompt">$ ./waste --model kimi-k3 --ram 29gb<span class="cursor"></span></p>
+  <p class="t-num" aria-hidden="true">03</p>
+  <p style="font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(126,214,72,0.55);margin-bottom:clamp(20px,3vw,40px);">&#127919;&nbsp; Story III &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 205 pts</p>
+  <h2>A Frontier Model<br>in Your Laptop Bag</h2>
+  <p class="dek">The gap between server-room AI and home hardware keeps shrinking. A new tool runs Moonshot's flagship Kimi K3 model in 29 GB of RAM, outputting half a token per second. Slow by API standards; extraordinary by any standard that matters for local, private, offline inference.</p>
+  <p class="source">github.com/sqliteai/waste &nbsp;&middot;&nbsp; 205 pts</p>
+  <a href="https://github.com/sqliteai/waste" class="read-link" target="_blank" rel="noopener" style="color:#7ED648">Read &rarr;</a>
+</section>
+
+
+<!-- ============================================================
+     S4 — SWISS POSTER
+     Is AI reasoning right for the wrong reasons?
+     ============================================================ -->
+<section class="spread s4">
+  <span class="swiss-iv" aria-hidden="true">IV</span>
+  <div class="top">
+    <p class="meta">&#127919;&nbsp; Story IV &nbsp;&middot;&nbsp; Quanta Magazine via HN &nbsp;&middot;&nbsp; 141 pts</p>
+    <h2>Right for the Wrong Reasons</h2>
+    <p class="dek">Quanta Magazine asks the question that matters most for anyone teaching people to trust AI: do reasoning models reach correct answers through something like genuine logic, or through statistical pattern-matching that happens to work? The distinction sounds academic. For AI educators and practitioners, it is entirely practical.</p>
+    <a href="https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731/" class="read-link" target="_blank" rel="noopener" style="color:#C41830">Read &rarr;</a>
+  </div>
+  <div class="bottom">
+    <div class="rule"></div>
+    <div class="bottom-bar">
+      <p class="source">quantamagazine.org &nbsp;&middot;&nbsp; 141 pts</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S5 — DARK / MIDNIGHT
+     Tailscale didn't stop the Hugging Face intrusion
+     ============================================================ -->
+<section class="spread s5">
+  <span class="ghost-num" aria-hidden="true">V</span>
+  <p class="ordinal">Story &nbsp;Five</p>
+  <p class="meta">&#127919;&nbsp; Hacker News &nbsp;&middot;&nbsp; 513 pts</p>
+  <h2>The Breach Tailscale Couldn't Catch</h2>
+  <p class="dek">Someone broke into Hugging Face's internal systems. Tailscale, the widely-trusted network security layer used by thousands of engineering teams, was present throughout and did not stop the intrusion. A forensic account of what went wrong; essential reading for any team building AI infrastructure on the assumption that perimeter tools alone are sufficient.</p>
+  <p class="source">tailscale.com &nbsp;&middot;&nbsp; 513 pts</p>
+  <a href="https://tailscale.com/blog/hugging-face-intrusion" class="read-link" target="_blank" rel="noopener" style="color:#A080F0">Read &rarr;</a>
+</section>
+
+
+<!-- ============================================================
+     S6 — ACADEMIC DROP-CAP
+     Elevators
+     ============================================================ -->
+<section class="spread s6">
+  <p class="meta"><span>Story VI</span> &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 1,117 pts</p>
+  <h2>Going Up</h2>
+  <p class="body-text">
+    <span class="drop" aria-hidden="true">O</span>ne of Hacker News's highest-scoring stories in recent weeks is a long-form essay about elevators: not the technology, but the social contract embedded in vertical movement. How a box that travels between floors quietly reshapes city planning, class dynamics, architectural ambition, and the texture of daily life.
+  </p>
+  <div class="footer">
+    <p class="source">john.fun &nbsp;&middot;&nbsp; 1,117 pts</p>
+    <a href="https://john.fun/elevators" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S7 — NEWSPAPER COLUMN
+     Big Food vs. the People
+     ============================================================ -->
+<section class="spread s7">
+  <span class="ghost-num" aria-hidden="true">VII</span>
+  <div class="mastline">
+    <span class="mastline-left">Story VII &nbsp;&middot;&nbsp; Investigation &nbsp;&middot;&nbsp; 216 pts</span>
+    <span class="mastline-right">Lighthouse Reports</span>
+  </div>
+  <div class="grid">
+    <div>
+      <h2>The Industry That Funds the Science That Says It's Fine</h2>
+      <p class="dek">Lighthouse Reports' investigation into how processed-food companies fund nutrition research, lobby dietary guidelines, and shape scientific consensus in ways that reliably serve profit over public health. Thoroughly sourced. For a story many people suspected was true, it is more unsettling to see confirmed in detail.</p>
+      <a href="https://www.lighthousereports.com/investigation/big-food-vs-the-people/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+    <div class="aside">
+      <p class="pullquote">"The industry that funds the science that says it's fine."</p>
+      <p class="aside-source">lighthousereports.com &nbsp;&middot;&nbsp; 216 pts</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S8 — ROSE-ALERT-STAMP
+     BMW Spider-Man in-car advertising
+     ============================================================ -->
+<section class="spread s8">
+  <div class="stamp" aria-hidden="true">8</div>
+  <p class="meta">Story VIII &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 160 pts</p>
+  <div class="alert-badge">Consumer Alert</div>
+  <h2>Your BMW Just Became a Cinema</h2>
+  <p class="dek">BMW has started pushing Spider-Man advertisements to in-car screens. Drivers did not opt in. The automotive industry's race to monetise the captive audience behind the wheel just shifted from a slow-burn concern to a documented present: your car is now a media channel, and you are the inventory.</p>
+  <p class="source">consumerrights.wiki &nbsp;&middot;&nbsp; 160 pts</p>
+  <a href="https://consumerrights.wiki/w/BMW_Spider-Man_in-car_advertising" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ============================================================
+     S9 — COLOUR-FIELD MINIMALIST
+     Software for One
+     ============================================================ -->
+<section class="spread s9">
+  <span class="ghost-num" aria-hidden="true">IX</span>
+  <div class="inner">
+    <p class="meta">&#127919;&nbsp; Story IX &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 71 pts</p>
+    <h2>Software for Exactly One Person</h2>
+    <p class="dek">An argument for building software that serves exactly one person rather than hypothetical millions: no user research, no roadmap, no scale concerns. Personal software as a quiet act of self-knowledge, and a design philosophy that consistently produces more useful tools than anything built for a crowd.</p>
+    <p class="source">ajwaxman.com &nbsp;&middot;&nbsp; 71 pts</p>
+    <a href="https://www.ajwaxman.com/writing/software-for-one" class="read-link" target="_blank" rel="noopener" style="color:#C4ECD4">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S10 — BIG-STAT FINISH
+     Using the railway network as a flatbed scanner
+     ============================================================ -->
+<section class="spread s10">
+  <span class="bg-x" aria-hidden="true">X</span>
+  <p class="meta">Story X &nbsp;&middot;&nbsp; EMF 2026 via HN &nbsp;&middot;&nbsp; 63 pts</p>
+  <h2>Every Track, a Pixel</h2>
+  <p class="dek">A talk from Electromagnetic Field 2026 demonstrating how the timing signals embedded in the UK rail network can be repurposed as an enormous, low-resolution flatbed scanner. Place an object across the track geometry and read it back from interference in the signal. Utterly impractical. Genuinely astonishing.</p>
+  <div class="bottom">
+    <p class="source">media.ccc.de &nbsp;&middot;&nbsp; 63 pts</p>
+    <a href="https://media.ccc.de/v/emf2026-74-1-using-the-railway-network-as-a-flatbed-scanner" class="read-link" target="_blank" rel="noopener" style="color:#E8D240">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ============ COLOPHON ============ -->
+<footer class="colophon">
+  <p class="mark"><em>Morning Edition</em></p>
+  <p>Vol. 062 &nbsp;&middot;&nbsp; 01 August 2026</p>
+  <p>Ten stories, curated and designed each morning at seven. Published by a scheduled agent for one reader.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
