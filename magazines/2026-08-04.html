@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 04 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.45}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ====== MASTHEAD ====== */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#2C3E28;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#D4EAC8;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(212,234,200,0.4);
+}
+
+/* ==================================================
+   S1 - COLOUR-FIELD MINIMALIST
+   LLMs reward expertise
+   ================================================== */
+.s1{
+  background:#3D6B52;
+  color:#F0EBE0;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s1 .num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.45em;
+  text-transform:uppercase;
+  color:rgba(240,235,224,0.45);
+  margin-bottom:clamp(40px,8vw,100px);
+}
+.s1 .divider{
+  width:100%;
+  height:1px;
+  background:rgba(240,235,224,0.18);
+  margin-bottom:clamp(40px,8vw,100px);
+}
+.s1 .flag{font-size:24px;margin-bottom:20px;display:block}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:200;
+  font-size:clamp(48px,7.5vw,130px);
+  line-height:1.0;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s1 .dek{
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.65;
+  max-width:52ch;
+  font-weight:300;
+}
+.s1 .meta-line{
+  margin-top:clamp(32px,5vw,56px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(240,235,224,0.4);
+  font-weight:600;
+}
+
+/* ==================================================
+   S2 - BIG-STAT FINISH
+   Ten advances in mathematics
+   ================================================== */
+.s2{
+  background:#101215;
+  color:#F5F0DF;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s2 .bg-ghost{
+  position:absolute;
+  right:-0.04em;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,48vw,620px);
+  line-height:1;
+  color:rgba(255,255,255,0.035);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s2 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:#D4C640;
+  margin-bottom:clamp(24px,4vw,48px);
+}
+.s2 .big-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,240px);
+  line-height:0.85;
+  color:#D4C640;
+  letter-spacing:-0.04em;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(28px,4vw,56px);
+  line-height:1.15;
+  max-width:28ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s2 .dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.6;
+  max-width:52ch;
+  font-weight:300;
+}
+.s2 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(245,240,223,0.3);
+  font-weight:600;
+}
+
+/* ==================================================
+   S3 - ROSE-ALERT-STAMP
+   Devtools must be open source
+   ================================================== */
+.s3{
+  background:#F5EDE0;
+  color:#1A1008;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s3 .stamp{
+  display:inline-block;
+  border:4px solid #CC3A1C;
+  color:#CC3A1C;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(48px,10vw,140px);
+  line-height:1;
+  letter-spacing:-0.04em;
+  padding:0.07em 0.2em;
+  margin-bottom:clamp(40px,6vw,80px);
+  transform:rotate(-2.5deg);
+  transform-origin:left center;
+  align-self:flex-start;
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(32px,5.5vw,86px);
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s3 .dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  font-weight:400;
+}
+.s3 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(26,16,8,0.38);
+  font-weight:700;
+}
+
+/* ==================================================
+   S4 - HERO COVER
+   More German than many Germans
+   ================================================== */
+.s4{
+  background:#0B2530;
+  color:#F4EDDB;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s4 .num-ghost{
+  position:absolute;
+  top:clamp(16px,2.5vw,44px);
+  right:clamp(36px,7vw,100px);
+  font-family:'Fraunces',serif;
+  font-weight:100;
+  font-size:clamp(100px,24vw,340px);
+  line-height:1;
+  color:rgba(244,237,219,0.06);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s4 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(244,237,219,0.42);
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7.5vw,118px);
+  line-height:0.98;
+  letter-spacing:-0.03em;
+  max-width:20ch;
+  margin-bottom:clamp(24px,4vw,52px);
+}
+.s4 .dek{
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.6;
+  max-width:52ch;
+  font-weight:300;
+}
+.s4 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(244,237,219,0.32);
+  font-weight:600;
+}
+
+/* ==================================================
+   S5 - DARK / MIDNIGHT
+   MiniMax H3 in ComfyUI
+   ================================================== */
+.s5{
+  background:#09080F;
+  color:#D8D0F0;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s5 .bg-code{
+  position:absolute;
+  right:-0.05em;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(200px,38vw,500px);
+  line-height:1;
+  color:rgba(140,80,255,0.06);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s5 .num-corner{
+  position:absolute;
+  bottom:clamp(36px,5vw,72px);
+  left:clamp(36px,7vw,100px);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.35em;
+  color:rgba(216,208,240,0.28);
+  text-transform:lowercase;
+}
+.s5 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:#9B72E8;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(36px,6.5vw,100px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,4vw,52px);
+}
+.s5 .dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  font-weight:300;
+}
+.s5 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(216,208,240,0.28);
+  font-weight:600;
+}
+
+/* ==================================================
+   S6 - NEWSPAPER COLUMN
+   Prevent cognitive debt
+   ================================================== */
+.s6{
+  background:#F9F3E6;
+  color:#1A1510;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s6 .num-box{
+  display:inline-block;
+  border:2.5px solid #1A1510;
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(24px,3.5vw,48px);
+  line-height:1;
+  padding:0.15em 0.4em;
+  letter-spacing:0.02em;
+  margin-bottom:clamp(28px,4.5vw,56px);
+  align-self:flex-start;
+}
+.s6 .flag{font-size:22px;margin-bottom:16px;display:block}
+.s6 .col-rule{
+  width:clamp(80px,10vw,140px);
+  height:3px;
+  background:#1A1510;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(30px,5vw,76px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:26ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s6 .dek{
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.72;
+  font-weight:400;
+  column-count:2;
+  column-gap:clamp(32px,5vw,72px);
+  max-width:88ch;
+}
+@media(max-width:700px){.s6 .dek{column-count:1}}
+.s6 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(26,21,16,0.38);
+  font-weight:700;
+}
+
+/* ==================================================
+   S7 - SWISS POSTER
+   AirLLM 70B on 4GB GPU
+   ================================================== */
+.s7{
+  background:#C0D714;
+  color:#080808;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.s7 .bg-num{
+  position:absolute;
+  bottom:-0.12em;
+  right:-0.04em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(260px,50vw,680px);
+  line-height:1;
+  color:rgba(8,8,8,0.06);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s7 .num-swiss{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,14vw,190px);
+  line-height:1;
+  letter-spacing:-0.05em;
+  color:#080808;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s7 h2{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(34px,6vw,104px);
+  line-height:0.95;
+  letter-spacing:-0.04em;
+  text-transform:uppercase;
+  max-width:18ch;
+  margin-bottom:clamp(24px,4vw,52px);
+}
+.s7 .dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.55;
+  max-width:50ch;
+  font-weight:400;
+}
+.s7 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(8,8,8,0.42);
+  font-weight:700;
+}
+
+/* ==================================================
+   S8 - TYPOGRAPHIC COLLAGE
+   Amazonian civilization
+   ================================================== */
+.s8{
+  background:#AE4518;
+  color:#F5E4CC;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s8 .num-roman-bg{
+  position:absolute;
+  left:clamp(28px,5vw,80px);
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(120px,24vw,320px);
+  line-height:0.85;
+  color:rgba(245,228,204,0.12);
+  letter-spacing:-0.04em;
+  user-select:none;
+  pointer-events:none;
+}
+.s8 .content{
+  position:relative;
+  z-index:2;
+  margin-left:clamp(0px,18vw,240px);
+}
+.s8 .eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(245,228,204,0.52);
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s8 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(32px,5.5vw,90px);
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s8 .dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  font-weight:300;
+}
+.s8 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(245,228,204,0.38);
+  font-weight:600;
+}
+
+/* ==================================================
+   S9 - MANIFESTO
+   Why did we wait so long for the bicycle?
+   ================================================== */
+.s9{
+  background:#1E3350;
+  color:#E2D5A8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s9 .num-manifesto{
+  position:absolute;
+  top:clamp(36px,5vw,72px);
+  right:clamp(36px,7vw,100px);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.4em;
+  color:rgba(226,213,168,0.3);
+}
+.s9 .rule{
+  width:clamp(48px,6vw,96px);
+  height:3px;
+  background:rgba(226,213,168,0.35);
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(36px,6.5vw,104px);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,4vw,52px);
+}
+.s9 .dek{
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.65;
+  max-width:56ch;
+  font-weight:300;
+}
+.s9 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(226,213,168,0.35);
+  font-weight:600;
+}
+
+/* ==================================================
+   S10 - ACADEMIC DROP-CAP
+   How Hollywood stopped making movies in Hollywood
+   ================================================== */
+.s10{
+  background:#ECE7D8;
+  color:#1C1C1E;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s10 .num-academic{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.4em;
+  color:rgba(28,28,30,0.32);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s10 .dropcap-row{
+  display:flex;
+  align-items:flex-start;
+  gap:0.12em;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s10 .drop{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(80px,15vw,200px);
+  line-height:0.78;
+  color:#1C1C1E;
+  flex-shrink:0;
+}
+.s10 .drop-rest{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(26px,4.5vw,68px);
+  line-height:1.2;
+  letter-spacing:-0.01em;
+  padding-top:0.3em;
+  color:#1C1C1E;
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(24px,3.5vw,52px);
+  line-height:1.1;
+  letter-spacing:-0.015em;
+  max-width:34ch;
+  margin-bottom:clamp(24px,4vw,52px);
+}
+.s10 .dek{
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.72;
+  max-width:64ch;
+  font-weight:400;
+}
+.s10 .meta-line{
+  margin-top:clamp(32px,4vw,52px);
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(28,28,30,0.38);
+  font-weight:600;
+}
+
+/* ====== COLOPHON ====== */
+.colophon{
+  padding:clamp(48px,6vw,80px) clamp(28px,6vw,88px);
+  background:#2C3E28;
+  color:rgba(212,234,200,0.52);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.colophon a{color:#D4EAC8;text-decoration:underline;text-underline-offset:4px}
+.colophon-brand{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(22px,2vw,32px);
+  color:#D4EAC8;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-title">Morning Edition</span>
+  <span class="masthead-meta">Vol. 065 &nbsp;&bull;&nbsp; 04 Aug 2026</span>
+</header>
+
+
+<!-- ===== S1: COLOUR-FIELD MINIMALIST ===== -->
+<!-- LLMs reward expertise | HN 704pts -->
+<section class="spread s1">
+  <span class="num-label">i &nbsp;&bull;&nbsp; hn &nbsp;&bull;&nbsp; 704 pts</span>
+  <div class="divider"></div>
+  <span class="flag">&#127919;</span>
+  <h2>The model rewards the already-expert</h2>
+  <p class="dek">Sean Goedecke makes an observation that cuts to the heart of AI's equity problem: LLMs give more useful answers to people who already know enough to ask good questions. For those who don't, the output feels impressive until it leads them somewhere wrong. AI amplifies existing knowledge gaps as readily as it closes them. Essential reading for anyone teaching AI literacy.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; seangoedecke.com</span>
+  <a class="read-link" href="https://www.seangoedecke.com/llms-reward-expertise/">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S2: BIG-STAT FINISH ===== -->
+<!-- Ten advances in mathematics | HN 508pts -->
+<section class="spread s2">
+  <span class="bg-ghost">10</span>
+  <span class="eyebrow">No. 02 &nbsp;&bull;&nbsp; openai.com &nbsp;&bull;&nbsp; 508 pts</span>
+  <div class="big-stat">10</div>
+  <h2>The theorems machines are finally cracking open</h2>
+  <p class="dek">OpenAI documents ten advances in mathematics and theoretical computer science made by its latest reasoning models. Some of these problems have resisted human proof for decades. This is not the same as general mathematical intelligence, but it is something concrete: a frontier model making genuine novel contributions to a formal discipline. The direction of travel is no longer in question.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; openai.com</span>
+  <a class="read-link" href="https://openai.com/index/ten-advances-in-mathematics/">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S3: ROSE-ALERT-STAMP ===== -->
+<!-- Devtools must be open source | HN 559pts -->
+<section class="spread s3">
+  <div class="stamp">03</div>
+  <h2>Your tools must be legible to you</h2>
+  <p class="dek">A sharp polemic: developer tooling locked inside commercial black boxes is a structural risk. When your instruments are opaque, you cannot audit them, fork them, or outlast their vendors. The argument for open-source devtools is not ideological sentiment. It is practical self-preservation for anyone who builds things for a living and would prefer that knowledge to remain their own.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; blog.exe.dev &nbsp;&bull;&nbsp; 559 pts</span>
+  <a class="read-link" href="https://blog.exe.dev/devtools-must-be-open-source/">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S4: HERO COVER ===== -->
+<!-- More German than many Germans | HN 459pts -->
+<section class="spread s4">
+  <span class="num-ghost">IV</span>
+  <span class="eyebrow">No. 04 &nbsp;&bull;&nbsp; mertbulan.com &nbsp;&bull;&nbsp; 459 pts</span>
+  <h2>More German than many Germans</h2>
+  <p class="dek">Mert Bulan, a Turkish-born software engineer, reflects on the slow process of becoming German: the bureaucracy, the language, the particular German relationship with the past, and the strange moment when a country's values start to feel like your own. One of those essays that reminds you that belonging is assembled, not inherited, and that the assembling takes time.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; mertbulan.com</span>
+  <a class="read-link" href="https://mertbulan.com/more-german-than-many-germans/">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S5: DARK / MIDNIGHT ===== -->
+<!-- MiniMax H3 in ComfyUI | HN 281pts -->
+<section class="spread s5">
+  <span class="bg-code">H3</span>
+  <span class="num-corner">v &nbsp;&bull;&nbsp; hn</span>
+  <span class="eyebrow">No. 05 &nbsp;&bull;&nbsp; blog.comfy.org &nbsp;&bull;&nbsp; 281 pts</span>
+  <h2>Open-weights video with native audio, day zero</h2>
+  <p class="dek">MiniMax H3 lands in ComfyUI on release day: open weights, native audio generation baked in, 2K video output. The gap between commercial AI video tools and what you can run on your own hardware is closing at a pace that felt impossible eighteen months ago. Creative tooling is entering genuinely strange territory, in the best possible sense.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; blog.comfy.org</span>
+  <a class="read-link" href="https://blog.comfy.org/p/minimax-h3-day-0-support-in-comfyui">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S6: NEWSPAPER COLUMN ===== -->
+<!-- Prevent cognitive debt | HN 443pts -->
+<section class="spread s6">
+  <div class="num-box">6.</div>
+  <span class="flag">&#127919;</span>
+  <div class="col-rule"></div>
+  <h2>The case for typing the code yourself</h2>
+  <p class="dek">Ankur Sethi argues that copying AI-generated code without carefully reading it creates cognitive debt: you ship something that works but that you do not understand, which compounds into systems nobody can maintain. The counter-intuitive fix is to retype it manually. Slowing down for comprehension is not inefficiency. It is the actual work of learning, even in 2026, and it applies just as directly to anyone teaching others to work with AI tools.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; ankursethi.com &nbsp;&bull;&nbsp; 443 pts</span>
+  <a class="read-link" href="https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S7: SWISS POSTER ===== -->
+<!-- AirLLM 70B on 4GB GPU | HN 206pts -->
+<section class="spread s7">
+  <span class="bg-num">7</span>
+  <div class="num-swiss">70B</div>
+  <h2>Frontier scale on one consumer card</h2>
+  <p class="dek">AirLLM runs a 70-billion-parameter model on a single 4 GB GPU by streaming layers through memory rather than loading the whole model at once. It is slower, but it works. Local AI inference is arriving not through better hardware but through cleverer choreography of the hardware we already have.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; github.com/lyogavin &nbsp;&bull;&nbsp; 206 pts</span>
+  <a class="read-link" href="https://github.com/lyogavin/airllm">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S8: TYPOGRAPHIC COLLAGE ===== -->
+<!-- Amazonian civilization | HN 104pts -->
+<section class="spread s8">
+  <span class="num-roman-bg">VIII</span>
+  <div class="content">
+    <span class="eyebrow">No. 08 &nbsp;&bull;&nbsp; science.org &nbsp;&bull;&nbsp; 104 pts</span>
+    <h2>Three million people, hidden in plain sight</h2>
+    <p class="dek">Satellite imagery analysis of the Amazon has revealed traces of a civilization that housed an estimated three million people inside just three percent of the forest's total area. Geometric shapes long dismissed as natural formations are instead urban footprints. The history we thought we understood keeps expanding downward, into older soil.</p>
+    <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; science.org</span>
+    <a class="read-link" href="https://www.science.org/content/article/odd-shapes-hidden-dense-amazon-rainforest-reveal-sprawling-ancient-civilization">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- ===== S9: MANIFESTO ===== -->
+<!-- Why did we wait so long for the bicycle? -->
+<section class="spread s9">
+  <span class="num-manifesto">09</span>
+  <div class="rule"></div>
+  <h2>Why does the obvious take centuries to arrive?</h2>
+  <p class="dek">Jason Crawford's classic essay on the bicycle: a machine built entirely from materials available since antiquity, yet not invented until the 1880s. What blocked it for so long was not technology but mental models. Nobody had framed the question of human-powered wheeled transport as a solvable problem. Worth reading slowly if you build anything, or teach anyone how to think about building things.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; rootsofprogress.org</span>
+  <a class="read-link" href="https://blog.rootsofprogress.org/why-did-we-wait-so-long-for-the-bicycle">Read &rarr;</a>
+</section>
+
+
+<!-- ===== S10: ACADEMIC DROP-CAP ===== -->
+<!-- How Hollywood stopped making movies in Hollywood | HN 184pts -->
+<section class="spread s10">
+  <span class="num-academic">Vol. 065 &nbsp;&bull;&nbsp; X</span>
+  <div class="dropcap-row">
+    <span class="drop">H</span>
+    <span class="drop-rest">ollywood left the city that built it. Here are the numbers.</span>
+  </div>
+  <h2>How Hollywood stopped making movies in Hollywood</h2>
+  <p class="dek">A data journalism investigation into the decades-long exodus of film and television production from Los Angeles. Tax incentives, cheaper labour markets, and the rise of streaming-native studios have redistributed the industry in ways that permanently altered the city's economic geography. An object lesson in how industries migrate without anyone quite deciding to move them.</p>
+  <span class="meta-line">Hacker News &nbsp;&bull;&nbsp; statsignificant.com &nbsp;&bull;&nbsp; 184 pts</span>
+  <a class="read-link" href="https://www.statsignificant.com/p/how-hollywood-stopped-making-movies">Read &rarr;</a>
+</section>
+
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span class="colophon-brand">Morning Edition</span>
+  <span>Vol. 065 &nbsp;&bull;&nbsp; 04 Aug 2026 &nbsp;&bull;&nbsp; <a href="../index.html">Back to archive &rarr;</a></span>
+</footer>
+
+</body>
+</html>
