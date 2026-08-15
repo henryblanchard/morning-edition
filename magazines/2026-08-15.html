@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 15 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* MASTHEAD */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#1F2C1F;
+  border-bottom:2px solid #3A5C3A;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#C8DDB8;
+  letter-spacing:-0.01em;
+}
+.masthead-title em{font-style:italic;font-weight:400}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(200,221,184,0.4);
+}
+
+/* ─── S1: HERO COVER ─── Leadership + AI */
+.s1{
+  background:#C8A844;
+  color:#1A1000;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s1-bg-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(200px,30vw,480px);
+  line-height:0.82;
+  color:rgba(26,16,0,0.1);
+  position:absolute;
+  top:-0.05em;
+  right:-0.03em;
+  letter-spacing:-0.06em;
+  pointer-events:none;
+}
+.s1-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:rgba(26,16,0,0.5);
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s1 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(44px,7.5vw,120px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:20ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s1-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.55;
+  max-width:52ch;
+  color:rgba(26,16,0,0.72);
+}
+
+/* ─── S2: MANIFESTO ─── Qwen 27B */
+.s2{
+  background:#1E1040;
+  color:#E8D8FF;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s2-bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,38vw,560px);
+  line-height:0.82;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(232,216,255,0.13);
+  position:absolute;
+  bottom:-0.1em;
+  right:-0.04em;
+  pointer-events:none;
+  letter-spacing:-0.04em;
+}
+.s2-eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  color:rgba(232,216,255,0.38);
+  margin-bottom:clamp(28px,4.5vw,64px);
+}
+.s2 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,7.5vw,120px);
+  line-height:0.92;
+  letter-spacing:-0.025em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.65;
+  max-width:54ch;
+  color:rgba(232,216,255,0.68);
+  font-weight:300;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s2-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:rgba(232,216,255,0.32);
+}
+
+/* ─── S3: NEWSPAPER COLUMN ─── Firefox / uBlock */
+.s3{
+  background:#EDE8DF;
+  color:#1C1510;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s3-rulebar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:3px solid #1C1510;
+  border-bottom:1px solid rgba(28,21,16,0.35);
+  padding:10px 0;
+  margin-bottom:clamp(32px,5vw,72px);
+}
+.s3-section{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+}
+.s3-num{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:22px;
+  color:rgba(28,21,16,0.38);
+}
+.s3 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(46px,8vw,130px);
+  line-height:0.87;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(28px,4vw,56px);
+}
+.s3-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(28px,5vw,72px);
+  align-items:center;
+}
+.s3-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.65;
+  color:rgba(28,21,16,0.78);
+}
+.s3-pullquote{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(22px,2.6vw,38px);
+  line-height:1.25;
+  color:rgba(28,21,16,0.45);
+  border-left:3px solid #1C1510;
+  padding-left:clamp(20px,2.5vw,36px);
+}
+
+/* ─── S4: SWISS POSTER ─── Homomorphic Encryption */
+.s4{
+  background:#B83A1A;
+  color:#F5F0E8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s4-topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s4-eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.42em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.45);
+}
+.s4-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.2em;
+  color:rgba(245,240,232,0.38);
+}
+.s4-rule{
+  width:100%;
+  height:1.5px;
+  background:rgba(245,240,232,0.2);
+}
+.s4 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(48px,8.5vw,150px);
+  line-height:0.88;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+}
+.s4-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.62;
+  max-width:52ch;
+  color:rgba(245,240,232,0.72);
+}
+.s4-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.38);
+}
+
+/* ─── S5: ROSE-ALERT-STAMP ─── Going Dark */
+.s5{
+  background:#F0B89A;
+  color:#1F0800;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+.s5-stamp{
+  position:absolute;
+  top:clamp(40px,6vw,80px);
+  right:clamp(40px,6vw,80px);
+  width:clamp(110px,14vw,190px);
+  height:clamp(110px,14vw,190px);
+  border:4px solid rgba(31,8,0,0.7);
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(14deg);
+  gap:2px;
+}
+.s5-stamp-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(44px,6vw,80px);
+  line-height:1;
+  color:rgba(31,8,0,0.7);
+}
+.s5-stamp-label{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:11px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:rgba(31,8,0,0.5);
+}
+.s5 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(38px,6.5vw,108px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:24ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.62;
+  max-width:52ch;
+  color:rgba(31,8,0,0.72);
+}
+.s5-source{
+  margin-top:clamp(18px,2.5vw,32px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:rgba(31,8,0,0.42);
+}
+
+/* ─── S6: BIG-STAT FINISH ─── 232x Kernel */
+.s6{
+  background:#0A0A0A;
+  color:#F0EDE5;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s6-bg-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(180px,30vw,500px);
+  line-height:0.82;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(240,237,229,0.08);
+  position:absolute;
+  right:-0.04em;
+  top:50%;
+  transform:translateY(-50%);
+  letter-spacing:-0.04em;
+  pointer-events:none;
+}
+.s6-num-label{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:rgba(240,237,229,0.32);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s6-big{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(88px,16vw,260px);
+  line-height:0.84;
+  letter-spacing:-0.04em;
+  color:#F0EDE5;
+}
+.s6-unit{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(22px,3vw,44px);
+  letter-spacing:0.1em;
+  color:rgba(240,237,229,0.45);
+  margin-bottom:clamp(28px,4vw,56px);
+  margin-top:6px;
+}
+.s6 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(26px,3.2vw,50px);
+  line-height:1.12;
+  max-width:34ch;
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s6-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.8vw,23px);
+  line-height:1.62;
+  max-width:52ch;
+  color:rgba(240,237,229,0.62);
+}
+
+/* ─── S7: DARK/MIDNIGHT ─── ThoughtDAG */
+.s7{
+  background:#062030;
+  color:#AACED8;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s7-bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(220px,32vw,500px);
+  line-height:0.82;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(170,206,216,0.12);
+  position:absolute;
+  left:-0.06em;
+  bottom:-0.1em;
+  pointer-events:none;
+}
+.s7-eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.36em;
+  text-transform:uppercase;
+  color:rgba(170,206,216,0.38);
+  margin-bottom:clamp(24px,4vw,60px);
+}
+.s7 h2{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(44px,7.5vw,120px);
+  line-height:0.9;
+  letter-spacing:-0.025em;
+  max-width:22ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s7-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  color:rgba(170,206,216,0.68);
+}
+
+/* ─── S8: TERMINAL/MONOSPACE ─── The Other Sean Byrne */
+.s8{
+  background:#0E0E16;
+  color:#39FF7A;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s8-num{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  color:rgba(57,255,122,0.35);
+  position:absolute;
+  top:clamp(36px,5vw,64px);
+  right:clamp(36px,5vw,64px);
+  letter-spacing:0.05em;
+}
+.s8-prompt{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(18px,1.6vw,22px);
+  color:rgba(57,255,122,0.45);
+  margin-bottom:clamp(20px,3vw,40px);
+  letter-spacing:0.03em;
+}
+.s8 h2{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(26px,4vw,64px);
+  line-height:1.1;
+  letter-spacing:-0.01em;
+  max-width:28ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  color:#39FF7A;
+}
+.s8-dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.7;
+  max-width:52ch;
+  color:rgba(57,255,122,0.65);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s8-cursor{
+  display:inline-block;
+  width:0.56em;
+  height:1.1em;
+  background:#39FF7A;
+  vertical-align:text-bottom;
+  animation:blink 1.1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ─── S9: COLOUR-FIELD MINIMALIST ─── Eigendrum */
+.s9{
+  background:#6BA898;
+  color:#0D1F1A;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.s9-ring1{
+  position:absolute;
+  top:50%;
+  right:clamp(-80px,-10vw,-40px);
+  transform:translateY(-50%);
+  width:clamp(280px,44vw,600px);
+  height:clamp(280px,44vw,600px);
+  border-radius:50%;
+  border:1px solid rgba(13,31,26,0.18);
+  pointer-events:none;
+}
+.s9-ring2{
+  position:absolute;
+  top:50%;
+  right:clamp(-80px,-10vw,-40px);
+  transform:translateY(-50%);
+  width:clamp(180px,28vw,380px);
+  height:clamp(180px,28vw,380px);
+  border-radius:50%;
+  border:1px solid rgba(13,31,26,0.12);
+  pointer-events:none;
+}
+.s9-bg-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(180px,26vw,360px);
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(13,31,26,0.1);
+  position:absolute;
+  top:50%;
+  right:clamp(-20px,-2vw,0px);
+  transform:translateY(-50%);
+  letter-spacing:-0.06em;
+  pointer-events:none;
+}
+.s9-eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.36em;
+  text-transform:uppercase;
+  color:rgba(13,31,26,0.4);
+  margin-bottom:clamp(20px,3vw,48px);
+}
+.s9 h2{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(50px,9vw,145px);
+  line-height:0.88;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s9-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.62;
+  max-width:48ch;
+  color:rgba(13,31,26,0.72);
+}
+
+/* ─── S10: ACADEMIC DROP-CAP ─── Brain / REM */
+.s10{
+  background:#F6F1E4;
+  color:#1A150D;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s10-header{
+  display:flex;
+  gap:clamp(16px,2.5vw,36px);
+  align-items:flex-start;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s10-dropcap{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(110px,18vw,240px);
+  line-height:0.82;
+  flex-shrink:0;
+  color:#1A150D;
+}
+.s10-header-right{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:0.1em;
+}
+.s10-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:rgba(26,21,13,0.38);
+  margin-bottom:10px;
+}
+.s10 h2{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(28px,3.8vw,58px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:30ch;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s10-rule{
+  width:clamp(40px,5vw,72px);
+  height:2px;
+  background:#1A150D;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s10-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.72;
+  max-width:60ch;
+  color:rgba(26,21,13,0.72);
+}
+
+/* COLOPHON */
+.colophon{
+  background:#1F2C1F;
+  color:#C8DDB8;
+  padding:clamp(40px,6vw,80px) clamp(36px,7vw,100px);
+  text-align:center;
+}
+.colophon p{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:rgba(200,221,184,0.42);
+  line-height:1.9;
+}
+.colophon a{
+  color:rgba(200,221,184,0.68);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title"><em>Morning Edition</em></div>
+  <div class="masthead-meta">Vol. 069 &nbsp;&middot;&nbsp; 15 August 2026</div>
+</header>
+
+<!-- 01: HERO COVER — Working with AI = Leadership -->
+<section class="spread s1">
+  <div class="s1-bg-num">I</div>
+  <div class="s1-meta">🎯 &nbsp;HN &middot; 63 pts &nbsp;&middot;&nbsp; AI Practice</div>
+  <h2>You Are Not Writing Code Anymore. You Are Managing a Team.</h2>
+  <p class="s1-dek">When Allen Bargi stopped trying to out-code the machine, something shifted: the skills that mattered most looked suspiciously like delegation, trust, and knowing when to push back. If working with AI feels like leadership, maybe that is exactly what it is.</p>
+  <a class="read-link" href="https://allen.bargi.org/notes/working-with-ai-feels-like-leadership/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 02: MANIFESTO — Qwen 3.8 27B -->
+<section class="spread s2">
+  <div class="s2-bg-num">2</div>
+  <div class="s2-eyebrow">🎯 &nbsp;HN &middot; 1,257 pts &nbsp;&middot;&nbsp; New Model Drop</div>
+  <h2>Alibaba's Open-Weight Contender Lands at 27 Billion Parameters</h2>
+  <p class="s2-dek">Qwen 3.8 27B appears on Hugging Face in an FP8 flavour, continuing the relentless compression of frontier-level capability into consumer-runnable weights. For educators and experimenters, the calculus of what you can demo locally is shifting again.</p>
+  <div class="s2-source">Qwen / Hugging Face &nbsp;&middot;&nbsp; <a href="https://huggingface.co/Qwen/Qwen3.8-27B-FP8" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;">Read &rarr;</a></div>
+</section>
+
+<!-- 03: NEWSPAPER COLUMN — Firefox / uBlock Origin -->
+<section class="spread s3">
+  <div class="s3-rulebar">
+    <span class="s3-section">Browser Wars</span>
+    <span class="s3-num">No. iii</span>
+  </div>
+  <h2>Firefox Is Now the Last Line</h2>
+  <div class="s3-columns">
+    <div>
+      <p class="s3-dek">Chrome's manifest v3 migration has finally squeezed uBlock Origin out of every major browser except one. The browser wars ended not in a dramatic collision but in a quiet regulatory retreat: Mozilla is left holding a flag most users did not know existed.</p>
+      <a class="read-link" href="https://www.pcworld.com/article/3212428/firefox-is-now-the-last-major-browser-that-still-supports-ublock-origin.html" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+    <blockquote class="s3-pullquote">The war was over before anyone called a ceasefire.</blockquote>
+  </div>
+</section>
+
+<!-- 04: SWISS POSTER — Google Homomorphic Encryption -->
+<section class="spread s4">
+  <div class="s4-topbar">
+    <span class="s4-eyebrow">Privacy Frontier</span>
+    <span class="s4-num">IV</span>
+  </div>
+  <div class="s4-rule"></div>
+  <h2>Your Queries, Encrypted: Even from Google</h2>
+  <p class="s4-dek">Google is shipping homomorphic encryption into real AI pipelines, letting models run inference on data they can mathematically never decrypt. The gap between "private" and "actually private" has always been a matter of trust; homomorphic encryption tries to make it a matter of maths.</p>
+  <div class="s4-source">HN &middot; 448 pts &nbsp;&middot;&nbsp; Google Security Blog &nbsp;&middot;&nbsp; <a href="https://blog.google/security/how-google-is-making-private-ai-practical-with-homomorphic-encryption/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;">Read &rarr;</a></div>
+</section>
+
+<!-- 05: ROSE-ALERT-STAMP — Going Dark -->
+<section class="spread s5">
+  <div class="s5-stamp">
+    <div class="s5-stamp-num">5</div>
+    <div class="s5-stamp-label">Alert</div>
+  </div>
+  <h2>The Encryption War Has a New Phase: Governments Hacking Back</h2>
+  <p class="s5-dek">Matthew Green's forensic survey of the "going dark" problem reveals a strategic pivot: rather than breaking encryption at the protocol level, law enforcement is quietly investing in device-level intrusion at scale. The debate about backdoors looks different when the front door is already open.</p>
+  <div class="s5-source">HN &middot; 397 pts &nbsp;&middot;&nbsp; Cryptography Engineering &nbsp;&middot;&nbsp; <a href="https://blog.cryptographyengineering.com/2026/08/14/everything-is-about-to-go-dark/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:4px;">Read &rarr;</a></div>
+</section>
+
+<!-- 06: BIG-STAT FINISH — 232x Faster Kernel -->
+<section class="spread s6">
+  <div class="s6-bg-stat">232x</div>
+  <div class="s6-num-label">🎯 &nbsp;vi &nbsp;&middot;&nbsp; HN &middot; 167 pts &nbsp;&middot;&nbsp; AI Research</div>
+  <div class="s6-big">232x</div>
+  <div class="s6-unit">Faster</div>
+  <h2>What Happens When You Let AI Choose Its Own Research Agenda</h2>
+  <p class="s6-dek">Sankalp ran OpenAI's Codex in a tight loop against a CUDA kernel optimisation problem and achieved a 232x speedup with minimal human steering. The story is less about CUDA and more about what AI-native research pipelines look like when you stop managing the intermediate steps.</p>
+  <a class="read-link" href="https://sankalp.bearblog.dev/autoresearch/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 07: DARK/MIDNIGHT — ThoughtDAG -->
+<section class="spread s7">
+  <div class="s7-bg-num">7</div>
+  <div class="s7-eyebrow">🎯 &nbsp;HN &middot; 79 pts &nbsp;&middot;&nbsp; AI Tools</div>
+  <h2>Rethinking the Chat Window as a Graph</h2>
+  <p class="s7-dek">ThoughtDAG replaces the linear chat thread with an editable directed acyclic graph of context nodes: you branch, prune, and reweight what the model attends to mid-conversation. For anyone who has cursed at a chatbot for forgetting the third paragraph, this is worth an afternoon.</p>
+  <a class="read-link" href="https://chenxiachan.github.io/thoughtdag/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 08: TERMINAL/MONOSPACE — The Other Sean Byrne -->
+<section class="spread s8">
+  <div class="s8-num">08</div>
+  <div class="s8-prompt">$ identity --query "sean-byrne" --depth full --verify existence</div>
+  <h2>His Name, His Face, His Life. He Never Existed.</h2>
+  <p class="s8-dek">A piece about discovering a digital doppelganger assembled entirely from metadata, plausible associations, and algorithm-friendly signals. As AI gets better at generating coherent identities, the question of what it means to exist online becomes sharply uncomfortable.<span class="s8-cursor"></span></p>
+  <a class="read-link" href="https://conic.al/writing/the-other-sean-byrne-doesnt-exist/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 09: COLOUR-FIELD MINIMALIST — Eigendrum -->
+<section class="spread s9">
+  <div class="s9-ring1"></div>
+  <div class="s9-ring2"></div>
+  <div class="s9-bg-num">9</div>
+  <div class="s9-eyebrow">HN &middot; 82 pts &nbsp;&middot;&nbsp; Creative Tools</div>
+  <h2>Draw a Shape. Hear a Drum.</h2>
+  <p class="s9-dek">Eigendrum computes the resonant frequencies of any arbitrary polygon using eigenvalue decomposition, then synthesises the sound of that shape vibrating. It is a live demonstration of the question "can you hear the shape of a drum," an unsolved problem in spectral geometry turned into something you can play with in a browser.</p>
+  <a class="read-link" href="https://baselashraf81.github.io/eigendrum/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 10: ACADEMIC DROP-CAP — Brain / REM Sleep -->
+<section class="spread s10">
+  <div class="s10-header">
+    <div class="s10-dropcap">X</div>
+    <div class="s10-header-right">
+      <div class="s10-meta">Neuroscience &nbsp;&middot;&nbsp; HN &middot; 22 pts</div>
+    </div>
+  </div>
+  <h2>During REM Sleep, the Brain Stops Listening and Starts Talking to Itself</h2>
+  <div class="s10-rule"></div>
+  <p class="s10-dek">EEG recordings from sleeping subjects show the auditory cortex decoupling from external input during REM and redirecting attention inward: not simply going quiet, but actively rerouting. The implication is that dreaming is not a passive byproduct of downtime but a structured internal broadcast.</p>
+  <a class="read-link" href="https://medicalxpress.com/news/2026-07-brain-rem-eeg.html" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<footer class="colophon">
+  <p>Morning Edition &nbsp;&middot;&nbsp; Vol. 069 &nbsp;&middot;&nbsp; 15 August 2026<br>
+  Curated daily for Henry Blanchard &nbsp;&middot;&nbsp; <a href="../index.html">Archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
