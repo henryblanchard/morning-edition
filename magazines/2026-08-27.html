@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 27 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* MASTHEAD */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#0E1810;
+  border-bottom:2px solid rgba(168,212,140,0.2);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#A8D48C;
+  letter-spacing:-0.01em;
+}
+.masthead-title em{font-style:italic;font-weight:400}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(168,212,140,0.35);
+}
+
+/* ─── S1: BIG-STAT FINISH ─── AWS / DuckLabs */
+.s1{
+  background:#1B3A2D;
+  color:#D6ECC8;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s1-num{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,260px);
+  color:transparent;
+  -webkit-text-stroke:2px rgba(168,212,140,0.3);
+  line-height:0.85;
+  user-select:none;
+}
+.s1-body{display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(20px,3vw,40px)}
+.s1-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.s1-stat{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(80px,14vw,200px);
+  color:#A8D48C;
+  line-height:0.85;
+  letter-spacing:-0.04em;
+}
+.s1-stat-label{
+  font-family:'Inter',sans-serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0.04em;
+  opacity:0.6;
+  margin-top:10px;
+}
+.s1-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(32px,5vw,68px);
+  line-height:1.1;
+  max-width:820px;
+}
+.s1-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:640px;
+  opacity:0.8;
+}
+
+/* ─── S2: SWISS POSTER ─── GLM-5.3-Flash */
+.s2{
+  background:#F4EEE0;
+  color:#111108;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s2-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+.s2-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  background:#111108;
+  color:#F4EEE0;
+  padding:6px 16px;
+}
+.s2-divider{
+  width:100%;
+  height:3px;
+  background:#111108;
+  margin:clamp(30px,5vw,70px) 0;
+}
+.s2-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(52px,10vw,160px);
+  line-height:0.88;
+  letter-spacing:-0.03em;
+  text-transform:uppercase;
+}
+.s2-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(30px,5vw,70px);
+  align-items:end;
+}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.6;
+  max-width:540px;
+}
+.s2-meta{
+  text-align:right;
+}
+.s2-score{
+  font-family:'Fraunces',serif;
+  font-size:clamp(60px,9vw,120px);
+  font-weight:300;
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:#6B3FA0;
+}
+.s2-score-label{
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.45;
+  margin-top:8px;
+}
+
+/* ─── S3: HERO COVER ─── Nvidia / Hugging Face */
+.s3{
+  background:#1A1410;
+  color:#F0EBE0;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+}
+.s3-accent-bar{
+  position:absolute;
+  top:0;
+  right:0;
+  width:clamp(6px,1vw,12px);
+  height:100%;
+  background:#FF6B2B;
+}
+.s3-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s3-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(18px,2vw,28px);
+  letter-spacing:-0.01em;
+  opacity:0.4;
+}
+.s3-flag{
+  font-size:26px;
+}
+.s3-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(48px,9vw,140px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:900px;
+}
+.s3-headline em{
+  font-style:italic;
+  font-weight:300;
+  color:#FF6B2B;
+}
+.s3-bottom{
+  display:flex;
+  align-items:flex-end;
+  gap:clamp(40px,7vw,100px);
+  flex-wrap:wrap;
+}
+.s3-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:580px;
+  opacity:0.82;
+  flex:1;
+  min-width:280px;
+}
+.s3-price{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(48px,7vw,100px);
+  line-height:1;
+  color:#FF6B2B;
+  letter-spacing:-0.03em;
+  white-space:nowrap;
+}
+.s3-price-label{
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-top:6px;
+}
+
+/* ─── S4: TERMINAL ─── Tailcat */
+.s4{
+  background:#0A0E09;
+  color:#00E55A;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  font-family:'Courier New',Courier,monospace;
+}
+.s4-topbar{
+  display:flex;
+  gap:8px;
+  margin-bottom:clamp(40px,6vw,80px);
+}
+.s4-dot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  opacity:0.6;
+}
+.s4-prompt-block{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(20px,3vw,36px);
+}
+.s4-num{
+  font-size:18px;
+  letter-spacing:0.3em;
+  opacity:0.4;
+}
+.s4-headline{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(28px,4.5vw,68px);
+  font-weight:700;
+  line-height:1.1;
+  color:#00E55A;
+  word-break:break-all;
+}
+.s4-cursor{
+  display:inline-block;
+  width:0.55em;
+  height:1em;
+  background:#00E55A;
+  vertical-align:text-bottom;
+  animation:blink 1.1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.s4-dek{
+  font-size:clamp(20px,2vw,22px);
+  line-height:1.7;
+  max-width:640px;
+  color:rgba(0,229,90,0.75);
+  font-family:'Courier New',Courier,monospace;
+}
+.s4-source{
+  font-size:18px;
+  letter-spacing:0.15em;
+  opacity:0.45;
+  text-transform:uppercase;
+}
+.s4-read-link{
+  display:inline-block;
+  margin-top:clamp(20px,3vw,40px);
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#00E55A;
+  border-bottom:2px solid #00E55A;
+  padding-bottom:4px;
+}
+
+/* ─── S5: COLOUR-FIELD MINIMALIST ─── Nebula Sans */
+.s5{
+  background:#3D5C36;
+  color:#F0F4E8;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:clamp(30px,5vw,60px);
+}
+.s5-num{
+  font-family:'Inter',sans-serif;
+  font-weight:200;
+  font-size:18px;
+  letter-spacing:0.6em;
+  opacity:0.35;
+  text-transform:uppercase;
+}
+.s5-headline{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(48px,9vw,140px);
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  max-width:880px;
+}
+.s5-rule{
+  width:60px;
+  height:2px;
+  background:rgba(240,244,232,0.4);
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.7;
+  max-width:560px;
+  opacity:0.82;
+}
+.s5-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ─── S6: ROSE-ALERT-STAMP ─── AI CEO */
+.s6{
+  background:#C42940;
+  color:#FFFFFF;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s6-stamp{
+  position:absolute;
+  top:50%;
+  right:clamp(-20px,2vw,20px);
+  transform:translateY(-50%) rotate(12deg);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(140px,22vw,340px);
+  color:transparent;
+  -webkit-text-stroke:3px rgba(255,255,255,0.12);
+  line-height:1;
+  user-select:none;
+  pointer-events:none;
+}
+.s6-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+  z-index:1;
+}
+.s6-num{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+.s6-flag{font-size:26px}
+.s6-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(40px,7vw,110px);
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  max-width:800px;
+  position:relative;
+  z-index:1;
+}
+.s6-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(20px,3vw,32px);
+  position:relative;
+  z-index:1;
+  max-width:640px;
+}
+.s6-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  opacity:0.9;
+}
+.s6-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+
+/* ─── S7: ACADEMIC DROP-CAP ─── Mechanical Turk */
+.s7{
+  background:#F0EAD6;
+  color:#2B1C10;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(30px,4vw,50px);
+}
+.s7-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-bottom:1px solid rgba(43,28,16,0.2);
+  padding-bottom:clamp(16px,2vw,28px);
+}
+.s7-journal{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.s7-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(18px,2vw,26px);
+  opacity:0.4;
+}
+.s7-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,90px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:860px;
+}
+.s7-article{
+  columns:2;
+  column-gap:clamp(30px,5vw,70px);
+}
+.s7-article p{
+  font-family:'Fraunces',serif;
+  font-size:clamp(20px,2vw,23px);
+  line-height:1.75;
+  break-inside:avoid;
+}
+.s7-article p:first-child::first-letter{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(72px,8vw,120px);
+  float:left;
+  line-height:0.85;
+  margin-right:12px;
+  margin-top:8px;
+  color:#6B3200;
+}
+.s7-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+/* ─── S8: DARK/MIDNIGHT ─── CoMaps */
+.s8{
+  background:#0D0822;
+  color:#E0DBF5;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s8-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s8-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+.s8-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+.s8-headline{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(40px,7vw,110px);
+  line-height:1.0;
+  letter-spacing:-0.02em;
+  max-width:860px;
+}
+.s8-headline em{
+  font-style:italic;
+  font-weight:300;
+  color:#9B8FE8;
+}
+.s8-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:620px;
+  opacity:0.78;
+}
+.s8-coords{
+  font-family:'Fraunces',serif;
+  font-weight:200;
+  font-size:clamp(36px,5vw,72px);
+  letter-spacing:-0.02em;
+  color:rgba(155,143,232,0.4);
+  line-height:1;
+}
+
+/* ─── S9: MANIFESTO ─── Bill Gates / Turbulent AI Era */
+.s9{
+  background:#1E2D4A;
+  color:#DDE6FF;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s9-bg-num{
+  position:absolute;
+  bottom:-0.1em;
+  right:-0.05em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,40vw,540px);
+  color:transparent;
+  -webkit-text-stroke:1px rgba(221,230,255,0.07);
+  line-height:1;
+  user-select:none;
+  pointer-events:none;
+}
+.s9-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+  z-index:1;
+}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+.s9-flag{font-size:26px}
+.s9-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(42px,7.5vw,120px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  max-width:840px;
+  position:relative;
+  z-index:1;
+}
+.s9-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.7;
+  max-width:620px;
+  opacity:0.8;
+  position:relative;
+  z-index:1;
+}
+.s9-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.38;
+  position:relative;
+  z-index:1;
+}
+
+/* ─── S10: NEWSPAPER COLUMN ─── FDA pancreatic cancer */
+.s10{
+  background:#F8F4EC;
+  color:#1A130A;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(30px,4vw,50px);
+}
+.s10-masthead-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:4px solid #1A130A;
+  border-bottom:1.5px solid #1A130A;
+  padding:14px 0;
+}
+.s10-section-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+}
+.s10-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(18px,2vw,26px);
+  opacity:0.4;
+}
+.s10-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,5.5vw,84px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:860px;
+  border-bottom:1px solid rgba(26,19,10,0.2);
+  padding-bottom:clamp(24px,3vw,44px);
+}
+.s10-cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(24px,4vw,56px);
+  align-items:start;
+}
+.s10-col p{
+  font-family:'Fraunces',serif;
+  font-size:clamp(20px,2vw,23px);
+  line-height:1.75;
+}
+.s10-col-divider{
+  width:1px;
+  height:100%;
+  background:rgba(26,19,10,0.15);
+}
+.s10-footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:16px;
+  border-top:1px solid rgba(26,19,10,0.2);
+  padding-top:clamp(16px,2.5vw,28px);
+}
+.s10-source{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+/* COLOPHON */
+.colophon{
+  padding:clamp(44px,6vw,88px) clamp(36px,7vw,100px);
+  background:#0E1810;
+  color:rgba(168,212,140,0.5);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  border-top:2px solid rgba(168,212,140,0.15);
+}
+.colophon-text{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.06em;
+}
+.colophon a{
+  color:rgba(168,212,140,0.75);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title"><em>Morning Edition</em></div>
+  <div class="masthead-meta">Vol. 072 &nbsp;&nbsp;&middot;&nbsp;&nbsp; 27 Aug 2026</div>
+</header>
+
+<!-- S1: BIG-STAT FINISH: AWS Acquires DuckLabs -->
+<section class="spread s1">
+  <div class="s1-num">I</div>
+  <div class="s1-body">
+    <div class="s1-source">HN &middot; 1,018 pts &nbsp;&nbsp;AWS / DUCKLABS</div>
+    <div class="s1-stat">$AWS<br><span style="font-size:0.45em;opacity:0.5;font-style:italic;">acquires</span></div>
+    <div class="s1-headline">The Cloud Giant Eats the Duck</div>
+    <div class="s1-dek">Amazon Web Services has acquired DuckLabs, home of the beloved in-process analytical database that became a quiet staple of the modern data stack. With 1,018 upvotes and 300 comments on Hacker News before breakfast, the deal landed as the biggest data-infrastructure story of the year.</div>
+    <a href="https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws" class="read-link">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S2: SWISS POSTER: GLM-5.3-Flash -->
+<section class="spread s2">
+  <div class="s2-toprow">
+    <div class="s2-num">02</div>
+    <div class="s2-tag">🎯 New Model Release</div>
+  </div>
+  <div>
+    <div class="s2-divider"></div>
+    <div class="s2-headline">GLM-5.3<br>FLASH</div>
+    <div class="s2-divider"></div>
+  </div>
+  <div class="s2-grid">
+    <div>
+      <div class="s2-dek">Zhipu AI's latest frontier model clears benchmarks that put it within striking range of the best Western releases, at inference costs that undercut most of them. The global AI race no longer has a Western time zone.</div>
+      <a href="https://z.ai/blog/glm-5.3-flash" class="read-link" style="color:#111108">Read &rarr;</a>
+    </div>
+    <div class="s2-meta">
+      <div class="s2-score">958</div>
+      <div class="s2-score-label">HN points</div>
+    </div>
+  </div>
+</section>
+
+<!-- S3: HERO COVER: Nvidia acquires Hugging Face -->
+<section class="spread s3">
+  <div class="s3-accent-bar"></div>
+  <div class="s3-toprow">
+    <div class="s3-num"><em>iii</em></div>
+    <div class="s3-flag">🎯</div>
+  </div>
+  <div class="s3-headline">The <em>Open-Source</em><br>Moment Ends</div>
+  <div class="s3-bottom">
+    <div class="s3-dek">Nvidia has agreed to acquire Hugging Face for $13 billion, taking the platform that hosts, ships, and trains the world's open models into one of the most vertically integrated AI stacks on the planet. Whether the community follows is the only question that matters now.</div>
+    <div>
+      <div class="s3-price">$13B</div>
+      <div class="s3-price-label">NVIDIA &middot; HN 728 pts</div>
+      <a href="https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/" class="read-link" style="color:#FF6B2B">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S4: TERMINAL: Tailcat -->
+<section class="spread s4">
+  <div class="s4-topbar">
+    <div class="s4-dot" style="background:#FF5F57"></div>
+    <div class="s4-dot" style="background:#FEBC2E"></div>
+    <div class="s4-dot" style="background:#28C840"></div>
+  </div>
+  <div class="s4-prompt-block">
+    <div class="s4-num">[04]</div>
+    <div class="s4-headline">$ tailcat<span class="s4-cursor"></span></div>
+    <div class="s4-dek">Like netcat, but it pipes data across Tailscale's encrypted mesh instead of raw TCP. A single binary that removes the entire class of "which port were you on again" problems from developer workflows.</div>
+    <div class="s4-source">HN &middot; 527 pts &nbsp;&middot;&nbsp; tailscale/tailcat</div>
+    <a href="https://github.com/tailscale/tailcat" class="s4-read-link">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S5: COLOUR-FIELD MINIMALIST: Nebula Sans -->
+<section class="spread s5">
+  <div class="s5-num">05 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Typography</div>
+  <div class="s5-headline">A typeface<br>that earns<br>its name</div>
+  <div class="s5-rule"></div>
+  <div class="s5-dek">Nebula Sans is a free display typeface engineered for large sizes, with just enough quirkiness in its terminals to justify the astronomical branding. In a season of relentless grotesques, it stands apart.</div>
+  <div>
+    <div class="s5-source">HN &middot; 381 pts &nbsp;&middot;&nbsp; nebulasans.com</div>
+    <a href="https://www.nebulasans.com" class="read-link">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S6: ROSE-ALERT-STAMP: AI CEO -->
+<section class="spread s6">
+  <div class="s6-stamp">VI</div>
+  <div class="s6-toprow">
+    <div class="s6-num">06</div>
+    <div class="s6-flag">🎯</div>
+  </div>
+  <div class="s6-headline">You're Replaced.<br>So Is Your Replacement.</div>
+  <div class="s6-bottom">
+    <div class="s6-dek">A startup CEO fired his entire engineering team to cut costs and lean into AI tooling. The team's parting gift: OpenExecutive, an open-source AI CEO on GitHub. The joke has 2,000 stars and a README written like a term sheet.</div>
+    <div class="s6-source">HN &middot; 346 pts &nbsp;&middot;&nbsp; github.com/SenteLabsAI</div>
+    <a href="https://github.com/SenteLabsAI/OpenExecutive" class="read-link">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S7: ACADEMIC DROP-CAP: Mechanical Turk shutdown -->
+<section class="spread s7">
+  <div class="s7-toprow">
+    <div class="s7-journal">End of an Era &nbsp;&middot;&nbsp; Crowdsourcing</div>
+    <div class="s7-num"><em>vii</em></div>
+  </div>
+  <div class="s7-headline">The End of Human Microlabour</div>
+  <div class="s7-article">
+    <p>Amazon Mechanical Turk, the crowdsourcing platform that quietly powered a decade of AI training data, academic psychology studies, and annotation pipelines, shuts down on 30 September 2026. Its closure is not a surprise; it is a signal. For years, researchers used MTurk to gather the labelled data that trained the first generation of supervised models.</p>
+    <p>What replaces it is a combination of synthetic data generation and specialised annotation vendors with far more rigorous quality controls. The era when anyone with an internet connection could contribute to AI training, however modestly, is ending quietly. The machines have learnt enough.</p>
+  </div>
+  <div class="s7-source">
+    HN &middot; 257 pts &nbsp;&middot;&nbsp; mturk.com
+    <a href="https://www.mturk.com/" class="read-link" style="margin-left:clamp(20px,3vw,40px);color:#2B1C10">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S8: DARK/MIDNIGHT: CoMaps -->
+<section class="spread s8">
+  <div class="s8-toprow">
+    <div class="s8-num">08 &nbsp;&middot;&nbsp; Humanitarian Tech</div>
+    <div class="s8-source">HN &middot; 239 pts</div>
+  </div>
+  <div>
+    <div class="s8-coords" aria-hidden="true">8.500N &nbsp; 71.200W</div>
+    <div class="s8-headline">The Map That<br>Worked When<br><em>Nothing Else Did</em></div>
+  </div>
+  <div>
+    <div class="s8-dek">CoMaps, an offline-first navigation app built on OpenStreetMap, guided Venezuelan rescue teams through a humanitarian emergency without a mobile signal. It is a small story with one large implication: resilient infrastructure outperforms connected infrastructure when it counts most.</div>
+    <a href="https://hotosm.org/en/news/comaps-the-offline-app-that-guided-rescuers-without-a-signal-in-the-venezuela-response/" class="read-link" style="color:#9B8FE8">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S9: MANIFESTO: Bill Gates / turbulent AI era -->
+<section class="spread s9">
+  <div class="s9-bg-num">9</div>
+  <div class="s9-toprow">
+    <div class="s9-num">09 &nbsp;&middot;&nbsp; Essay</div>
+    <div class="s9-flag">🎯</div>
+  </div>
+  <div class="s9-headline">Turbulence Is the Condition,<br>Not the Phase</div>
+  <div class="s9-dek">Bill Gates argues in his latest essay that the AI transition is not a period of disruption that resolves into stability. It is the new baseline. His framing is characteristically measured; the implications, characteristically understated. Worth assigning to anyone who still thinks we are moving through a temporary adjustment.</div>
+  <div>
+    <div class="s9-source">HN &middot; 206 pts &nbsp;&middot;&nbsp; gatesnotes.com</div>
+    <a href="https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make" class="read-link" style="color:#DDE6FF">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S10: NEWSPAPER COLUMN: FDA approves pancreatic cancer therapy -->
+<section class="spread s10">
+  <div class="s10-masthead-row">
+    <div class="s10-section-label">Medicine &nbsp;&middot;&nbsp; Science</div>
+    <div class="s10-num"><em>10</em></div>
+  </div>
+  <div class="s10-headline">A Cancer That Has Long<br>Resisted Treatment Gets<br>a Targeted Drug</div>
+  <div class="s10-cols">
+    <div class="s10-col">
+      <p>The FDA has approved the first targeted therapy for metastatic pancreatic cancer, a disease that has remained almost entirely resistant to the precision-medicine gains that transformed treatment of other solid tumours over the past two decades.</p>
+    </div>
+    <div class="s10-col">
+      <p>Unlike chemotherapy, which attacks dividing cells indiscriminately, the new drug class targets a specific molecular pathway found in a subset of patients. Survival data from the trial suggests meaningful benefit where previously none existed.</p>
+    </div>
+    <div class="s10-col">
+      <p>Pancreatic cancer's five-year survival rate sits below 12 percent globally. Any approved targeted option marks a genuine inflection. The subset of patients who qualify is small; the proof-of-concept it establishes is not.</p>
+    </div>
+  </div>
+  <div class="s10-footer-row">
+    <div class="s10-source">HN &middot; 199 pts &nbsp;&middot;&nbsp; FDA</div>
+    <a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-class-targeted-therapy-metastatic-pancreatic-cancer" class="read-link" style="color:#1A130A">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-text">Morning Edition &middot; Vol. 072 &middot; 27 Aug 2026</div>
+  <div class="colophon-text"><a href="../index.html">Back to archive &rarr;</a></div>
+</footer>
+
+</body>
+</html>
