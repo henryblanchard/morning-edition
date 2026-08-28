@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 28 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* MASTHEAD */
+.masthead{
+  padding:clamp(20px,3vw,44px) clamp(28px,6vw,88px);
+  background:#1F0E2A;
+  border-bottom:2px solid rgba(180,140,220,0.25);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(24px,2.8vw,36px);
+  color:#C49EE8;
+  letter-spacing:-0.01em;
+}
+.masthead-title em{font-style:italic;font-weight:400}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(196,158,232,0.35);
+}
+
+/* ─── S1: HERO COVER ─── Nvidia / Hugging Face */
+.s1{
+  background:#2B1206;
+  color:#F5E6D4;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+}
+.s1-stripe{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:clamp(6px,0.8vw,10px);
+  background:#E84E1B;
+}
+.s1-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-top:clamp(10px,2vw,20px);
+}
+.s1-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.5vw,32px);
+  opacity:0.4;
+}
+.s1-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s1-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(52px,10vw,160px);
+  line-height:0.9;
+  letter-spacing:-0.035em;
+  max-width:1100px;
+}
+.s1-headline em{
+  font-style:italic;
+  font-weight:300;
+  color:#E84E1B;
+}
+.s1-bottom{
+  display:flex;
+  align-items:flex-end;
+  gap:clamp(40px,7vw,100px);
+  flex-wrap:wrap;
+}
+.s1-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:580px;
+  opacity:0.82;
+  flex:1;
+  min-width:280px;
+}
+.s1-price{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(52px,8vw,120px);
+  line-height:1;
+  color:#E84E1B;
+  letter-spacing:-0.04em;
+  white-space:nowrap;
+}
+.s1-price-label{
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-top:8px;
+}
+
+/* ─── S2: ROSE-ALERT-STAMP ─── Small Models */
+.s2{
+  background:#D01F3C;
+  color:#FFF5F0;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+}
+.s2-stamp{
+  position:absolute;
+  top:clamp(40px,6vw,80px);
+  right:clamp(36px,7vw,100px);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(14px,1.6vw,20px);
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  border:4px solid rgba(255,245,240,0.5);
+  padding:10px 20px;
+  opacity:0.55;
+  transform:rotate(4deg);
+  white-space:nowrap;
+}
+.s2-toprow{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(72px,12vw,180px);
+  line-height:0.85;
+  opacity:0.15;
+  flex-shrink:0;
+}
+.s2-flag{
+  font-size:clamp(28px,4vw,48px);
+  margin-top:8px;
+}
+.s2-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(48px,8.5vw,130px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:900px;
+}
+.s2-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(16px,2.5vw,32px);
+}
+.s2-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:640px;
+  opacity:0.88;
+}
+
+/* ─── S3: BIG-STAT FINISH ─── 100TB DNS */
+.s3{
+  background:#12143A;
+  color:#E8EBF8;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s3-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+.s3-stat{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-size:clamp(90px,17vw,260px);
+  color:#5C7CFA;
+  line-height:0.85;
+  letter-spacing:-0.05em;
+}
+.s3-stat-label{
+  font-family:'Inter',sans-serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0.06em;
+  opacity:0.5;
+  margin-top:12px;
+}
+.s3-body{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(20px,3vw,36px);
+}
+.s3-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(32px,5vw,68px);
+  line-height:1.08;
+  max-width:800px;
+}
+.s3-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:640px;
+  opacity:0.75;
+}
+.s3-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ─── S4: TYPOGRAPHIC COLLAGE ─── 507 Mechanical Movements */
+.s4{
+  background:#F2E84A;
+  color:#14120A;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s4-ghost{
+  position:absolute;
+  bottom:-0.2em;
+  right:-0.05em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(200px,35vw,500px);
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:2px rgba(20,18,10,0.12);
+  pointer-events:none;
+  user-select:none;
+}
+.s4-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s4-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,14vw,200px);
+  line-height:0.85;
+  opacity:0.12;
+}
+.s4-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  background:#14120A;
+  color:#F2E84A;
+  padding:7px 18px;
+}
+.s4-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,8vw,120px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:800px;
+  position:relative;
+  z-index:1;
+}
+.s4-headline em{
+  font-style:italic;
+  font-weight:300;
+}
+.s4-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(16px,2.5vw,28px);
+  position:relative;
+  z-index:1;
+}
+.s4-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s4-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:600px;
+}
+
+/* ─── S5: DARK/MIDNIGHT ─── Claude vocabulary */
+.s5{
+  background:#080812;
+  color:#D8F0FF;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+}
+.s5-glow{
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background:radial-gradient(ellipse at 30% 50%, rgba(59,232,255,0.07) 0%, transparent 70%);
+  pointer-events:none;
+}
+.s5-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+  z-index:1;
+}
+.s5-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+.s5-flag{
+  font-size:26px;
+}
+.s5-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,8vw,120px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:900px;
+  position:relative;
+  z-index:1;
+}
+.s5-headline em{
+  font-style:italic;
+  font-weight:300;
+  color:#3BE8FF;
+}
+.s5-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(16px,2.5vw,28px);
+  position:relative;
+  z-index:1;
+}
+.s5-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:640px;
+  opacity:0.8;
+}
+
+/* ─── S6: SWISS POSTER ─── Gemini 3.5 Transcribe */
+.s6{
+  background:#0F5C2E;
+  color:#F0FBEE;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s6-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s6-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+.s6-badge{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.s6-flag{font-size:26px;}
+.s6-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  background:#F0FBEE;
+  color:#0F5C2E;
+  padding:6px 16px;
+}
+.s6-divider{
+  width:100%;
+  height:4px;
+  background:rgba(240,251,238,0.25);
+  margin:clamp(28px,4vw,60px) 0;
+}
+.s6-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(52px,10vw,150px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  text-transform:uppercase;
+}
+.s6-grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:clamp(30px,5vw,80px);
+  align-items:end;
+}
+.s6-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.6;
+  max-width:540px;
+  opacity:0.82;
+}
+.s6-meta{text-align:right;}
+.s6-score{
+  font-family:'Fraunces',serif;
+  font-size:clamp(60px,9vw,120px);
+  font-weight:300;
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:rgba(240,251,238,0.4);
+}
+.s6-score-label{
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-top:8px;
+}
+
+/* ─── S7: MANIFESTO ─── Microduck */
+.s7{
+  background:#B8781A;
+  color:#FDF4E3;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.s7-bg-num{
+  position:absolute;
+  bottom:-0.2em;
+  right:-0.05em;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(200px,35vw,480px);
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:2px rgba(253,244,227,0.1);
+  pointer-events:none;
+  user-select:none;
+}
+.s7-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+  z-index:1;
+}
+.s7-num{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s7-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s7-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(52px,10vw,156px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:900px;
+  position:relative;
+  z-index:1;
+}
+.s7-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(16px,2.5vw,28px);
+  position:relative;
+  z-index:1;
+}
+.s7-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2.2vw,24px);
+  line-height:1.65;
+  max-width:640px;
+  opacity:0.85;
+}
+
+/* ─── S8: ACADEMIC DROP-CAP ─── Suica */
+.s8{
+  background:#EDE8F5;
+  color:#1A1228;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s8-toprow{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.s8-journal{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+.s8-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.5vw,32px);
+  opacity:0.35;
+}
+.s8-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(38px,6.5vw,96px);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  max-width:820px;
+}
+.s8-article{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(30px,5vw,70px);
+}
+.s8-article p{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2vw,22px);
+  line-height:1.72;
+  opacity:0.82;
+}
+.s8-article p:first-child::first-letter{
+  font-family:'Fraunces',serif;
+  font-size:clamp(72px,9vw,120px);
+  font-weight:700;
+  float:left;
+  line-height:0.8;
+  margin:8px 12px 0 0;
+  color:#5B3FA0;
+}
+.s8-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ─── S9: NEWSPAPER COLUMN ─── N64 decompile */
+.s9{
+  background:#DDD8CE;
+  color:#1A130A;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s9-masthead-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:3px solid #1A130A;
+  border-bottom:1px solid rgba(26,19,10,0.3);
+  padding:12px 0;
+}
+.s9-section-label{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.s9-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.5vw,32px);
+  opacity:0.4;
+}
+.s9-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(38px,7vw,108px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:880px;
+}
+.s9-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:clamp(24px,4vw,56px);
+  border-top:1px solid rgba(26,19,10,0.25);
+  padding-top:clamp(24px,3.5vw,48px);
+}
+.s9-col p{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2vw,22px);
+  line-height:1.72;
+  opacity:0.8;
+}
+.s9-footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.s9-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.45;
+}
+
+/* ─── S10: TERMINAL/MONOSPACE ─── FFmpeg fuzzer */
+.s10{
+  background:#040D04;
+  color:#4DFA6A;
+  padding:clamp(50px,7vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+  font-family:'Courier New',Courier,monospace;
+}
+.s10-topbar{
+  display:flex;
+  gap:8px;
+  margin-bottom:clamp(30px,5vw,60px);
+}
+.s10-dot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+}
+.s10-prompt-block{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(20px,3vw,36px);
+}
+.s10-num{
+  font-size:18px;
+  letter-spacing:0.3em;
+  opacity:0.35;
+}
+.s10-cmd{
+  font-size:clamp(18px,1.8vw,22px);
+  opacity:0.55;
+  letter-spacing:0.02em;
+}
+.s10-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,88px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  color:#4DFA6A;
+}
+.s10-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,2vw,22px);
+  line-height:1.65;
+  max-width:680px;
+  opacity:0.75;
+  color:#B0F0B8;
+}
+.s10-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.s10-source{
+  font-size:18px;
+  letter-spacing:0.25em;
+  opacity:0.4;
+}
+
+/* COLOPHON */
+.colophon{
+  padding:clamp(32px,5vw,64px) clamp(36px,7vw,100px);
+  background:#1F0E2A;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  border-top:2px solid rgba(196,158,232,0.18);
+}
+.colophon-text{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(196,158,232,0.45);
+  font-weight:600;
+}
+.colophon-text a{
+  color:rgba(196,158,232,0.7);
+  text-decoration:none;
+  border-bottom:1px solid currentColor;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title"><em>Morning</em> Edition</div>
+  <div class="masthead-meta">Vol. 073 &nbsp;&middot;&nbsp; 28 Aug 2026</div>
+</header>
+
+<!-- S1: HERO COVER ─── Nvidia acquires Hugging Face -->
+<section class="spread s1">
+  <div class="s1-stripe"></div>
+  <div class="s1-toprow">
+    <div class="s1-num"><em>one</em></div>
+    <div class="s1-source">HN &middot; 1,877 pts &nbsp;&middot;&nbsp; Business Insider</div>
+  </div>
+  <div class="s1-headline">The $13 Billion<br><em>Land Grab</em><br>in Open AI</div>
+  <div class="s1-bottom">
+    <div class="s1-dek">Nvidia has agreed to acquire Hugging Face, the company that became the GitHub of machine learning, for $13 billion. The deal hands the world's dominant chip-maker direct ownership of the most important open-source AI repository in existence. What happens to "open" when the hardware monopoly owns the library is the question nobody wants to answer yet.</div>
+    <div>
+      <div class="s1-price">$13B</div>
+      <div class="s1-price-label">acquisition price</div>
+      <a href="https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8" class="read-link" style="color:#E84E1B">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S2: ROSE-ALERT-STAMP ─── Small Models -->
+<section class="spread s2">
+  <div class="s2-stamp">Signal &rarr; Watch</div>
+  <div class="s2-toprow">
+    <div class="s2-num">02</div>
+    <div class="s2-flag">🎯</div>
+  </div>
+  <div class="s2-headline">The Argument<br>for Small</div>
+  <div class="s2-bottom">
+    <div class="s2-source">HN &middot; 588 pts &nbsp;&middot;&nbsp; calv.info</div>
+    <div class="s2-dek">The narrative that bigger models always win has been running out of examples to support it. Calv makes the case that small, focused models are not a compromise: they are the design. Fast, cheap, deployable anywhere, and increasingly capable on narrow tasks. For anyone teaching AI tools to non-engineers, this is the conceptual shift worth internalising.</div>
+    <a href="https://calv.info/small-models-have-arrived" class="read-link" style="color:#FFF5F0">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S3: BIG-STAT FINISH ─── 100TB DNS cache -->
+<section class="spread s3">
+  <div class="s3-num">03 &nbsp;&middot;&nbsp; Infrastructure</div>
+  <div>
+    <div class="s3-stat">100 TB</div>
+    <div class="s3-stat-label">memory saved across Cloudflare's DNS fleet</div>
+  </div>
+  <div class="s3-body">
+    <div class="s3-headline">One Billion Queries a Day, Fewer Servers Than You Think</div>
+    <div class="s3-dek">Cloudflare's team walked through how they cut 100 terabytes of memory from 1.1.1.1's DNS cache without degrading performance. The trick: understanding which cache keys were actually load-bearing and rewriting the data structures around them. A satisfying systems story with a lesson that applies well beyond DNS.</div>
+    <div class="s3-source">HN &middot; 671 pts &nbsp;&middot;&nbsp; blog.cloudflare.com</div>
+    <a href="https://blog.cloudflare.com/dns-cache-memory-optimization-1111/" class="read-link" style="color:#5C7CFA">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S4: TYPOGRAPHIC COLLAGE ─── 507 Mechanical Movements -->
+<section class="spread s4">
+  <div class="s4-ghost">IV</div>
+  <div class="s4-toprow">
+    <div class="s4-num">04</div>
+    <div class="s4-tag">Curiosity</div>
+  </div>
+  <div class="s4-headline">A Nineteenth-Century Inventor's<br><em>Bestiary of Motion</em></div>
+  <div class="s4-bottom">
+    <div class="s4-source">HN &middot; 548 pts &nbsp;&middot;&nbsp; 507movements.com</div>
+    <div class="s4-dek">A digitised archive of 507 mechanical movements from an 1868 reference book. Every gear, lever, crank, and cam system that kept pre-electric industry running, animated and explorable. Spend twenty minutes here and come away with a better intuition for how physical systems store and transform energy. No algorithm needed.</div>
+    <a href="https://507movements.com/" class="read-link" style="color:#14120A">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S5: DARK/MIDNIGHT ─── Claude vocabulary -->
+<section class="spread s5">
+  <div class="s5-glow"></div>
+  <div class="s5-toprow">
+    <div class="s5-num">05 &nbsp;&middot;&nbsp; AI Research</div>
+    <div class="s5-flag">🎯</div>
+  </div>
+  <div class="s5-headline">The Tokens That<br>Hold the Model<br><em>Together</em></div>
+  <div class="s5-bottom">
+    <div class="s5-source">HN &middot; 444 pts &nbsp;&middot;&nbsp; louisabraham.github.io</div>
+    <div class="s5-dek">A researcher used logit lensing to identify which tokens in Claude's vocabulary exert disproportionate influence on its outputs. The results are strange and illuminating: a small number of abstract, structural words do most of the heavy lifting. If you teach AI prompting, this is the kind of mechanistic evidence that reframes the conversation about why prompts work.</div>
+    <a href="https://louisabraham.github.io/load-bearing/" class="read-link" style="color:#3BE8FF">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S6: SWISS POSTER ─── Gemini 3.5 Transcribe -->
+<section class="spread s6">
+  <div class="s6-toprow">
+    <div class="s6-num">06</div>
+    <div class="s6-badge">
+      <div class="s6-flag">🎯</div>
+      <div class="s6-tag">New Model</div>
+    </div>
+  </div>
+  <div class="s6-divider"></div>
+  <div class="s6-headline">Transcription<br>as Infrastructure</div>
+  <div class="s6-grid">
+    <div>
+      <div class="s6-dek">Google released Gemini 3.5 Transcribe, a model built specifically for speech-to-text with strong multilingual performance and low latency. Transcription used to be a product differentiator; it is becoming table stakes. Anyone building with voice input now has another serious option at competitive cost.</div>
+      <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/" class="read-link" style="color:#F0FBEE">Read &rarr;</a>
+    </div>
+    <div class="s6-meta">
+      <div class="s6-score">235</div>
+      <div class="s6-score-label">HN pts</div>
+    </div>
+  </div>
+</section>
+
+<!-- S7: MANIFESTO ─── Microduck -->
+<section class="spread s7">
+  <div class="s7-bg-num">7</div>
+  <div class="s7-toprow">
+    <div class="s7-num">07 &nbsp;&middot;&nbsp; Robotics</div>
+    <div class="s7-source">HN &middot; 608 pts &nbsp;&middot;&nbsp; pollen-robotics.com</div>
+  </div>
+  <div class="s7-headline">The Robot<br>That Fits in<br>Your Pocket</div>
+  <div class="s7-bottom">
+    <div class="s7-dek">Pollen Robotics has released Microduck, a compact open-source robot designed for embodied AI research at a price point accessible to individuals and small teams. Physical intelligence needs physical bodies to train on. Small, cheap, and open is probably the right design for the experiment phase: the next generation of AI researchers will teach their models to move the same way the last generation taught them to read.</div>
+    <a href="https://pollen-robotics.com/microduck/" class="read-link" style="color:#FDF4E3">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S8: ACADEMIC DROP-CAP ─── Suica -->
+<section class="spread s8">
+  <div class="s8-toprow">
+    <div class="s8-journal">Tech History &nbsp;&middot;&nbsp; Infrastructure</div>
+    <div class="s8-num"><em>viii</em></div>
+  </div>
+  <div class="s8-headline">The Card That Solved<br>a City's Friction</div>
+  <div class="s8-article">
+    <p>Japan's Suica transit card launched in 2001, before contactless payment was a concept anyone had a name for, and became one of the most quietly transformative pieces of infrastructure ever deployed at scale. The engineering constraints that shaped it, low-power chips, offline transaction validation, no network dependency at the gate, produced a design that has held up for a quarter century.</p>
+    <p>The adoption story is equally instructive. Suica succeeded not because it replaced something broken but because it removed an invisible friction that commuters had stopped noticing. That is a harder design problem than solving a complaint. Understanding how it was navigated is worth the read for anyone interested in how products actually diffuse through populations rather than how we retrospectively explain that they did.</p>
+  </div>
+  <div class="s8-source">
+    HN &middot; 227 pts &nbsp;&middot;&nbsp; tokyodev.com
+    <a href="https://www.tokyodev.com/articles/the-story-of-suica" class="read-link" style="margin-left:clamp(20px,3vw,40px);color:#5B3FA0">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S9: NEWSPAPER COLUMN ─── N64 decompile -->
+<section class="spread s9">
+  <div class="s9-masthead-row">
+    <div class="s9-section-label">Computing &nbsp;&middot;&nbsp; Craft</div>
+    <div class="s9-num"><em>9</em></div>
+  </div>
+  <div class="s9-headline">84 Days to Reverse-Engineer<br>a Game Nobody Asked For</div>
+  <div class="s9-cols">
+    <div class="s9-col">
+      <p>A programmer decompiled a Nintendo 64 game in under three months, producing a matching assembly source for a codebase nobody documented and nobody has maintained in decades. The project required identifying function boundaries, naming anonymous variables, and reconstructing the developer's intent from instruction patterns alone.</p>
+    </div>
+    <div class="s9-col">
+      <p>The tools used are largely the same ones security researchers use to audit binaries: static analysis, manual disassembly, and patient comparison between recompiled output and the original. The difference is motivation: there is no vulnerability to find, no CVE to file. Just the satisfaction of understanding something completely.</p>
+    </div>
+    <div class="s9-col">
+      <p>What decompilation projects like this reveal is how much information survives in compiled code when someone is patient enough to look for it. Variable names are gone; everything else is negotiable. The 84-day timeline says less about the difficulty than about what stubborn, methodical attention can accomplish without a team or a deadline.</p>
+    </div>
+  </div>
+  <div class="s9-footer-row">
+    <div class="s9-source">HN &middot; 216 pts &nbsp;&middot;&nbsp; blog.chrislewis.au</div>
+    <a href="https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/" class="read-link" style="color:#1A130A">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S10: TERMINAL/MONOSPACE ─── FFmpeg vibecoded fuzzer -->
+<section class="spread s10">
+  <div class="s10-topbar">
+    <div class="s10-dot" style="background:#FF5F57"></div>
+    <div class="s10-dot" style="background:#FEBC2E"></div>
+    <div class="s10-dot" style="background:#28C840"></div>
+  </div>
+  <div class="s10-prompt-block">
+    <div class="s10-num">10 &nbsp;&middot;&nbsp; Security / AI</div>
+    <div class="s10-cmd">$ ./vibefuzzer --target ffmpeg --corpus ./samples --timeout 84h</div>
+    <div class="s10-headline">A Fuzzer Written<br>in Vibes, a Bug<br>Hiding in Plain Sight</div>
+    <div class="s10-dek">A team used a mostly AI-written fuzzer, their own description: "vibecoded", to find a division-by-zero bug in FFmpeg that had been sitting in production for years. The methodology is worth reading carefully: rapid, imprecise code generation combined with systematic corpus testing catches classes of bug that careful review tends to overlook. The fuzzer did not need to be good. It needed to run long enough.</div>
+  </div>
+  <div class="s10-footer">
+    <div class="s10-source">HN &middot; 210 pts &nbsp;&middot;&nbsp; code.ffmpeg.org</div>
+    <a href="https://code.ffmpeg.org/FFmpeg/FFmpeg/issues/24290" class="read-link" style="color:#4DFA6A">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-text">Morning Edition &middot; Vol. 073 &middot; 28 Aug 2026</div>
+  <div class="colophon-text"><a href="../index.html">Back to archive &rarr;</a></div>
+</footer>
+
+</body>
+</html>
