@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 03 Sep 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(18px,2.5vw,38px) clamp(28px,6vw,88px);
+  background:#1C0E34;
+  border-bottom:1.5px solid rgba(180,140,255,0.18);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:clamp(22px,2.4vw,32px);
+  color:#C8A8FF;
+  letter-spacing:-0.01em;
+}
+.masthead-title em{font-style:italic;font-weight:400}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(200,168,255,0.3);
+}
+
+/* ======= S1: MANIFESTO — Exit the Cave ======= */
+.s1{
+  background:#3B1D5C;
+  color:#F0E8FF;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.s1-ghost{
+  position:absolute;
+  top:-0.06em;
+  left:-0.04em;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(260px,52vw,800px);
+  line-height:0.82;
+  color:rgba(240,232,255,0.04);
+  letter-spacing:-0.05em;
+  user-select:none;
+  pointer-events:none;
+}
+.s1-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(72px,13vw,200px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  color:rgba(240,232,255,0.2);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s1-kicker{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(200,168,255,0.55);
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s1-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(48px,8.5vw,128px);
+  line-height:1.01;
+  letter-spacing:-0.025em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+}
+.s1-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,30px);
+  line-height:1.55;
+  max-width:52ch;
+  opacity:0.78;
+}
+.s1-source{
+  margin-top:clamp(18px,2.5vw,36px);
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.35;
+}
+
+/* ======= S2: SWISS POSTER — Gemini 3.8 Flash ======= */
+.s2{
+  background:#F2EBE0;
+  color:#111111;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s2-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,1.8vw,22px);
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:#C40F00;
+}
+.s2-badge{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  background:#C40F00;
+  color:#F2EBE0;
+  padding:6px 16px;
+}
+.s2-center{
+  text-align:center;
+  padding:clamp(32px,5vw,64px) 0;
+}
+.s2-label{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:16px;
+}
+.s2-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(56px,11vw,170px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s2-rule{width:100%;height:3px;background:#C40F00;margin:clamp(20px,3vw,36px) 0}
+.s2-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(22px,2.4vw,32px);
+  line-height:1.45;
+  max-width:54ch;
+  margin:0 auto;
+}
+.s2-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:2px solid #111;
+  padding-top:20px;
+}
+.s2-source{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+}
+
+/* ======= S3: ROSE-ALERT-STAMP — Manufactured AI Sources ======= */
+.s3{
+  background:#B80A0A;
+  color:#FFF4EF;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s3-stamp{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(-10deg);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,16vw,260px);
+  letter-spacing:-0.04em;
+  color:rgba(255,244,239,0.05);
+  white-space:nowrap;
+  text-transform:uppercase;
+  user-select:none;
+  pointer-events:none;
+}
+.s3-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.s3-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(56px,10vw,148px);
+  line-height:1;
+  letter-spacing:-0.06em;
+  color:rgba(255,244,239,0.18);
+}
+.s3-alert{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  border:3px solid rgba(255,244,239,0.75);
+  padding:8px 18px;
+}
+.s3-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6vw,88px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin:clamp(16px,3vw,40px) 0;
+}
+.s3-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:50ch;
+  opacity:0.8;
+}
+.s3-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.s3-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.42;
+}
+
+/* ======= S4: ACADEMIC DROP-CAP — Fable 5.1 World Modeling ======= */
+.s4{
+  background:#F5EFE0;
+  color:#1C1208;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+}
+.s4-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:clamp(48px,8vw,108px);
+}
+.s4-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(18px,2vw,26px);
+  letter-spacing:0.06em;
+  opacity:0.35;
+}
+.s4-journal{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.3;
+}
+.s4-body{overflow:hidden}
+.s4-drop{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,20vw,300px);
+  line-height:0.8;
+  color:rgba(28,18,8,0.09);
+  float:left;
+  margin-right:0.08em;
+  margin-bottom:-0.05em;
+}
+.s4-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,76px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:28ch;
+  margin-bottom:clamp(22px,3vw,44px);
+}
+.s4-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.6;
+  max-width:56ch;
+  clear:both;
+}
+.s4-footer{
+  margin-top:clamp(32px,5vw,72px);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid rgba(28,18,8,0.18);
+  padding-top:20px;
+}
+.s4-source{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.38;
+}
+
+/* ======= S5: DARK/MIDNIGHT — Dark Matter Detector ======= */
+.s5{
+  background:#050A1C;
+  color:#C8D8F0;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s5-field{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(100,120,200,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(60,80,180,0.06) 0%, transparent 55%);
+  pointer-events:none;
+}
+.s5-dots{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px),
+    radial-gradient(circle,rgba(255,255,255,0.5) 1px,transparent 1px),
+    radial-gradient(circle,rgba(200,220,255,0.4) 1px,transparent 1px);
+  background-size:180px 180px, 290px 290px, 420px 420px;
+  background-position:40px 60px, 90px 140px, 20px 200px;
+  opacity:0.28;
+  pointer-events:none;
+}
+.s5-num{
+  font-family:'Inter',sans-serif;
+  font-weight:200;
+  font-size:clamp(18px,1.8vw,22px);
+  letter-spacing:0.5em;
+  text-transform:uppercase;
+  color:rgba(200,216,240,0.28);
+  margin-bottom:clamp(28px,4.5vw,64px);
+  position:relative;
+}
+.s5-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(52px,9.5vw,144px);
+  line-height:1.01;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(32px,5vw,68px);
+  position:relative;
+}
+.s5-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:50ch;
+  opacity:0.65;
+  position:relative;
+}
+.s5-footer{
+  margin-top:clamp(40px,7vw,96px);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid rgba(200,216,240,0.12);
+  padding-top:20px;
+  position:relative;
+}
+.s5-source{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.28;
+}
+
+/* ======= S6: HERO COVER — Muse Spark 1.3 ======= */
+.s6{
+  background:#1D4A36;
+  color:#EFF0E2;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s6-bgnum{
+  position:absolute;
+  top:-0.04em;
+  right:-0.04em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(260px,50vw,720px);
+  line-height:0.84;
+  color:rgba(239,240,226,0.04);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s6-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+}
+.s6-kicker{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(239,240,226,0.4);
+}
+.s6-num{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:clamp(18px,1.8vw,22px);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(239,240,226,0.25);
+}
+.s6-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(64px,12vw,196px);
+  line-height:0.91;
+  letter-spacing:-0.03em;
+  max-width:14ch;
+  position:relative;
+}
+.s6-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  flex-wrap:wrap;
+  position:relative;
+}
+.s6-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.1vw,27px);
+  line-height:1.5;
+  max-width:46ch;
+  opacity:0.78;
+}
+.s6-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  opacity:0.3;
+  white-space:nowrap;
+}
+
+/* ======= S7: NEWSPAPER COLUMN — Aging Brains ======= */
+.s7{
+  background:#ECEAE0;
+  color:#1A180F;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+}
+.s7-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-bottom:3px double #1A180F;
+  padding-bottom:clamp(16px,2.5vw,32px);
+  margin-bottom:clamp(32px,5vw,72px);
+}
+.s7-masthead{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(28px,3.6vw,52px);
+  letter-spacing:-0.03em;
+  text-transform:uppercase;
+}
+.s7-edition{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2vw,26px);
+  opacity:0.38;
+  text-align:right;
+}
+.s7-columns{
+  display:grid;
+  grid-template-columns:1.2fr 2.4fr;
+  gap:clamp(36px,5vw,80px);
+  flex:1;
+}
+.s7-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(96px,18vw,264px);
+  line-height:0.86;
+  color:rgba(26,24,15,0.07);
+  padding-top:0.05em;
+}
+.s7-main{display:flex;flex-direction:column;justify-content:space-between}
+.s7-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(30px,4.5vw,64px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s7-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.6;
+  max-width:52ch;
+}
+.s7-source{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.38;
+  margin-top:clamp(18px,3vw,40px);
+}
+
+/* ======= S8: TERMINAL — WebLLM ======= */
+.s8{
+  background:#080808;
+  color:#00E060;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s8-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.s8-bar{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  letter-spacing:0.05em;
+  opacity:0.4;
+}
+.s8-num{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(18px,1.8vw,22px);
+  letter-spacing:0.14em;
+  opacity:0.28;
+}
+.s8-prompt{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  letter-spacing:0.04em;
+  opacity:0.4;
+  margin-bottom:10px;
+}
+.s8-headline{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(32px,5.5vw,84px);
+  line-height:1.18;
+  font-weight:700;
+  max-width:30ch;
+  margin-bottom:clamp(24px,4vw,56px);
+}
+.s8-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:52ch;
+  color:#90F0C0;
+}
+.s8-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid rgba(0,224,96,0.15);
+  padding-top:20px;
+}
+.s8-source{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  letter-spacing:0.08em;
+  opacity:0.28;
+  text-transform:uppercase;
+}
+
+/* ======= S9: TYPOGRAPHIC COLLAGE — Schoolgirls Pea Plant ======= */
+.s9{
+  background:#E09818;
+  color:#180E00;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s9-bg1{
+  position:absolute;
+  top:-0.14em;
+  left:-0.03em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(130px,26vw,400px);
+  line-height:1;
+  color:rgba(24,14,0,0.07);
+  letter-spacing:-0.04em;
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.s9-bg2{
+  position:absolute;
+  bottom:-0.08em;
+  right:-0.02em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(80px,15vw,240px);
+  line-height:1;
+  color:rgba(24,14,0,0.05);
+  letter-spacing:-0.04em;
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.s9-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(60px,11vw,160px);
+  line-height:0.9;
+  letter-spacing:-0.06em;
+  color:rgba(24,14,0,0.15);
+}
+.s9-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  opacity:0.42;
+  text-align:right;
+}
+.s9-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(38px,6vw,88px);
+  line-height:1.07;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin:clamp(16px,3vw,40px) 0;
+  position:relative;
+}
+.s9-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:52ch;
+  opacity:0.78;
+  position:relative;
+}
+.s9-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  position:relative;
+}
+.s9-source{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.38;
+}
+
+/* ======= S10: BIG-STAT FINISH — Poisson Disk Sampling ======= */
+.s10{
+  background:#192E3E;
+  color:#F4E4C4;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:space-between;
+}
+.s10-bgnum{
+  position:absolute;
+  top:-0.04em;
+  left:clamp(36px,7vw,100px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(220px,44vw,660px);
+  line-height:0.84;
+  color:rgba(244,228,196,0.05);
+  letter-spacing:-0.05em;
+  user-select:none;
+  pointer-events:none;
+}
+.s10-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+}
+.s10-kicker{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(244,228,196,0.38);
+}
+.s10-issue{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(244,228,196,0.22);
+}
+.s10-main{
+  text-align:center;
+  position:relative;
+}
+.s10-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(96px,18vw,280px);
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  color:#F5C318;
+  margin-bottom:clamp(16px,2.5vw,36px);
+}
+.s10-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(32px,5vw,72px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  max-width:28ch;
+  margin:0 auto clamp(18px,2.5vw,36px);
+}
+.s10-dek{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  line-height:1.55;
+  max-width:52ch;
+  margin:0 auto;
+  opacity:0.65;
+}
+.s10-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  border-top:1px solid rgba(244,228,196,0.14);
+  padding-top:20px;
+  position:relative;
+}
+.s10-source{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.28;
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#0E0E0E;
+  color:#A8A0A4;
+  padding:clamp(80px,12vw,160px) clamp(36px,7vw,100px);
+  text-align:center;
+  font-family:'Fraunces',serif;
+}
+.colophon-mark{
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(40px,6vw,80px);
+  color:#F4E4C4;
+  margin-bottom:clamp(20px,3vw,44px);
+  line-height:1;
+}
+.colophon p{
+  font-family:'Inter',sans-serif;
+  font-size:20px;
+  line-height:1.7;
+  max-width:48ch;
+  margin:0 auto 12px;
+}
+.colophon a{color:#F5C318;text-underline-offset:4px}
+
+@media(max-width:640px){
+  .s7-columns{grid-template-columns:1fr}
+  .s7-num{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title"><em>Morning Edition</em></div>
+  <div class="masthead-meta">Vol. 075 / 03 Sep 2026</div>
+</header>
+
+<!-- SPREAD 1: MANIFESTO — Exit the Cave -->
+<section class="spread s1">
+  <div class="s1-ghost" aria-hidden="true">I</div>
+  <div class="s1-num">i.</div>
+  <div class="s1-kicker">Manifesto / turtlespace.blog / 269 pts</div>
+  <h2 class="s1-headline">Everything You Think You Know Is a Cave Wall</h2>
+  <p class="s1-dek">Plato's allegory is 2,400 years old. Most people still live in it. This essay is a nudge toward the exit: not a self-help pep talk, but a genuine philosophical provocation about what we mistake for reality when we have only ever seen its shadows.</p>
+  <div class="s1-source">turtlespace.blog</div>
+  <a class="read-link" href="https://turtlespace.blog/p/exit-the-cave" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 2: SWISS POSTER — Gemini 3.8 Flash -->
+<section class="spread s2">
+  <div class="s2-header">
+    <div class="s2-num">02 / 🎯</div>
+    <div class="s2-badge">New Model</div>
+  </div>
+  <div class="s2-center">
+    <div class="s2-label">Google DeepMind / 1,037 pts</div>
+    <h2 class="s2-headline">Gemini 3.8<br>Flash</h2>
+    <div class="s2-rule"></div>
+    <p class="s2-dek">Two new variants: Flash for speed, and Flash Cyber for agentic workflows where adversarial robustness matters as much as raw output. Google's fastest generation yet, targeting the cases where a 10-second response is already too slow.</p>
+    <a class="read-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+  <div class="s2-footer">
+    <div class="s2-source">blog.google</div>
+    <div class="s2-source">Flash &amp; Flash Cyber</div>
+  </div>
+</section>
+
+<!-- SPREAD 3: ROSE-ALERT-STAMP — Manufactured AI Sources -->
+<section class="spread s3">
+  <div class="s3-stamp" aria-hidden="true">ALERT</div>
+  <div class="s3-top">
+    <div class="s3-num">03</div>
+    <div class="s3-alert">🎯 Investigation</div>
+  </div>
+  <h2 class="s3-headline">The Ghost Encyclopaedia Feeding Your AI Recommendations</h2>
+  <p class="s3-dek">Three sites auto-generated 215,128 "best software" pages. Perplexity cites them as authoritative. This is what a manufactured knowledge layer looks like in the wild: a confidence problem dressed up as a citation problem, at industrial scale.</p>
+  <div class="s3-footer">
+    <div class="s3-source">trellner.com / 429 pts</div>
+    <a class="read-link" href="https://trellner.com/reports/manufactured-sources-behind-ai-recommendations/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 4: ACADEMIC DROP-CAP — Fable 5.1 World Modeling -->
+<section class="spread s4">
+  <div class="s4-header">
+    <div class="s4-num">Vol. LXXV / iv.</div>
+    <div class="s4-journal">🎯 AI Research / github / 259 pts</div>
+  </div>
+  <div class="s4-body">
+    <div class="s4-drop" aria-hidden="true">F</div>
+    <h2 class="s4-headline">Fable 5.1 and the Art of Simulating Everything</h2>
+    <p class="s4-dek">PhiloLabs releases a world-modeling variant of Fable 5.1, trained not just to converse but to simulate physical environments and their state over time. The gap between language models and world models is closing faster than most people are prepared to notice.</p>
+  </div>
+  <div class="s4-footer">
+    <div class="s4-source">github.com/PhiloLabs</div>
+    <a class="read-link" href="https://github.com/PhiloLabs/fable51-worlds" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 5: DARK/MIDNIGHT — Dark Matter Detector -->
+<section class="spread s5">
+  <div class="s5-field" aria-hidden="true"></div>
+  <div class="s5-dots" aria-hidden="true"></div>
+  <div class="s5-num">V / science.org / 304 pts</div>
+  <h2 class="s5-headline">One Particle. No Theory Fits.</h2>
+  <p class="s5-dek">The world's most sensitive dark matter detector recorded a single anomalous event that existing physics cannot cleanly explain. Not proof of anything yet. Exactly the kind of not-proof that rewrites textbooks twenty years from now.</p>
+  <div class="s5-footer">
+    <div class="s5-source">science.org</div>
+    <a class="read-link" href="https://www.science.org/content/article/world-s-biggest-dark-matter-detector-spots-single-weird-particle" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 6: HERO COVER — Muse Spark 1.3 -->
+<section class="spread s6">
+  <div class="s6-bgnum" aria-hidden="true">6</div>
+  <div class="s6-top">
+    <div class="s6-kicker">🎯 Creative AI / Meta / 591 pts</div>
+    <div class="s6-num">06</div>
+  </div>
+  <h2 class="s6-headline">Muse Spark 1.3</h2>
+  <div class="s6-bottom">
+    <p class="s6-dek">Meta's open generative model for game development, now at version 1.3. Designed to produce in-engine assets, textures, and world elements on demand. The line between artist and model keeps moving, and it keeps moving in one direction.</p>
+    <div class="s6-source">developer.meta.com</div>
+  </div>
+  <a class="read-link" href="https://developer.meta.com/ai/models/muse-spark/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 7: NEWSPAPER COLUMN — Aging Brains -->
+<section class="spread s7">
+  <div class="s7-header">
+    <div class="s7-masthead">Science Desk</div>
+    <div class="s7-edition">03 September 2026 / studyfinds.com / 289 pts</div>
+  </div>
+  <div class="s7-columns">
+    <div class="s7-num" aria-hidden="true">VII</div>
+    <div class="s7-main">
+      <div>
+        <h2 class="s7-headline">Why Your Brain Doesn't Forget: It Merges</h2>
+        <p class="s7-dek">A new study finds that older brains don't simply delete memories: they blend similar ones into composites. The result is a kind of generalised knowing, where specific episodes dissolve into patterns. Forgetting, it turns out, is a category error. The filing system just changes shape.</p>
+      </div>
+      <div>
+        <div class="s7-source">studyfinds.com</div>
+        <a class="read-link" href="https://studyfinds.com/aging-brains-blend-memories-together-instead-of-forgetting-them-study-finds/" target="_blank" rel="noopener">Read &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 8: TERMINAL — WebLLM -->
+<section class="spread s8">
+  <div class="s8-header">
+    <div class="s8-bar">$ morning-edition --issue=075</div>
+    <div class="s8-num">08 / 🎯 / 122 pts</div>
+  </div>
+  <div>
+    <div class="s8-prompt">$ run_llm --context=browser --server=none</div>
+    <h2 class="s8-headline">Run a Language Model<br>in Your Browser Tab</h2>
+    <p class="s8-dek">WebLLM delivers high-performance LLM inference directly in the browser, no server required. The implications for privacy-first AI tools and offline-capable AI education are significant: a course module that works on a plane with no internet.</p>
+    <a class="read-link" href="https://github.com/mlc-ai/web-llm" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+  <div class="s8-footer">
+    <div class="s8-source">github.com/mlc-ai</div>
+    <div class="s8-source">mlc-ai/web-llm</div>
+  </div>
+</section>
+
+<!-- SPREAD 9: TYPOGRAPHIC COLLAGE — Schoolgirls Pea Plant -->
+<section class="spread s9">
+  <div class="s9-bg1" aria-hidden="true">Science</div>
+  <div class="s9-bg2" aria-hidden="true">Bacteria</div>
+  <div class="s9-top">
+    <div class="s9-num">9</div>
+    <div class="s9-meta">Weird Science<br>scienceblog.com / 161 pts</div>
+  </div>
+  <h2 class="s9-headline">Three Girls, One Pea Plant, and a Bedroom Full of Bacteria</h2>
+  <p class="s9-dek">In 2016, three schoolgirls in Kinsale found a pea plant with strange warts, then spent three years testing 13,000 seeds in a spare bedroom. The bacteria they discovered in those warts can dramatically improve barley yield. Proper science, done in the wrong room.</p>
+  <div class="s9-footer">
+    <div class="s9-source">scienceblog.com</div>
+    <a class="read-link" href="https://scienceblog.com/b-three-schoolgirls-in-kinsale-pulled-up-a-pea-plant-covered-in-warts-and-instead-of-binning-it-spent-three-years-testing-13000-seeds-in-a-spare-bedroom-the-bacteria-living-in-those-warts-made-barley/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- SPREAD 10: BIG-STAT FINISH — Poisson Disk Sampling -->
+<section class="spread s10">
+  <div class="s10-bgnum" aria-hidden="true">X</div>
+  <div class="s10-header">
+    <div class="s10-kicker">Mathematics / stripeacross.com / 168 pts</div>
+    <div class="s10-issue">Vol. 075 / Final</div>
+  </div>
+  <div class="s10-main">
+    <div class="s10-stat">1987</div>
+    <h2 class="s10-headline">The Most Beautiful Way to Scatter Points</h2>
+    <p class="s10-dek">Poisson disk sampling: described by Don Mitchell in 1987, used by nature in the layout of photoreceptors in the eye. It distributes points so no two are too close, producing patterns that feel simultaneously random and inevitable. One of those mathematical ideas you cannot unsee once you have seen it.</p>
+    <a class="read-link" href="https://stripeacross.com/posts/poisson-disk-sampling/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+  <div class="s10-footer">
+    <div class="s10-source">stripeacross.com</div>
+    <div class="s10-source">Issue 075 complete</div>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-mark">Morning Edition</div>
+  <p>A daily curated digest for one reader. Composed autonomously, published before breakfast.</p>
+  <p>Ten stories. Ten spreads. Every morning.</p>
+  <p><a href="../index.html">Full archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
