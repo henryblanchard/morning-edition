@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 23 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(16px,2vw,32px) clamp(28px,6vw,88px);
+  background:#0A1628;
+  border-bottom:1.5px solid rgba(200,180,120,0.2);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(20px,2vw,30px);
+  color:#C8B478;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(200,180,120,0.35);
+}
+
+/* ======= S1: HERO COVER — LLMs + formal verification ======= */
+.s1{
+  background:#122210;
+  color:#D4EFD0;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s1-ghost{
+  position:absolute;
+  top:-0.1em;
+  left:-0.06em;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(300px,58vw,960px);
+  line-height:0.82;
+  color:rgba(212,239,208,0.04);
+  letter-spacing:-0.05em;
+  user-select:none;
+  pointer-events:none;
+}
+.s1-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(20px,2.2vw,28px);
+  font-weight:300;
+  letter-spacing:0.05em;
+  opacity:0.55;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s1-flag{margin-bottom:12px;font-size:20px}
+.s1-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:clamp(16px,2.5vw,30px);
+}
+.s1-headline{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:800;
+  font-size:clamp(52px,8.5vw,160px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:14ch;
+}
+.s1-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.6;
+  max-width:62ch;
+  opacity:0.8;
+}
+
+/* ======= S2: MANIFESTO — OpenShell / AI agent runtime ======= */
+.s2{
+  background:#F0EBD8;
+  color:#141210;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(100px,20vw,320px);
+  line-height:0.85;
+  letter-spacing:-0.06em;
+  color:rgba(20,18,16,0.07);
+  position:absolute;
+  right:clamp(28px,5vw,80px);
+  top:50%;
+  transform:translateY(-50%);
+  user-select:none;
+  pointer-events:none;
+}
+.s2-rule{
+  width:clamp(48px,6vw,88px);
+  height:4px;
+  background:#141210;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s2-flag{margin-bottom:10px;font-size:20px}
+.s2-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.s2-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,7vw,120px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:16ch;
+}
+.s2-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:58ch;
+}
+
+/* ======= S3: TERMINAL — WorldTUI ======= */
+.s3{
+  background:#050E05;
+  color:#39FF5A;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  font-family:monospace;
+}
+.s3-prompt{
+  font-size:clamp(18px,1.6vw,22px);
+  opacity:0.5;
+  margin-bottom:clamp(20px,3vw,40px);
+  letter-spacing:0.04em;
+}
+.s3-num{
+  font-size:clamp(18px,1.5vw,22px);
+  opacity:0.35;
+  letter-spacing:0.1em;
+  margin-bottom:8px;
+}
+.s3-flag{margin-bottom:12px;font-size:20px}
+.s3-src{
+  font-size:18px;
+  letter-spacing:0.1em;
+  opacity:0.4;
+  margin-bottom:clamp(14px,2vw,24px);
+  text-transform:uppercase;
+}
+.s3-headline{
+  font-family:monospace;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,96px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+}
+.s3-cursor{
+  display:inline-block;
+  width:0.6em;
+  height:1em;
+  background:#39FF5A;
+  vertical-align:text-bottom;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.s3-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:62ch;
+  opacity:0.8;
+  color:#9EFFA8;
+}
+.s3-read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:monospace;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-decoration:none;
+  border-bottom:2px solid #39FF5A;
+  padding-bottom:4px;
+  color:#39FF5A;
+  transition:opacity 0.15s;
+}
+.s3-read-link:hover{opacity:0.4}
+
+/* ======= S4: DARK/MIDNIGHT — AI models controversial take ======= */
+.s4{
+  background:#0E1020;
+  color:#E8E4F8;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s4-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(220px,40vw,680px);
+  line-height:0.8;
+  color:rgba(232,228,248,0.04);
+  position:absolute;
+  right:-0.02em;
+  bottom:-0.1em;
+  user-select:none;
+  pointer-events:none;
+  letter-spacing:-0.06em;
+}
+.s4-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(200,188,255,0.5);
+  margin-bottom:clamp(14px,2vw,28px);
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+.s4-flag{font-size:20px}
+.s4-headline{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:clamp(48px,7.5vw,140px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  color:#E8E4F8;
+}
+.s4-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:62ch;
+  color:rgba(232,228,248,0.72);
+}
+
+/* ======= S5: ACADEMIC DROP-CAP — Dijkstra 1978 ======= */
+.s5{
+  background:#F5F0E8;
+  color:#1A1714;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s5-num{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.05em;
+  color:rgba(26,23,20,0.35);
+  margin-bottom:clamp(20px,3vw,40px);
+  border-left:3px solid rgba(26,23,20,0.2);
+  padding-left:12px;
+}
+.s5-src{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(12px,1.8vw,22px);
+}
+.s5-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(42px,6.5vw,112px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3vw,44px);
+}
+.s5-body{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.75;
+  max-width:62ch;
+  color:rgba(26,23,20,0.85);
+  position:relative;
+}
+.s5-dropcap{
+  float:left;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(80px,11vw,168px);
+  line-height:0.78;
+  margin-right:0.06em;
+  margin-top:0.04em;
+  color:#1A1714;
+}
+.s5-marginal{
+  position:absolute;
+  right:-clamp(20px,3vw,48px);
+  top:0;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(80px,12vw,180px);
+  line-height:1;
+  color:rgba(26,23,20,0.05);
+  user-select:none;
+  pointer-events:none;
+}
+
+/* ======= S6: SWISS POSTER — OpenAI / 100 companies ======= */
+.s6{
+  background:#D42B25;
+  color:#FFFFFF;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s6-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.s6-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(20px,2vw,30px);
+  letter-spacing:-0.02em;
+  opacity:0.55;
+}
+.s6-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+.s6-mid{
+  margin-top:auto;
+  margin-bottom:auto;
+}
+.s6-flag{margin-bottom:12px;font-size:20px}
+.s6-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(52px,9vw,180px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  max-width:14ch;
+}
+.s6-rule{
+  width:100%;
+  height:3px;
+  background:rgba(255,255,255,0.25);
+  margin:clamp(24px,3.5vw,52px) 0;
+}
+.s6-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.6;
+  max-width:60ch;
+  opacity:0.88;
+}
+
+/* ======= S7: NEWSPAPER COLUMN — Gridification ======= */
+.s7{
+  background:#FAFAF3;
+  color:#111111;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  flex-direction:column;
+}
+.s7-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(18px,1.5vw,22px);
+  opacity:0.3;
+  margin-bottom:clamp(8px,1.2vw,14px);
+  letter-spacing:0.04em;
+}
+.s7-dateline{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.38;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s7-rule{
+  width:100%;
+  height:2px;
+  background:#111111;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s7-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(40px,6vw,108px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(24px,3vw,44px);
+  max-width:20ch;
+}
+.s7-cols{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:clamp(24px,3vw,48px);
+  max-width:960px;
+}
+.s7-col p{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(20px,1.7vw,23px);
+  line-height:1.75;
+  color:rgba(17,17,17,0.82);
+}
+.s7-col p+p{margin-top:1em}
+
+/* ======= S8: ROSE-ALERT-STAMP — Quad9 exits France ======= */
+.s8{
+  background:#2A0012;
+  color:#FDDDE6;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s8-stamp-ring{
+  position:absolute;
+  top:50%;
+  right:clamp(36px,6vw,100px);
+  transform:translateY(-50%);
+  width:clamp(180px,24vw,380px);
+  height:clamp(180px,24vw,380px);
+  border-radius:50%;
+  border:clamp(12px,1.8vw,24px) solid rgba(253,221,230,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  user-select:none;
+  pointer-events:none;
+}
+.s8-stamp-inner{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(28px,4vw,64px);
+  letter-spacing:-0.02em;
+  text-transform:uppercase;
+  color:rgba(253,221,230,0.14);
+  text-align:center;
+  line-height:1.1;
+}
+.s8-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,1.6vw,24px);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s8-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.s8-headline{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:800;
+  font-size:clamp(44px,7vw,132px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  color:#FDDDE6;
+}
+.s8-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:58ch;
+  color:rgba(253,221,230,0.72);
+}
+
+/* ======= S9: TYPOGRAPHIC COLLAGE — Underwater volcano ======= */
+.s9{
+  background:#1C3B72;
+  color:#F0E8C8;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  overflow:hidden;
+}
+.s9-bg-word{
+  position:absolute;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  white-space:nowrap;
+  user-select:none;
+  pointer-events:none;
+}
+.s9-bg-word:nth-child(1){
+  font-size:clamp(120px,22vw,380px);
+  color:rgba(240,232,200,0.04);
+  top:-0.05em;
+  left:-0.05em;
+  letter-spacing:-0.04em;
+}
+.s9-bg-word:nth-child(2){
+  font-size:clamp(60px,10vw,180px);
+  color:rgba(240,232,200,0.05);
+  bottom:0.1em;
+  right:-0.02em;
+  letter-spacing:-0.03em;
+}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(18px,1.6vw,22px);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.s9-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.s9-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(48px,7.5vw,148px);
+  line-height:0.9;
+  letter-spacing:-0.04em;
+  max-width:16ch;
+  color:#F0E8C8;
+}
+.s9-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:60ch;
+  color:rgba(240,232,200,0.78);
+}
+
+/* ======= S10: COLOUR-FIELD MINIMALIST — How to Design Flowers ======= */
+.s10{
+  background:#EDE8D8;
+  color:#1A1612;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s10-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+}
+.s10-num-big{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(80px,14vw,240px);
+  line-height:0.8;
+  letter-spacing:-0.05em;
+  color:rgba(26,22,18,0.1);
+  user-select:none;
+}
+.s10-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  opacity:0.38;
+  text-align:right;
+}
+.s10-center{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex:1;
+}
+.s10-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(52px,8vw,160px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  max-width:16ch;
+  color:#1A1612;
+}
+.s10-dek{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,24px);
+  line-height:1.65;
+  max-width:62ch;
+  color:rgba(26,22,18,0.72);
+}
+.s10-bottom-rule{
+  width:100%;
+  height:1px;
+  background:rgba(26,22,18,0.15);
+  margin-top:clamp(32px,4vw,60px);
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#0A1628;
+  color:rgba(200,180,120,0.55);
+  padding:clamp(40px,5vw,72px) clamp(28px,6vw,88px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(200,180,120,0.1);
+}
+.colophon-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,28px);
+  color:rgba(200,180,120,0.7);
+}
+.colophon-right{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.colophon-right a{
+  color:rgba(200,180,120,0.7);
+  text-decoration:none;
+  border-bottom:1px solid rgba(200,180,120,0.3);
+  padding-bottom:2px;
+  transition:opacity 0.15s;
+}
+.colophon-right a:hover{opacity:0.55}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-title"><em>Morning Edition</em></span>
+  <span class="masthead-meta">Vol. 077 &nbsp;&middot;&nbsp; 23 October 2026</span>
+</header>
+
+<!-- S1: HERO COVER — LLMs + formal verification -->
+<section class="spread s1">
+  <div class="s1-ghost" aria-hidden="true">I</div>
+  <div class="s1-num">No. I</div>
+  <div class="s1-flag">🎯</div>
+  <div class="s1-src">Hacker News &middot; 250 points</div>
+  <h2 class="s1-headline">The Bug That Couldn't Exist</h2>
+  <p class="s1-dek">Anthropic researchers show that frontier language models can generate and check formal proofs at industrial scale, turning a decades-old dream of provably correct software into a practical engineering choice. For anyone building AI-assisted workflows, this changes what "tested" can mean.</p>
+  <a href="https://www.anthropic.com/research/formal-verification" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S2: MANIFESTO — OpenShell / AI agent runtime -->
+<section class="spread s2">
+  <div class="s2-num" aria-hidden="true">02</div>
+  <div class="s2-rule"></div>
+  <div class="s2-flag">🎯</div>
+  <div class="s2-src">Hacker News &middot; 354 points</div>
+  <h2 class="s2-headline">A Cage for Your AI Workforce</h2>
+  <p class="s2-dek">NVIDIA opens its agent orchestration layer: a sandboxed runtime that lets you deploy fleets of autonomous AI agents without handing them the keys to production infrastructure. The question of how to govern agents at scale has a first serious answer.</p>
+  <a href="https://github.com/NVIDIA/OpenShell" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S3: TERMINAL — WorldTUI -->
+<section class="spread s3">
+  <div class="s3-prompt">$ morning_edition --spread 3</div>
+  <div class="s3-num">--- 003 ---</div>
+  <h2 class="s3-headline">Inside the Machine That Thinks It Is One<span class="s3-cursor"></span></h2>
+  <p class="s3-dek">A 360-million-parameter world model trained entirely on terminal interaction logs learns to simulate a Unix shell convincingly enough to fool automated scripts. The boundary between interface and intelligence keeps thinning. Output below.</p>
+  <div style="margin-top:clamp(8px,1.5vw,18px);font-size:18px;opacity:0.4;line-height:1.9">
+    <div>$ ls -la /dev/null</div>
+    <div>crw-rw-rw-  1 root  wheel  3,  2 Oct 23 07:10 /dev/null</div>
+    <div>$ echo "Source: HN &middot; 516 points"</div>
+    <div>Source: HN &middot; 516 points</div>
+  </div>
+  <a href="https://simedw.com/2026/10/21/world-model-terminal/" class="s3-read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S4: DARK/MIDNIGHT — AI models controversial take -->
+<section class="spread s4">
+  <div class="s4-num" aria-hidden="true">IV</div>
+  <div class="s4-tag">
+    <span class="s4-flag"></span>
+    <span>Hacker News &middot; 327 points</span>
+  </div>
+  <h2 class="s4-headline">They All Say the Same Thing</h2>
+  <p class="s4-dek">Researchers benchmarked a dozen frontier models on supposedly divisive questions about human nature and found near-identical responses across providers. Whether that reflects training data convergence, shared RLHF objectives, or something structurally deeper about intelligence itself is the real conversation worth having.</p>
+  <a href="https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S5: ACADEMIC DROP-CAP — Dijkstra 1978 -->
+<section class="spread s5">
+  <div class="s5-num">No. V &nbsp;&middot;&nbsp; EWD667 &nbsp;&middot;&nbsp; 1978</div>
+  <div class="s5-src">Hacker News &middot; 97 points</div>
+  <h2 class="s5-headline">Dijkstra Was Not Impressed</h2>
+  <p class="s5-body">
+    <span class="s5-dropcap">A</span>
+    1978 Dijkstra memo argues with characteristic acid that making programs readable in plain English is a category error, not an engineering goal. Worth rereading in the year that large language models became the dominant development environment. Some arguments age poorly. Others clarify with time.
+  </p>
+  <div class="s5-marginal" aria-hidden="true">V</div>
+  <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S6: SWISS POSTER — OpenAI / 100 companies -->
+<section class="spread s6">
+  <div class="s6-top">
+    <span class="s6-num">006</span>
+    <span class="s6-src">Ask HN &middot; 67 points</span>
+  </div>
+  <div class="s6-mid">
+    <div class="s6-flag">🎯</div>
+    <h2 class="s6-headline">The Token Dilemma</h2>
+    <div class="s6-rule"></div>
+    <p class="s6-dek">If frontier models are capable enough to power entire product companies, why are the labs selling compute rather than shipping products? A Hacker News thread that asks the right founder question: the answers reveal how incumbency actually works in the age of intelligence.</p>
+    <a href="https://news.ycombinator.com/item?id=50200997" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S7: NEWSPAPER COLUMN — Gridification -->
+<section class="spread s7">
+  <div class="s7-num">vii.</div>
+  <div class="s7-dateline">Hacker News &middot; 438 points &nbsp;&middot;&nbsp; Music &amp; Form</div>
+  <div class="s7-rule"></div>
+  <h2 class="s7-headline">The Grid Beneath the Song</h2>
+  <div class="s7-cols">
+    <div class="s7-col">
+      <p>A detailed inquiry into why modern music production flattens performance onto a rigid temporal grid: what is lost in feel and swing, why the groove gets thinner, and what "gridification" actually costs a recording.</p>
+      <p>The argument is both technical and cultural. Quantisation is not neutral.</p>
+    </div>
+    <div class="s7-col">
+      <p>Worth reading for anyone interested in the relationship between constraint, tools, and creative output. The grid is a design decision that became an invisible default.</p>
+      <p>That pattern shows up in more than music production.</p>
+      <a href="https://musicalform.substack.com/p/what-is-gridifcation" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S8: ROSE-ALERT-STAMP — Quad9 exits France -->
+<section class="spread s8">
+  <div class="s8-stamp-ring" aria-hidden="true">
+    <div class="s8-stamp-inner">ALERT<br>INTERNET<br>FREEDOM</div>
+  </div>
+  <div class="s8-num">VIII &nbsp;&middot;&nbsp; Infrastructure</div>
+  <div class="s8-src">Hacker News &middot; 1,108 points</div>
+  <h2 class="s8-headline">The DNS Resolver That France Expelled</h2>
+  <p class="s8-dek">Quad9, the privacy-first DNS service used by millions globally, is leaving France after a court order required it to block specific domains. A canary in the coal mine for the regulatory direction of the open internet: when infrastructure becomes jurisdiction, neutrality becomes impossible.</p>
+  <a href="https://quad9.net/news/blog/au-revoir-france/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S9: TYPOGRAPHIC COLLAGE — Underwater volcano -->
+<section class="spread s9">
+  <div class="s9-bg-word" aria-hidden="true">Volcano</div>
+  <div class="s9-bg-word" aria-hidden="true">Energy</div>
+  <div class="s9-num">No. 9 &nbsp;&middot;&nbsp; Energy &amp; Science</div>
+  <div class="s9-src">Hacker News &middot; 132 points</div>
+  <h2 class="s9-headline">Fire from the Deep</h2>
+  <p class="s9-dek">An energy startup has run a proof-of-concept tap on a submerged volcanic vent, converting hydrothermal output into usable electricity. Not commercially viable yet. The physics, however, says it eventually could be. The ocean floor as a power source is a genuinely strange idea that is starting to make serious engineering sense.</p>
+  <a href="https://arstechnica.com/science/2026/10/startup-taps-underwater-volcano-as-energy-source-in-proof-point-test/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S10: COLOUR-FIELD MINIMALIST — How to Design Flowers -->
+<section class="spread s10">
+  <div class="s10-top">
+    <div class="s10-num-big" aria-hidden="true">X</div>
+    <div class="s10-src">Hacker News &middot; 35 points</div>
+  </div>
+  <div class="s10-center">
+    <h2 class="s10-headline">The Geometry of Petals</h2>
+    <p class="s10-dek">A deep look at how flowers achieve their forms: the developmental mathematics behind spiral phyllotaxis, bilateral symmetry, and the recurring patterns that evolution keeps rediscovering. Fibonacci ratios turn up in places that feel almost deliberate. Strange, beautiful, and worth an hour of your morning.</p>
+    <a href="https://www.asimov.press/p/flowers" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+  <div class="s10-bottom-rule"></div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span class="colophon-title"><em>Morning Edition</em> &nbsp;&middot;&nbsp; Vol. 077 &nbsp;&middot;&nbsp; 23 October 2026</span>
+  <span class="colophon-right"><a href="../index.html">All Issues &rarr;</a></span>
+</footer>
+
+</body>
+</html>
