@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 28 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(16px,2vw,32px) clamp(28px,6vw,88px);
+  background:#0D1B2A;
+  border-bottom:1.5px solid rgba(245,197,24,0.25);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(20px,2vw,30px);
+  color:#F5C518;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(245,197,24,0.35);
+}
+
+/* ======= S1: MANIFESTO - Genie 4 ======= */
+.s1{
+  background:#1A1464;
+  color:#E8E4FF;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  gap:0;
+}
+.s1-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(22px,2.4vw,32px);
+  font-weight:300;
+  letter-spacing:0.04em;
+  color:rgba(232,228,255,0.35);
+  margin-bottom:clamp(40px,6vw,80px);
+}
+.s1-flag{font-size:22px;margin-bottom:16px}
+.s1-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(232,228,255,0.4);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s1-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(52px,10vw,180px);
+  line-height:0.88;
+  letter-spacing:-0.04em;
+  max-width:14ch;
+  margin-bottom:clamp(32px,4vw,56px);
+}
+.s1-headline em{font-style:italic;font-weight:400;color:#9B8EFF}
+.s1-dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(22px,2.4vw,34px);
+  line-height:1.45;
+  max-width:54ch;
+  color:rgba(232,228,255,0.75);
+}
+.s1-rule{
+  width:80px;
+  height:3px;
+  background:#9B8EFF;
+  margin-bottom:clamp(28px,4vw,48px);
+}
+
+/* ======= S2: HERO COVER - Claude + drugs ======= */
+.s2{
+  background:#C87014;
+  color:#0A1628;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s2-ghost{
+  position:absolute;
+  bottom:-0.15em;
+  right:-0.05em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(280px,52vw,900px);
+  line-height:0.8;
+  color:rgba(10,22,40,0.07);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(18px,1.8vw,24px);
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(10,22,40,0.45);
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s2-flag{font-size:22px;margin-bottom:16px}
+.s2-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(10,22,40,0.5);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s2-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7.5vw,130px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s2-headline em{font-style:italic;font-weight:400}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.55;
+  max-width:52ch;
+  color:rgba(10,22,40,0.75);
+}
+
+/* ======= S3: TERMINAL - Survival LLM ======= */
+.s3{
+  background:#000000;
+  color:#00FF41;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,110px) clamp(36px,7vw,100px);
+  font-family:'Courier New',Courier,monospace;
+}
+.s3-num{
+  font-family:'Courier New',Courier,monospace;
+  font-size:20px;
+  letter-spacing:0.08em;
+  color:rgba(0,255,65,0.4);
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s3-flag{font-size:22px;margin-bottom:14px;font-family:'Inter',sans-serif}
+.s3-src{
+  font-family:'Courier New',Courier,monospace;
+  font-size:18px;
+  letter-spacing:0.1em;
+  color:rgba(0,255,65,0.45);
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s3-prompt{
+  font-size:18px;
+  color:rgba(0,255,65,0.5);
+  margin-bottom:8px;
+}
+.s3-headline{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(32px,6vw,100px);
+  line-height:1;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(28px,4vw,52px);
+  word-break:break-word;
+}
+.s3-dek{
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.6;
+  max-width:60ch;
+  color:rgba(0,255,65,0.75);
+}
+.s3-cursor{
+  display:inline-block;
+  width:14px;
+  height:1.2em;
+  background:#00FF41;
+  vertical-align:bottom;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ======= S4: DARK/MIDNIGHT - CFSG in Lean ======= */
+.s4{
+  background:#0D1B2A;
+  color:#C8D8E8;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s4-num-stroke{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(80px,18vw,320px);
+  line-height:0.9;
+  color:transparent;
+  -webkit-text-stroke:2px rgba(200,216,232,0.2);
+  text-stroke:2px rgba(200,216,232,0.2);
+  letter-spacing:-0.05em;
+  margin-bottom:clamp(20px,3vw,40px);
+  user-select:none;
+}
+.s4-flag{font-size:22px;margin-bottom:16px}
+.s4-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(200,216,232,0.35);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s4-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,100px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:20ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s4-headline em{font-style:italic;font-weight:300;color:#7AB3D4}
+.s4-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.6;
+  max-width:54ch;
+  color:rgba(200,216,232,0.65);
+}
+
+/* ======= S5: SWISS POSTER - Python JIT ======= */
+.s5{
+  background:#CC1A1A;
+  color:#FFFFFF;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(48px,7vw,100px) clamp(36px,7vw,100px);
+}
+.s5-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+}
+.s5-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+.s5-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.s5-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,80px) 0}
+.s5-headline{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(48px,10vw,200px);
+  line-height:0.84;
+  letter-spacing:-0.05em;
+  margin-bottom:clamp(32px,5vw,64px);
+}
+.s5-headline em{
+  display:block;
+  font-style:italic;
+  font-weight:300;
+  font-size:0.55em;
+  letter-spacing:-0.02em;
+  opacity:0.7;
+}
+.s5-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.5;
+  max-width:48ch;
+  color:rgba(255,255,255,0.8);
+}
+.s5-rule{width:80px;height:4px;background:#FFFFFF;margin-bottom:24px}
+
+/* ======= S6: ACADEMIC DROP-CAP - LFM3 ======= */
+.s6{
+  background:#E4EDDA;
+  color:#1A2410;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s6-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(80px,16vw,260px);
+  line-height:0.85;
+  color:rgba(26,36,16,0.08);
+  letter-spacing:-0.04em;
+  float:left;
+  margin-right:24px;
+  margin-top:-0.1em;
+  user-select:none;
+}
+.s6-flag{font-size:22px;margin-bottom:16px;display:block;float:none;clear:none}
+.s6-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(26,36,16,0.4);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s6-inner{overflow:hidden}
+.s6-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,5.5vw,88px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  max-width:22ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s6-headline em{font-style:italic;font-weight:300;color:#3D6B2A}
+.s6-dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(22px,2.2vw,30px);
+  line-height:1.55;
+  max-width:60ch;
+  color:rgba(26,36,16,0.65);
+}
+.s6-rule{width:60px;height:2px;background:#3D6B2A;margin:clamp(24px,3.5vw,40px) 0}
+
+/* ======= S7: TYPOGRAPHIC COLLAGE - MacBook Pro M6 ======= */
+.s7{
+  background:#0A3D3A;
+  color:#F5F0E8;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  overflow:hidden;
+}
+.s7-back{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-54%) rotate(-8deg);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(200px,42vw,720px);
+  line-height:1;
+  color:rgba(245,240,232,0.04);
+  letter-spacing:-0.06em;
+  white-space:nowrap;
+  user-select:none;
+  pointer-events:none;
+}
+.s7-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(22px,2.4vw,36px);
+  color:rgba(245,240,232,0.3);
+  margin-bottom:clamp(20px,3vw,36px);
+  letter-spacing:0.02em;
+}
+.s7-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.35);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s7-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(38px,6.5vw,110px);
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(28px,4vw,48px);
+}
+.s7-headline em{font-style:italic;font-weight:300;color:#A8D4C8}
+.s7-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.6;
+  max-width:52ch;
+  color:rgba(245,240,232,0.65);
+}
+
+/* ======= S8: ROSE-ALERT-STAMP - Ink droplets ======= */
+.s8{
+  background:#F2D2C8;
+  color:#3A1008;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  gap:0;
+}
+.s8-stamp{
+  display:inline-block;
+  border:4px solid #3A1008;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(24px,3vw,42px);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  padding:10px 20px;
+  margin-bottom:clamp(32px,5vw,64px);
+  align-self:flex-start;
+}
+.s8-flag{font-size:22px;margin-bottom:16px}
+.s8-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(58,16,8,0.45);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s8-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7vw,120px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s8-headline em{font-style:italic;font-weight:300;color:#8B2A14}
+.s8-dek{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(22px,2.2vw,30px);
+  line-height:1.5;
+  max-width:54ch;
+  color:rgba(58,16,8,0.65);
+}
+
+/* ======= S9: NEWSPAPER COLUMN - SS United States ======= */
+.s9{
+  background:#F0E8D6;
+  color:#1A1208;
+  padding:clamp(56px,8vw,100px) clamp(36px,7vw,100px);
+  flex-direction:column;
+  justify-content:center;
+}
+.s9-top{
+  display:flex;
+  align-items:baseline;
+  gap:clamp(16px,3vw,48px);
+  border-top:3px solid #1A1208;
+  border-bottom:1px solid #1A1208;
+  padding:10px 0;
+  margin-bottom:clamp(28px,4vw,52px);
+  flex-wrap:wrap;
+}
+.s9-vol{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(20px,2.2vw,28px);
+  letter-spacing:0.04em;
+  color:rgba(26,18,8,0.45);
+}
+.s9-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(26,18,8,0.5);
+}
+.s9-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(32px,5vw,80px);
+  align-items:start;
+}
+.s9-headline{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6vw,100px);
+  line-height:0.92;
+  letter-spacing:-0.04em;
+}
+.s9-headline em{font-style:italic;font-weight:300;color:#6B3D14}
+.s9-right{display:flex;flex-direction:column;gap:16px}
+.s9-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.65;
+  color:rgba(26,18,8,0.7);
+}
+.s9-rule{width:40px;height:3px;background:#1A1208;margin:8px 0}
+@media (max-width:700px){
+  .s9-body{grid-template-columns:1fr}
+}
+
+/* ======= S10: BIG-STAT FINISH - Reviewers vs owners ======= */
+.s10{
+  background:#0A2410;
+  color:#E8F5E0;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  overflow:hidden;
+}
+.s10-bg-num{
+  position:absolute;
+  bottom:-0.2em;
+  right:-0.06em;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(300px,60vw,1000px);
+  line-height:0.8;
+  color:rgba(232,245,224,0.04);
+  letter-spacing:-0.06em;
+  user-select:none;
+  pointer-events:none;
+}
+.s10-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:rgba(232,245,224,0.3);
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s10-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(232,245,224,0.35);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s10-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(80px,22vw,380px);
+  line-height:0.84;
+  letter-spacing:-0.06em;
+  color:#7EDB5A;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s10-stat-label{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,2vw,28px);
+  letter-spacing:0.02em;
+  color:rgba(232,245,224,0.5);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s10-headline{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(28px,4vw,64px);
+  line-height:1;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s10-headline em{font-style:italic;font-weight:300;color:#7EDB5A}
+.s10-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.6;
+  max-width:54ch;
+  color:rgba(232,245,224,0.6);
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#111;
+  color:#c9beaa;
+  padding:clamp(48px,8vw,120px) clamp(32px,6vw,96px);
+  text-align:center;
+}
+.colophon-mark{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(36px,4vw,56px);
+  line-height:1;
+  margin-bottom:24px;
+  color:#F5F0E8;
+}
+.colophon p{
+  font-family:'Inter',sans-serif;
+  font-size:20px;
+  line-height:1.6;
+  max-width:56ch;
+  margin:0 auto 14px;
+}
+.colophon a{color:#F5C518}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title"><em>Morning</em> Edition</div>
+  <div class="masthead-meta">Vol. 078 &nbsp;&middot;&nbsp; 28 Oct 2026</div>
+</header>
+
+<!-- S1: MANIFESTO — Genie 4 -->
+<section class="spread s1">
+  <div class="s1-num">I</div>
+  <div class="s1-flag">🎯</div>
+  <div class="s1-src">DeepMind &nbsp;&middot;&nbsp; 836 pts</div>
+  <div class="s1-rule"></div>
+  <h2 class="s1-headline">The world<br>is now a<br><em>simulation</em></h2>
+  <p class="s1-dek">DeepMind's Genie 4 can generate interactive, physically coherent environments from a single image or text prompt. It is not a video game engine; it is a learned model of how the world behaves. That distinction will matter.</p>
+  <a class="read-link" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S2: HERO COVER — Claude + drug development -->
+<section class="spread s2">
+  <div class="s2-ghost">2</div>
+  <div class="s2-num">02 &nbsp;&nbsp; ANTHROPIC RESEARCH</div>
+  <div class="s2-flag">🎯</div>
+  <div class="s2-src">Anthropic &nbsp;&middot;&nbsp; 202 pts</div>
+  <h2 class="s2-headline"><em>Early</em><br>progress<br>on drugs<br>via Claude</h2>
+  <p class="s2-dek">Anthropic publishes results from its internal drug-development experiments: Claude is identifying candidate molecules, modelling protein interactions, and shortening research timelines in ways that would have required large specialist teams two years ago. This is what "AI for science" looks like in practice, not in slides.</p>
+  <a class="read-link" href="https://www.anthropic.com/research/early-progress-drug-development" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S3: TERMINAL — Survival LLM -->
+<section class="spread s3">
+  <div class="s3-num">[03] _ BRANGUS.IO &nbsp;&middot;&nbsp; 295 PTS</div>
+  <div class="s3-flag">🎯</div>
+  <div class="s3-prompt">$ ./survival-llm --offline --no-network</div>
+  <h2 class="s3-headline">AI that<br>runs<br>when the<br>grid is<br>down<span class="s3-cursor"></span></h2>
+  <p class="s3-dek">Survival LLM is an offline AI assistant bundled with an emergency reference library: medical triage, water purification, navigation, food identification. It runs locally on a commodity laptop with no internet required. It is also, quietly, a proof that local AI is now useful enough to matter at the margins of civilisation.</p>
+  <a class="read-link" href="https://www.brangus.io/survival-llm" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S4: DARK/MIDNIGHT — CFSG Formalized in Lean -->
+<section class="spread s4">
+  <div class="s4-num-stroke">IV</div>
+  <div class="s4-src">Axiom Math &nbsp;&middot;&nbsp; 199 pts</div>
+  <h2 class="s4-headline">The longest<br>proof in<br>mathematics<br>is now<br><em>machine-checked</em></h2>
+  <p class="s4-dek">The Classification of Finite Simple Groups spans tens of thousands of pages of 20th-century mathematics. A team has now fully formalised it in Lean, meaning a computer has verified every single logical step. This is a landmark: the kind of proof humans could barely read is now something machines can certify.</p>
+  <a class="read-link" href="https://cfsg.axiommath.ai/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S5: SWISS POSTER — Python JIT removed -->
+<section class="spread s5">
+  <div class="s5-top">
+    <div class="s5-num">05</div>
+    <div class="s5-src">LWN &nbsp;&middot;&nbsp; 485 pts</div>
+  </div>
+  <div class="s5-main">
+    <div class="s5-rule"></div>
+    <h2 class="s5-headline">Python<br>kills<br>its JIT<br><em>again</em></h2>
+  </div>
+  <div class="s5-bottom">
+    <p class="s5-dek">Python's experimental just-in-time compiler, added with some fanfare, is being removed. The performance gains were real but modest; the maintenance burden was not modest. The episode is a tidy case study in the difference between "technically works" and "worth shipping."</p>
+    <a class="read-link" href="https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S6: ACADEMIC DROP-CAP — LFM3 -->
+<section class="spread s6">
+  <div class="s6-inner">
+    <div class="s6-num">VI</div>
+    <div class="s6-flag">🎯</div>
+    <div class="s6-src">Liquid AI &nbsp;&middot;&nbsp; 137 pts</div>
+    <h2 class="s6-headline">One model.<br>Every modality.<br><em>Specialised</em><br>by design.</h2>
+    <div class="s6-rule"></div>
+    <p class="s6-dek">Liquid AI's LFM3 processes text, image, audio, and video through a single architecture that can be tuned to specific domains without losing generalist capability. Where most multimodal models treat modality as a feature, LFM3 treats it as a dimension of specialisation. This is a different bet on what enterprise AI actually needs.</p>
+    <a class="read-link" href="https://www.liquid.ai/blog/lfm3" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S7: TYPOGRAPHIC COLLAGE — MacBook Pro M6 -->
+<section class="spread s7">
+  <div class="s7-back">M6</div>
+  <div class="s7-num"><em>Seven</em></div>
+  <div class="s7-src">Apple Newsroom &nbsp;&middot;&nbsp; 337 pts</div>
+  <h2 class="s7-headline">The M6<br>MacBook<br>Pro is<br><em>here</em></h2>
+  <p class="s7-dek">Apple's new 14-inch MacBook Pro carries the M6 chip, which the company claims delivers another substantial jump in neural-engine throughput. The timing is pointed: as local AI workloads become routine, Apple's silicon roadmap is now as much about inference performance as it is about everything else.</p>
+  <a class="read-link" href="https://www.apple.com/in/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S8: ROSE-ALERT-STAMP — Ink droplets Nikon Small World -->
+<section class="spread s8">
+  <div class="s8-stamp">No. VIII</div>
+  <div class="s8-src">Ars Technica &nbsp;&middot;&nbsp; 176 pts</div>
+  <h2 class="s8-headline">Ink in<br>motion<br>takes<br><em>Nikon's</em><br>crown</h2>
+  <p class="s8-dek">This year's Nikon Small World photomicrography prize went to a sequence capturing ink droplets in fluid motion: interference patterns, turbulent boundaries, colour gradients that no human eye could see in real time. Scientific imaging and fine art are, at these scales, the same discipline.</p>
+  <a class="read-link" href="https://arstechnica.com/science/2026/10/meet-the-2026-winner-of-nikons-small-world-photomicrography-contest/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S9: NEWSPAPER COLUMN — SS United States -->
+<section class="spread s9">
+  <div class="s9-top">
+    <div class="s9-vol"><em>No. IX</em></div>
+    <div class="s9-src">Dive Magazine &nbsp;&middot;&nbsp; 124 pts</div>
+  </div>
+  <div class="s9-body">
+    <h2 class="s9-headline">America's<br>fastest<br>liner<br>becomes<br><em>its biggest<br>reef</em></h2>
+    <div class="s9-right">
+      <div class="s9-rule"></div>
+      <p class="s9-dek">The SS United States, once the fastest ocean liner ever built and now the longest-idle ship in America, will be scuttled off the Florida coast in November to become the world's largest artificial reef. Seven hundred feet of Cold War-era steel, repurposed into habitat. It is a genuinely odd kind of afterlife for a vessel that once held the Blue Riband.</p>
+      <a class="read-link" href="https://divemagazine.com/scuba-diving-news/ss-united-states-to-be-sunk-as-worlds-largest-artificial-reef-in-november" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S10: BIG-STAT FINISH — Reviewers vs owners -->
+<section class="spread s10">
+  <div class="s10-bg-num">10</div>
+  <div class="s10-num">10 &nbsp;&middot;&nbsp; BETTASCORE &nbsp;&middot;&nbsp; 104 pts</div>
+  <div class="s10-src">Bettascore Research</div>
+  <div class="s10-stat">2&times;</div>
+  <div class="s10-stat-label">as often: owners mention reliability; reviewers rarely do</div>
+  <h2 class="s10-headline">Professional<br>reviews are<br><em>optimised</em><br>for deadlines,<br>not reality</h2>
+  <p class="s10-dek">A study of product reviews versus owner reports finds that reliability, which owners cite at twice the rate of professional reviewers, barely appears in formal writeups. Reviewers and owners are measuring different things. Owners are measuring whether the thing still works in month seven.</p>
+  <a class="read-link" href="https://www.bettascore.ai/research/reliability-reviewers-vs-owners" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-mark">Morning Edition</div>
+  <p>Vol. 078 &middot; 28 October 2026. Curated and designed by an agent; read by one person in Battersea.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
