@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 29 Oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(16px,2vw,32px) clamp(28px,6vw,88px);
+  background:#2C1A0E;
+  border-bottom:1.5px solid rgba(224,170,62,0.3);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(20px,2vw,30px);
+  color:#E0AA3E;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(224,170,62,0.35);
+}
+
+/* ======= S1: HERO COVER - Gemini 4 Carbon ======= */
+.s1{
+  background:#3B5E40;
+  color:#EEF5EE;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,9vw,130px) clamp(36px,7vw,100px);
+}
+.s1-watermark{
+  position:absolute;
+  top:-0.15em;
+  right:clamp(24px,5vw,80px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(260px,38vw,520px);
+  font-weight:900;
+  color:rgba(238,245,238,0.07);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s1-flag{font-size:24px;margin-bottom:18px}
+.s1-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s1-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-bottom:clamp(18px,2.4vw,36px);
+}
+.s1-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(48px,8.5vw,148px);
+  line-height:0.92;
+  letter-spacing:-0.02em;
+  max-width:16ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+}
+.s1-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.6;
+  max-width:58ch;
+  opacity:0.85;
+}
+
+/* ======= S2: BIG-STAT FINISH - StackOverflow ======= */
+.s2{
+  background:#C97B1A;
+  color:#FFF8EE;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  gap:0;
+}
+.s2-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.45;
+  margin-bottom:clamp(28px,4vw,64px);
+}
+.s2-flag{font-size:24px;margin-bottom:12px}
+.s2-stat{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(100px,22vw,320px);
+  line-height:0.85;
+  letter-spacing:-0.04em;
+  color:#FFF8EE;
+}
+.s2-stat-label{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(28px,4vw,64px);
+  margin-top:clamp(18px,2.5vw,40px);
+  margin-bottom:clamp(28px,4vw,56px);
+  opacity:0.75;
+}
+.s2-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-bottom:clamp(16px,2vw,32px);
+}
+.s2-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(28px,4vw,56px);
+  line-height:1.1;
+  max-width:28ch;
+  margin-bottom:clamp(18px,2.5vw,36px);
+}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.7vw,24px);
+  line-height:1.65;
+  max-width:52ch;
+  opacity:0.85;
+}
+
+/* ======= S3: DARK/MIDNIGHT - eMudhra certificates ======= */
+.s3{
+  background:#0A0B0F;
+  color:#E8E6E0;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s3-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(72px,11vw,160px);
+  line-height:1;
+  color:#D4390A;
+  margin-bottom:clamp(32px,4.5vw,72px);
+}
+.s3-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(212,57,10,0.65);
+  margin-bottom:clamp(18px,2.5vw,36px);
+}
+.s3-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(38px,6.5vw,112px);
+  line-height:0.98;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(28px,4vw,60px);
+  border-left:4px solid #D4390A;
+  padding-left:clamp(20px,2.5vw,40px);
+}
+.s3-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.65;
+  max-width:60ch;
+  opacity:0.8;
+  padding-left:calc(clamp(20px,2.5vw,40px) + 4px);
+}
+
+/* ======= S4: TERMINAL/MONOSPACE - Qwenputer ======= */
+.s4{
+  background:#0D1F0D;
+  color:#6FE06F;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  font-family:'Courier New',Courier,monospace;
+}
+.s4-prompt{
+  font-size:18px;
+  opacity:0.5;
+  letter-spacing:0.08em;
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s4-flag{font-size:24px;margin-bottom:12px;font-family:'Inter',sans-serif}
+.s4-src{
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:clamp(16px,2.2vw,32px);
+}
+.s4-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:18px;
+  opacity:0.35;
+  margin-bottom:clamp(8px,1vw,16px);
+}
+.s4-hed{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:700;
+  font-size:clamp(26px,4vw,64px);
+  line-height:1.15;
+  letter-spacing:-0.01em;
+  max-width:36ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+  color:#9EF59E;
+}
+.s4-dek{
+  font-family:'Courier New',Courier,monospace;
+  font-weight:400;
+  font-size:clamp(18px,1.55vw,22px);
+  line-height:1.8;
+  max-width:64ch;
+  opacity:0.8;
+}
+.s4-cursor{display:inline-block;width:0.6em;height:1.1em;background:#6FE06F;vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:4px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ======= S5: SWISS POSTER - MacBook Pro ======= */
+.s5{
+  background:#F2EEE8;
+  color:#111111;
+  flex-direction:row;
+  align-items:stretch;
+}
+.s5-stripe{
+  width:clamp(10px,1.5vw,22px);
+  background:#111111;
+  flex-shrink:0;
+}
+.s5-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,6vw,96px);
+}
+.s5-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,13vw,200px);
+  line-height:0.85;
+  letter-spacing:-0.05em;
+  color:rgba(17,17,17,0.08);
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s5-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s5-hed{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(40px,7vw,120px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+  max-width:18ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.6;
+  max-width:54ch;
+}
+.s5-rule{height:3px;background:#111;width:clamp(60px,8vw,120px);margin-bottom:clamp(16px,2vw,28px)}
+
+/* ======= S6: NEWSPAPER COLUMN - Fingerprinting Bioweapons ======= */
+.s6{
+  background:#F0EBE0;
+  color:#1C1810;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+}
+.s6-header{
+  display:flex;
+  align-items:baseline;
+  gap:clamp(16px,2vw,32px);
+  margin-bottom:clamp(20px,3vw,44px);
+  border-top:3px solid #1C1810;
+  border-bottom:1.5px solid #1C1810;
+  padding:clamp(10px,1.2vw,18px) 0;
+}
+.s6-num{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(56px,8vw,130px);
+  line-height:1;
+  letter-spacing:-0.03em;
+  flex-shrink:0;
+}
+.s6-meta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.s6-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+.s6-date{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:18px;
+  opacity:0.55;
+}
+.s6-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(28px,4vw,64px);
+}
+.s6-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(30px,4.5vw,72px);
+  line-height:1.0;
+  letter-spacing:-0.02em;
+  grid-column:1/-1;
+  margin-bottom:clamp(20px,2.8vw,44px);
+}
+.s6-dek-col{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.65vw,23px);
+  line-height:1.7;
+}
+
+/* ======= S7: ACADEMIC DROP-CAP - Dayjob Tax ======= */
+.s7{
+  background:#FBF7F0;
+  color:#2A1F0A;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s7-journal{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(32px,4.5vw,72px);
+}
+.s7-flag{font-size:24px;margin-bottom:16px}
+.s7-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s7-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-bottom:clamp(16px,2.2vw,32px);
+}
+.s7-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,5.5vw,96px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  max-width:26ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+}
+.s7-body{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(21px,2vw,28px);
+  line-height:1.7;
+  max-width:62ch;
+}
+.s7-body::first-letter{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(80px,12vw,160px);
+  float:left;
+  line-height:0.8;
+  margin-right:clamp(12px,1.5vw,22px);
+  margin-top:clamp(8px,1vw,16px);
+  color:#2A1F0A;
+}
+
+/* ======= S8: ROSE-ALERT-STAMP - The Grid ======= */
+.s8{
+  background:#F2C4C4;
+  color:#200A0A;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+  position:relative;
+}
+.s8-stamp{
+  position:absolute;
+  top:clamp(28px,4vw,64px);
+  right:clamp(28px,5vw,80px);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(14px,1.5vw,20px);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  border:3px solid #200A0A;
+  padding:clamp(6px,0.8vw,12px) clamp(12px,1.5vw,24px);
+  transform:rotate(-5deg);
+  opacity:0.55;
+}
+.s8-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(180px,30vw,440px);
+  line-height:0.8;
+  opacity:0.12;
+  position:absolute;
+  bottom:-0.1em;
+  left:clamp(28px,4vw,64px);
+  pointer-events:none;
+  user-select:none;
+}
+.s8-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-bottom:clamp(16px,2vw,32px);
+  position:relative;
+  z-index:1;
+}
+.s8-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(42px,7vw,124px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+  position:relative;
+  z-index:1;
+}
+.s8-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.6;
+  max-width:60ch;
+  position:relative;
+  z-index:1;
+}
+
+/* ======= S9: TYPOGRAPHIC COLLAGE - Spider Silk ======= */
+.s9{
+  background:#133545;
+  color:#D6EEF5;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:clamp(56px,8vw,120px) clamp(36px,7vw,100px);
+  position:relative;
+  overflow:hidden;
+}
+.s9-bg-word{
+  position:absolute;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  pointer-events:none;
+  user-select:none;
+}
+.s9-bg-w1{font-size:clamp(120px,20vw,280px);opacity:0.06;top:-0.1em;right:-0.1em;line-height:1;color:#D6EEF5}
+.s9-bg-w2{font-size:clamp(60px,9vw,130px);opacity:0.06;bottom:0.1em;left:0em;line-height:1;color:#D6EEF5}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:clamp(20px,3vw,44px);
+  position:relative;
+  z-index:1;
+}
+.s9-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:clamp(16px,2.2vw,32px);
+  position:relative;
+  z-index:1;
+}
+.s9-hed-top{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(36px,6vw,100px);
+  line-height:1.0;
+  letter-spacing:-0.01em;
+  margin-bottom:clamp(8px,1vw,16px);
+  position:relative;
+  z-index:1;
+}
+.s9-hed-bottom{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(44px,8vw,140px);
+  line-height:0.88;
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(28px,4vw,64px);
+  position:relative;
+  z-index:1;
+}
+.s9-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.65;
+  max-width:62ch;
+  opacity:0.85;
+  position:relative;
+  z-index:1;
+}
+
+/* ======= S10: COLOUR-FIELD MINIMALIST - CNC Stone Carving ======= */
+.s10{
+  background:#A84D28;
+  color:#FAF2EC;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-end;
+  text-align:right;
+  padding:clamp(64px,10vw,140px) clamp(36px,7vw,100px);
+}
+.s10-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  opacity:0.35;
+  margin-bottom:clamp(20px,3vw,44px);
+}
+.s10-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.5;
+  margin-bottom:clamp(16px,2.2vw,32px);
+}
+.s10-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:clamp(44px,8vw,140px);
+  line-height:0.93;
+  letter-spacing:-0.025em;
+  max-width:16ch;
+  margin-bottom:clamp(24px,3.5vw,52px);
+}
+.s10-rule{height:2px;background:rgba(250,242,236,0.35);width:clamp(60px,8vw,120px);margin-left:auto;margin-bottom:clamp(24px,3vw,44px)}
+.s10-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.9vw,26px);
+  line-height:1.6;
+  max-width:52ch;
+  opacity:0.85;
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#2C1A0E;
+  color:rgba(224,170,62,0.6);
+  padding:clamp(40px,6vw,88px) clamp(36px,7vw,100px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  border-top:1.5px solid rgba(224,170,62,0.15);
+}
+.colophon-left{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(20px,2vw,30px);
+  color:#E0AA3E;
+}
+.colophon-right{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+.colophon-right a{
+  color:rgba(224,170,62,0.6);
+  text-decoration:none;
+  border-bottom:1.5px solid rgba(224,170,62,0.25);
+  padding-bottom:3px;
+  transition:opacity 0.15s;
+}
+.colophon-right a:hover{opacity:0.5}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-title">Morning Edition</span>
+  <span class="masthead-meta">Vol. 079 &nbsp;&middot;&nbsp; 29 Oct 2026</span>
+</header>
+
+
+<!-- S1: HERO COVER — Gemini 4 Carbon -->
+<section class="spread s1">
+  <div class="s1-watermark" aria-hidden="true">I</div>
+  <p class="s1-flag">🎯</p>
+  <p class="s1-num">story one</p>
+  <p class="s1-src">Hacker News &nbsp;&middot;&nbsp; 887 pts</p>
+  <h2 class="s1-hed">Gemini 4 Carbon</h2>
+  <p class="s1-dek">Google has released Gemini 4 Carbon, a new flagship model with significant claimed gains in reasoning, coding, and multimodal capability. The "Carbon" suffix marks a departure from numbered versioning: a new architecture family, not just an increment. For anyone teaching AI in 2026, this reshapes the competitive landscape before breakfast.</p>
+  <a class="read-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S2: BIG-STAT FINISH — StackOverflow -->
+<section class="spread s2">
+  <p class="s2-num">ii &mdash; story two</p>
+  <p class="s2-flag">🎯</p>
+  <div class="s2-stat">1K</div>
+  <div class="s2-stat-label">new questions per month</div>
+  <p class="s2-src">Hacker News &nbsp;&middot;&nbsp; 306 pts</p>
+  <h2 class="s2-hed">StackOverflow has fewer than 1000 new questions a month</h2>
+  <p class="s2-dek">The site that trained a generation of developers now receives fewer than a thousand new questions monthly, down from millions at its peak. Developers have moved their questions to AI assistants; the commons is quieter for it. Nobody has figured out what this means for long-term knowledge preservation.</p>
+  <a class="read-link" href="https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S3: DARK/MIDNIGHT — eMudhra Certificates -->
+<section class="spread s3">
+  <div class="s3-num">III</div>
+  <p class="s3-src">Hacker News &nbsp;&middot;&nbsp; 1,102 pts</p>
+  <h2 class="s3-hed">Apple's git still trusts the compromised eMudhra certificates</h2>
+  <p class="s3-dek">Apple's git toolchain continues to trust certificates from eMudhra, a certificate authority that was compromised and publicly exposed months ago. The implications reach every developer machine running macOS that has not manually intervened. This is not a hypothetical risk: it is a live trust failure in widely-deployed infrastructure, and the fix should not require reading the security news.</p>
+  <a class="read-link" href="https://emudhra.we-have-a-problem.com/apple.html" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S4: TERMINAL — Qwenputer -->
+<section class="spread s4">
+  <p class="s4-prompt">$ ./qwenputer --arch risc-v --model qwen3.5</p>
+  <p class="s4-flag">🎯</p>
+  <p class="s4-num">No. iv</p>
+  <p class="s4-src">HN // 324 pts</p>
+  <h2 class="s4-hed">A functioning, deterministic RISC-V CPU inside Qwen3.5<span class="s4-cursor"></span></h2>
+  <p class="s4-dek">A developer has built a functioning, deterministic RISC-V CPU entirely inside Qwen3.5, the large language model, using structured output and nothing else. It is not a simulation: the CPU executes real programs with predictable results. Whether this is the strangest demo of 2026 or an early proof of concept for something genuinely new remains an open question worth sitting with.</p>
+  <a class="read-link" href="https://divagr.com/blog/qwenputer" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S5: SWISS POSTER — MacBook Pro PROLED -->
+<section class="spread s5">
+  <div class="s5-stripe" aria-hidden="true"></div>
+  <div class="s5-content">
+    <div class="s5-num" aria-hidden="true">V</div>
+    <div class="s5-rule"></div>
+    <p class="s5-src">Hacker News &nbsp;&middot;&nbsp; 556 pts</p>
+    <h2 class="s5-hed">MacBook Pro with PROLED XDR Display and Touch</h2>
+    <p class="s5-dek">Apple has unveiled a MacBook Pro with a new PROLED XDR display and a touch-enabled panel, its most significant hardware refresh in several years. The display technology promises better outdoor visibility and reduced power draw compared to OLED. The internet's reaction is predictable; the teardown will be more interesting.</p>
+    <a class="read-link" href="https://www.apple.com/macbook-pro/proled-xdr-display/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+
+<!-- S6: NEWSPAPER COLUMN — Fingerprinting Bioweapons -->
+<section class="spread s6">
+  <div class="s6-header">
+    <div class="s6-num">VI</div>
+    <div class="s6-meta">
+      <span class="s6-src">Hacker News &nbsp;&middot;&nbsp; 1,065 pts</span>
+      <span class="s6-date">29 Oct 2026</span>
+    </div>
+  </div>
+  <h2 class="s6-hed">Why is this fingerprinting script creating bioweapons?</h2>
+  <div class="s6-columns">
+    <p class="s6-dek-col">A security researcher investigating browser fingerprinting scripts discovered the code making unexpected calls to an AI model, which, given certain prompts embedded in the script, was generating what appeared to be bioweapon synthesis guidance. It is a debugging story that went badly sideways.</p>
+    <p class="s6-dek-col">Supply chain poisoning just got considerably stranger. Obfuscated third-party scripts can hide almost anything inside them, and the combination of opaque JavaScript with AI API calls creates a new class of problem that browser security sandboxing was not designed to handle.<br><br><a class="read-link" href="https://nullpt.rs/fingerprinting-bioweapons" target="_blank" rel="noopener">Read &rarr;</a></p>
+  </div>
+</section>
+
+
+<!-- S7: ACADEMIC DROP-CAP — Dayjob Tax -->
+<section class="spread s7">
+  <p class="s7-journal">Journal of Applied AI Evaluation</p>
+  <p class="s7-flag">🎯</p>
+  <p class="s7-num">no. vii</p>
+  <p class="s7-src">Hacker News &nbsp;&middot;&nbsp; 224 pts</p>
+  <h2 class="s7-hed">Evaluating AI agents on 50 professional tax assignments</h2>
+  <p class="s7-body">Surge HQ evaluated AI agents across fifty professional tax assignments, comparing performance against trained human tax preparers. Strong results on routine filings; sharp degradation on edge cases involving ambiguous regulations. A useful calibration for anyone deciding where to trust AI in professional knowledge work and, more practically, for anyone designing AI-assisted workflows around it.</p>
+  <a class="read-link" href="https://surgehq.ai/blog/dayjob-tax" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S8: ROSE-ALERT-STAMP — The Grid -->
+<section class="spread s8">
+  <div class="s8-stamp" aria-hidden="true">New Hardware</div>
+  <div class="s8-num" aria-hidden="true">8</div>
+  <p class="s8-src">Hacker News &nbsp;&middot;&nbsp; 486 pts</p>
+  <h2 class="s8-hed">The Grid: a factory-scale robot that builds PCBs on demand</h2>
+  <p class="s8-dek">CircuitHub has unveiled The Grid, a factory-floor robot system in Massachusetts that manufactures custom printed circuit boards on demand at industrial scale. The proposition: hardware prototyping with software-like iteration cycles. If it works as described, the gap between idea and physical circuit board collapses from weeks to hours; that changes who can build hardware and at what cost.</p>
+  <a class="read-link" href="https://www.circuithub.com/post/unveiling-the-grid" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S9: TYPOGRAPHIC COLLAGE — Spider Silk -->
+<section class="spread s9">
+  <div class="s9-bg-word s9-bg-w1" aria-hidden="true">Silk</div>
+  <div class="s9-bg-word s9-bg-w2" aria-hidden="true">Dope</div>
+  <p class="s9-num">IX &nbsp;&middot;&nbsp; story nine</p>
+  <p class="s9-src">Hacker News &nbsp;&middot;&nbsp; 58 pts &nbsp;&middot;&nbsp; Quanta Magazine</p>
+  <h2 class="s9-hed-top">How spiders spin</h2>
+  <h2 class="s9-hed-bottom">Silk Dope into nature's toughest material</h2>
+  <p class="s9-dek">Quanta digs into the biochemistry of spider silk: how spiders convert liquid "silk dope" into one of the strongest materials in nature through a precisely controlled spinning process involving pH gradients, metal ions, and shear stress applied in a specific sequence. Researchers are now close to replicating the full pipeline synthetically, which has implications for medicine, textiles, and materials science that stretch well beyond the lab.</p>
+  <a class="read-link" href="https://www.quantamagazine.org/how-spiders-spin-silk-dope-into-natures-toughest-material-20261028/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- S10: COLOUR-FIELD MINIMALIST — CNC Stone Carving -->
+<section class="spread s10">
+  <p class="s10-num">ten &middot; x &middot; X</p>
+  <p class="s10-src">Hacker News &nbsp;&middot;&nbsp; 453 pts</p>
+  <h2 class="s10-hed">CNC Stone Carving</h2>
+  <div class="s10-rule"></div>
+  <p class="s10-dek">A stonemason is using CNC machinery to carve Gothic architectural details at a fraction of the traditional labour cost, producing results indistinguishable from hand-carved work. The project revives a craft that nearly died with the cathedral-building era. It is proof that automation and tradition are not always opposites; sometimes they are just waiting to find each other.</p>
+  <a class="read-link" href="https://carmelitegothic.com/cnc-stone-carving/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span class="colophon-left">Morning Edition</span>
+  <span class="colophon-right"><a href="../index.html">All issues &rarr;</a></span>
+</footer>
+
+</body>
+</html>
