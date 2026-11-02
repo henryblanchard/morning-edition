@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 02 Nov 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(16px,2vw,32px) clamp(28px,6vw,88px);
+  background:#1C1C1C;
+  border-bottom:1.5px solid rgba(255,255,255,0.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(20px,2vw,30px);
+  color:#E8D5B0;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(232,213,176,0.38);
+}
+
+/* ======= S1: MANIFESTO — Terry Tao on Mathematics ======= */
+.s1{
+  background:#241810;
+  color:#F0E6C0;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(60px,10vw,140px) clamp(36px,8vw,120px);
+  gap:0;
+}
+.s1-ghost{
+  position:absolute;
+  top:clamp(20px,3vw,40px);
+  right:clamp(16px,3vw,48px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(160px,28vw,400px);
+  font-weight:900;
+  color:rgba(240,230,192,0.06);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s1-rule{
+  width:clamp(80px,12vw,180px);
+  height:2px;
+  background:rgba(240,230,192,0.3);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s1-kicker{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(240,230,192,0.45);
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s1-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(44px,7.5vw,118px);
+  line-height:0.98;
+  letter-spacing:-0.022em;
+  max-width:15ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s1-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:62ch;
+  opacity:0.76;
+  font-weight:300;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s1-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(240,230,192,0.4);
+}
+
+/* ======= S2: SWISS POSTER — HackerTube ======= */
+.s2{
+  background:#1A3353;
+  color:#FFFFFF;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s2-ghost{
+  position:absolute;
+  top:clamp(24px,4vw,56px);
+  left:clamp(28px,5vw,72px);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(180px,30vw,420px);
+  color:rgba(255,255,255,0.05);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s2-flag{font-size:24px;margin-bottom:14px}
+.s2-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.42);
+  margin-bottom:clamp(16px,2.5vw,28px);
+}
+.s2-hed{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(40px,7.5vw,124px);
+  line-height:0.92;
+  letter-spacing:-0.025em;
+  max-width:17ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s2-hr{
+  width:100%;
+  height:1.5px;
+  background:rgba(255,255,255,0.14);
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s2-dek{
+  font-size:clamp(20px,2vw,23px);
+  line-height:1.62;
+  max-width:58ch;
+  color:rgba(255,255,255,0.7);
+  font-weight:300;
+}
+
+/* ======= S3: TERMINAL — Postgres 19 ======= */
+.s3{
+  background:#0D1117;
+  color:#A8FF60;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s3-ghost{
+  position:absolute;
+  right:clamp(16px,3vw,48px);
+  bottom:clamp(16px,3vw,48px);
+  font-family:'Courier New',monospace;
+  font-weight:900;
+  font-size:clamp(140px,24vw,360px);
+  color:rgba(168,255,96,0.04);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s3-prompt{
+  font-family:'Courier New',monospace;
+  font-size:18px;
+  color:rgba(168,255,96,0.5);
+  margin-bottom:clamp(10px,1.5vw,18px);
+  letter-spacing:0.04em;
+}
+.s3-src{
+  font-family:'Courier New',monospace;
+  font-size:18px;
+  color:rgba(168,255,96,0.4);
+  letter-spacing:0.08em;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s3-hed{
+  font-family:'Courier New',monospace;
+  font-weight:900;
+  font-size:clamp(30px,4.8vw,78px);
+  line-height:1.12;
+  max-width:30ch;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s3-dek{
+  font-family:'Courier New',monospace;
+  font-size:clamp(18px,1.6vw,22px);
+  line-height:1.72;
+  max-width:60ch;
+  color:rgba(168,255,96,0.73);
+}
+.s3-cursor{
+  display:inline-block;
+  width:11px;
+  height:1.1em;
+  background:#A8FF60;
+  vertical-align:text-bottom;
+  animation:blink 1.2s step-start infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ======= S4: HERO COVER — Italian seeds ======= */
+.s4{
+  background:#EEE5CC;
+  color:#1E1409;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,9vw,130px) clamp(36px,7vw,100px);
+}
+.s4-watermark{
+  position:absolute;
+  top:-0.12em;
+  right:clamp(16px,3vw,48px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(200px,38vw,520px);
+  font-weight:900;
+  color:rgba(30,20,9,0.055);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s4-num{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  opacity:0.38;
+  margin-bottom:clamp(16px,2.5vw,36px);
+}
+.s4-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.4;
+  margin-bottom:clamp(14px,2vw,28px);
+}
+.s4-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(44px,8vw,132px);
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  max-width:14ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s4-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.62;
+  max-width:60ch;
+  opacity:0.72;
+  font-weight:400;
+}
+
+/* ======= S5: ACADEMIC DROP-CAP — Platonic Representation ======= */
+.s5{
+  background:#F0ECF8;
+  color:#221640;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s5-ghost{
+  position:absolute;
+  left:-0.06em;
+  top:-0.08em;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(200px,34vw,460px);
+  color:rgba(34,22,64,0.04);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s5-label{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(34,22,64,0.38);
+  margin-bottom:clamp(12px,1.8vw,22px);
+}
+.s5-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(34,22,64,0.35);
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s5-dropcap-wrap{
+  display:flex;
+  align-items:flex-start;
+  gap:clamp(16px,2.5vw,32px);
+  max-width:72ch;
+  margin-bottom:clamp(28px,4vw,48px);
+}
+.s5-dropcap{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:900;
+  font-size:clamp(90px,15vw,200px);
+  line-height:0.78;
+  flex-shrink:0;
+  color:#5B3FA6;
+}
+.s5-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(28px,4vw,62px);
+  line-height:1.08;
+  letter-spacing:-0.01em;
+  padding-top:clamp(6px,1vw,14px);
+}
+.s5-dek{
+  font-size:clamp(20px,2vw,23px);
+  line-height:1.7;
+  max-width:66ch;
+  opacity:0.76;
+}
+
+/* ======= S6: NEWSPAPER COLUMN — AI fan wikis ======= */
+.s6{
+  background:#F5F1E8;
+  color:#1A1410;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s6-header{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.04em;
+  border-top:3px solid #1A1410;
+  border-bottom:1px solid rgba(26,20,16,0.3);
+  padding:10px 0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:clamp(28px,4.5vw,60px);
+}
+.s6-flag{font-size:22px}
+.s6-grid{
+  display:grid;
+  grid-template-columns:minmax(120px,0.45fr) 1fr;
+  gap:clamp(32px,5vw,72px);
+  align-items:start;
+}
+.s6-col-left{
+  border-right:1px solid rgba(26,20,16,0.18);
+  padding-right:clamp(24px,3.5vw,48px);
+}
+.s6-vol{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(90px,16vw,210px);
+  font-weight:900;
+  color:rgba(26,20,16,0.07);
+  line-height:0.88;
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.s6-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(26,20,16,0.38);
+}
+.s6-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(30px,4.5vw,66px);
+  line-height:1.04;
+  letter-spacing:-0.01em;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s6-dek{
+  font-size:clamp(20px,1.9vw,23px);
+  line-height:1.7;
+  font-weight:400;
+  opacity:0.78;
+}
+
+/* ======= S7: ROSE-ALERT-STAMP — Lenovo USB ======= */
+.s7{
+  background:#B83229;
+  color:#FFF8F5;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s7-ghost{
+  position:absolute;
+  top:clamp(24px,4vw,56px);
+  right:clamp(24px,4vw,56px);
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(100px,18vw,240px);
+  color:rgba(255,248,245,0.08);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s7-alert-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  background:rgba(255,248,245,0.14);
+  padding:8px 22px;
+  border-radius:4px;
+  margin-bottom:clamp(24px,3.5vw,44px);
+  width:fit-content;
+}
+.s7-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,248,245,0.42);
+  margin-bottom:clamp(16px,2vw,28px);
+}
+.s7-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6.5vw,106px);
+  line-height:0.97;
+  letter-spacing:-0.022em;
+  max-width:19ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s7-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.62;
+  max-width:60ch;
+  color:rgba(255,248,245,0.78);
+  font-weight:300;
+}
+
+/* ======= S8: DARK/MIDNIGHT — HackerBooks ======= */
+.s8{
+  background:#0A1628;
+  color:#C9A84C;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s8-ghost{
+  position:absolute;
+  top:clamp(20px,3vw,40px);
+  left:clamp(28px,5vw,72px);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(200px,36vw,500px);
+  color:rgba(201,168,76,0.04);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s8-flag{font-size:24px;margin-bottom:14px}
+.s8-src{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(201,168,76,0.48);
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s8-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(40px,7vw,116px);
+  line-height:0.94;
+  letter-spacing:-0.022em;
+  max-width:15ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s8-rule{
+  width:clamp(64px,9vw,120px);
+  height:1.5px;
+  background:rgba(201,168,76,0.32);
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s8-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:60ch;
+  color:rgba(201,168,76,0.68);
+  font-weight:300;
+}
+
+/* ======= S9: TYPOGRAPHIC COLLAGE — AI cost of JS ======= */
+.s9{
+  background:#3A1240;
+  color:#FFE6A0;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s9-bg-text{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  user-select:none;
+}
+.s9-bg-word{
+  position:absolute;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  color:rgba(255,230,160,0.04);
+  white-space:nowrap;
+}
+.s9-flag{font-size:24px;margin-bottom:10px}
+.s9-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(255,230,160,0.38);
+  margin-bottom:clamp(18px,2.5vw,32px);
+}
+.s9-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(255,230,160,0.38);
+  margin-bottom:clamp(16px,2.5vw,30px);
+}
+.s9-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6.5vw,102px);
+  line-height:0.99;
+  letter-spacing:-0.022em;
+  max-width:18ch;
+  margin-bottom:clamp(28px,4vw,50px);
+}
+.s9-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:62ch;
+  color:rgba(255,230,160,0.73);
+  font-weight:300;
+}
+
+/* ======= S10: COLOUR-FIELD MINIMALIST — Thermal cloak ======= */
+.s10{
+  background:#DFF0E8;
+  color:#0F2E1E;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:clamp(56px,9vw,120px) clamp(36px,7vw,100px);
+}
+.s10-ghost{
+  position:absolute;
+  right:-0.04em;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-style:italic;
+  font-size:clamp(240px,40vw,560px);
+  color:rgba(15,46,30,0.06);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.s10-src{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(15,46,30,0.38);
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+.s10-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(40px,7.5vw,120px);
+  line-height:0.94;
+  letter-spacing:-0.025em;
+  max-width:15ch;
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s10-dek{
+  font-size:clamp(20px,2vw,24px);
+  line-height:1.65;
+  max-width:58ch;
+  opacity:0.7;
+  font-weight:400;
+  margin-bottom:clamp(32px,5vw,60px);
+}
+.s10-rule{
+  width:clamp(100px,16vw,200px);
+  height:3px;
+  background:rgba(15,46,30,0.22);
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#1C1C1C;
+  color:rgba(255,255,255,0.48);
+  padding:clamp(32px,5vw,72px) clamp(36px,7vw,100px);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  border-top:1.5px solid rgba(255,255,255,0.07);
+}
+.colophon-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:clamp(22px,2.5vw,34px);
+  color:rgba(255,255,255,0.68);
+}
+.colophon-text{font-size:18px;line-height:1.6}
+.colophon a{color:rgba(232,213,176,0.7);text-decoration:underline;text-underline-offset:4px}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-title">Morning Edition</span>
+  <span class="masthead-meta">Vol. 080 &nbsp;&middot;&nbsp; 02 Nov 2026</span>
+</header>
+
+<!-- SPREAD 1: MANIFESTO — Terry Tao, mathematics has changed -->
+<section class="spread s1">
+  <span class="s1-ghost" aria-hidden="true">I</span>
+  <div class="s1-rule"></div>
+  <div class="s1-kicker">&#x1F3AF; &nbsp;Mathematics &amp; AI &nbsp;&middot;&nbsp; Story One</div>
+  <h1 class="s1-hed">Formal Proof Is the New Peer Review</h1>
+  <p class="s1-dek">Terry Tao, one of mathematics' most celebrated living minds, argues that AI proof assistants have irreversibly changed what rigour looks like. The old model of a single referee skimming a dense argument is no longer adequate for an era when machine verification catches gaps no human would. An essay that will be quoted in departmental meetings for years.</p>
+  <div class="s1-src">HN &middot; 277 pts</div>
+  <a href="https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 2: SWISS POSTER — HackerTube by Karpathy -->
+<section class="spread s2">
+  <span class="s2-ghost" aria-hidden="true">02</span>
+  <span class="s2-flag">&#x1F3AF;</span>
+  <div class="s2-src">HN &middot; 2,467 pts</div>
+  <h2 class="s2-hed">Karpathy Gives HN's 18-Year Video Backlog a Front Row</h2>
+  <div class="s2-hr"></div>
+  <p class="s2-dek">Andrej Karpathy scraped 39,834 Hacker News comments linking to YouTube since 2007, then built a Netflix-style interface for the 6,454 most-recommended clips. Viral within hours: what it really reveals is how much institutional knowledge lives in comment threads, waiting for someone to finally surface it.</p>
+  <a href="https://karpathy.bearblog.dev/hacker-tube/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 3: TERMINAL — Postgres 19 delayed by AI -->
+<section class="spread s3">
+  <span class="s3-ghost" aria-hidden="true">03</span>
+  <div class="s3-prompt">$ morning_edition --story 3 --source hn</div>
+  <div class="s3-src">HN &middot; 286 pts</div>
+  <h2 class="s3-hed">AI Found So Many Bugs It Delayed Postgres&nbsp;19</h2>
+  <p class="s3-dek">The PostgreSQL release schedule has slipped because AI-assisted fuzz testing is surfacing more latent defects than any previous development cycle. A good problem to have; a revealing data point: the tools we build to write code are also exposing how many quiet errors already lived inside the code we thought was fine.<span class="s3-cursor"></span></p>
+  <a href="http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 4: HERO COVER — Italian seeds -->
+<section class="spread s4">
+  <span class="s4-watermark" aria-hidden="true">IV</span>
+  <div class="s4-num">Story four</div>
+  <div class="s4-src">HN &middot; 793 pts</div>
+  <h2 class="s4-hed">An Italian Farmer Found Mystery Seeds in His Attic. They Sprouted.</h2>
+  <p class="s4-dek">Someone's grandfather left behind an unmarked paper packet. His grandson planted them, half as a joke. What grew turned out to be a near-extinct strain of durum wheat: the kind of find archaeobotanists dream of. A small, perfect story about patience, curiosity, and the things that persist quietly in old buildings.</p>
+  <a href="https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 5: ACADEMIC DROP-CAP — Platonic Representation Hypothesis -->
+<section class="spread s5">
+  <span class="s5-ghost" aria-hidden="true">V</span>
+  <div class="s5-label">Research &middot; Machine Learning &middot; Story Five</div>
+  <div class="s5-src">HN &middot; 131 pts</div>
+  <div class="s5-dropcap-wrap">
+    <span class="s5-dropcap" aria-hidden="true">D</span>
+    <h2 class="s5-hed">o All Neural Networks Secretly Converge on the Same Reality?</h2>
+  </div>
+  <p class="s5-dek">A new paper refines the Platonic Representation Hypothesis: that large-scale AI models, regardless of architecture or training data, tend to converge toward a shared internal geometry of the world. The authors provide formal proofs and demonstrate improvements. If they are right, the models are not just approximating our language about reality; they are approximating reality itself.</p>
+  <a href="https://arxiv.org/abs/2610.39302" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 6: NEWSPAPER COLUMN — AI fan wikis -->
+<section class="spread s6">
+  <div class="s6-header">
+    Story Six <span class="s6-flag">&#x1F3AF;</span>
+  </div>
+  <div class="s6-grid">
+    <div class="s6-col-left">
+      <div class="s6-vol">VI</div>
+      <div class="s6-src">HN &middot; 72 pts</div>
+    </div>
+    <div>
+      <h2 class="s6-hed">AI-Written Game Wikis Are Quietly Poisoning the Archive</h2>
+      <p class="s6-dek">Fan wikis for popular games are filling with plausible-but-wrong AI-generated text, and ordinary players searching for guidance are reading it as fact. The errors are hard to spot, hard to correct, and spreading fast enough to concern people who have spent years maintaining these community archives. A case study in what low-quality AI deployment actually costs, at scale.</p>
+      <a href="https://www.eurogamer.net/ai-fan-wikis-errors-complicating-games-culture" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPREAD 7: ROSE-ALERT-STAMP — Lenovo USB fraud -->
+<section class="spread s7">
+  <span class="s7-ghost" aria-hidden="true">07</span>
+  <div class="s7-alert-tag">&#x26A0;&#xFE0F;&nbsp; Security Alert</div>
+  <div class="s7-src">HN &middot; 456 pts</div>
+  <h2 class="s7-hed">Lenovo's Biometric Drive Is Just an SD Card Wearing a Lab Coat</h2>
+  <p class="s7-dek">Security researchers took apart Lenovo's premium 'encrypted' fingerprint USB drive and found an unencrypted SD card with no hardware encryption whatsoever: the fingerprint sensor is entirely cosmetic. The data sits exposed to anyone with a screwdriver and a card reader. A product selling on a false promise of security.</p>
+  <a href="https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 8: DARK/MIDNIGHT — HackerBooks -->
+<section class="spread s8">
+  <span class="s8-ghost" aria-hidden="true">VIII</span>
+  <span class="s8-flag">&#x1F3AF;</span>
+  <div class="s8-src">HN &middot; 1,245 pts</div>
+  <h2 class="s8-hed">Every Book That Made It onto HN, Catalogued</h2>
+  <div class="s8-rule"></div>
+  <p class="s8-dek">A developer catalogued 16,500 books mentioned in Hacker News comments since 2007. Crucially, it was almost entirely written by Claude: the developer's own role was steering and making decisions, not coding. The resulting archive is useful; what it implies about solo software development in late 2026 is more interesting still.</p>
+  <a href="https://hackerbooks.org" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 9: TYPOGRAPHIC COLLAGE — AI cost of JS frameworks -->
+<section class="spread s9">
+  <div class="s9-bg-text" aria-hidden="true">
+    <span class="s9-bg-word" style="font-size:clamp(80px,14vw,200px);top:4%;left:-2%">TOKENS</span>
+    <span class="s9-bg-word" style="font-size:clamp(60px,10vw,160px);bottom:6%;right:-1%">COST</span>
+    <span class="s9-bg-word" style="font-size:clamp(40px,7vw,100px);top:46%;left:28%">CONTEXT</span>
+  </div>
+  <span class="s9-flag">&#x1F3AF;</span>
+  <div class="s9-num">Story Nine</div>
+  <div class="s9-src">HN &middot; 346 pts</div>
+  <h2 class="s9-hed">The Hidden Token Toll Your Framework Racks Up</h2>
+  <p class="s9-dek">Nolan Lawson measures how much each popular JavaScript framework inflates the context window when you ask an AI for help. React costs significantly more per prompt than vanilla JavaScript. As AI becomes the primary way developers interact with their stack, framework bloat has a new and very legible price tag.</p>
+  <a href="https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- SPREAD 10: COLOUR-FIELD MINIMALIST — Thermal invisibility cloak -->
+<section class="spread s10">
+  <span class="s10-ghost" aria-hidden="true">X</span>
+  <div class="s10-src">HN &middot; 71 pts &nbsp;&middot;&nbsp; Story Ten</div>
+  <h2 class="s10-hed">Scientists Built a Cloak That Hides Objects from Heat Cameras</h2>
+  <p class="s10-dek">Engineers have fabricated a three-dimensional metamaterial shell that redirects thermal radiation around its contents, rendering them invisible to infrared sensors. The cloak works across a broad temperature range and, unlike previous two-dimensional attempts, functions when rotated. Applications range from satellite camouflage to shielding electronics from heat detection.</p>
+  <a href="https://www.sciencedaily.com/releases/2026/10/261025073051.htm" class="read-link" target="_blank" rel="noopener">Read &rarr;</a>
+  <div class="s10-rule"></div>
+</section>
+
+<footer class="colophon">
+  <div class="colophon-title">Morning Edition</div>
+  <p class="colophon-text">Vol. 080 &middot; 02 November 2026. Ten stories curated by Claude for Henry Blanchard. Published daily via scheduled agent.</p>
+  <p class="colophon-text"><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
