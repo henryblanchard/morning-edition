@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Edition · 03 Nov 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+.read-link{
+  display:inline-block;
+  margin-top:clamp(24px,3.5vw,48px);
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:2.5px solid currentColor;
+  padding-bottom:5px;
+  transition:opacity 0.15s;
+}
+.read-link:hover{opacity:0.4}
+.spread{min-height:100vh;display:flex;position:relative;overflow:hidden}
+
+/* ======= MASTHEAD ======= */
+.masthead{
+  padding:clamp(16px,2vw,32px) clamp(28px,6vw,88px);
+  background:#0e0e20;
+  border-bottom:1.5px solid rgba(245,197,0,0.2);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.masthead-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(20px,2vw,30px);
+  color:#f5c500;
+  letter-spacing:-0.01em;
+}
+.masthead-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(245,197,0,0.35);
+}
+
+/* ======= S1: BIG-STAT FINISH — Astra weight programming ======= */
+.s1{
+  background:#0e0e20;
+  color:#f5c500;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(48px,8vw,100px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s1-watermark{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-52%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(260px,38vw,560px);
+  line-height:0.85;
+  color:rgba(245,197,0,0.06);
+  letter-spacing:-0.04em;
+  user-select:none;
+  white-space:nowrap;
+}
+.s1-num{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  margin-bottom:clamp(24px,4vw,48px);
+  opacity:0.55;
+}
+.s1-stat{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(80px,16vw,220px);
+  line-height:0.88;
+  letter-spacing:-0.03em;
+  margin-bottom:clamp(24px,3vw,40px);
+}
+.s1-stat em{
+  font-style:italic;
+  font-weight:500;
+  font-size:0.38em;
+  display:block;
+  letter-spacing:-0.01em;
+  margin-bottom:0.1em;
+  opacity:0.75;
+}
+.s1-hed{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(28px,4vw,54px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  max-width:22ch;
+  margin-bottom:clamp(16px,2.5vw,32px);
+}
+.s1-dek{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  opacity:0.75;
+}
+.s1-source{
+  margin-top:clamp(20px,2.5vw,36px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+
+/* ======= S2: DARK/MIDNIGHT — Subvocal ======= */
+.s2{
+  background:#07091a;
+  color:#a8c4e0;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,120px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s2-num{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(100px,20vw,280px);
+  line-height:0.85;
+  letter-spacing:-0.04em;
+  color:rgba(168,196,224,0.08);
+  position:absolute;
+  top:clamp(32px,5vw,64px);
+  right:clamp(32px,7vw,100px);
+  user-select:none;
+}
+.s2-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(168,196,224,0.45);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s2-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(42px,7vw,100px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  max-width:16ch;
+  margin-bottom:clamp(28px,3.5vw,48px);
+}
+.s2-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.6;
+  max-width:48ch;
+  color:rgba(168,196,224,0.72);
+}
+.s2-source{
+  margin-top:clamp(20px,3vw,40px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(168,196,224,0.38);
+}
+
+/* ======= S3: ROSE-ALERT-STAMP — WTF Ubuntu ======= */
+.s3{
+  background:#c14718;
+  color:#fff;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:clamp(48px,8vw,96px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s3-stamp{
+  border:6px solid #fff;
+  display:inline-block;
+  padding:10px 24px;
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(36px,7vw,96px);
+  letter-spacing:0.02em;
+  line-height:1;
+  text-transform:uppercase;
+  transform:rotate(-2.5deg);
+  width:fit-content;
+  opacity:0.9;
+}
+.s3-meta{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  opacity:0.65;
+  margin-top:clamp(48px,8vw,100px);
+}
+.s3-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6vw,88px);
+  line-height:0.96;
+  letter-spacing:-0.02em;
+  max-width:20ch;
+  margin-top:clamp(20px,3vw,36px);
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s3-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.55;
+  max-width:52ch;
+  opacity:0.85;
+}
+.s3-source{
+  margin-top:clamp(20px,3vw,40px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+
+/* ======= S4: ACADEMIC DROP-CAP — Terry Tao ======= */
+.s4{
+  background:#f4ecdc;
+  color:#2d1a09;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,128px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s4-num{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:18px;
+  letter-spacing:0.08em;
+  color:#8a6040;
+  margin-bottom:clamp(20px,3vw,40px);
+  border-top:1.5px solid #8a6040;
+  padding-top:14px;
+  display:inline-block;
+}
+.s4-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(34px,5.5vw,80px);
+  line-height:1.0;
+  letter-spacing:-0.025em;
+  max-width:24ch;
+  margin-bottom:clamp(32px,4vw,56px);
+}
+.s4-body{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px,2vw,30px);
+  font-weight:350;
+  line-height:1.5;
+  max-width:52ch;
+}
+.s4-body::first-letter{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(80px,12vw,160px);
+  float:left;
+  line-height:0.78;
+  margin-right:0.08em;
+  margin-top:0.05em;
+  color:#8a6040;
+}
+.s4-source{
+  margin-top:clamp(28px,4vw,52px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#8a6040;
+}
+
+/* ======= S5: MANIFESTO — Resisting Cognitive Surrender ======= */
+.s5{
+  background:#1e3326;
+  color:#f5e8c8;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,120px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s5-num{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(180px,28vw,400px);
+  line-height:0.85;
+  letter-spacing:-0.04em;
+  color:rgba(245,232,200,0.06);
+  position:absolute;
+  bottom:-0.1em;
+  right:clamp(20px,5vw,60px);
+  user-select:none;
+}
+.s5-eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(245,232,200,0.45);
+  margin-bottom:clamp(28px,4vw,52px);
+}
+.s5-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:clamp(44px,7.5vw,110px);
+  line-height:0.95;
+  letter-spacing:-0.025em;
+  max-width:18ch;
+  margin-bottom:clamp(28px,3.5vw,48px);
+}
+.s5-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.6;
+  max-width:50ch;
+  color:rgba(245,232,200,0.72);
+}
+.s5-source{
+  margin-top:clamp(24px,3vw,44px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(245,232,200,0.4);
+}
+
+/* ======= S6: SWISS POSTER — NIST Solopreneur ======= */
+.s6{
+  background:#d41c1c;
+  color:#ffffff;
+  flex-direction:column;
+  padding:clamp(48px,8vw,100px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s6-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:auto;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.s6-numblock{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:clamp(80px,15vw,200px);
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:rgba(255,255,255,0.15);
+}
+.s6-tag{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  border:2.5px solid rgba(255,255,255,0.6);
+  padding:8px 18px;
+  opacity:0.9;
+  align-self:flex-start;
+  margin-top:8px;
+}
+.s6-bottom{
+  padding-top:clamp(64px,10vw,120px);
+}
+.s6-hed{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(36px,6vw,88px);
+  line-height:0.96;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s6-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.55;
+  max-width:50ch;
+  opacity:0.88;
+}
+.s6-source{
+  margin-top:clamp(24px,3vw,40px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.55;
+}
+
+/* ======= S7: NEWSPAPER COLUMN — Back up websites ======= */
+.s7{
+  background:#ede5cc;
+  color:#1c1c1c;
+  flex-direction:column;
+  padding:clamp(48px,8vw,100px) clamp(32px,7vw,100px);
+}
+.s7-flag{
+  font-family:'Fraunces',serif;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(18px,2vw,24px);
+  letter-spacing:0.01em;
+  border-bottom:1.5px solid #1c1c1c;
+  padding-bottom:14px;
+  margin-bottom:clamp(24px,3.5vw,48px);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.s7-flag .issue-mark{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+.s7-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(32px,5vw,72px);
+}
+.s7-hed{
+  grid-column:1/-1;
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:clamp(32px,5.5vw,80px);
+  line-height:0.96;
+  letter-spacing:-0.02em;
+  max-width:24ch;
+  margin-bottom:clamp(24px,3vw,40px);
+  border-bottom:3px solid #1c1c1c;
+  padding-bottom:clamp(20px,3vw,36px);
+}
+.s7-col{
+  font-family:'Fraunces',serif;
+  font-weight:350;
+  font-size:clamp(20px,1.8vw,26px);
+  line-height:1.55;
+}
+.s7-source{
+  grid-column:1/-1;
+  margin-top:clamp(24px,3vw,36px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#4a4a4a;
+}
+@media(max-width:640px){
+  .s7-cols{grid-template-columns:1fr}
+  .s7-hed{grid-column:1}
+  .s7-source{grid-column:1}
+}
+
+/* ======= S8: HERO COVER — Warsaw in voxels ======= */
+.s8{
+  background:#3d5a36;
+  color:#f5ede0;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(48px,8vw,100px) clamp(32px,7vw,100px);
+  position:relative;
+}
+.s8-num{
+  position:absolute;
+  top:clamp(32px,5vw,64px);
+  left:clamp(32px,7vw,100px);
+  font-family:'Fraunces',serif;
+  font-weight:200;
+  font-style:italic;
+  font-size:clamp(18px,1.8vw,24px);
+  letter-spacing:0.04em;
+  color:rgba(245,237,224,0.45);
+}
+.s8-kicker{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(245,237,224,0.5);
+  margin-bottom:clamp(20px,3vw,36px);
+}
+.s8-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(48px,9vw,130px);
+  line-height:0.93;
+  letter-spacing:-0.03em;
+  max-width:14ch;
+  margin-bottom:clamp(24px,3vw,40px);
+}
+.s8-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.6;
+  max-width:46ch;
+  color:rgba(245,237,224,0.72);
+}
+.s8-source{
+  margin-top:clamp(20px,2.5vw,36px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(245,237,224,0.4);
+}
+
+/* ======= S9: TERMINAL/MONOSPACE — Altermagnetism ======= */
+.s9{
+  background:#080c08;
+  color:#00cc55;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(64px,10vw,120px) clamp(32px,7vw,100px);
+  position:relative;
+  font-family:'Courier New',Courier,monospace;
+}
+.s9-prompt{
+  font-size:clamp(18px,1.5vw,22px);
+  opacity:0.55;
+  margin-bottom:clamp(24px,4vw,48px);
+  letter-spacing:0.04em;
+}
+.s9-hed{
+  font-size:clamp(28px,4.5vw,64px);
+  line-height:1.15;
+  font-weight:700;
+  max-width:36ch;
+  margin-bottom:clamp(20px,3vw,36px);
+  letter-spacing:-0.01em;
+  font-family:'Fraunces',serif;
+}
+.s9-dek{
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.65;
+  max-width:54ch;
+  color:rgba(0,204,85,0.72);
+  letter-spacing:0.01em;
+}
+.s9-line{
+  margin-top:clamp(32px,4vw,52px);
+  display:flex;
+  gap:32px;
+  font-size:18px;
+  opacity:0.5;
+  flex-wrap:wrap;
+}
+.s9-cursor{
+  display:inline-block;
+  width:12px;
+  height:1.2em;
+  background:#00cc55;
+  vertical-align:middle;
+  animation:blink 1.1s step-end infinite;
+  margin-left:4px;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ======= S10: TYPOGRAPHIC COLLAGE — Windows 2000 ======= */
+.s10{
+  background:#2e1020;
+  color:#d4a528;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(48px,8vw,100px) clamp(32px,7vw,100px);
+  position:relative;
+  overflow:hidden;
+}
+.s10-xmark{
+  position:absolute;
+  right:-0.12em;
+  top:50%;
+  transform:translateY(-48%);
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:clamp(300px,50vw,700px);
+  line-height:0.85;
+  color:rgba(212,165,40,0.05);
+  letter-spacing:-0.05em;
+  user-select:none;
+}
+.s10-label{
+  font-family:'Inter',sans-serif;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(212,165,40,0.5);
+  margin-bottom:clamp(24px,3.5vw,48px);
+}
+.s10-hed{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:clamp(36px,6vw,88px);
+  line-height:0.97;
+  letter-spacing:-0.025em;
+  max-width:20ch;
+  margin-bottom:clamp(20px,3vw,40px);
+}
+.s10-hed em{
+  font-style:italic;
+  font-weight:400;
+  color:#e8c850;
+}
+.s10-dek{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(20px,1.6vw,24px);
+  line-height:1.58;
+  max-width:50ch;
+  color:rgba(212,165,40,0.72);
+}
+.s10-source{
+  margin-top:clamp(24px,3vw,40px);
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(212,165,40,0.4);
+}
+
+/* ======= COLOPHON ======= */
+.colophon{
+  background:#0e0e20;
+  color:rgba(245,197,0,0.5);
+  padding:clamp(64px,10vw,128px) clamp(32px,7vw,100px);
+  text-align:center;
+}
+.colophon-mark{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(36px,4.5vw,60px);
+  color:#f5c500;
+  margin-bottom:24px;
+  letter-spacing:-0.01em;
+}
+.colophon p{
+  font-family:'Inter',sans-serif;
+  font-size:20px;
+  line-height:1.6;
+  max-width:46ch;
+  margin:0 auto 12px;
+}
+.colophon a{
+  color:#f5c500;
+  text-decoration:underline;
+  text-underline-offset:5px;
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-title"><em>Morning</em> Edition</div>
+  <div class="masthead-meta">Vol.&nbsp;081 &nbsp;&mdash;&nbsp; 03 Nov 2026</div>
+</header>
+
+<!-- S1: BIG-STAT FINISH — Astra weight programming -->
+<section class="spread s1">
+  <div class="s1-watermark">2400</div>
+  <div class="s1-num">01 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 2400 &nbsp;·&nbsp; 🎯</div>
+  <div class="s1-stat">
+    <em>The score says</em>
+    2,400
+  </div>
+  <h1 class="s1-hed">The AI That Edits Its Peers</h1>
+  <p class="s1-dek">Weight-space programming has arrived: an AI called Astra can now read and rewrite the numerical parameters inside other neural networks, using that access to measurably improve Qwen's performance. This is not fine-tuning by a human; it is one model treating another model's internals as editable code. The implications for how AI systems will develop each other are only beginning to be understood.</p>
+  <div class="s1-source">rikiyat.github.io &nbsp;·&nbsp; 751 comments</div>
+  <a class="read-link" href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S2: DARK/MIDNIGHT — Subvocal -->
+<section class="spread s2">
+  <div class="s2-num">II</div>
+  <div class="s2-meta">02 &nbsp;·&nbsp; HN / YC F26 &nbsp;·&nbsp; Score: 652 &nbsp;·&nbsp; 🎯</div>
+  <h2 class="s2-hed">Mouth It, Don't Say It</h2>
+  <p class="s2-dek">Two Georgia Tech students have built smart glasses that decode silent mouthed words into text, at the speed of speech and without any sound. The device reads radio-frequency signals from inside the mouth; you can give it commands in a crowded room and no one notices. From a YC batch, this is either niche accessibility hardware or the first prototype of invisible human-computer interaction.</p>
+  <div class="s2-source">subvocal.company &nbsp;·&nbsp; 327 comments</div>
+  <a class="read-link" href="https://news.ycombinator.com/item?id=50340088" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S3: ROSE-ALERT-STAMP — WTF Ubuntu -->
+<section class="spread s3">
+  <div class="s3-stamp">Alert</div>
+  <div class="s3-meta">03 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 1441</div>
+  <h2 class="s3-hed">Ubuntu's Month of Silence on a Critical Kernel Hole</h2>
+  <p class="s3-dek">A remote code execution zero-day in the Linux kernel has sat unpatched on Ubuntu LTS systems for nearly three weeks. The original blog post and a separate follow-up thread both crested the top of Hacker News in the same week; the community response ranged from bafflement to fury. Canonical has not commented publicly on the timeline.</p>
+  <div class="s3-source">chalmovsky.com &nbsp;·&nbsp; 612 comments</div>
+  <a class="read-link" href="https://chalmovsky.com/posts/wtf-ubuntu" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S4: ACADEMIC DROP-CAP — Terry Tao -->
+<section class="spread s4">
+  <div class="s4-num">§ iv &nbsp;&mdash; Hacker News &nbsp;·&nbsp; Score: 147 &nbsp;·&nbsp; 🎯</div>
+  <h2 class="s4-hed">Let the Machine Show Off. The Work Survives.</h2>
+  <p class="s4-body">The greatest living mathematician argues that mathematicians must shed their attachment to individual credit now that AI can assist in proof-writing at scale. Tao's point is pragmatic: the discipline advances faster when ego is not the rate-limiting step. For anyone teaching creative and intellectual work professionally, this is the argument worth having in your back pocket.</p>
+  <div class="s4-source">terrytao.wordpress.com &nbsp;·&nbsp; 99 comments</div>
+  <a class="read-link" href="https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S5: MANIFESTO — Resisting Cognitive Surrender -->
+<section class="spread s5">
+  <div class="s5-num">V</div>
+  <div class="s5-eyebrow">05 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 97 &nbsp;·&nbsp; 🎯</div>
+  <h2 class="s5-hed">Don't Let the Machine Think for You. Yet.</h2>
+  <p class="s5-dek">An essay on the quiet erosion of judgment that happens when you offload thinking to AI tools too readily. It does not argue against AI; it argues for preserving the habits of mind that give AI output its context. If you teach people to use AI well, this is the framing problem you are paid to solve.</p>
+  <div class="s5-source">knlb.dev &nbsp;·&nbsp; 35 comments</div>
+  <a class="read-link" href="https://knlb.dev/essays/surrender" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S6: SWISS POSTER — NIST Solopreneur -->
+<section class="spread s6">
+  <div class="s6-top">
+    <div class="s6-numblock">06</div>
+    <div class="s6-tag">🎯 Actionable</div>
+  </div>
+  <div class="s6-bottom">
+    <div style="font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.6;margin-bottom:clamp(16px,2.5vw,28px)">Hacker News &nbsp;·&nbsp; Score: 181 &nbsp;·&nbsp; NIST</div>
+    <h2 class="s6-hed">The Government Finally Wrote the Security Guide Freelancers Actually Need</h2>
+    <p class="s6-dek">NIST has published a cybersecurity framework aimed specifically at self-employed people and solopreneurs: one person, multiple accounts, limited IT support, and real data to protect. It is practical, non-jargon-heavy, and long overdue. If you run your own business, this is worth reading before it becomes relevant the hard way.</p>
+    <div class="s6-source">nist.gov &nbsp;·&nbsp; 49 comments</div>
+    <a class="read-link" href="https://www.nist.gov/news-events/news/2026/11/self-employed-solopreneur-nist-has-cybersecurity-guide-just-you" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S7: NEWSPAPER COLUMN — Back up websites -->
+<section class="spread s7">
+  <div class="s7-flag">
+    <span>Morning Edition &nbsp;·&nbsp; 03 November 2026</span>
+    <span class="issue-mark">Story VII</span>
+  </div>
+  <div class="s7-cols">
+    <h2 class="s7-hed">Things You Love On the Internet Will Disappear</h2>
+    <div class="s7-col">
+      A meditation on the fragility of the web, prompted by the usual occasion: a site worth caring about going dark. The author's argument is simple and correct: if a site matters to you, wget it tonight. The tools exist; the effort is minimal; the alternative is watching someone's work vanish from the record entirely.
+    </div>
+    <div class="s7-col">
+      There is something quietly important about who decides what the internet remembers. Archive.org helps. wget helps more. The instinct that most people lack is not technical ability but the sense of urgency that something good will not always be there.
+    </div>
+    <div class="s7-source">blog.mistys-internet.website &nbsp;·&nbsp; HN Score: 499 &nbsp;·&nbsp; 110 comments</div>
+    <a class="read-link" style="grid-column:1/-1" href="https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- S8: HERO COVER — Warsaw in voxels -->
+<section class="spread s8">
+  <div class="s8-num">VIII &nbsp;&mdash; Show HN</div>
+  <div class="s8-kicker">08 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 249</div>
+  <h2 class="s8-hed">Warsaw, Rendered Block by Block</h2>
+  <p class="s8-dek">A single developer transformed OpenStreetMap data, city LiDAR scans, and Warsaw's official tree database into an interactive voxel city. You can change the time of day, season, and weather; you can walk as a pedestrian. It is technically impressive and, somehow, genuinely lovely.</p>
+  <div class="s8-source">p.migdal.pl &nbsp;·&nbsp; 41 comments</div>
+  <a class="read-link" href="https://p.migdal.pl/warsaw-vibe-voxel/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- S9: TERMINAL — Altermagnetism -->
+<section class="spread s9">
+  <div class="s9-prompt">09&gt; SLAC_STANFORD :: PHYSICS &nbsp;·&nbsp; HN Score: 64 &nbsp;&mdash;&nbsp; [READ]</div>
+  <h2 class="s9-hed">A New State of Magnetic Matter, Confirmed</h2>
+  <p class="s9-dek">Stanford's SLAC facility has demonstrated experimental proof of altermagnetism, a magnetic phase predicted theoretically but never definitively observed. Unlike ferromagnets and antiferromagnets, altermagnets carry no net magnetic moment while still breaking time-reversal symmetry in ways that could matter for future electronics and spintronics.</p>
+  <div class="s9-line">
+    <span>SOURCE: www6.slac.stanford.edu</span>
+    <span>COMMENTS: 8</span>
+    <span>DATE: 2026-10-29</span>
+  </div>
+  <a class="read-link" href="https://www6.slac.stanford.edu/news/2026-10-29-slac-researchers-find-proof-altermagnetism-new-magnetic-phase" target="_blank" rel="noopener">Read &rarr;<span class="s9-cursor"></span></a>
+</section>
+
+<!-- S10: TYPOGRAPHIC COLLAGE — Windows 2000 -->
+<section class="spread s10">
+  <div class="s10-xmark">X</div>
+  <div class="s10-label">10 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 126</div>
+  <h2 class="s10-hed">How a Night of Chaos Became the Blueprint for a <em>Billion-Dollar</em> Launch</h2>
+  <p class="s10-dek">Raymond Chen recounts sneaking into the rehearsal for the Windows 2000 launch: a period of Microsoft ambition on a scale the company has not attempted since. The story is affectionate, specific, and quietly melancholy. A dispatch from when software launches still felt like events that mattered.</p>
+  <div class="s10-source">devblogs.microsoft.com/oldnewthing &nbsp;·&nbsp; 45 comments</div>
+  <a class="read-link" href="https://devblogs.microsoft.com/oldnewthing/20261102-00/?p=112818/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colophon-mark">Morning Edition</div>
+  <p>Vol. 081 &nbsp;·&nbsp; 03 November 2026. Ten stories, curated and designed at dawn by an agent for one reader.</p>
+  <p><a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
