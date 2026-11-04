@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 04 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ff-display: 'Fraunces', serif;
+  --ff-body: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-body); overflow-x: hidden; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: #E8D5A0;
+  color: #1A1A0A;
+  padding: 32px 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 3px solid #1A1A0A;
+}
+.masthead-title {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.masthead-meta {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── SPREADS ── */
+.spread {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── S1: SWISS POSTER — Postman API scandal ── */
+.s1 {
+  background: #E8D5A0;
+  color: #1A1A0A;
+  padding: 60px 48px;
+  border-bottom: 4px solid #1A1A0A;
+}
+.s1-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1400px;
+  align-items: center;
+}
+.s1-num {
+  font-family: var(--ff-display);
+  font-size: clamp(180px, 25vw, 320px);
+  font-weight: 900;
+  line-height: 0.85;
+  color: #1A1A0A;
+  opacity: 0.12;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  user-select: none;
+}
+.s1-kicker {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+.s1-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(40px, 6vw, 86px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+.s1-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.s1-score {
+  font-family: var(--ff-display);
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 900;
+  line-height: 1;
+  color: #C84020;
+}
+.s1-score-label {
+  font-family: var(--ff-body);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 8px;
+}
+.s1-link {
+  display: inline-block;
+  border: 2px solid #1A1A0A;
+  padding: 14px 28px;
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+.s1-link:hover { background: #1A1A0A; color: #E8D5A0; text-decoration: none; }
+
+/* ── S2: ROSE-ALERT-STAMP — Astra debunk ── */
+.s2 {
+  background: #C85A3A;
+  color: #FFF5EE;
+  padding: 72px 48px;
+  position: relative;
+}
+.s2-stamp {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 160px;
+  height: 160px;
+  border: 6px solid #FFF5EE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  transform: rotate(-12deg);
+  opacity: 0.9;
+}
+.s2-num {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 20px;
+}
+.s2-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(44px, 7vw, 100px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  max-width: 900px;
+  margin-bottom: 36px;
+}
+.s2-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 23px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 640px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+.s2-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #FFF5EE;
+  padding-bottom: 4px;
+}
+
+/* ── S3: TYPOGRAPHIC COLLAGE — Qwen weights ── */
+.s3 {
+  background: #1A3A5C;
+  color: #E8F0F8;
+  padding: 72px 48px;
+  position: relative;
+}
+.s3-bg-word {
+  position: absolute;
+  font-family: var(--ff-display);
+  font-size: clamp(100px, 20vw, 240px);
+  font-weight: 900;
+  color: #E8F0F8;
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s3-bg-w1 { top: 10%; left: -2%; }
+.s3-bg-w2 { bottom: 10%; right: -2%; text-align: right; }
+.s3-flag {
+  font-family: var(--ff-body);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.s3-num {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 24px;
+}
+.s3-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(46px, 7.5vw, 108px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  max-width: 820px;
+  margin-bottom: 40px;
+}
+.s3-hed em {
+  font-style: italic;
+  color: #7EC8D4;
+}
+.s3-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 23px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 580px;
+  opacity: 0.88;
+  margin-bottom: 32px;
+}
+.s3-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #7EC8D4;
+}
+
+/* ── S4: HERO COVER — Jailbreaking car GPS ── */
+.s4 {
+  background: #3D2B1A;
+  color: #F5EED8;
+  padding: 72px 48px;
+  position: relative;
+}
+.s4-giant {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  font-family: var(--ff-display);
+  font-size: clamp(100px, 22vw, 320px);
+  font-weight: 900;
+  color: #F5EED8;
+  opacity: 0.04;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.s4-eyebrow {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+.s4-num {
+  font-family: var(--ff-display);
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+  color: #C89A2E;
+  margin-bottom: 24px;
+}
+.s4-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(38px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+.s4-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 23px);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 600px;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+.s4-meta {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  opacity: 0.45;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.s4-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: #C89A2E;
+  letter-spacing: 0.06em;
+}
+
+/* ── S5: ACADEMIC DROP-CAP — Stringman robot ── */
+.s5 {
+  background: #F0EBE0;
+  color: #1A1A0A;
+  padding: 72px 48px;
+  position: relative;
+}
+.s5-num {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 36px;
+}
+.s5-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  max-width: 820px;
+  margin-bottom: 40px;
+}
+.s5-body {
+  max-width: 700px;
+  columns: 2;
+  column-gap: 48px;
+}
+.s5-body p {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 22px);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+.s5-body p:first-child::first-letter {
+  font-family: var(--ff-display);
+  font-size: 96px;
+  font-weight: 900;
+  float: left;
+  line-height: 0.78;
+  margin-right: 12px;
+  margin-top: 8px;
+  color: #5A7A5A;
+}
+.s5-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #5A7A5A;
+  border-bottom: 1px solid #5A7A5A;
+  padding-bottom: 3px;
+}
+.s5-price {
+  font-family: var(--ff-display);
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900;
+  color: #5A7A5A;
+  line-height: 1;
+  opacity: 0.15;
+  position: absolute;
+  bottom: 32px;
+  right: 48px;
+}
+
+/* ── S6: NEWSPAPER COLUMN — Mac at scale ── */
+.s6 {
+  background: #E6E0D0;
+  color: #1A1612;
+  padding: 72px 48px;
+}
+.s6-topbar {
+  border-top: 3px solid #1A1612;
+  border-bottom: 1px solid #1A1612;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+.s6-topbar-left {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.s6-topbar-right {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  opacity: 0.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.s6-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.s6-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(44px, 6vw, 86px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+  grid-column: 1 / -1;
+  border-bottom: 1px solid #1A1612;
+  padding-bottom: 24px;
+}
+.s6-col {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 22px);
+  line-height: 1.72;
+  font-weight: 300;
+}
+.s6-sidebar {
+  border-left: 3px solid #1A1612;
+  padding-left: 24px;
+}
+.s6-sidebar-num {
+  font-family: var(--ff-display);
+  font-size: clamp(60px, 10vw, 100px);
+  font-weight: 900;
+  color: #1A1612;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.s6-sidebar-label {
+  font-family: var(--ff-body);
+  font-size: 20px;
+  font-weight: 300;
+  opacity: 0.6;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+.s6-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1A1612;
+  padding-bottom: 3px;
+}
+
+/* ── S7: COLOUR-FIELD MINIMALIST — Little Book Gen AI ── */
+.s7 {
+  background: #4A6B6B;
+  color: #E8F4F4;
+  padding: 72px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.s7-num {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.45;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.s7-flag {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.s7-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(50px, 9vw, 130px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+.s7-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 600px;
+  opacity: 0.88;
+  margin-bottom: 36px;
+}
+.s7-source {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  opacity: 0.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.s7-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #A8D8D8;
+  border-bottom: 1px solid #A8D8D8;
+  padding-bottom: 3px;
+}
+
+/* ── S8: DARK/MIDNIGHT — Figma AI model ── */
+.s8 {
+  background: #0A0A18;
+  color: #E8E4F8;
+  padding: 72px 48px;
+  position: relative;
+}
+.s8-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48px;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #9B8CF8, transparent);
+  opacity: 0.5;
+}
+.s8-num {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-bottom: 16px;
+  margin-left: 32px;
+}
+.s8-flag {
+  font-size: 24px;
+  margin-bottom: 16px;
+  margin-left: 32px;
+}
+.s8-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(44px, 7vw, 100px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  max-width: 860px;
+  margin-bottom: 36px;
+  margin-left: 32px;
+}
+.s8-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 23px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 580px;
+  opacity: 0.78;
+  margin-bottom: 32px;
+  margin-left: 32px;
+}
+.s8-link {
+  margin-left: 32px;
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: #9B8CF8;
+  letter-spacing: 0.06em;
+}
+.s8-glow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(ellipse at bottom right, rgba(155, 140, 248, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── S9: TERMINAL/MONOSPACE — Vesuvius scroll ── */
+.s9 {
+  background: #0D1A0D;
+  color: #39E839;
+  padding: 72px 48px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.s9-window {
+  max-width: 900px;
+}
+.s9-titlebar {
+  background: #1A2E1A;
+  border: 1px solid #39E839;
+  border-bottom: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  display: flex;
+  gap: 16px;
+  opacity: 0.75;
+}
+.s9-body {
+  border: 1px solid #39E839;
+  padding: 36px;
+}
+.s9-prompt {
+  font-size: clamp(20px, 2.5vw, 26px);
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+.s9-command {
+  font-family: var(--ff-display);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  color: #7AFF7A;
+}
+.s9-output {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+.s9-cursor {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: #39E839;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.s9-link {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  color: #39E839;
+  border-bottom: 1px solid #39E839;
+  padding-bottom: 2px;
+}
+.s9-num {
+  font-size: 18px;
+  opacity: 0.45;
+  margin-bottom: 24px;
+}
+
+/* ── S10: BIG-STAT FINISH — HackerTV ── */
+.s10 {
+  background: #8B2A5A;
+  color: #FFF0F8;
+  padding: 72px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.s10-bignum {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-display);
+  font-size: clamp(150px, 28vw, 400px);
+  font-weight: 900;
+  color: #FFF0F8;
+  opacity: 0.04;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+.s10-content {
+  position: relative;
+  z-index: 1;
+}
+.s10-num {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.s10-stat-label {
+  font-family: var(--ff-body);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+.s10-stat {
+  font-family: var(--ff-display);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #FFB8D8;
+  margin-bottom: 32px;
+}
+.s10-hed {
+  font-family: var(--ff-display);
+  font-size: clamp(38px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 820px;
+  margin-bottom: 28px;
+}
+.s10-dek {
+  font-family: var(--ff-body);
+  font-size: clamp(20px, 2vw, 23px);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 600px;
+  opacity: 0.88;
+  margin-bottom: 32px;
+}
+.s10-link {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFB8D8;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #FFB8D8;
+  padding-bottom: 3px;
+}
+
+/* ── COLOPHON ── */
+.colophon {
+  background: #1A1A0A;
+  color: #E8D5A0;
+  padding: 48px;
+  text-align: center;
+  font-family: var(--ff-body);
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+.colophon a {
+  color: #E8D5A0;
+  border-bottom: 1px solid rgba(232, 213, 160, 0.4);
+  padding-bottom: 2px;
+}
+.colophon strong {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .masthead { padding: 24px; }
+  .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10 { padding: 48px 24px; }
+  .s1-grid { grid-template-columns: 1fr; }
+  .s5-body { columns: 1; }
+  .s6-layout { grid-template-columns: 1fr; }
+  .s9-body { padding: 24px; }
+  .s1-num { display: none; }
+  .s10-bignum { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-title">Morning Edition</div>
+  <div class="masthead-meta">04 November 2026 &nbsp;·&nbsp; Vol. 082</div>
+</header>
+
+<!-- S1: SWISS POSTER — Postman silently shares all API data -->
+<section class="spread s1">
+  <div class="s1-num">1186</div>
+  <div class="s1-grid">
+    <div>
+      <div class="s1-kicker">01 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 1186</div>
+      <h2 class="s1-hed">Who Is Reading Your API Calls?</h2>
+      <p class="s1-dek">Postman, the tool millions of developers trust to test and document APIs, was caught quietly installing AI plugins and attempting to vacuum up all API request data. The discovery sparked 391 comments and an immediate wave of migration threads. Trust, once noticed leaving, departs faster than it arrived.</p>
+      <a href="https://github.com/postmanlabs/postman-app-support/issues/14370" class="s1-link">Read &rarr;</a>
+    </div>
+    <div>
+      <div class="s1-score">1,186</div>
+      <div class="s1-score-label">Points on HN</div>
+    </div>
+  </div>
+</section>
+
+<!-- S2: ROSE-ALERT-STAMP — Astra AI claims debunked -->
+<section class="spread s2">
+  <div class="s2-stamp">Fact<br>Check</div>
+  <div class="s2-num">02 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 958</div>
+  <h2 class="s2-hed">The Weight-Editing Story Everyone Got Wrong</h2>
+  <p class="s2-dek">A carefully-worded post claimed Google's Astra could read and write to Qwen's model weights, implying a new era of self-improving AI. It spread quickly. Matthew Honnibal, spaCy's creator, read the original paper and explained why that's not what happened at all. The story is a useful case study in how AI hype travels faster than the footnotes.</p>
+  <a href="https://honnibal.dev/blog/astra-read-write-misleading" class="s2-link">Read &rarr;</a>
+</section>
+
+<!-- S3: TYPOGRAPHIC COLLAGE — Qwen 27B interprets weights -->
+<section class="spread s3">
+  <div class="s3-bg-word">WEIGHTS</div>
+  <div class="s3-bg-word s3-bg-w2">LOCAL</div>
+  <div class="s3-flag">🎯</div>
+  <div class="s3-num">03 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 578</div>
+  <h2 class="s3-hed">The <em>Laptop</em> That Reads AI Brains</h2>
+  <p class="s3-dek">Simon Willison runs Qwen 3.8's 27B parameter model on a standard laptop and finds it can meaningfully interpret what individual neurons are doing inside other neural networks. Free, local, no API key required. The capability gap between cloud and consumer hardware is narrowing in ways nobody predicted two years ago.</p>
+  <a href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/" class="s3-link">Read &rarr;</a>
+</section>
+
+<!-- S4: HERO COVER — Jailbreaking car GPS to change the time -->
+<section class="spread s4">
+  <div class="s4-giant">RENAULT</div>
+  <div class="s4-eyebrow">04 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 742</div>
+  <div class="s4-num">IV</div>
+  <h2 class="s4-hed">A Man, a Renault, and a Stubborn Clock</h2>
+  <p class="s4-meta">Score: 742 &nbsp;·&nbsp; 300 Comments</p>
+  <p class="s4-dek">When his car's navigation system refused to automatically update its clock, one developer didn't call the dealer. He reverse-engineered the firmware, extracted the GPS module, and fixed the time himself. The story is a love letter to stubborn curiosity and the particular madness of spending a weekend on a problem that takes a technician ten minutes.</p>
+  <a href="https://blog.nns.ee/2026/11/02/renault-hack/" class="s4-link">Read &rarr;</a>
+</section>
+
+<!-- S5: ACADEMIC DROP-CAP — Stringman $800 robot -->
+<section class="spread s5">
+  <div class="s5-price">$800</div>
+  <div class="s5-num">05 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 529 &nbsp;·&nbsp; neufangled.com</div>
+  <h2 class="s5-hed">String Theory, Applied to Robotics</h2>
+  <div class="s5-body">
+    <p>Stringman is an $800 open-source robot that uses cables instead of rigid arms to grip and move objects in room-scale space. Rather than the expensive articulated limbs that define industrial robotics, it suspends a gripper on a network of motorised strings, letting it sweep across a full room with surprising precision.</p>
+    <p>The build cost is roughly one three-hundredth of a comparable commercial system. The plans are published, the BOM is straightforward, and the team's thesis is that the barrier to embodied robotics is architecture, not materials. The cables make it gentle, too: it handles objects without the rigid-arm problem of a robot that cannot stop itself hitting things.</p>
+  </div>
+  <a href="https://neufangled.com/" class="s5-link">Read &rarr;</a>
+</section>
+
+<!-- S6: NEWSPAPER COLUMN — Mac at any scale -->
+<section class="spread s6">
+  <div class="s6-topbar">
+    <div class="s6-topbar-left">Infrastructure &nbsp;·&nbsp; No. 06</div>
+    <div class="s6-topbar-right">Hacker News &nbsp;·&nbsp; Score: 367</div>
+  </div>
+  <div class="s6-layout">
+    <h2 class="s6-hed">Why Silicon Valley Is Running on iPhone Chips</h2>
+    <div class="s6-col">
+      <p>Namespace explains how they scale macOS compute to hundreds of machines using Apple Silicon. The economics are counterintuitive at first: why run CI/CD on chips designed for phones? The answer involves performance-per-watt, thermal density, and the peculiarities of Apple's unified memory architecture, which turns out to be excellent for compiling and testing iOS apps at scale.</p>
+      <p>The performance figures make a surprising argument. The latency numbers for large Xcode builds are hard to match with x86. The piece is also an unusually honest account of the operational complexity that comes with running macOS in a data centre context, Apple's restrictions included.</p>
+      <a href="https://namespace.so/blog/mac-at-any-scale" class="s6-link">Read &rarr;</a>
+    </div>
+    <div class="s6-sidebar">
+      <div class="s6-sidebar-num">367</div>
+      <div class="s6-sidebar-label">Points on HN &nbsp;·&nbsp; 204 comments</div>
+    </div>
+  </div>
+</section>
+
+<!-- S7: COLOUR-FIELD MINIMALIST — Little Book of Gen AI Foundations -->
+<section class="spread s7">
+  <div class="s7-num">vii.</div>
+  <div class="s7-flag">🎯</div>
+  <h2 class="s7-hed">The Maths Book for the AI Age</h2>
+  <div class="s7-source">07 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 314 &nbsp;·&nbsp; arxiv.org</div>
+  <p class="s7-dek">A free arXiv preprint promises something rare: an intuitive mathematical primer on generative AI that earns its notation. For anyone teaching or studying the field, this is the supplement the standard courses never included. It covers diffusion, transformers, and the probabilistic foundations without assuming a PhD, and without pretending the subject is simpler than it is.</p>
+  <a href="https://arxiv.org/abs/2605.29713" class="s7-link">Read &rarr;</a>
+</section>
+
+<!-- S8: DARK/MIDNIGHT — Figma-fluent AI editing model -->
+<section class="spread s8">
+  <div class="s8-line"></div>
+  <div class="s8-glow"></div>
+  <div class="s8-flag">🎯</div>
+  <div class="s8-num">08 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 106 &nbsp;·&nbsp; figma.com</div>
+  <h2 class="s8-hed">Figma Is Teaching an AI to Think in Layers</h2>
+  <p class="s8-dek">Figma is training a model on its own design format, so the AI understands components, constraints, and design intent rather than pixel coordinates. The practical upshot: edits that respect hierarchy, not just appearance. For anyone building courses or materials around AI-assisted design, the implications for no-code creative workflows are worth watching closely.</p>
+  <a href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/" class="s8-link">Read &rarr;</a>
+</section>
+
+<!-- S9: TERMINAL/MONOSPACE — Herculaneum scroll, new text -->
+<section class="spread s9">
+  <div class="s9-window">
+    <div class="s9-titlebar">
+      <span>vesuvius-challenge-terminal</span>
+      <span>&mdash;</span>
+      <span>bash</span>
+    </div>
+    <div class="s9-body">
+      <div class="s9-num">09 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 126</div>
+      <div class="s9-prompt">$ xray-decode --scroll PHerc.306B --mode=full</div>
+      <div class="s9-command">TEXT DETECTED<br>AFTER 2000 YEARS</div>
+      <div class="s9-output">&gt;&gt; Source: Herculaneum library. Carbonised 79 AD.<br>&gt;&gt; Method: AI-assisted X-ray tomography.<br>&gt;&gt; Status: First reading since Mt. Vesuvius eruption.<br>&gt;&gt; The Vesuvius Challenge team has revealed writing from a scroll<br>&gt;&gt; that hasn't been read since the eruption buried it. PHerc. 306B<br>&gt;&gt; emerges letter by letter from beneath two millennia of volcanic<br>&gt;&gt; material. Ancient philosophy, almost certainly. Intact.<br>&gt;&gt; <span class="s9-cursor"></span></div>
+      <a href="https://scrollprize.substack.com/p/writing-seen-in-pherc-306b-for-the" class="s9-link">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- S10: BIG-STAT FINISH — HackerTV -->
+<section class="spread s10">
+  <div class="s10-bignum">19 YRS</div>
+  <div class="s10-content">
+    <div class="s10-num">10 &nbsp;·&nbsp; Hacker News &nbsp;·&nbsp; Score: 283</div>
+    <div class="s10-stat-label">Years of recommendations</div>
+    <div class="s10-stat">19</div>
+    <h2 class="s10-hed">19 Years of YouTube Recs, Now on 24/7 TV</h2>
+    <p class="s10-dek">Someone built a television network out of 19 years of Hacker News YouTube recommendations. Flip through DEVTV, RETRO, ORBIT, or tune into Late Night, which only broadcasts between 11pm and 5am and shows colour bars otherwise. The result is remarkably soothing: an algorithm-free channel with a genuinely good curatorial memory. Built, the maker notes, with Claude Code in a few hours.</p>
+    <a href="https://hackertv.org" class="s10-link">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <p><strong>Morning Edition</strong> &nbsp;·&nbsp; Vol. 082 &nbsp;·&nbsp; 04 November 2026</p>
+  <p style="margin-top: 12px; opacity: 0.6;">Ten stories, every morning. Curated for Henry Blanchard.</p>
+  <p style="margin-top: 12px;"><a href="../index.html">Back to archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
