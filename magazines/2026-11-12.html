@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition -- 12 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ff-d: 'Fraunces', serif; --ff-b: 'Inter', sans-serif; --ff-m: 'Courier New', Courier, monospace; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-b); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ======= MASTHEAD ======= */
+.masthead {
+  background: #1C1208;
+  color: #F5EDD8;
+  padding: 24px 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 3px solid #D4A843;
+}
+.mh-title {
+  font-family: var(--ff-d);
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #F5EDD8;
+}
+.mh-meta {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #D4A843;
+}
+
+/* ======= SHARED SPREAD BASE ======= */
+.spread {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) clamp(32px, 6vw, 80px);
+}
+.read-link {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 32px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.meta-line {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.flag { opacity: 1; font-size: 20px; margin-left: 6px; }
+
+/* ======= S1: ROSE-ALERT-STAMP (Tim Peters obituary) ======= */
+/* Blush background, bold stamped numeral in a punched circle */
+.s1 { background: #FEF0EB; color: #1A0806; }
+.s1-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(80px, 14vw, 160px);
+  height: clamp(80px, 14vw, 160px);
+  border: 6px solid #C5280A;
+  border-radius: 50%;
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 900;
+  color: #C5280A;
+  margin-bottom: 36px;
+  flex-shrink: 0;
+}
+.s1-kicker {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C5280A;
+  margin-bottom: 20px;
+}
+.s1-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 7vw, 120px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.95;
+  max-width: 20ch;
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+}
+.s1-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 50ch;
+}
+.s1 .meta-line { color: #7A2010; }
+.s1 .read-link { color: #C5280A; }
+
+/* ======= S2: HERO COVER (AI agents found Maya site) ======= */
+/* Dark forest green, cream text, enormous italic numeral */
+.s2 { background: #152B1A; color: #EDE8D8; }
+.s2-num {
+  font-family: var(--ff-d);
+  font-size: clamp(120px, 22vw, 400px);
+  font-weight: 300;
+  font-style: italic;
+  color: #3DB86E;
+  line-height: 0.8;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+}
+.s2-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 6vw, 100px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.95;
+  max-width: 22ch;
+  margin-bottom: 36px;
+}
+.s2-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.55;
+  max-width: 52ch;
+  font-weight: 300;
+}
+.s2 .meta-line { color: #3DB86E; opacity: 1; font-size: 18px; }
+.s2 .read-link { color: #3DB86E; }
+
+/* ======= S3: DARK/MIDNIGHT (Nvidia oust Jensen Huang) ======= */
+/* Near-black with ghost outline numeral */
+.s3 { background: #07071C; color: #C8D4EC; }
+.s3-num {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 18vw, 320px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #5A6EC8;
+  line-height: 0.85;
+  margin-bottom: 20px;
+}
+.s3-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(36px, 5vw, 88px);
+  font-weight: 700;
+  line-height: 1.0;
+  max-width: 24ch;
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+  color: #E8EEF8;
+}
+.s3-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.55;
+  max-width: 52ch;
+  color: #A0B0CC;
+  font-weight: 400;
+}
+.s3 .meta-line { color: #5A6EC8; opacity: 1; }
+.s3 .read-link { color: #7B8FE0; }
+
+/* ======= S4: TERMINAL/MONOSPACE (AWS emulator) ======= */
+/* Terminal black-green, monospace everything */
+.s4 { background: #060E08; color: #18EF42; }
+.s4-num {
+  font-family: var(--ff-m);
+  font-size: clamp(80px, 14vw, 220px);
+  font-weight: 400;
+  color: #18EF42;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+.s4-prompt {
+  font-family: var(--ff-m);
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: #0DBF32;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+.s4-hed {
+  font-family: var(--ff-m);
+  font-size: clamp(28px, 3.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  max-width: 36ch;
+  margin-bottom: 36px;
+  color: #24FF55;
+}
+.s4-dek {
+  font-family: var(--ff-m);
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.65;
+  max-width: 60ch;
+  color: #60C878;
+}
+.s4 .meta-line { color: #0DBF32; opacity: 1; font-family: var(--ff-m); font-size: 18px; }
+.s4 .read-link { color: #18EF42; font-family: var(--ff-m); }
+
+/* ======= S5: SWISS POSTER (United Airlines bans AI agents) ======= */
+/* Clean off-white, bold red type, structural grid feel */
+.s5 { background: #EDEDE5; color: #0A0A0A; }
+.s5-num-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.s5-num {
+  font-family: var(--ff-b);
+  font-size: clamp(80px, 16vw, 260px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: #D6180A;
+}
+.s5-rule {
+  width: 4px;
+  background: #D6180A;
+  align-self: stretch;
+  margin-bottom: 8px;
+}
+.s5-hed {
+  font-family: var(--ff-b);
+  font-size: clamp(28px, 3.8vw, 72px);
+  font-weight: 700;
+  line-height: 1.0;
+  max-width: 24ch;
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.s5-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.5;
+  max-width: 52ch;
+  font-weight: 400;
+  color: #2A2A2A;
+}
+.s5 .meta-line { color: #666; }
+.s5 .read-link { color: #D6180A; }
+
+/* ======= S6: ACADEMIC DROP-CAP (Jane Street Socratic Tutor) ======= */
+/* Parchment, editorial drop-cap, italic serif everywhere */
+.s6 { background: #F4EFE2; color: #221A0E; }
+.s6-num {
+  font-family: var(--ff-d);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7A6035;
+  margin-bottom: 48px;
+}
+.s6-num em {
+  font-style: italic;
+  font-size: 36px;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: #221A0E;
+}
+.s6-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(36px, 5vw, 88px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.0;
+  max-width: 24ch;
+  margin-bottom: 36px;
+  letter-spacing: -0.01em;
+}
+.s6-body {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.6;
+  max-width: 52ch;
+  position: relative;
+}
+.s6-dropcap {
+  float: left;
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 10vw, 140px);
+  line-height: 0.78;
+  font-weight: 300;
+  font-style: italic;
+  color: #9A7840;
+  margin-right: 12px;
+  margin-top: 8px;
+}
+.s6 .meta-line { color: #7A6035; opacity: 1; }
+.s6 .read-link { color: #7A6035; }
+
+/* ======= S7: NEWSPAPER COLUMN (Gemini Decisions API) ======= */
+/* Newsprint beige, column layout, tight leading */
+.s7 { background: #E6DCC4; color: #111008; }
+.s7-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+.s7-left {}
+.s7-num {
+  font-family: var(--ff-d);
+  font-size: clamp(90px, 14vw, 220px);
+  font-weight: 300;
+  line-height: 0.85;
+  color: #111008;
+  margin-bottom: 20px;
+}
+.s7-src {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-top: 2.5px solid #111008;
+  padding-top: 12px;
+  color: #333220;
+}
+.s7-right {}
+.s7-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(28px, 3.5vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  max-width: 26ch;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+.s7-col {
+  column-count: 2;
+  column-gap: 32px;
+  column-rule: 1.5px solid #9A8E72;
+}
+.s7-dek {
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.65;
+  font-family: var(--ff-d);
+  font-weight: 300;
+}
+.s7 .read-link { margin-top: 28px; }
+@media (max-width: 700px) {
+  .s7-layout { grid-template-columns: 1fr; }
+  .s7-col { column-count: 1; }
+}
+
+/* ======= S8: MANIFESTO (Lean Grimoire / Terry Tao) ======= */
+/* Deep indigo, stacked bold italic proclamations */
+.s8 { background: #0E0C22; color: #F0ECF8; }
+.s8-num {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 18vw, 300px);
+  font-weight: 300;
+  font-style: italic;
+  color: #8070E8;
+  line-height: 0.82;
+  margin-bottom: 28px;
+}
+.s8-label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8070E8;
+  margin-bottom: 20px;
+}
+.s8-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(36px, 5.5vw, 96px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.95;
+  max-width: 26ch;
+  margin-bottom: 40px;
+}
+.s8-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.55;
+  max-width: 52ch;
+  color: #C0B8E0;
+}
+.s8 .read-link { color: #9888F0; }
+
+/* ======= S9: COLOUR-FIELD MINIMALIST (RNA world origins) ======= */
+/* Sage/mint background, centered, stripped back */
+.s9 { background: #A4C4B4; color: #0A1A12; }
+.s9-inner {
+  max-width: 60ch;
+}
+.s9-num {
+  font-family: var(--ff-b);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0A1A12;
+  opacity: 0.5;
+  margin-bottom: 48px;
+}
+.s9-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 6vw, 100px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.95;
+  margin-bottom: 44px;
+  letter-spacing: -0.02em;
+}
+.s9-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.6;
+  font-weight: 400;
+  color: #1A3828;
+}
+.s9 .meta-line { opacity: 0.6; font-size: 18px; }
+.s9 .read-link { color: #0A4028; }
+
+/* ======= S10: BIG-STAT FINISH (93% paint splatters) ======= */
+/* Warm ochre, giant percentage number, editorial voice */
+.s10 { background: #F0E2B8; color: #1A1008; }
+.s10-stat {
+  font-family: var(--ff-d);
+  font-size: clamp(140px, 28vw, 440px);
+  font-weight: 900;
+  font-style: italic;
+  color: #1A1008;
+  line-height: 0.82;
+  margin-bottom: 8px;
+  letter-spacing: -0.04em;
+}
+.s10-stat-label {
+  font-family: var(--ff-d);
+  font-size: clamp(28px, 4vw, 72px);
+  font-weight: 300;
+  font-style: italic;
+  color: #7A5820;
+  margin-bottom: 36px;
+  line-height: 1.1;
+}
+.s10-dek {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.55;
+  max-width: 52ch;
+}
+.s10 .meta-line { color: #7A5820; opacity: 1; }
+.s10 .read-link { color: #7A5820; }
+
+/* ======= COLOPHON ======= */
+.colophon {
+  background: #1C1208;
+  color: #9A8A70;
+  padding: clamp(48px, 10vw, 120px) clamp(32px, 6vw, 80px);
+  text-align: center;
+}
+.colo-mark {
+  font-family: var(--ff-d);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 72px);
+  color: #F5EDD8;
+  margin-bottom: 24px;
+  line-height: 1.0;
+}
+.colo-p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 50ch;
+  margin: 0 auto 14px;
+}
+.colo-p a { color: #D4A843; text-decoration: underline; text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mh-title">Morning Edition</div>
+  <div class="mh-meta">Vol. 084 &nbsp;&middot;&nbsp; 12 November 2026</div>
+</header>
+
+<!-- ===================================================== -->
+<!-- S1: ROSE-ALERT-STAMP | Tim Peters has died            -->
+<!-- ===================================================== -->
+<section class="spread s1">
+  <div class="s1-stamp">I</div>
+  <div class="s1-kicker">In memoriam &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 1,087 points</div>
+  <h2 class="s1-hed">The Man Who Sorted the World</h2>
+  <p class="s1-dek">
+    Tim Peters, the Python developer who invented Timsort and authored The Zen of Python, died this week at 73.
+    His sorting algorithm runs inside Python, Java, Android, and V8 -- almost certainly the most-executed piece of
+    code in human history, still optimised from one person's insight. The HN thread is as much tribute as discussion.
+  </p>
+  <a class="read-link" href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S2: HERO COVER | AI agents found unmapped Maya site   -->
+<!-- ===================================================== -->
+<section class="spread s2">
+  <div class="s2-num">II</div>
+  <div class="meta-line">Hacker News &nbsp;&middot;&nbsp; 969 points <span class="flag">🎯</span></div>
+  <h2 class="s2-hed">An Agent Found a City</h2>
+  <p class="s2-dek">
+    A researcher running autonomous AI agents over satellite and lidar datasets claims to have located an
+    unmapped Maya settlement -- a task that would have taken a human team years of fieldwork. The agents
+    cross-referenced topographic signatures with known site patterns while the researcher slept. Whether
+    confirmed or not, this is the kind of discovery that archaeology departments, and AI educators, should be paying close attention to.
+  </p>
+  <a class="read-link" href="https://pietromiotti.com/latest/maya-site" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S3: DARK/MIDNIGHT | Nvidia preparing to oust Jensen   -->
+<!-- ===================================================== -->
+<section class="spread s3">
+  <div class="s3-num">III</div>
+  <div class="meta-line" style="color:#5A6EC8;opacity:1;">Wall Street Journal &nbsp;&middot;&nbsp; 862 points</div>
+  <h2 class="s3-hed">The Board Moves Against Jensen</h2>
+  <p class="s3-dek">
+    Nvidia's board is reportedly preparing to remove Jensen Huang as CEO -- one of the most dramatic
+    executive ousters since Steve Jobs. Huang led Nvidia from a niche graphics-card company to the dominant
+    infrastructure layer of the AI era. If true, the timing is extraordinary: AI capex is still accelerating
+    and Nvidia's market position has never been stronger.
+  </p>
+  <a class="read-link" href="https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S4: TERMINAL/MONOSPACE | AWS emulator                 -->
+<!-- ===================================================== -->
+<section class="spread s4">
+  <div class="s4-num">04</div>
+  <div class="s4-prompt">$ cat about.txt &gt; // Agents wrote this. Engineers reviewed it.</div>
+  <div class="meta-line">GitHub / AWS &nbsp;&middot;&nbsp; 795 points <span class="flag">🎯</span></div>
+  <h2 class="s4-hed">Agents Built This, Not Humans</h2>
+  <p class="s4-dek">
+    AWS has open-sourced a fully functional local emulator for its own cloud -- developers can now
+    build and test against AWS APIs without touching real infrastructure. The remarkable detail is in
+    the linked Amazon post: autonomous AI agents wrote the bulk of the codebase. The engineers' job
+    was to review what the agents produced. That is not a future scenario. It happened.
+  </p>
+  <a class="read-link" href="https://github.com/aws/aws-emulator" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S5: SWISS POSTER | United Airlines bans AI agents     -->
+<!-- ===================================================== -->
+<section class="spread s5">
+  <div class="s5-num-row">
+    <div class="s5-num">5</div>
+    <div class="s5-rule"></div>
+  </div>
+  <div class="meta-line">CBS News &nbsp;&middot;&nbsp; 514 points <span class="flag">🎯</span></div>
+  <h2 class="s5-hed">United Says No to Machines at the Desk</h2>
+  <p class="s5-dek">
+    United Airlines has explicitly banned AI agents from booking flights on behalf of travellers, citing
+    liability questions over who is responsible when an agent makes a mistake. The move draws a legal
+    line in territory that has been ambiguous -- and sets a precedent other industries will study.
+    For anyone teaching AI agentic workflows, this is the first major institutional pushback worth unpacking with your students.
+  </p>
+  <a class="read-link" href="https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S6: ACADEMIC DROP-CAP | Jane Street Socratic Tutor    -->
+<!-- ===================================================== -->
+<section class="spread s6">
+  <div class="s6-num"><em>vi</em>&nbsp; Article &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 21 points <span class="flag">🎯</span></div>
+  <h2 class="s6-hed">Wall Street's Unexpected Tutor</h2>
+  <div class="s6-body">
+    <span class="s6-dropcap">J</span>
+    <p class="s6-dek" style="display:inline; font-size:clamp(20px, 1.8vw, 24px); line-height:1.6;">
+      ane Street -- the famously secretive quant trading firm -- has published an AI agent skill for
+      Socratic tutoring: a prompt-based methodology for guiding a learner through problems without
+      giving answers directly. It's a small release, but that a firm known for internal knowledge hoarding
+      chose to open-source an educational tool is worth pausing on. Any AI educator building course
+      frameworks should read the SKILL.md carefully.
+    </p>
+  </div>
+  <a class="read-link" href="https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S7: NEWSPAPER COLUMN | Gemini Decisions API           -->
+<!-- ===================================================== -->
+<section class="spread s7">
+  <div class="s7-layout">
+    <div class="s7-left">
+      <div class="s7-num">7</div>
+      <div class="s7-src">Google Blog &nbsp;&middot;&nbsp; 378 pts <span class="flag">🎯</span></div>
+    </div>
+    <div class="s7-right">
+      <h2 class="s7-hed">Google Builds the Decision Layer</h2>
+      <div class="s7-col">
+        <p class="s7-dek">
+          Google has launched the Gemini Decisions API, a purpose-built endpoint for embedding structured
+          decision-making into products -- routing, triage, approval chains. It's a step beyond "chat
+          completion" toward something that feels more like a reasoning substrate. For anyone building
+          AI-powered workflows, this is the tool to put on the radar before your next cohort starts.
+        </p>
+      </div>
+      <a class="read-link" href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener">Read &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- S8: MANIFESTO | Lean Grimoire by Terry Tao            -->
+<!-- ===================================================== -->
+<section class="spread s8">
+  <div class="s8-num">VIII</div>
+  <div class="s8-label">Mathematics &nbsp;&middot;&nbsp; Terry Tao's blog &nbsp;&middot;&nbsp; 28 points</div>
+  <h2 class="s8-hed">Tao's Spellbook for the Machine</h2>
+  <p class="s8-dek">
+    Fields Medal winner Terry Tao has published "Lean Grimoire" -- a collection of Lean4 proof techniques
+    gathered from his own experiments with the formal verification system. The word "grimoire" is deliberate:
+    these are incantations for getting a proof assistant to do what you mean. It is both deeply technical
+    and genuinely important as AI systems begin to participate in the production of verified mathematical truth.
+  </p>
+  <a class="read-link" href="https://terrytao.wordpress.com/2026/11/11/lean-grimoire/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- ===================================================== -->
+<!-- S9: COLOUR-FIELD MINIMALIST | RNA world origins       -->
+<!-- ===================================================== -->
+<section class="spread s9">
+  <div class="s9-inner">
+    <div class="s9-num">No. 09 &nbsp;&middot;&nbsp; Quanta Magazine &nbsp;&middot;&nbsp; 51 points</div>
+    <h2 class="s9-hed">The First Molecule That Could Copy Itself</h2>
+    <p class="s9-dek">
+      Quanta Magazine revisits the RNA world hypothesis -- the idea that life began not with DNA or proteins
+      but with RNA, a molecule that can both carry information and act as an enzyme. New experiments are
+      closing in on plausible conditions under which RNA self-replicated without any biological machinery to help.
+      If confirmed, the origin of life reduces, in principle, to chemistry.
+    </p>
+    <a class="read-link" href="https://www.quantamagazine.org/did-life-begin-in-an-rna-world-20261109/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- S10: BIG-STAT FINISH | 93% paint splatters valid Perl -->
+<!-- ===================================================== -->
+<section class="spread s10">
+  <div class="meta-line">SIGBOVIK 2019 &nbsp;&middot;&nbsp; Hacker News &nbsp;&middot;&nbsp; 357 points</div>
+  <div class="s10-stat">93%</div>
+  <div class="s10-stat-label">of paint splatters are valid Perl programs</div>
+  <p class="s10-dek">
+    A 2019 SIGBOVIK paper calculates that 93% of randomly generated pixel-art noise is syntactically valid Perl.
+    Perl's grammar is so permissive that almost any sequence of characters parses as code. This is either a
+    devastating critique of a language's design or a beautiful argument for expressive ambiguity; the community
+    still cannot agree which.
+  </p>
+  <a class="read-link" href="https://www.mcmillen.dev/sigbovik/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colo-mark">Morning Edition</div>
+  <p class="colo-p">Vol. 084 &nbsp;&middot;&nbsp; 12 November 2026. Ten stories, curated and designed by an agent at 7am.</p>
+  <p class="colo-p">Published for one reader. <a href="../index.html">Back to the archive &rarr;</a></p>
+</footer>
+
+</body>
+</html>
