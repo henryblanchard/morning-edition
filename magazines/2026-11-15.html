@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition -- 15 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ff-d: 'Fraunces', serif;
+  --ff-b: 'Inter', sans-serif;
+  --ff-m: 'Courier New', Courier, monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-b); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== MASTHEAD ===== */
+.masthead {
+  background: #111A0C;
+  color: #F2EDDF;
+  padding: 22px 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 3px solid #9EB876;
+}
+.mh-title {
+  font-family: var(--ff-d);
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #F2EDDF;
+}
+.mh-meta {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9EB876;
+}
+
+/* ===== SHARED SPREAD BASE ===== */
+.spread {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) clamp(32px, 6vw, 80px);
+}
+.read-link {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 32px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.meta-line {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.65;
+}
+.flag { opacity: 1; font-size: 20px; margin-left: 6px; }
+.dek {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin-top: 20px;
+}
+
+/* ===== S1: MANIFESTO - sage ===== */
+.s1 {
+  background: #5A6B4A;
+  color: #F0EDE0;
+  justify-content: center;
+}
+.s1-numeral {
+  font-family: var(--ff-d);
+  font-size: clamp(180px, 28vw, 400px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.08);
+  line-height: 0.85;
+  position: absolute;
+  top: -0.1em;
+  right: -0.05em;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+.s1-kicker {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C4D6A6;
+  margin-bottom: 24px;
+}
+.s1-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 6.5vw, 110px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  margin-bottom: 0;
+}
+.s1-manifesto-block {
+  border-left: 5px solid #9EB876;
+  padding-left: 28px;
+  margin-top: 32px;
+  max-width: 60ch;
+}
+.s1-manifesto-block p {
+  font-size: clamp(20px, 1.9vw, 24px);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ===== S2: SWISS POSTER - white/red ===== */
+.s2 {
+  background: #FAFAFA;
+  color: #0A0A0A;
+}
+.s2-top-rule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: #E02020;
+}
+.s2-numeral {
+  font-family: var(--ff-d);
+  font-size: clamp(120px, 20vw, 320px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2.5px #0A0A0A;
+  line-height: 1;
+  display: block;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+}
+.s2-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 5.5vw, 90px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 24ch;
+}
+.s2-hed em { font-style: italic; color: #E02020; }
+.s2-rule { width: 80px; height: 4px; background: #E02020; margin: 28px 0; }
+
+/* ===== S3: ACADEMIC DROP-CAP - warm ivory ===== */
+.s3 {
+  background: #F3EDD8;
+  color: #2A1E0E;
+}
+.s3-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.s3-numeral-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.s3-roman {
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 300;
+  font-style: italic;
+  color: #8B6B2A;
+  line-height: 0.9;
+}
+.s3-label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8B6B2A;
+  writing-mode: horizontal-tb;
+}
+.s3-body { flex: 1; min-width: 280px; }
+.s3-dept {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8B6B2A;
+  margin-bottom: 20px;
+}
+.s3-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(34px, 4.5vw, 72px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 32ch;
+  margin-bottom: 24px;
+}
+.s3-dropcap {
+  float: left;
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 700;
+  line-height: 0.78;
+  color: #8B6B2A;
+  margin-right: 12px;
+  margin-top: 8px;
+}
+.s3-text {
+  font-size: clamp(20px, 1.9vw, 24px);
+  line-height: 1.65;
+  font-weight: 300;
+}
+.s3-text::after { content: ''; display: block; clear: both; }
+
+/* ===== S4: DARK / MIDNIGHT ===== */
+.s4 {
+  background: #0E1218;
+  color: #D8D4C8;
+}
+.s4-bg-numeral {
+  font-family: var(--ff-d);
+  font-size: clamp(200px, 36vw, 520px);
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  bottom: -0.2em;
+  right: -0.05em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s4-eyebrow {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6E9ECA;
+  margin-bottom: 20px;
+}
+.s4-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 6vw, 100px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  max-width: 24ch;
+  color: #F0ECE0;
+}
+.s4-hed em { font-style: italic; color: #6E9ECA; }
+
+/* ===== S5: TERMINAL / MONOSPACE ===== */
+.s5 {
+  background: #071A07;
+  color: #3FBE3F;
+  font-family: var(--ff-m);
+}
+.s5-prompt-num {
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 400;
+  color: rgba(63, 190, 63, 0.12);
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s5-line {
+  font-size: 18px;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+.s5-cursor {
+  display: inline-block;
+  width: 14px;
+  height: clamp(32px, 4vw, 52px);
+  background: #3FBE3F;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.s5-hed {
+  font-family: var(--ff-m);
+  font-size: clamp(28px, 3.8vw, 60px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #7FDF7F;
+  max-width: 36ch;
+  margin-bottom: 24px;
+}
+.s5-dek {
+  font-family: var(--ff-m);
+  font-size: clamp(20px, 1.9vw, 22px);
+  line-height: 1.7;
+  max-width: 56ch;
+  opacity: 0.75;
+}
+.s5 .read-link { font-family: var(--ff-m); color: #3FBE3F; }
+
+/* ===== S6: NEWSPAPER COLUMN ===== */
+.s6 {
+  background: #EAE4D0;
+  color: #1A1208;
+}
+.s6-cols {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.s6-num-col { flex-shrink: 0; }
+.s6-numeral-big {
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 400;
+  font-style: italic;
+  color: #8B6520;
+  line-height: 0.9;
+}
+.s6-num-label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8B6520;
+  margin-top: 10px;
+}
+.s6-col-rule {
+  width: 1px;
+  background: #2A1E0E;
+  opacity: 0.3;
+  align-self: stretch;
+}
+.s6-byline {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.55;
+}
+.s6-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(34px, 4.2vw, 68px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 28ch;
+  margin-bottom: 24px;
+}
+.s6-text {
+  font-size: clamp(20px, 1.9vw, 23px);
+  line-height: 1.6;
+  columns: 2;
+  column-gap: 32px;
+}
+@media (max-width: 700px) {
+  .s6-text { columns: 1; }
+  .s6-cols { grid-template-columns: 1fr; }
+}
+
+/* ===== S7: ROSE-ALERT-STAMP ===== */
+.s7 {
+  background: #FEF0EB;
+  color: #1A0806;
+}
+.s7-stamp-wrap {
+  position: absolute;
+  top: clamp(32px, 6vw, 72px);
+  right: clamp(32px, 6vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(80px, 14vw, 180px);
+  height: clamp(80px, 14vw, 180px);
+  border: 7px solid #C5280A;
+  border-radius: 50%;
+}
+.s7-stamp-num {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 900;
+  color: #C5280A;
+  line-height: 1;
+}
+.s7-alert {
+  display: inline-block;
+  background: #C5280A;
+  color: #FEF0EB;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  margin-bottom: 24px;
+}
+.s7-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 6vw, 100px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  max-width: 26ch;
+  color: #1A0806;
+}
+
+/* ===== S8: TYPOGRAPHIC COLLAGE - ochre ===== */
+.s8 {
+  background: #D98F14;
+  color: #1A0D00;
+}
+.s8-bg-text {
+  position: absolute;
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 20vw, 320px);
+  font-weight: 900;
+  color: rgba(0,0,0,0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.s8-num-tag {
+  display: inline-block;
+  font-family: var(--ff-d);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 3px solid #1A0D00;
+  padding: 6px 18px;
+  margin-bottom: 24px;
+}
+.s8-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(50px, 7.5vw, 130px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+  color: #1A0D00;
+}
+.s8-hed strong {
+  font-weight: 900;
+  font-style: normal;
+  display: block;
+}
+
+/* ===== S9: BIG-STAT FINISH - burnt sienna ===== */
+.s9 {
+  background: #C94E2A;
+  color: #FDF0E8;
+}
+.s9-stat {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 20vw, 340px);
+  font-weight: 900;
+  font-style: italic;
+  color: rgba(255,255,255,0.12);
+  line-height: 0.85;
+  position: absolute;
+  bottom: -0.1em;
+  right: -0.03em;
+  pointer-events: none;
+  user-select: none;
+}
+.s9-num {
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.s9-eyebrow {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #FFD0B0;
+}
+.s9-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 6vw, 100px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+}
+
+/* ===== S10: COLOUR-FIELD MINIMALIST - dusty blue ===== */
+.s10 {
+  background: #6B8FA4;
+  color: #F2F0EA;
+}
+.s10-numeral {
+  font-family: var(--ff-d);
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.45;
+  margin-bottom: 48px;
+  display: block;
+}
+.s10-hed {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 6.5vw, 110px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+  color: #F2F0EA;
+}
+.s10-hed strong {
+  font-weight: 700;
+  font-style: normal;
+}
+.s10-rule {
+  width: 60px;
+  height: 2px;
+  background: #F2F0EA;
+  opacity: 0.5;
+  margin: 32px 0;
+}
+
+/* ===== COLOPHON ===== */
+.colophon {
+  background: #111A0C;
+  color: #9EB876;
+  padding: clamp(60px, 10vw, 140px) clamp(32px, 6vw, 80px);
+  text-align: center;
+}
+.colophon-mark {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 400;
+  font-style: italic;
+  color: #F2EDDF;
+  display: block;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+.colophon-text {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.6;
+  max-width: 50ch;
+  margin: 0 auto 24px;
+  color: #B8C9A4;
+  font-weight: 300;
+}
+.colophon-link {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #F2EDDF;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+@media (max-width: 600px) {
+  .masthead { padding: 20px 24px; }
+  .spread { padding: 40px 24px; }
+  .s7-stamp-wrap { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mh-title">Morning Edition</div>
+  <div class="mh-meta">Vol. 085 &nbsp;&middot;&nbsp; 15 November 2026</div>
+</header>
+
+
+<!-- ===== STORY 1: MANIFESTO - Lovable security expose ===== -->
+<section class="spread s1">
+  <div class="s1-numeral" aria-hidden="true">I</div>
+  <div class="s1-kicker">Security &nbsp;&middot;&nbsp; HN 579 &nbsp;🎯</div>
+  <h1 class="s1-hed">The app that built your startup just leaked your users' passports.</h1>
+  <div class="s1-manifesto-block">
+    <p>Researcher Crissy Field found Lovable-generated apps exposing more than 200,000 private messages and passport scans, the detritus of hundreds of founders shipping fast with AI tools and no security review. The vibe-coding era's first systemic reckoning is here: convenience defaults to open, and your users pay the price.</p>
+  </div>
+  <a class="read-link" href="https://www.crissyfield.de/research/lovable-en/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 2: SWISS POSTER - SpaceX Starship Flight 15 ===== -->
+<section class="spread s2">
+  <div class="s2-top-rule"></div>
+  <span class="s2-numeral" aria-hidden="true">02</span>
+  <div class="meta-line">Aerospace &nbsp;&middot;&nbsp; HN 488</div>
+  <h2 class="s2-hed">Starship <em>caught</em> again. Flight 15 ends cleanly in the arms.</h2>
+  <div class="s2-rule"></div>
+  <p class="dek" style="color:#0A0A0A;">SpaceX repeated the mechanical catch of a returning Super Heavy booster on Flight 15, turning a feat that once seemed implausible into a routine manoeuvre. The engineering is now ahead of the cadence: the pad is ready faster than the vehicles can be built to fill it.</p>
+  <a class="read-link" href="https://news.ycombinator.com/item?id=50500963" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 3: ACADEMIC DROP-CAP - Dartmouth math PhD ===== -->
+<section class="spread s3">
+  <div class="s3-top">
+    <div class="s3-numeral-col">
+      <span class="s3-roman">III</span>
+      <span class="s3-label">Academia</span>
+    </div>
+    <div class="s3-body">
+      <div class="s3-dept">Education &nbsp;&middot;&nbsp; HN 66</div>
+      <h3 class="s3-hed">Dartmouth quietly closes the door on a mathematics PhD class for the first time in its history.</h3>
+    </div>
+  </div>
+  <p class="s3-text">
+    <span class="s3-dropcap" aria-hidden="true">D</span>artmouth's Guarini School will admit no mathematics doctoral candidates this cycle. The university cites budget pressures and a reappraisal of graduate research priorities, but the timing is hard to ignore: AI systems are increasingly producing publishable mathematical results, and elite departments are quietly asking whether training the next generation of human researchers pencils out. When a university stops seeding its own discipline, something structural has shifted.
+  </p>
+  <a class="read-link" href="https://www.thedartmouth.com/article/2026/11/gandhi-fagell-guarini-will-not-admit-math-ph-d-cohort-this-year" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 4: DARK / MIDNIGHT - Italy fines Meta ===== -->
+<section class="spread s4">
+  <span class="s4-bg-numeral" aria-hidden="true">4</span>
+  <div class="s4-eyebrow">Privacy &amp; Regulation &nbsp;&middot;&nbsp; HN 312</div>
+  <h4 class="s4-hed">Italy fines Meta <em>887 million euros</em> for how it handles Android data.</h4>
+  <p class="dek" style="color:#D8D4C8;margin-top:24px;">Italian regulators found Meta had accessed Android users' data without adequate legal basis, issuing the largest privacy fine in the country's history. Europe continues to be the world's most consequential regulator for tech, not because its penalties hurt most, but because its rulings set the precedent every other jurisdiction eventually copies.</p>
+  <a class="read-link" href="https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/" target="_blank" rel="noopener" style="color:#6E9ECA;">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 5: TERMINAL / MONOSPACE - DeepSeek V3 in Jax ===== -->
+<section class="spread s5">
+  <span class="s5-prompt-num" aria-hidden="true">05</span>
+  <div class="s5-line">$ cat deepseek_v3.py | wc -l</div>
+  <div class="s5-line">201</div>
+  <div class="s5-line" style="margin-bottom:32px;">&nbsp;</div>
+  <h5 class="s5-hed">Someone rewrote DeepSeek V3 from scratch in roughly 200 lines of pure JAX. It runs.</h5>
+  <p class="s5-dek">Vaibhaav Tiwari's minimal reimplementation strips a state-of-the-art mixture-of-experts model to its bare mathematics. It is partly a flex and partly a teaching tool: the gap between "frontier AI" and "code you can read in an afternoon" turns out to be mostly engineering scaffolding rather than fundamental mystery. Source on GitHub.</p>
+  <div style="margin-top:8px;">
+    <div class="s5-line" style="opacity:0.4;font-size:18px;">HN 148 &nbsp;|&nbsp; programming</div>
+  </div>
+  <a class="read-link" href="https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 6: NEWSPAPER COLUMN - Antigravity /teamwork ===== -->
+<section class="spread s6">
+  <div class="s6-cols">
+    <div class="s6-num-col">
+      <div class="s6-numeral-big">VI</div>
+      <div class="s6-num-label">Research</div>
+    </div>
+    <div>
+      <div class="s6-byline">AI Tools &nbsp;&middot;&nbsp; HN 152 &nbsp;🎯</div>
+      <h6 class="s6-hed">Google's Antigravity uses an AI /teamwork command to accelerate science and engineering.</h6>
+      <div class="s6-text">Google Research published a report on Antigravity's /teamwork feature, an agentic workflow that lets researchers invoke collaborative AI assistance mid-task. The framing is deliberate: rather than AI as a solo assistant, Antigravity positions it as a team member that joins ongoing work. For educators designing AI-assisted curricula, the model is worth studying. The jump in productivity comes not from replacing the researcher but from lowering the cost of the first draft, the literature scan, and the hypothesis test. Wherever a workflow has a bottleneck between knowing what to try and trying it, /teamwork shrinks the gap.</div>
+    </div>
+  </div>
+  <a class="read-link" href="https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/" target="_blank" rel="noopener" style="margin-top:40px;">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 7: ROSE-ALERT-STAMP - AI energy non-English ===== -->
+<section class="spread s7">
+  <div class="s7-stamp-wrap" aria-hidden="true">
+    <span class="s7-stamp-num">7</span>
+  </div>
+  <div class="s7-alert">AI &amp; Energy &nbsp;&middot;&nbsp; HN 168 &nbsp;🎯</div>
+  <h2 class="s7-hed">Running an AI prompt in Spanish or Hindi costs measurably more energy than in English.</h2>
+  <p class="dek" style="color:#3A1810;margin-top:24px;">University of Michigan researchers found that tokenisation inefficiency makes non-English inference significantly more energy-intensive, adding a hidden cost to deploying AI in multilingual contexts. For anyone building AI-powered tools for global audiences, or teaching non-English speakers to use AI, this is a structural inequality baked into current model architectures that no prompt-engineering fix will solve.</p>
+  <a class="read-link" href="https://news.umich.edu/generative-ai-uses-more-energy-on-non-english-text/" target="_blank" rel="noopener" style="color:#C5280A;">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 8: TYPOGRAPHIC COLLAGE - KDE documentary ===== -->
+<section class="spread s8">
+  <div class="s8-bg-text" aria-hidden="true">KDE</div>
+  <div class="s8-num-tag">08 &nbsp;&middot;&nbsp; Open Source</div>
+  <h2 class="s8-hed">
+    <strong>Twenty-nine years</strong>
+    of a desktop
+    <em>that refused to die.</em>
+  </h2>
+  <p class="dek" style="color:#1A0D00;margin-top:24px;">A new documentary traces KDE from a German university student's side project in 1996 to a full desktop environment still actively developed and shipped on tens of millions of machines. It is a story about volunteer coordination at scale, the peculiar durability of open-source communities, and what happens when usefulness outlasts every prediction. HN 355.</p>
+  <a class="read-link" href="https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 9: BIG-STAT FINISH - Old phone as Pi replacement ===== -->
+<section class="spread s9">
+  <span class="s9-stat" aria-hidden="true">$0</span>
+  <div class="s9-num">IX</div>
+  <div class="s9-eyebrow">DIY &amp; Hardware &nbsp;&middot;&nbsp; HN 483</div>
+  <h2 class="s9-hed">Why spend on a Raspberry Pi when a drawer full of old phones will serve for free?</h2>
+  <p class="dek" style="color:#FDF0E8;margin-top:24px;">A developer's argument for repurposing old Android handsets as home servers, build machines, and monitoring nodes: more RAM, better WiFi, built-in display and battery, and they cost nothing because they already exist. The hardware you forgot you owned turns out to be the most sustainable compute available.</p>
+  <a class="read-link" href="https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/" target="_blank" rel="noopener" style="color:#FFD0B0;">Read &rarr;</a>
+</section>
+
+
+<!-- ===== STORY 10: COLOUR-FIELD MINIMALIST - Agweb browser for agents ===== -->
+<section class="spread s10">
+  <span class="s10-numeral">Ten</span>
+  <h2 class="s10-hed">A browser built to stay out of the <strong>agent's way.</strong></h2>
+  <div class="s10-rule"></div>
+  <p class="dek" style="color:#F2F0EA;font-weight:300;">Agweb is a minimal headless browser designed specifically for AI agents navigating the web: no visual chrome, clean DOM access, and an interface that assumes the driver is a machine rather than a human. It is a small but deliberate piece of infrastructure for a world where agents need to browse routinely. HN 85 &nbsp;&middot;&nbsp; Show HN &nbsp;🎯</p>
+  <a class="read-link" href="https://github.com/paul-nameless/agweb" target="_blank" rel="noopener" style="color:#F2F0EA;">Read &rarr;</a>
+</section>
+
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span class="colophon-mark">Morning Edition</span>
+  <p class="colophon-text">Published daily from Battersea by a scheduled agent. Designed with Fraunces and Inter, served from GitHub Pages. Ten stories, one reader.</p>
+  <a class="colophon-link" href="../index.html">Back to the archive &rarr;</a>
+</footer>
+
+</body>
+</html>
