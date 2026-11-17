@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition -- 17 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ff-d: 'Fraunces', serif;
+  --ff-b: 'Inter', sans-serif;
+  --ff-m: 'Courier Prime', 'Courier New', monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-b); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* MASTHEAD */
+.masthead {
+  background: #2B1A0D;
+  color: #F7EDD8;
+  padding: 22px 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 3px solid #C8873A;
+}
+.mh-title {
+  font-family: var(--ff-d);
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 400;
+  font-style: italic;
+  color: #F7EDD8;
+}
+.mh-meta {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C8873A;
+}
+
+/* SHARED */
+.spread {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) clamp(32px, 6vw, 80px);
+}
+.read-link {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 32px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.meta-line {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+.flag { opacity: 1; font-size: 20px; margin-left: 4px; }
+.dek {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.65;
+  max-width: 56ch;
+  margin-top: 20px;
+}
+
+/* S1: HERO COVER -- warm ivory/terracotta */
+.s1 { background: #F5EAD8; color: #2C1810; }
+.s1-bg-num {
+  font-family: var(--ff-d);
+  font-size: clamp(280px, 44vw, 560px);
+  font-weight: 900;
+  color: rgba(139, 58, 47, 0.06);
+  position: absolute;
+  bottom: -80px;
+  right: -20px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s1-accent {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #8B3A2F;
+  margin-bottom: 28px;
+}
+.s1-headline {
+  font-family: var(--ff-d);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(52px, 8.5vw, 128px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 15ch;
+  color: #8B3A2F;
+  position: relative;
+  z-index: 1;
+}
+
+/* S2: TERMINAL -- dark green on black */
+.s2 { background: #0A1200; color: #3EE847; font-family: var(--ff-m); }
+.s2-prompt {
+  font-family: var(--ff-m);
+  font-size: 18px;
+  opacity: 0.45;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+.s2-numeral {
+  font-family: var(--ff-m);
+  font-size: clamp(100px, 17vw, 220px);
+  font-weight: 700;
+  color: rgba(62, 232, 71, 0.1);
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  line-height: 1;
+  pointer-events: none;
+}
+.s2-headline {
+  font-family: var(--ff-m);
+  font-weight: 700;
+  font-size: clamp(28px, 4.5vw, 60px);
+  line-height: 1.1;
+  max-width: 28ch;
+  position: relative;
+  z-index: 1;
+}
+.s2 .meta-line { color: rgba(62,232,71,0.5); opacity: 1; font-family: var(--ff-m); }
+.s2 .dek { font-family: var(--ff-m); font-size: clamp(18px, 1.8vw, 22px); opacity: 0.85; }
+.s2 .read-link { color: #3EE847; font-family: var(--ff-m); }
+
+/* S3: BIG-STAT -- deep navy */
+.s3 { background: #0C1631; color: #E8D5A3; justify-content: space-between; }
+.s3-stat {
+  font-family: var(--ff-d);
+  font-size: clamp(130px, 24vw, 340px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #E8D5A3;
+  margin-bottom: 16px;
+}
+.s3-stat-label {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7B9BC4;
+  margin-bottom: 48px;
+}
+.s3-headline {
+  font-family: var(--ff-d);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.1;
+  max-width: 32ch;
+}
+
+/* S4: TYPOGRAPHIC COLLAGE -- warm peach */
+.s4 { background: #EFC9A5; color: #2B1A0F; }
+.s4-ghost {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 20vw, 300px);
+  font-weight: 900;
+  color: rgba(43,26,15,0.07);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.s4-stacked { position: relative; z-index: 1; }
+.s4-num {
+  font-family: var(--ff-d);
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.45;
+  margin-bottom: 10px;
+}
+.s4-headline {
+  font-family: var(--ff-d);
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 100px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+}
+.s4-headline em { font-style: italic; font-weight: 300; }
+
+/* S5: ACADEMIC DROP-CAP -- paper yellow */
+.s5 { background: #F9F3DC; color: #2C2415; }
+.s5-num {
+  font-family: var(--ff-d);
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.45;
+  margin-bottom: 16px;
+}
+.s5-dropcap {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 18vw, 240px);
+  font-weight: 900;
+  font-style: italic;
+  color: #8A6A1A;
+  float: left;
+  line-height: 0.78;
+  margin-right: 16px;
+  padding-top: 8px;
+}
+.s5-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(32px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.1;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.s5-rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(44,36,21,0.2);
+  margin: 16px 0 32px;
+  clear: both;
+}
+
+/* S6: ROSE-ALERT-STAMP -- deep crimson */
+.s6 { background: #760000; color: #FFE8D6; }
+.s6-stamp {
+  font-family: var(--ff-d);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 3px solid #FF6B4A;
+  color: #FF6B4A;
+  display: inline-block;
+  padding: 8px 18px;
+  margin-bottom: 36px;
+  transform: rotate(-1.5deg);
+}
+.s6-num {
+  font-family: var(--ff-d);
+  font-size: clamp(180px, 30vw, 400px);
+  font-weight: 900;
+  color: rgba(255,232,214,0.05);
+  position: absolute;
+  bottom: -60px;
+  right: 32px;
+  line-height: 1;
+  pointer-events: none;
+}
+.s6-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(40px, 6vw, 88px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+
+/* S7: NEWSPAPER COLUMN -- dusty blue-grey */
+.s7 { background: #D1D9E4; color: #1A1E26; }
+.s7-num {
+  font-family: var(--ff-d);
+  font-style: italic;
+  font-size: 18px;
+  opacity: 0.45;
+  margin-bottom: 20px;
+}
+.s7-inner {
+  columns: 2;
+  column-gap: 56px;
+  max-width: 920px;
+}
+.s7-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  column-span: all;
+  margin-bottom: 28px;
+}
+.s7-col-rule {
+  column-span: all;
+  width: 100%;
+  height: 2px;
+  background: #1A1E26;
+  opacity: 0.15;
+  margin-bottom: 24px;
+}
+.s7-body {
+  font-size: clamp(20px, 1.9vw, 24px);
+  line-height: 1.65;
+  color: #2A3040;
+}
+@media (max-width: 700px) { .s7-inner { columns: 1; } }
+
+/* S8: SWISS POSTER -- bright red */
+.s8 { background: #CC2200; color: #FFFFFF; justify-content: space-between; }
+.s8-top-rule { width: 100%; height: 6px; background: #FFFFFF; margin-bottom: 32px; }
+.s8-num {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.s8-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(48px, 8.5vw, 130px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  max-width: 15ch;
+}
+.s8-bottom-rule { width: 100%; height: 6px; background: #FFFFFF; margin-top: 32px; }
+.s8 .meta-line { opacity: 0.65; }
+
+/* S9: COLOUR-FIELD MINIMALIST -- sage */
+.s9 { background: #A6BB96; color: #1C2416; justify-content: center; align-items: flex-start; }
+.s9-bg-num {
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 14vw, 190px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(28,36,22,0.09);
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  line-height: 1;
+}
+.s9-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(44px, 7.5vw, 110px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+.s9-rule { width: 48px; height: 2px; background: #1C2416; margin: 28px 0; }
+
+/* S10: MANIFESTO -- deep ochre/gold */
+.s10 { background: #C09028; color: #120A00; justify-content: center; }
+.s10-bg {
+  font-family: var(--ff-d);
+  font-size: clamp(200px, 36vw, 500px);
+  font-weight: 900;
+  color: rgba(18,10,0,0.07);
+  position: absolute;
+  bottom: -80px;
+  left: -20px;
+  line-height: 0.85;
+  pointer-events: none;
+}
+.s10-num {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-bottom: 28px;
+}
+.s10-headline {
+  font-family: var(--ff-d);
+  font-weight: 700;
+  font-size: clamp(44px, 8vw, 120px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+.s10-headline em { font-style: italic; font-weight: 300; }
+
+/* COLOPHON */
+.colophon {
+  background: #1A1208;
+  color: #A89A7A;
+  padding: clamp(60px, 10vw, 120px) clamp(32px, 6vw, 80px);
+  text-align: center;
+}
+.colo-mark {
+  font-family: var(--ff-d);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 60px);
+  color: #F7EDD8;
+  margin-bottom: 24px;
+}
+.colo-body { font-size: 20px; line-height: 1.65; max-width: 50ch; margin: 0 auto; }
+.colo-body a { color: #C8873A; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mh-title">Morning Edition</div>
+  <div class="mh-meta">Vol. 086 &nbsp;&middot;&nbsp; Monday 17 November 2026</div>
+</header>
+
+<!-- 1: HERO COVER -- CMU free CS courses -->
+<section class="spread s1">
+  <div class="s1-bg-num" aria-hidden="true">I</div>
+  <div class="s1-accent"></div>
+  <div class="meta-line" style="color:#8B3A2F;">Hacker News &middot; 1,551 points <span class="flag">🎯</span></div>
+  <h2 class="s1-headline">The Ivy League Opens Its Doors</h2>
+  <p class="dek" style="color:#4A2D1E;">Carnegie Mellon has put its core computer science curriculum on YouTube: free, unpaywalled, no sign-up required. For anyone self-teaching or teaching others, this is precisely what publicly funded knowledge should look like. The courses are already live.</p>
+  <a class="read-link" href="https://www.cs.cmu.edu/learn/" target="_blank" rel="noopener" style="color:#8B3A2F;">Read &rarr;</a>
+</section>
+
+<!-- 2: TERMINAL -- Windows coding agent telemetry -->
+<section class="spread s2">
+  <div class="s2-numeral" aria-hidden="true">02</div>
+  <div class="s2-prompt">$ grep -r "telemetry" ~/.vscode/extensions/...</div>
+  <div class="meta-line">Hacker News &middot; 615 points <span class="flag">🎯</span></div>
+  <h2 class="s2-headline">Windows Is Watching Which AI Builds You Trust</h2>
+  <p class="dek">Microsoft's latest telemetry quietly logs which coding agents and developer tools you run. The company frames it as usage analytics; developers frame it as surveillance. What your IDE is reporting to Redmond every day is worth knowing.</p>
+  <a class="read-link" href="https://xusheng.dev/posts/windows-coding-agent-telemetry/" target="_blank" rel="noopener">Read &rarr;</a>
+</section>
+
+<!-- 3: BIG-STAT -- JPMorgan Chase outage -->
+<section class="spread s3">
+  <div>
+    <div class="s3-stat">648</div>
+    <div class="s3-stat-label">HN comments. The day Chase went dark.</div>
+  </div>
+  <div class="meta-line" style="color:#7B9BC4; opacity:1;">Hacker News &middot; 778 points</div>
+  <h2 class="s3-headline">The Age of Single Points of Failure</h2>
+  <p class="dek" style="color:#C4B488;">A technical fault at JPMorgan sent disruption across Wells Fargo, Truist, and others simultaneously. At peak panic, nearly every major US retail bank had a service interruption. No one ever learns from someone else's outage.</p>
+  <a class="read-link" href="https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda" target="_blank" rel="noopener" style="color:#E8D5A3;">Read &rarr;</a>
+</section>
+
+<!-- 4: TYPOGRAPHIC COLLAGE -- BugMeNot closed -->
+<section class="spread s4">
+  <div class="s4-ghost" aria-hidden="true">BYE</div>
+  <div class="s4-stacked">
+    <div class="s4-num">No. IV &middot; Hacker News &middot; 554 points</div>
+    <h2 class="s4-headline">A Quiet Door Closes on<br><em>the Old Internet</em></h2>
+    <p class="dek">BugMeNot, the shared-credential database that let you read newspaper sites without registering for yet another account, has gone offline after two decades. Its closure is a small obituary for the web that existed before surveillance capitalism learned our email addresses.</p>
+    <a class="read-link" href="https://www.bugmenot.com/" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 5: ROSE-ALERT-STAMP -- Optimizely supply chain attack -->
+<section class="spread s6">
+  <div>
+    <div class="s6-stamp">Supply Chain</div>
+  </div>
+  <div class="s6-num" aria-hidden="true">V</div>
+  <div class="meta-line" style="color:rgba(255,232,214,0.5); opacity:1;">Hacker News &middot; 358 points</div>
+  <h2 class="s6-headline">The Experiment Manager That Became the Exploit</h2>
+  <p class="dek">Optimizely, the A/B testing platform embedded in thousands of enterprise sites, was compromised and briefly served malware through Zoom and GitLab pages. Supply chain risk has never been theoretical; this is what it looks like in production.</p>
+  <a class="read-link" href="https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/" target="_blank" rel="noopener" style="color:#FF8F72;">Read &rarr;</a>
+</section>
+
+<!-- 6: NEWSPAPER COLUMN -- mysterious domain -->
+<section class="spread s7">
+  <div class="s7-num">No. VI &middot; Hacker News &middot; 353 points</div>
+  <div class="s7-inner">
+    <h2 class="s7-headline">The Domain No One Registered, Yet Everyone Visits</h2>
+    <div class="s7-col-rule"></div>
+    <p class="s7-body">A developer investigates a cryptic string of characters that appears in browser logs across millions of machines but has no apparent owner, no readable WHOIS record, and no obvious purpose. The answer turns out to be stranger than any conspiracy theory, and it lives right inside the network stack.<br><br>Some mysteries are not hidden. They sit in plain sight, waiting for someone to notice the right log line at the right moment.</p>
+  </div>
+  <a class="read-link" href="https://jack.cab/blog/siterate" target="_blank" rel="noopener" style="margin-top:40px;">Read &rarr;</a>
+</section>
+
+<!-- 7: SWISS POSTER -- OpenCode Browse -->
+<section class="spread s8">
+  <div>
+    <div class="s8-top-rule"></div>
+    <div class="s8-num">No. 07 &middot; Hacker News &middot; 259 pts <span class="flag">🎯</span></div>
+  </div>
+  <h2 class="s8-headline">The Agent That Browses So You Do Not Have To</h2>
+  <div>
+    <p class="dek">OpenCode has shipped a web-browsing mode for its coding agent: point it at a documentation site or a GitHub repo and it fetches, reads, and applies context directly. The gap between "AI assistant" and "AI colleague" is closing faster than most roadmaps predicted.</p>
+    <div class="s8-bottom-rule"></div>
+    <a class="read-link" href="https://opencode.ai/product/browse" target="_blank" rel="noopener">Read &rarr;</a>
+  </div>
+</section>
+
+<!-- 8: ACADEMIC DROP-CAP -- Chemistry is Geometry -->
+<section class="spread s5">
+  <div class="s5-num">No. VIII &middot; Hacker News &middot; 234 points</div>
+  <div>
+    <span class="s5-dropcap" aria-hidden="true">G</span>
+    <h2 class="s5-headline">eometry Is the Structure<br>Beneath the Atom</h2>
+  </div>
+  <div class="s5-rule"></div>
+  <p class="dek">A physicist makes the case that molecular bonding, orbital configuration, and chemical behaviour are, at root, problems in geometry. If the reframe holds, then the entire periodic table is topology in disguise, and we have been teaching chemistry the wrong way round.</p>
+  <a class="read-link" href="https://chillphysicsenjoyer.substack.com/p/chemistry-is-actually-geometry" target="_blank" rel="noopener" style="color:#8A6A1A;">Read &rarr;</a>
+</section>
+
+<!-- 9: COLOUR-FIELD MINIMALIST -- Frame ePaper display -->
+<section class="spread s9">
+  <div class="s9-bg-num" aria-hidden="true">ix</div>
+  <div class="meta-line" style="opacity:0.5; color:#1C2416;">Hacker News &middot; 424 points</div>
+  <h2 class="s9-headline">Thirty-One Inches of Colour, Zero Backlight</h2>
+  <div class="s9-rule"></div>
+  <p class="dek" style="color:#2A361E;">TRMNL's Frame is a 31.5-inch colour ePaper display designed to hang on a wall and show whatever you configure: dashboards, slow news, a poem, a photograph. At $399 it is the first colour ePaper product that does not feel like a prototype. The hardware finally caught up to the idea.</p>
+  <a class="read-link" href="https://trmnl.com/blog/introducing-frame" target="_blank" rel="noopener" style="color:#1C2416;">Read &rarr;</a>
+</section>
+
+<!-- 10: MANIFESTO -- Squircles -->
+<section class="spread s10">
+  <div class="s10-bg" aria-hidden="true">X</div>
+  <div class="s10-num">No. X &middot; Hacker News &middot; 194 points</div>
+  <h2 class="s10-headline">The Shape Apple <em>Borrowed</em> from Mathematics</h2>
+  <p class="dek" style="color:#2A1500; margin-top:24px;">Squircles follow a superellipse equation that makes corners feel optically correct to the human eye. They are why iPhone app icons look right, and why a perfect circle would look wrong in that context. This is mathematics explaining an aesthetic: not an accident, not mere taste, but geometry with intent.</p>
+  <a class="read-link" href="https://linebender.org/wiki/curves/squircle/" target="_blank" rel="noopener" style="color:#1A0A00;">Read &rarr;</a>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div class="colo-mark">Morning Edition</div>
+  <p class="colo-body">Vol. 086. Published 17 November 2026. Ten stories, curated by an agent from Hacker News and Reddit, designed as a single issue for one reader. No newsletter. No feed.<br><br><a href="../index.html">&larr; Back to the archive</a></p>
+</footer>
+
+</body>
+</html>
