@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition -- 20 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Inter:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ff-d: 'Fraunces', serif;
+  --ff-b: 'Inter', sans-serif;
+  --ff-m: 'Courier Prime', 'Courier New', monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-b); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* MASTHEAD */
+.masthead {
+  background: #1A0E00;
+  color: #F7EDD8;
+  padding: 22px 48px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 3px solid #D4851A;
+}
+.mh-title {
+  font-family: var(--ff-d);
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 400;
+  font-style: italic;
+  color: #F7EDD8;
+}
+.mh-meta {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4851A;
+}
+
+/* SHARED */
+.spread {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) clamp(32px, 6vw, 80px);
+}
+.read-link {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 32px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.meta-line {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+.flag { opacity: 1; font-size: 20px; margin-left: 4px; }
+.dek {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.65;
+  max-width: 56ch;
+  margin-top: 20px;
+}
+
+/* ============================================================
+   S1: MANIFESTO -- amber on near-black
+   ============================================================ */
+.s1 { background: #1A0E00; color: #F5D78C; justify-content: center; }
+.s1-roman {
+  font-family: var(--ff-d);
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.4;
+  letter-spacing: 0.12em;
+  position: absolute;
+  top: clamp(48px, 8vw, 96px);
+  left: clamp(32px, 6vw, 80px);
+}
+.s1-ghost {
+  font-family: var(--ff-d);
+  font-size: clamp(240px, 38vw, 480px);
+  font-weight: 900;
+  color: rgba(212,133,26,0.05);
+  position: absolute;
+  bottom: -60px;
+  right: -20px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s1-rule {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #D4851A;
+  margin-bottom: 36px;
+}
+.s1-headline {
+  font-family: var(--ff-d);
+  font-weight: 300;
+  font-size: clamp(44px, 7vw, 110px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  color: #F5D78C;
+  position: relative;
+  z-index: 1;
+}
+.s1 .meta-line { color: rgba(245,215,140,0.5); opacity: 1; }
+.s1 .dek { color: rgba(245,215,140,0.85); }
+.s1 .read-link { color: #D4851A; }
+
+/* ============================================================
+   S2: HERO COVER -- sage green, dark text
+   ============================================================ */
+.s2 { background: #6B8C6E; color: #0E1F10; }
+.s2-bg-num {
+  font-family: var(--ff-d);
+  font-size: clamp(300px, 48vw, 600px);
+  font-weight: 900;
+  color: rgba(14,31,16,0.06);
+  position: absolute;
+  bottom: -80px;
+  right: -20px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.s2-num {
+  font-family: var(--ff-d);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+.s2-accent {
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #0E1F10;
+  margin-bottom: 28px;
+}
+.s2-headline {
+  font-family: var(--ff-d);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(50px, 8vw, 124px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 16ch;
+  position: relative;
+  z-index: 1;
+}
+.s2 .dek { color: rgba(14,31,16,0.8); }
+.s2 .meta-line { opacity: 0.55; }
+
+/* ============================================================
+   S3: DARK/MIDNIGHT -- near-black, lavender text
+   ============================================================ */
+.s3 { background: #0C0914; color: #C9BFE8; }
+.s3-tiny-num {
+  position: absolute;
+  bottom: clamp(48px, 8vw, 96px);
+  right: clamp(32px, 6vw, 80px);
+  font-family: var(--ff-b);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  opacity: 0.3;
+}
+.s3-headline {
+  font-family: var(--ff-d);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(46px, 7.5vw, 116px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 18ch;
+  color: #E8E0FF;
+  position: relative;
+  z-index: 1;
+}
+.s3-diamond {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #9C7FD4;
+  transform: rotate(45deg);
+  margin-bottom: 24px;
+}
+.s3 .meta-line { color: rgba(201,191,232,0.5); opacity: 1; }
+.s3 .dek { color: rgba(201,191,232,0.8); }
+.s3 .read-link { color: #C9BFE8; }
+
+/* ============================================================
+   S4: ROSE-ALERT-STAMP -- crimson/dark red
+   ============================================================ */
+.s4 { background: #3A0000; color: #FFE0D0; }
+.s4-stamp {
+  font-family: var(--ff-b);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border: 3px solid #FF5533;
+  color: #FF5533;
+  display: inline-block;
+  padding: 9px 20px;
+  margin-bottom: 36px;
+  transform: rotate(-2deg);
+}
+.s4-num-bg {
+  font-family: var(--ff-d);
+  font-size: clamp(200px, 32vw, 420px);
+  font-weight: 900;
+  color: rgba(255,80,50,0.04);
+  position: absolute;
+  bottom: -60px;
+  right: 24px;
+  line-height: 1;
+  pointer-events: none;
+}
+.s4-headline {
+  font-family: var(--ff-d);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(38px, 6vw, 86px);
+  line-height: 1.05;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+.s4 .meta-line { color: rgba(255,224,208,0.45); opacity: 1; }
+.s4 .dek { color: rgba(255,224,208,0.85); }
+.s4 .read-link { color: #FF9980; }
+
+/* ============================================================
+   S5: SWISS POSTER -- white/black, bold geometry
+   ============================================================ */
+.s5 { background: #F2F0EB; color: #111010; justify-content: space-between; padding-top: clamp(48px, 8vw, 96px); }
+.s5-top { display: flex; align-items: flex-start; justify-content: space-between; width: 100%; }
+.s5-num-swiss {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 18vw, 240px);
+  font-weight: 900;
+  line-height: 1;
+  color: #111010;
+  letter-spacing: -0.04em;
+}
+.s5-label {
+  font-family: var(--ff-b);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  opacity: 0.35;
+  align-self: flex-end;
+  padding-bottom: 8px;
+}
+.s5-rule-thick {
+  width: 100%;
+  height: 6px;
+  background: #111010;
+  margin: 32px 0;
+}
+.s5-headline {
+  font-family: var(--ff-d);
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 100px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  text-transform: uppercase;
+}
+.s5 .meta-line { opacity: 0.4; }
+.s5 .dek { color: rgba(17,16,16,0.75); }
+
+/* ============================================================
+   S6: TYPOGRAPHIC COLLAGE -- sage/moss
+   ============================================================ */
+.s6 { background: #3D5438; color: #E8F0E0; }
+.s6-ghost-word {
+  font-family: var(--ff-d);
+  font-size: clamp(80px, 16vw, 220px);
+  font-weight: 900;
+  color: rgba(232,240,224,0.05);
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.s6-stacked { position: relative; z-index: 1; }
+.s6-num-small {
+  font-family: var(--ff-b);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+  margin-bottom: 10px;
+}
+.s6-headline {
+  font-family: var(--ff-d);
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 100px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+}
+.s6-headline em { font-style: italic; font-weight: 300; }
+.s6 .meta-line { color: rgba(232,240,224,0.45); opacity: 1; }
+.s6 .dek { color: rgba(232,240,224,0.8); }
+.s6 .read-link { color: #A8D890; }
+
+/* ============================================================
+   S7: NEWSPAPER COLUMN -- newsprint, two-col feel
+   ============================================================ */
+.s7 { background: #F4EDD5; color: #1C1A14; }
+.s7-num-paren {
+  font-family: var(--ff-d);
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-style: italic;
+  opacity: 0.45;
+  margin-bottom: 10px;
+}
+.s7-rule-thin {
+  width: 100%;
+  height: 1px;
+  background: rgba(28,26,20,0.25);
+  margin-bottom: 36px;
+}
+.s7-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(38px, 5.5vw, 80px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  max-width: 24ch;
+  margin-bottom: 24px;
+}
+.s7-col-rule {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+.s7-col-rule::before {
+  content: '';
+  display: block;
+  width: 1px;
+  background: rgba(28,26,20,0.2);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.s7 .meta-line { opacity: 0.45; }
+.s7 .dek { margin-top: 0; }
+.s7 .read-link { color: #5A4A1A; }
+
+/* ============================================================
+   S8: ACADEMIC DROP-CAP -- warm tan/parchment
+   ============================================================ */
+.s8 { background: #EDE0C8; color: #2A1E10; }
+.s8-num-italic {
+  font-family: var(--ff-d);
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.4;
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+.s8-dropcap {
+  font-family: var(--ff-d);
+  font-size: clamp(100px, 18vw, 240px);
+  font-weight: 900;
+  font-style: italic;
+  color: #7A5218;
+  float: left;
+  line-height: 0.78;
+  margin-right: 16px;
+  padding-top: 8px;
+}
+.s8-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(32px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.1;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.s8-rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(42,30,16,0.2);
+  margin: 16px 0 32px;
+  clear: both;
+}
+.s8 .meta-line { opacity: 0.45; }
+.s8 .dek { color: rgba(42,30,16,0.8); }
+.s8 .read-link { color: #7A5218; }
+
+/* ============================================================
+   S9: TERMINAL -- green on black
+   ============================================================ */
+.s9 { background: #0A1200; color: #3EE847; font-family: var(--ff-m); }
+.s9-prompt {
+  font-family: var(--ff-m);
+  font-size: 18px;
+  opacity: 0.4;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+.s9-num-hash {
+  font-family: var(--ff-m);
+  font-size: clamp(90px, 16vw, 200px);
+  font-weight: 700;
+  color: rgba(62,232,71,0.08);
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  line-height: 1;
+  pointer-events: none;
+}
+.s9-headline {
+  font-family: var(--ff-m);
+  font-weight: 700;
+  font-size: clamp(28px, 4.5vw, 58px);
+  line-height: 1.1;
+  max-width: 28ch;
+  position: relative;
+  z-index: 1;
+}
+.s9 .meta-line { color: rgba(62,232,71,0.45); opacity: 1; font-family: var(--ff-m); }
+.s9 .dek { font-family: var(--ff-m); font-size: clamp(18px, 1.8vw, 22px); color: rgba(62,232,71,0.8); }
+.s9 .read-link { color: #3EE847; font-family: var(--ff-m); }
+
+/* ============================================================
+   S10: BIG-STAT FINISH -- deep plum
+   ============================================================ */
+.s10 { background: #1E0A2E; color: #E8D4F8; justify-content: space-between; }
+.s10-stat {
+  font-family: var(--ff-d);
+  font-size: clamp(130px, 24vw, 340px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #D4A8F0;
+  margin-bottom: 16px;
+}
+.s10-stat-label {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9B6EC4;
+  margin-bottom: 48px;
+}
+.s10-headline {
+  font-family: var(--ff-d);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.1;
+  max-width: 32ch;
+}
+.s10 .meta-line { color: rgba(232,212,248,0.45); opacity: 1; }
+.s10 .dek { color: rgba(232,212,248,0.8); }
+.s10 .read-link { color: #D4A8F0; }
+
+/* COLOPHON */
+.colophon {
+  background: #1A0E00;
+  color: rgba(245,215,140,0.6);
+  padding: 48px clamp(32px, 6vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 18px;
+  font-family: var(--ff-b);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.colophon a { color: #D4851A; text-decoration: underline; text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span class="mh-title">Morning Edition</span>
+  <span class="mh-meta">Vol. 087 &mdash; 20 November 2026</span>
+</div>
+
+<!-- ============================================================
+     SPREAD 1: MANIFESTO -- Anthropic's Nasdaq debut
+     ============================================================ -->
+<section class="spread s1">
+  <span class="s1-roman">I</span>
+  <div class="s1-ghost" aria-hidden="true">1</div>
+  <span class="s1-rule"></span>
+  <div class="meta-line">HN &bull; 1,059 points &bull; 2,082 comments 🎯</div>
+  <h1 class="s1-headline">Anthropic walks onto Wall Street.</h1>
+  <p class="dek">The AI lab that bet everything on constitutional alignment debuted on Nasdaq yesterday and held its nerve. Anthropic's listing put a number on the question of whether safety and commercial scale can coexist: the market said yes, at least for now.</p>
+  <a class="read-link" href="https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 2: HERO COVER -- Claude solves black hole physics
+     ============================================================ -->
+<section class="spread s2">
+  <div class="s2-bg-num" aria-hidden="true">2</div>
+  <div class="s2-num">No. 02</div>
+  <span class="s2-accent"></span>
+  <div class="meta-line">HN &bull; 475 points &bull; Anthropic Research 🎯</div>
+  <h2 class="s2-headline">The model gave proofs, not approximations.</h2>
+  <p class="dek">Claude resolved two open problems in black hole physics that researchers had circled for years: not approximate answers, actual derivations. What it means for how we use AI in scientific research is a bigger question than the physics itself.</p>
+  <a class="read-link" href="https://www.anthropic.com/research/claude-black-hole-physics" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 3: DARK/MIDNIGHT -- Pancreatic cancer virus treatment
+     ============================================================ -->
+<section class="spread s3">
+  <div class="s3-tiny-num" aria-hidden="true">03</div>
+  <div class="s3-diamond"></div>
+  <div class="meta-line">HN &bull; 748 points &bull; New Scientist</div>
+  <h2 class="s3-headline">A virus injection stopped pancreatic cancer in three patients.</h2>
+  <p class="dek">Three patients, a modified virus injected directly into tumour tissue, no disease progression. The trial is small, the mechanism not fully understood, but the result is extraordinary: a cancer with a five-year survival rate under 12% appeared to stall.</p>
+  <a class="read-link" href="https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 4: ROSE-ALERT-STAMP -- UK Apple encryption order
+     ============================================================ -->
+<section class="spread s4">
+  <div class="s4-num-bg" aria-hidden="true">IV</div>
+  <div class="s4-stamp">Classified &middot; Declassified</div>
+  <div class="meta-line">HN &bull; 623 points &bull; 281 comments</div>
+  <h2 class="s4-headline">The British government spent months denying it. A tribunal ruling forced an admission.</h2>
+  <p class="dek">The UK secretly ordered Apple to unlock encrypted user data for surveillance purposes. Denied for months, now confirmed by a tribunal. The scope of the original order remains classified. The precedent it sets does not.</p>
+  <a class="read-link" href="https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 5: SWISS POSTER -- Garage Door Spam
+     ============================================================ -->
+<section class="spread s5">
+  <div class="s5-top">
+    <div class="s5-num-swiss" aria-hidden="true">5</div>
+    <div class="s5-label">Morning Edition</div>
+  </div>
+  <div class="s5-rule-thick"></div>
+  <div class="meta-line">HN &bull; 842 points &bull; 353 comments</div>
+  <h2 class="s5-headline">Your Garage Door Is Receiving Spam.</h2>
+  <p class="dek">Someone noticed their garage door opener was picking up radio frequency noise that looked like broadcast packets. It was. Cheap IoT radio bands are being quietly co-opted for bulk data transmission, and most devices have no idea it is happening.</p>
+  <a class="read-link" href="https://blog.harrison.page/garage-door-spam/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 6: TYPOGRAPHIC COLLAGE -- Garage Door Spam...
+     Wait, I used that for S5. Let me use this for 98% Slot Machine.
+     ============================================================ -->
+<section class="spread s6">
+  <div class="s6-ghost-word" aria-hidden="true">SPEND</div>
+  <div class="s6-stacked">
+    <div class="s6-num-small">SIX</div>
+    <div class="meta-line">HN &bull; 262 points &bull; Global Commerce Graph</div>
+    <h2 class="s6-headline">The <em>98% slot machine.</em></h2>
+    <p class="dek">For every dollar spent on paid digital advertising, only two cents reaches what advertisers actually want. The rest pays for fraud, platform margins, and the infrastructure of manufactured attention. The essay's author calls it an extraction tax on commerce.</p>
+    <a class="read-link" href="https://globalcommercegraph.com/writing/the-ninety-eight-percent-slot-machine" target="_blank" rel="noopener">Read &#8594;</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPREAD 7: NEWSPAPER COLUMN -- 8-page foldable zines
+     ============================================================ -->
+<section class="spread s7">
+  <div class="s7-num-paren">(Seven)</div>
+  <div class="s7-rule-thin"></div>
+  <div class="meta-line">HN &bull; 289 points &bull; 61 comments</div>
+  <h2 class="s7-headline">Eight pages. One sheet of A4. No print shop.</h2>
+  <div class="s7-col-rule">
+    <p class="dek">A browser tool handles the layout geometry automatically: fold the paper eight times and you have a finished zine. The constraints are the point. Physical output from a purely digital workflow, no special equipment required. It makes publishing feel like origami.</p>
+  </div>
+  <a class="read-link" href="https://krthr.co/paper-folds-and-whats-new-in-fanzines-app/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 8: ACADEMIC DROP-CAP -- Onlook designer tool
+     ============================================================ -->
+<section class="spread s8">
+  <div class="s8-num-italic">viii</div>
+  <div class="s8-dropcap">O</div>
+  <h2 class="s8-headline">nlook puts a design canvas directly on your real codebase. 🎯</h2>
+  <div class="s8-rule"></div>
+  <div class="meta-line">HN &bull; 114 points &bull; YC W25 &bull; Open Source</div>
+  <p class="dek">Designers edit in production without touching code. Every change lands as a PR you can review or discard. Open-sourced by a YC W25 team, already the top trending repo on GitHub twice. The workflow gap between design and development has another serious attempt at closure.</p>
+  <a class="read-link" href="https://github.com/onlook-dev/onlook/" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 9: TERMINAL -- OpenSSL critical CVE
+     ============================================================ -->
+<section class="spread s9">
+  <div class="s9-num-hash" aria-hidden="true">#9</div>
+  <div class="s9-prompt">$ curl -s https://openssl.org/news/secadv/20261119.txt</div>
+  <div class="meta-line">HN &bull; 189 points &bull; 140 comments</div>
+  <h2 class="s9-headline">CVE-2026-121481. CVSS 9.8. Buffer overflow in EVP_EncodeBlock().</h2>
+  <p class="dek">The patch is out. Whether it gets applied across the dependency graph of a substantial fraction of the internet is a different question. OpenSSL critical vulnerabilities have a long history of lingering in production longer than anyone would like to admit.</p>
+  <a class="read-link" href="https://github.com/openssl/openssl/pull/33652" target="_blank" rel="noopener">Read &#8594;</a>
+</section>
+
+<!-- ============================================================
+     SPREAD 10: BIG-STAT FINISH -- Weight-Space Programming
+     ============================================================ -->
+<section class="spread s10">
+  <div>
+    <div class="s10-stat">1990</div>
+    <div class="s10-stat-label">The methods are older than the internet.</div>
+  </div>
+  <div>
+    <div class="meta-line">HN &bull; 70 points &bull; Notes by Lex</div>
+    <h2 class="s10-headline">Weight-Space Programming builds neural networks like a researcher who predates backpropagation.</h2>
+    <p class="dek">No gradient descent. No training loops. Networks constructed directly in weight space, using techniques from the era before deep learning rewrote the field. The implications for interpretability are significant: you know exactly what you built and why each weight is there.</p>
+    <a class="read-link" href="https://notesbylex.com/weight-space-programming-1990s" target="_blank" rel="noopener">Read &#8594;</a>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <span>Morning Edition &mdash; Vol. 087 &mdash; 20 Nov 2026</span>
+  <a href="../index.html">Archive &#8594;</a>
+</footer>
+
+</body>
+</html>
